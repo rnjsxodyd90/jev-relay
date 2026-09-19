@@ -7,44 +7,57 @@ final class OfflineScreenshotTests: XCTestCase {
         continueAfterFailure = false
         XCUIDevice.shared.orientation = .portrait
         app = XCUIApplication()
-        // Exercise the real app views, without a replay or alternate app mode.
-        // Never consent, Interpret, Record, or delete a cloud identity in this suite.
+        // Exercise real views only. This suite never consents, translates, records, or deletes a cloud identity.
         app.launch()
-        XCTAssertTrue(app.staticTexts["What would you like to say?"].waitForExistence(timeout: 15), "The offline app shell did not appear.")
+        XCTAssertTrue(app.staticTexts["Your English-to-Dutch conversation helper"].waitForExistence(timeout: 15), "The offline app shell did not appear.")
     }
 
-    override func tearDownWithError() throws {
-        app?.terminate()
-        app = nil
-    }
+    override func tearDownWithError() throws { app?.terminate(); app = nil }
 
     func testGenuineOfflineScreenshots() {
         captureWorkbench()
         capturePhrasebook()
-        capturePrivacyPreferences()
+        captureSettings()
     }
 
     private func captureWorkbench() {
-        let heading = app.staticTexts["What would you like to say?"]
-        XCTAssertTrue(heading.waitForExistence(timeout: 10))
+        XCTAssertTrue(app.staticTexts["Type or speak English, review the Dutch, then choose to play it."].exists)
         let editor = app.textViews["sourceEditor"].firstMatch
         XCTAssertTrue(editor.waitForExistence(timeout: 5))
-        XCTAssertFalse(app.buttons["interpretButton"].isEnabled, "An empty turn must not be sent.")
+        XCTAssertFalse(app.buttons["translateButton"].isEnabled, "An empty turn must not be sent.")
+        XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "transmissionNotice").firstMatch.exists)
         attachScreenshot(named: "00-empty-editor-offline")
+
         let example = "Which train goes to Amsterdam?"
+        app.buttons["tryExampleButton"].tap()
+        XCTAssertEqual(editor.value as? String, example, "Try an example must only fill editable English text.")
+        XCTAssertFalse(app.descendants(matching: .any)["resultPanel"].exists, "Examples must not fabricate inference results.")
+        XCTAssertFalse(app.descendants(matching: .any)["interpretProgress"].exists, "Examples must not start translation.")
+        attachScreenshot(named: "01-interpret-offline")
+
         editor.tap()
-        editor.typeText(example)
         let done = app.buttons["dismissKeyboardButton"].firstMatch
         XCTAssertTrue(done.waitForExistence(timeout: 5), "An explicit keyboard-dismiss control must be available.")
         done.tap()
         XCTAssertEqual(editor.value as? String, example, "Dismissing the keyboard must preserve the editable source.")
         XCTAssertFalse(app.keyboards.firstMatch.exists, "Done must dismiss the keyboard.")
-        XCTAssertFalse(app.descendants(matching: .any)["resultPanel"].exists, "Offline screenshots must not present a fabricated inference result.")
-        XCTAssertFalse(app.descendants(matching: .any)["interpretProgress"].exists, "Editing text must not start interpretation.")
-        attachScreenshot(named: "01-interpret-offline")
 
-        let notice = app.descendants(matching: .any).matching(identifier: "workbenchSafetyNotice").firstMatch
-        scrollToAndCapture(notice, named: "04-decisions-scroll-offline")
+        let optional = app.buttons["Optional context and tone"].firstMatch
+        XCTAssertTrue(optional.waitForExistence(timeout: 5), "Optional controls must be clearly available.")
+        optional.tap()
+        XCTAssertTrue(app.textFields["contextEditor"].exists)
+        optional.tap()
+
+        let details = app.buttons["How it works"].firstMatch
+        for _ in 0..<6 where !details.isHittable { app.swipeUp() }
+        XCTAssertTrue(details.isHittable, "How it works must be reachable.")
+        details.tap()
+        XCTAssertTrue(app.staticTexts["Transparent detail"].waitForExistence(timeout: 5))
+        attachScreenshot(named: "04-decisions-scroll-offline")
+
+        let safety = app.descendants(matching: .any).matching(identifier: "workbenchSafetyNotice").firstMatch
+        for _ in 0..<8 where !isVisibleAboveBottomNavigation(safety) { app.swipeUp() }
+        XCTAssertTrue(isVisibleAboveBottomNavigation(safety), "Lower safety content must remain reachable.")
     }
 
     private func capturePhrasebook() {
@@ -57,25 +70,15 @@ final class OfflineScreenshotTests: XCTestCase {
         scrollToAndCapture(savedStatus, named: "05-phrasebook-end-offline")
     }
 
-    private func capturePrivacyPreferences() {
-        tapTab(named: "Preferences")
-        XCTAssertTrue(app.navigationBars["Preferences"].waitForExistence(timeout: 10))
-
-        // SwiftUI Link may expose a button rather than XCUIElementTypeLink.
-        // Use a stable identifier without assuming its accessibility element type.
+    private func captureSettings() {
+        tapTab(named: "Settings")
+        XCTAssertTrue(app.navigationBars["Settings"].waitForExistence(timeout: 10))
         let privacy = app.descendants(matching: .any).matching(identifier: "privacyPolicyLink").firstMatch
         for _ in 0..<8 where !privacy.exists || !privacy.isHittable { app.swipeUp() }
-        if !privacy.exists || !privacy.isHittable {
-            let hierarchy = XCTAttachment(string: app.debugDescription)
-            hierarchy.name = "Privacy accessibility hierarchy"
-            hierarchy.lifetime = .keepAlways
-            add(hierarchy)
-        }
-        XCTAssertTrue(privacy.exists && privacy.isHittable, "The privacy row was not visible and reachable in Preferences.")
+        XCTAssertTrue(privacy.exists && privacy.isHittable, "The privacy row was not visible and reachable in Settings.")
         let notice = app.descendants(matching: .any).matching(identifier: "privacySafetyNotice").firstMatch
         for _ in 0..<4 where !notice.exists || !notice.isHittable { app.swipeUp() }
         XCTAssertTrue(notice.exists && notice.isHittable, "The privacy and safety notice was not visible.")
-        XCTAssertTrue(privacy.exists && privacy.isHittable, "The screenshot must also include the accessible privacy row.")
         attachScreenshot(named: "03-privacy-preferences-offline")
     }
 
@@ -90,10 +93,7 @@ final class OfflineScreenshotTests: XCTestCase {
     private func isVisibleAboveBottomNavigation(_ element: XCUIElement) -> Bool {
         guard element.exists && element.isHittable else { return false }
         let bar = app.tabBars.firstMatch
-        // iPad may place its tab controls at the top instead.
-        if bar.exists && bar.frame.minY > app.frame.midY {
-            return element.frame.maxY <= bar.frame.minY
-        }
+        if bar.exists && bar.frame.minY > app.frame.midY { return element.frame.maxY <= bar.frame.minY }
         return true
     }
 

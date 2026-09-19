@@ -4,9 +4,9 @@ struct RootView: View {
     @EnvironmentObject private var model: AppModel
     var body: some View {
         TabView {
-            NavigationStack { WorkbenchView() }.tabItem { Label("Interpret", systemImage: "text.book.closed") }.accessibilityIdentifier("workbenchTab")
+            NavigationStack { WorkbenchView() }.tabItem { Label("Translate", systemImage: "text.book.closed") }.accessibilityIdentifier("workbenchTab")
             NavigationStack { PhrasebookView() }.tabItem { Label("Phrases", systemImage: "character.book.closed") }.accessibilityIdentifier("phrasesTab")
-            NavigationStack { SettingsView() }.tabItem { Label("Preferences", systemImage: "slider.horizontal.3") }.accessibilityIdentifier("preferencesTab")
+            NavigationStack { SettingsView() }.tabItem { Label("Settings", systemImage: "slider.horizontal.3") }.accessibilityIdentifier("preferencesTab")
         }
         .background(RelayStyle.workspace)
         .sheet(isPresented: $model.showingConsent) { ConsentView().interactiveDismissDisabled() }

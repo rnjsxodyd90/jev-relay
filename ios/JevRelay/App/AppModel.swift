@@ -2,6 +2,13 @@ import Foundation
 import Combine
 import UIKit
 
+struct PlaybackReview: Identifiable {
+    let id: UUID
+    let resultGeneration: UUID
+    let sourceText: String
+    let translatedText: String
+}
+
 @MainActor
 final class AppModel: ObservableObject {
     @Published var sourceText = "" { didSet { if sourceText != oldValue { invalidateTurn() } } }
@@ -10,6 +17,7 @@ final class AppModel: ObservableObject {
     @Published private(set) var result: InterpretResponse?
     @Published private(set) var isInterpreting = false
     @Published private(set) var errorMessage: String?
+    @Published private(set) var playbackReview: PlaybackReview?
     @Published var showingConsent = false
     @Published var showingResetConfirmation = false
     @Published var deletionMessage: String?
@@ -26,6 +34,8 @@ final class AppModel: ObservableObject {
     private let defaults: UserDefaults
     private var interpretTask: Task<Void, Never>?
     private var revision = UUID()
+    private var resultGeneration: UUID?
+    private var consumedReviewToken: UUID?
     private let consentKey = "transmissionConsent.v1"
 
     init(configuration: ServiceConfiguration = .current(), defaults: UserDefaults = .standard, phrasebook: PhrasebookStore? = nil, api: (any RelayServing)? = nil) {
@@ -34,7 +44,11 @@ final class AppModel: ObservableObject {
         self.api = api ?? RelayAPIClient(configuration: configuration)
         speechCapture.onTranscript = { [weak self] transcript in self?.sourceText = transcript }
         NotificationCenter.default.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: .main) { [weak self] _ in
-            Task { @MainActor in self?.speechCapture.stop(); self?.speaker.stop() }
+            Task { @MainActor in
+                self?.speechCapture.stop()
+                self?.speaker.stop()
+                self?.invalidatePlaybackReview()
+            }
         }
     }
 
@@ -43,6 +57,7 @@ final class AppModel: ObservableObject {
 
     func requestInterpretation() {
         errorMessage = nil
+        invalidatePlaybackReview()
         guard configuration.isServiceAvailable else { errorMessage = configuration.missingServiceMessage; return }
         guard hasConsent else { showingConsent = true; return }
         beginInterpretation()
@@ -50,10 +65,19 @@ final class AppModel: ObservableObject {
 
     func acceptConsent() { defaults.set(true, forKey: consentKey); showingConsent = false; beginInterpretation() }
     func declineConsent() { showingConsent = false }
-    func revokeConsent() { defaults.set(false, forKey: consentKey); interpretTask?.cancel(); isInterpreting = false; speaker.stop() }
+    func revokeConsent() {
+        defaults.set(false, forKey: consentKey)
+        interpretTask?.cancel()
+        isInterpreting = false
+        speaker.stop()
+        invalidatePlaybackReview()
+    }
 
     private func beginInterpretation() {
         interpretTask?.cancel(); speaker.stop(); speechCapture.stop()
+        invalidatePlaybackReview()
+        resultGeneration = nil
+        result = nil
         let turn: InterpretRequest
         do { turn = try InterpretRequest(text: sourceText, context: context, tone: tone) }
         catch { errorMessage = error.localizedDescription; return }
@@ -64,7 +88,9 @@ final class AppModel: ObservableObject {
             do {
                 let response = try await api.interpret(turn)
                 guard !Task.isCancelled, self.revision == requestRevision, self.sourceText.trimmingCharacters(in: .whitespacesAndNewlines) == turn.text else { return }
-                self.result = response; self.isInterpreting = false
+                self.result = response
+                self.resultGeneration = UUID()
+                self.isInterpreting = false
                 UIAccessibility.post(notification: .announcement, argument: self.statusAnnouncement(for: response))
             } catch is CancellationError { if self.revision == requestRevision { self.isInterpreting = false } }
             catch {
@@ -75,8 +101,42 @@ final class AppModel: ObservableObject {
         }
     }
 
-    func cancelInterpretation() { interpretTask?.cancel(); revision = UUID(); isInterpreting = false }
-    func playResult() { guard canPlayResult, let result else { return }; speaker.speak(result.translatedText) }
+    func cancelInterpretation() {
+        interpretTask?.cancel()
+        revision = UUID()
+        isInterpreting = false
+        invalidatePlaybackReview()
+    }
+
+    func requestPlaybackReview() {
+        guard canPlayResult, let result, let resultGeneration else { return }
+        playbackReview = PlaybackReview(
+            id: UUID(),
+            resultGeneration: resultGeneration,
+            sourceText: result.sourceText,
+            translatedText: result.translatedText
+        )
+    }
+
+    func dismissPlaybackReview() { playbackReview = nil }
+
+    func approveReviewAndPlay(_ token: UUID) {
+        guard let playbackReview,
+              playbackReview.id == token,
+              consumedReviewToken != playbackReview.id,
+              let result,
+              resultGeneration == playbackReview.resultGeneration,
+              result.sourceText == playbackReview.sourceText,
+              result.translatedText == playbackReview.translatedText,
+              canPlayResult else {
+            self.playbackReview = nil
+            return
+        }
+        consumedReviewToken = playbackReview.id
+        self.playbackReview = nil
+        speaker.speak(result.translatedText)
+    }
+
     func saveResult() { guard canPlayResult, let result else { return }; phrasebook.save(english: result.sourceText, dutch: result.translatedText) }
 
     func usePhrase(_ phrase: Phrase) { resetSession(); sourceText = phrase.english; result = nil }
@@ -85,11 +145,15 @@ final class AppModel: ObservableObject {
     func resetSession() {
         interpretTask?.cancel(); speechCapture.stop(); speaker.stop(); revision = UUID()
         sourceText = ""; context = ""; tone = .automatic; result = nil; errorMessage = nil; isInterpreting = false
+        resultGeneration = nil
+        invalidatePlaybackReview()
         UIAccessibility.post(notification: .announcement, argument: "Session reset. No transcript was saved.")
     }
 
     func deleteIdentity(clearSavedPhrases: Bool) async {
         deletionMessage = nil
+        speaker.stop()
+        invalidatePlaybackReview()
         do {
             try await api.deleteIdentity()
             defaults.set(false, forKey: consentKey)
@@ -105,8 +169,16 @@ final class AppModel: ObservableObject {
         isInterpreting = false
         speaker.stop()
         result = nil
+        resultGeneration = nil
         errorMessage = nil
+        invalidatePlaybackReview()
     }
+
+    private func invalidatePlaybackReview() {
+        playbackReview = nil
+        consumedReviewToken = nil
+    }
+
     private func statusAnnouncement(for response: InterpretResponse) -> String {
         switch response.route {
         case .memory, .translate: return "Dutch result ready for review. Playback is manual."

@@ -6,7 +6,7 @@ struct SettingsView: View {
         Form {
             Section("Live service") {
                 LabeledContent("Status", value: model.configuration.isServiceAvailable ? "Configured" : "Unavailable")
-                Text(model.configuration.isServiceAvailable ? "Text can be sent only after consent and an explicit Interpret action." : model.configuration.missingServiceMessage).font(.relay(.subheadline)).foregroundStyle(RelayStyle.muted)
+                Text(model.configuration.isServiceAvailable ? "Translation needs an internet connection. Text can be sent only after consent and an explicit Translate action." : model.configuration.missingServiceMessage).font(.relay(.subheadline)).foregroundStyle(RelayStyle.muted)
                 if model.hasConsent { Button("Revoke transmission consent") { model.revokeConsent() }.frame(minHeight: 44) }
                 else { Text("Transmission consent is not active.").font(.relay(.subheadline)).foregroundStyle(RelayStyle.muted) }
             }
@@ -32,7 +32,7 @@ struct SettingsView: View {
             }
             Section { Text("Not for legal, medical, or emergency use. Output is not certified. No analytics, tracking, advertising, in-app purchases, or account wall are included.").font(.relay(.caption)).foregroundStyle(RelayStyle.muted).accessibilityIdentifier("privacySafetyNotice") }
         }
-        .scrollContentBackground(.hidden).background(RelayStyle.workspace).navigationTitle("Preferences")
+        .scrollContentBackground(.hidden).background(RelayStyle.workspace).navigationTitle("Settings")
         .confirmationDialog("Delete anonymous identity?", isPresented: $model.showingIdentityDeletion, titleVisibility: .visible) {
             Button("Delete identity, keep local phrases", role: .destructive) { deleteIdentity(clearSaved: false) }
             Button("Delete identity and local phrases", role: .destructive) { deleteIdentity(clearSaved: true) }
