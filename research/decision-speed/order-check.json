@@ -1,0 +1,12 @@
+{
+  "jevFirst": {
+    "n": 18,
+    "jevMedianMs": 302.5,
+    "qwenMedianMs": 396.5
+  },
+  "qwenFirst": {
+    "n": 18,
+    "jevMedianMs": 307,
+    "qwenMedianMs": 368
+  }
+}

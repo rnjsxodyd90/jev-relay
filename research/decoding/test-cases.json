@@ -1,0 +1,74 @@
+[
+  {
+    "id": "t01",
+    "source": "I am not hungry.",
+    "reference": "Ik heb geen honger.",
+    "focus": "negation; idiomatic verb"
+  },
+  {
+    "id": "t02",
+    "source": "She gave him the book yesterday.",
+    "reference": "Ze heeft hem gisteren het boek gegeven.",
+    "focus": "agent and recipient; past tense"
+  },
+  {
+    "id": "t03",
+    "source": "Where can I buy a ticket?",
+    "reference": "Waar kan ik een kaartje kopen?",
+    "focus": "question word order"
+  },
+  {
+    "id": "t04",
+    "source": "Please speak a little more slowly.",
+    "reference": "Spreek alstublieft iets langzamer.",
+    "focus": "polite request"
+  },
+  {
+    "id": "t05",
+    "source": "I thought he would come tomorrow.",
+    "reference": "Ik dacht dat hij morgen zou komen.",
+    "focus": "embedded clause; tense"
+  },
+  {
+    "id": "t06",
+    "source": "The red car is smaller than the blue one.",
+    "reference": "De rode auto is kleiner dan de blauwe.",
+    "focus": "comparison; adjective agreement"
+  },
+  {
+    "id": "t07",
+    "source": "If it rains, we will stay home.",
+    "reference": "Als het regent, blijven we thuis.",
+    "focus": "condition and Dutch inversion"
+  },
+  {
+    "id": "t08",
+    "source": "I have lived here for three years.",
+    "reference": "Ik woon hier al drie jaar.",
+    "focus": "duration; tense equivalence"
+  },
+  {
+    "id": "t09",
+    "source": "Please do not send the message yet.",
+    "reference": "Stuur het bericht alstublieft nog niet.",
+    "focus": "negation scope; yet"
+  },
+  {
+    "id": "t10",
+    "source": "Anna will arrive at 14:30, not at 13:30.",
+    "reference": "Anna komt om 14:30 aan, niet om 13:30.",
+    "focus": "name; times; negation"
+  },
+  {
+    "id": "t11",
+    "source": "That decision cost me an arm and a leg.",
+    "reference": "Die beslissing heeft me een fortuin gekost.",
+    "focus": "idiom; nonliteral meaning"
+  },
+  {
+    "id": "t12",
+    "source": "The appointment was moved from Tuesday to Thursday.",
+    "reference": "De afspraak is verplaatst van dinsdag naar donderdag.",
+    "focus": "passive; direction; days"
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "name": "jev-decision-speed",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.9"
+  },
+  "scripts": {
+    "benchmark": "node --env-file-if-exists=.env run.mjs",
+    "analyze": "node analyze.mjs",
+    "dashboard": "node make-dashboard.mjs"
+  }
+}

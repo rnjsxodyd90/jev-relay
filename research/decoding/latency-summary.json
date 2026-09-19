@@ -1,0 +1,52 @@
+{
+  "hierarchical_parallel_words": {
+    "n": 12,
+    "medianMs": 941,
+    "minMs": 702,
+    "maxMs": 2227,
+    "meanMs": 1186,
+    "errors": 0,
+    "inputTokens": 493093,
+    "calls": 24
+  },
+  "parallel_characters": {
+    "n": 12,
+    "medianMs": 698,
+    "minMs": 595,
+    "maxMs": 853,
+    "meanMs": 699,
+    "errors": 0,
+    "inputTokens": 362915,
+    "calls": 12
+  },
+  "mymemory_service": {
+    "n": 12,
+    "medianMs": 546,
+    "minMs": 359,
+    "maxMs": 838,
+    "meanMs": 565,
+    "errors": 0,
+    "inputTokens": 0,
+    "calls": 12
+  },
+  "hierarchical_sequential_words": {
+    "n": 3,
+    "medianMs": 628,
+    "minMs": 541,
+    "maxMs": 718,
+    "meanMs": 629,
+    "errors": 0,
+    "inputTokens": 11909,
+    "calls": 6
+  },
+  "qwen_30b_a3b": {
+    "n": 12,
+    "medianMs": 372,
+    "minMs": 268,
+    "maxMs": 765,
+    "meanMs": 415,
+    "errors": 0,
+    "inputTokens": 863,
+    "calls": 12
+  }
+}

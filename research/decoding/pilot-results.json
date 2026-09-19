@@ -1,0 +1,18 @@
+[
+  {
+    "mode": "parallel_words",
+    "error": "{\"error\":\"Provider error\",\"status\":400,\"details\":\"Too many choices. Must have at most 255 choices.\"}"
+  },
+  {
+    "mode": "parallel_characters",
+    "error": "{\"error\":\"Provider error\",\"status\":400,\"details\":{\"error_type\":\"max_tokens_exceeded\"}}"
+  },
+  {
+    "mode": "sequential_words",
+    "error": "{\"error\":\"Provider error\",\"status\":400,\"details\":\"Too many choices. Must have at most 255 choices.\"}"
+  },
+  {
+    "mode": "gpt_4_1_mini",
+    "error": "{\"error\":\"Provider error\",\"status\":429,\"details\":\"You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.\"}"
+  }
+]

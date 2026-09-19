@@ -1,0 +1,266 @@
+[
+  {
+    "id": "t01",
+    "reference": "Ik heb geen honger.",
+    "focus": "negation; idiomatic verb",
+    "mode": "qwen_30b_a3b",
+    "source": "I am not hungry.",
+    "text": "Ik heb geen honger.",
+    "latencyMs": 292,
+    "calls": 1,
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "usage": {
+      "completion_tokens": 8,
+      "prompt_tokens": 68,
+      "total_tokens": 76,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 48
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "id": "t02",
+    "reference": "Ze heeft hem gisteren het boek gegeven.",
+    "focus": "agent and recipient; past tense",
+    "mode": "qwen_30b_a3b",
+    "source": "She gave him the book yesterday.",
+    "text": "Zij gaf hem het boek gisteren.",
+    "latencyMs": 452,
+    "calls": 1,
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "usage": {
+      "completion_tokens": 13,
+      "prompt_tokens": 70,
+      "total_tokens": 83,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 48
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "id": "t03",
+    "reference": "Waar kan ik een kaartje kopen?",
+    "focus": "question word order",
+    "mode": "qwen_30b_a3b",
+    "source": "Where can I buy a ticket?",
+    "text": "Waar kan ik een kaartje kopen?",
+    "latencyMs": 293,
+    "calls": 1,
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "usage": {
+      "completion_tokens": 12,
+      "prompt_tokens": 70,
+      "total_tokens": 82,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 48
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "id": "t04",
+    "reference": "Spreek alstublieft iets langzamer.",
+    "focus": "polite request",
+    "mode": "qwen_30b_a3b",
+    "source": "Please speak a little more slowly.",
+    "text": "Spreek alsjeblieft een beetje langzamer.",
+    "latencyMs": 377,
+    "calls": 1,
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "usage": {
+      "completion_tokens": 15,
+      "prompt_tokens": 70,
+      "total_tokens": 85,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 48
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "id": "t05",
+    "reference": "Ik dacht dat hij morgen zou komen.",
+    "focus": "embedded clause; tense",
+    "mode": "qwen_30b_a3b",
+    "source": "I thought he would come tomorrow.",
+    "text": "Ik dacht dat hij morgen zou komen.",
+    "latencyMs": 669,
+    "calls": 1,
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "usage": {
+      "completion_tokens": 11,
+      "prompt_tokens": 70,
+      "total_tokens": 81,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 48
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "id": "t06",
+    "reference": "De rode auto is kleiner dan de blauwe.",
+    "focus": "comparison; adjective agreement",
+    "mode": "qwen_30b_a3b",
+    "source": "The red car is smaller than the blue one.",
+    "text": "De rode auto is kleiner dan de blauwe.",
+    "latencyMs": 326,
+    "calls": 1,
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "usage": {
+      "completion_tokens": 13,
+      "prompt_tokens": 73,
+      "total_tokens": 86,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 48
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "id": "t07",
+    "reference": "Als het regent, blijven we thuis.",
+    "focus": "condition and Dutch inversion",
+    "mode": "qwen_30b_a3b",
+    "source": "If it rains, we will stay home.",
+    "text": "Als het regent, blijven we thuis.",
+    "latencyMs": 367,
+    "calls": 1,
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "usage": {
+      "completion_tokens": 11,
+      "prompt_tokens": 72,
+      "total_tokens": 83,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 48
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "id": "t08",
+    "reference": "Ik woon hier al drie jaar.",
+    "focus": "duration; tense equivalence",
+    "mode": "qwen_30b_a3b",
+    "source": "I have lived here for three years.",
+    "text": "Ik woon hier al drie jaar.",
+    "latencyMs": 268,
+    "calls": 1,
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "usage": {
+      "completion_tokens": 10,
+      "prompt_tokens": 71,
+      "total_tokens": 81,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 48
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "id": "t09",
+    "reference": "Stuur het bericht alstublieft nog niet.",
+    "focus": "negation scope; yet",
+    "mode": "qwen_30b_a3b",
+    "source": "Please do not send the message yet.",
+    "text": "Stuur de boodschap alstublieft nog niet.",
+    "latencyMs": 390,
+    "calls": 1,
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "usage": {
+      "completion_tokens": 15,
+      "prompt_tokens": 71,
+      "total_tokens": 86,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 48
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "id": "t10",
+    "reference": "Anna komt om 14:30 aan, niet om 13:30.",
+    "focus": "name; times; negation",
+    "mode": "qwen_30b_a3b",
+    "source": "Anna will arrive at 14:30, not at 13:30.",
+    "text": "Anna komt om 14:30 aan, niet om 13:30.",
+    "latencyMs": 442,
+    "calls": 1,
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "usage": {
+      "completion_tokens": 21,
+      "prompt_tokens": 83,
+      "total_tokens": 104,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 48
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "id": "t11",
+    "reference": "Die beslissing heeft me een fortuin gekost.",
+    "focus": "idiom; nonliteral meaning",
+    "mode": "qwen_30b_a3b",
+    "source": "That decision cost me an arm and a leg.",
+    "text": "Die beslissing kostte me een arm en een been.",
+    "latencyMs": 765,
+    "calls": 1,
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "usage": {
+      "completion_tokens": 14,
+      "prompt_tokens": 73,
+      "total_tokens": 87,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 48
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "id": "t12",
+    "reference": "De afspraak is verplaatst van dinsdag naar donderdag.",
+    "focus": "passive; direction; days",
+    "mode": "qwen_30b_a3b",
+    "source": "The appointment was moved from Tuesday to Thursday.",
+    "text": "De afspraak is verplaatst van dinsdag naar donderdag.",
+    "latencyMs": 336,
+    "calls": 1,
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "usage": {
+      "completion_tokens": 18,
+      "prompt_tokens": 72,
+      "total_tokens": 90,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 48
+      }
+    },
+    "finishReason": "stop"
+  }
+]

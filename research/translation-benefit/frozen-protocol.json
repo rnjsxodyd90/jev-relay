@@ -1,0 +1,25 @@
+{
+  "frozenAt": "2026-09-19T08:34:59.517Z",
+  "casesSha256": "7f0685bfc88ee4a33cd86fa62dcedefbf3fb5589dc20f80887679def614be3c9",
+  "n": 32,
+  "categories": {
+    "memory": 8,
+    "sense": 8,
+    "register": 4,
+    "meaning": 6,
+    "memory_trap": 2,
+    "clarification": 4
+  },
+  "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+  "temperature": 0,
+  "jev": "jev-latest",
+  "cacheThreshold": 0.9,
+  "clarifyThreshold": 0.8,
+  "translateThresholdForCache": 0.75,
+  "design": "paired, deterministic shuffled case order; alternating within-pair baseline/assisted order; identical material in both arms",
+  "outcome": "correct action AND meaning/context preservation; naturalness reported separately",
+  "assisted": "Jev memory/sense/register/action labels; high-confidence memory and clarification may bypass Qwen",
+  "fallback": "invalid Jev response is logged and Qwen runs with no advice; failure latency remains included",
+  "latency": "end-to-end per arm, all API stages included; excludes audio and playback; one warmup per arm excluded",
+  "review": "two blinded AI raters; disagreement reported and adjudicated; not native human certification"
+}

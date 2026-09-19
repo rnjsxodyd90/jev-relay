@@ -1,0 +1,11 @@
+{
+  "label": "Counterfactual replay, not separately executed; use Jev only when a memory bank is supplied, including near-miss controls",
+  "n": 32,
+  "meanMs": 663,
+  "medianMs": 724.5,
+  "estimatedUsd": 0.0013952059999999997,
+  "jevCalls": 10,
+  "llmCalls": 25,
+  "baselineMeanMs": 735.46875,
+  "baselineEstimatedUsd": 0.0011916000000000003
+}

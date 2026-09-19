@@ -1,0 +1,65 @@
+{
+  "qwenMaxCompletionTokens": 21,
+  "qwenMaxTokensLimit": 128,
+  "qwenFinishReasons": {
+    "stop": 108
+  },
+  "qwenTruncatedResponses": 0,
+  "formatFailures": [
+    {
+      "task": "word_sense",
+      "id": "sense_5",
+      "round": 1,
+      "error": "invalid_choice",
+      "choices": {
+        "sense": "elastic mechanical coil; veer"
+      }
+    },
+    {
+      "task": "word_sense",
+      "id": "sense_12",
+      "round": 1,
+      "error": "invalid_choice",
+      "choices": {
+        "sense": "water flow; stroming"
+      }
+    },
+    {
+      "task": "word_sense",
+      "id": "sense_12",
+      "round": 2,
+      "error": "invalid_choice",
+      "choices": {
+        "sense": "water flow; stroming"
+      }
+    },
+    {
+      "task": "word_sense",
+      "id": "sense_5",
+      "round": 2,
+      "error": "invalid_choice",
+      "choices": {
+        "sense": "elastic mechanical coil; veer"
+      }
+    },
+    {
+      "task": "word_sense",
+      "id": "sense_12",
+      "round": 3,
+      "error": "invalid_choice",
+      "choices": {
+        "sense": "water flow; stroming"
+      }
+    },
+    {
+      "task": "word_sense",
+      "id": "sense_5",
+      "round": 3,
+      "error": "invalid_choice",
+      "choices": {
+        "sense": "elastic mechanical coil; veer"
+      }
+    }
+  ],
+  "credentialHandling": "Credentials were read into process memory; temporary input files deleted at launch; no credential values in artifacts."
+}

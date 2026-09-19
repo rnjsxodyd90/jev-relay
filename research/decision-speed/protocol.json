@@ -1,0 +1,36 @@
+{
+  "frozenAt": "2026-09-19T08:49:30.484Z",
+  "sha256": "2aace10f76a5e0beb6cfabff3f79d216f1710f2cdc06d08015a155dfdfabe8d9",
+  "tasks": {
+    "memory_selection": 12,
+    "word_sense": 12,
+    "decision_bundle": 12
+  },
+  "uniqueCases": 36,
+  "repetitions": 3,
+  "pairedTrials": 108,
+  "warmupsPerProvider": 3,
+  "order": "Seeded shuffle each round; balanced alternating provider order within pairs.",
+  "models": {
+    "jev": "jev-latest",
+    "qwen": "Qwen/Qwen3-30B-A3B-Instruct-2507"
+  },
+  "comparison": "Exactly the same state, question instructions and choice criteria; Qwen returns only a JSON map from question id to choice id. No probability/reason/explanation demand on Qwen.",
+  "qwenTemperature": 0,
+  "qwenMaxTokens": 128,
+  "jevNativeTypedApi": true,
+  "primaryQuality": "Exact decision labels against frozen gold. Full bundle correctness and individual labels separately.",
+  "primaryLatency": "Complete HTTP-response wall time, including JSON read/parse, from the same local runner. Not raw GPU inference or time-to-first-token.",
+  "tailMetric": "Empirical p95; only 36 trials per task so this is a coarse tail estimate.",
+  "plannedAnalysis": "Report all trials plus correctness-qualified latency. Paired ratios/bootstraps cluster by unique case rather than treating three repeats as independent cases.",
+  "caps": {
+    "jev": 120,
+    "qwen": 120
+  },
+  "limitations": [
+    "Synthetic selected cases adapted from earlier work, not a fresh blind hold-out of all prior development.",
+    "Gold decisions are authored, not native-human adjudicated.",
+    "One region/network/time window and one fast comparison model.",
+    "Repeated prompts can benefit provider-side caches; round-level results will be shown."
+  ]
+}

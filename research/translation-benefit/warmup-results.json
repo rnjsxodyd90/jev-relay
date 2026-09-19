@@ -1,0 +1,77 @@
+[
+  {
+    "output": {
+      "action": "translate",
+      "text": "Dank u wel voor uw hulp."
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 794,
+    "usage": {
+      "completion_tokens": 18,
+      "prompt_tokens": 227,
+      "total_tokens": 245,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": null
+    },
+    "finishReason": "stop",
+    "arm": "baseline",
+    "route": "qwen",
+    "totalMs": 794,
+    "llmCalls": 1,
+    "jevCalls": 0
+  },
+  {
+    "arm": "assisted",
+    "jev": {
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "translate",
+          "confidence": 1,
+          "probabilities": {
+            "clarify": 0,
+            "translate": 1
+          }
+        },
+        "register": {
+          "type": "choice",
+          "choice": "neutral",
+          "confidence": 0.62,
+          "probabilities": {
+            "plural": 0,
+            "neutral": 0.72,
+            "formal": 0.18,
+            "informal": 0.1
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 575,
+        "output_tokens": 77
+      },
+      "jevMs": 819
+    },
+    "jevCalls": 1,
+    "output": {
+      "action": "translate",
+      "text": "Dank je wel voor je hulp."
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 722,
+    "usage": {
+      "completion_tokens": 18,
+      "prompt_tokens": 256,
+      "total_tokens": 274,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 208
+      }
+    },
+    "finishReason": "stop",
+    "route": "jev_guided_qwen",
+    "totalMs": 1541,
+    "llmCalls": 1
+  }
+]

@@ -1,0 +1,2772 @@
+[
+  {
+    "id": "a3",
+    "category": "clarification",
+    "output": {
+      "action": "translate",
+      "text": "Zet het bedrag op vijftien—nee, vijftig—"
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 859,
+    "usage": {
+      "completion_tokens": 27,
+      "prompt_tokens": 247,
+      "total_tokens": 274,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 176
+      }
+    },
+    "finishReason": "stop",
+    "arm": "baseline",
+    "route": "qwen",
+    "totalMs": 859,
+    "llmCalls": 1,
+    "jevCalls": 0
+  },
+  {
+    "id": "a3",
+    "category": "clarification",
+    "arm": "assisted",
+    "jev": {
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "clarify",
+          "confidence": 0.92,
+          "probabilities": {
+            "translate": 0.04,
+            "clarify": 0.96
+          }
+        },
+        "register": {
+          "type": "choice",
+          "choice": "neutral",
+          "confidence": 0.94,
+          "probabilities": {
+            "plural": 0,
+            "neutral": 0.96,
+            "informal": 0.03,
+            "formal": 0.01
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 594,
+        "output_tokens": 78
+      },
+      "jevMs": 263
+    },
+    "jevCalls": 1,
+    "output": {
+      "action": "clarify",
+      "text": "Kun je verduidelijken wat je bedoelt?"
+    },
+    "route": "jev_clarify",
+    "llmCalls": 0,
+    "totalMs": 263
+  },
+  {
+    "id": "m3",
+    "category": "memory",
+    "arm": "assisted",
+    "jev": {
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "translate",
+          "confidence": 1,
+          "probabilities": {
+            "clarify": 0,
+            "translate": 1
+          }
+        },
+        "register": {
+          "type": "choice",
+          "choice": "formal",
+          "confidence": 0.98,
+          "probabilities": {
+            "neutral": 0.01,
+            "informal": 0,
+            "plural": 0,
+            "formal": 0.99
+          }
+        },
+        "memory": {
+          "type": "choice",
+          "choice": "card",
+          "confidence": 0.96,
+          "probabilities": {
+            "NONE": 0.03,
+            "slower": 0,
+            "reservation": 0,
+            "station": 0,
+            "card": 0.97,
+            "receipt": 0,
+            "understand": 0,
+            "help": 0,
+            "repeat": 0
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1284,
+        "output_tokens": 157
+      },
+      "jevMs": 281
+    },
+    "jevCalls": 1,
+    "output": {
+      "action": "translate",
+      "text": "Kan ik pinnen?"
+    },
+    "route": "jev_memory",
+    "memoryId": "card",
+    "llmCalls": 0,
+    "totalMs": 281
+  },
+  {
+    "id": "m3",
+    "category": "memory",
+    "output": {
+      "action": "translate",
+      "text": "Kan ik met mijn pinpas betalen?"
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 896,
+    "usage": {
+      "completion_tokens": 19,
+      "prompt_tokens": 442,
+      "total_tokens": 461,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 176
+      }
+    },
+    "finishReason": "stop",
+    "arm": "baseline",
+    "route": "qwen",
+    "totalMs": 896,
+    "llmCalls": 1,
+    "jevCalls": 0
+  },
+  {
+    "id": "s8",
+    "category": "sense",
+    "output": {
+      "action": "translate",
+      "text": "Zorg er tegen vrijdag voor dat de notulen zijn opgesteld."
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 1033,
+    "usage": {
+      "completion_tokens": 25,
+      "prompt_tokens": 254,
+      "total_tokens": 279,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 176
+      }
+    },
+    "finishReason": "stop",
+    "arm": "baseline",
+    "route": "qwen",
+    "totalMs": 1033,
+    "llmCalls": 1,
+    "jevCalls": 0
+  },
+  {
+    "id": "s8",
+    "category": "sense",
+    "arm": "assisted",
+    "jev": {
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "translate",
+          "confidence": 1,
+          "probabilities": {
+            "clarify": 0,
+            "translate": 1
+          }
+        },
+        "register": {
+          "type": "choice",
+          "choice": "neutral",
+          "confidence": 0.32,
+          "probabilities": {
+            "neutral": 0.49,
+            "informal": 0.03,
+            "plural": 0.02,
+            "formal": 0.46
+          }
+        },
+        "sense": {
+          "type": "choice",
+          "choice": "record",
+          "confidence": 1,
+          "probabilities": {
+            "time": 0,
+            "record": 1,
+            "UNKNOWN": 0
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 707,
+        "output_tokens": 112
+      },
+      "jevMs": 262
+    },
+    "jevCalls": 1,
+    "output": {
+      "action": "translate",
+      "text": "Zorg er tegen vrijdag voor dat de notulen zijn opgesteld."
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 891,
+    "usage": {
+      "completion_tokens": 25,
+      "prompt_tokens": 305,
+      "total_tokens": 330,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 240
+      }
+    },
+    "finishReason": "stop",
+    "route": "jev_guided_qwen",
+    "totalMs": 1153,
+    "llmCalls": 1
+  },
+  {
+    "id": "s3",
+    "category": "sense",
+    "arm": "assisted",
+    "jev": {
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "translate",
+          "confidence": 0.86,
+          "probabilities": {
+            "translate": 0.93,
+            "clarify": 0.07
+          }
+        },
+        "register": {
+          "type": "choice",
+          "choice": "neutral",
+          "confidence": 0.79,
+          "probabilities": {
+            "plural": 0,
+            "informal": 0,
+            "neutral": 0.85,
+            "formal": 0.15
+          }
+        },
+        "sense": {
+          "type": "choice",
+          "choice": "rate",
+          "confidence": 1,
+          "probabilities": {
+            "curiosity": 0,
+            "UNKNOWN": 0,
+            "rate": 1,
+            "stake": 0
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 741,
+        "output_tokens": 122
+      },
+      "jevMs": 278
+    },
+    "jevCalls": 1,
+    "output": {
+      "action": "translate",
+      "text": "Is de rente veranderd?"
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 663,
+    "usage": {
+      "completion_tokens": 17,
+      "prompt_tokens": 316,
+      "total_tokens": 333,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 176
+      }
+    },
+    "finishReason": "stop",
+    "route": "jev_guided_qwen",
+    "totalMs": 940,
+    "llmCalls": 1
+  },
+  {
+    "id": "s3",
+    "category": "sense",
+    "output": {
+      "action": "translate",
+      "text": "Is de rente veranderd?"
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 981,
+    "usage": {
+      "completion_tokens": 17,
+      "prompt_tokens": 264,
+      "total_tokens": 281,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 256
+      }
+    },
+    "finishReason": "stop",
+    "arm": "baseline",
+    "route": "qwen",
+    "totalMs": 981,
+    "llmCalls": 1,
+    "jevCalls": 0
+  },
+  {
+    "id": "m4",
+    "category": "memory",
+    "output": {
+      "action": "translate",
+      "text": "Waar kan ik het treinstation vinden?"
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 685,
+    "usage": {
+      "completion_tokens": 19,
+      "prompt_tokens": 440,
+      "total_tokens": 459,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 176
+      }
+    },
+    "finishReason": "stop",
+    "arm": "baseline",
+    "route": "qwen",
+    "totalMs": 685,
+    "llmCalls": 1,
+    "jevCalls": 0
+  },
+  {
+    "id": "m4",
+    "category": "memory",
+    "arm": "assisted",
+    "jev": {
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "translate",
+          "confidence": 1,
+          "probabilities": {
+            "translate": 1,
+            "clarify": 0
+          }
+        },
+        "register": {
+          "type": "choice",
+          "choice": "formal",
+          "confidence": 0.95,
+          "probabilities": {
+            "informal": 0,
+            "formal": 0.96,
+            "plural": 0,
+            "neutral": 0.04
+          }
+        },
+        "memory": {
+          "type": "choice",
+          "choice": "station",
+          "confidence": 0.98,
+          "probabilities": {
+            "help": 0,
+            "NONE": 0.02,
+            "card": 0,
+            "understand": 0,
+            "reservation": 0,
+            "slower": 0,
+            "receipt": 0,
+            "station": 0.98,
+            "repeat": 0
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1282,
+        "output_tokens": 157
+      },
+      "jevMs": 252
+    },
+    "jevCalls": 1,
+    "output": {
+      "action": "translate",
+      "text": "Waar is het treinstation?"
+    },
+    "route": "jev_memory",
+    "memoryId": "station",
+    "llmCalls": 0,
+    "totalMs": 252
+  },
+  {
+    "id": "m5",
+    "category": "memory",
+    "arm": "assisted",
+    "jev": {
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "translate",
+          "confidence": 1,
+          "probabilities": {
+            "translate": 1,
+            "clarify": 0
+          }
+        },
+        "register": {
+          "type": "choice",
+          "choice": "formal",
+          "confidence": 0.96,
+          "probabilities": {
+            "informal": 0,
+            "plural": 0,
+            "neutral": 0.03,
+            "formal": 0.97
+          }
+        },
+        "memory": {
+          "type": "choice",
+          "choice": "receipt",
+          "confidence": 0.98,
+          "probabilities": {
+            "receipt": 0.98,
+            "slower": 0,
+            "help": 0,
+            "repeat": 0,
+            "station": 0,
+            "NONE": 0.02,
+            "reservation": 0,
+            "card": 0,
+            "understand": 0
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1282,
+        "output_tokens": 157
+      },
+      "jevMs": 342
+    },
+    "jevCalls": 1,
+    "output": {
+      "action": "translate",
+      "text": "Mag ik de bon?"
+    },
+    "route": "jev_memory",
+    "memoryId": "receipt",
+    "llmCalls": 0,
+    "totalMs": 342
+  },
+  {
+    "id": "m5",
+    "category": "memory",
+    "output": {
+      "action": "translate",
+      "text": "Kan ik de bon hebben, alstublieft?"
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 766,
+    "usage": {
+      "completion_tokens": 21,
+      "prompt_tokens": 440,
+      "total_tokens": 461,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 176
+      }
+    },
+    "finishReason": "stop",
+    "arm": "baseline",
+    "route": "qwen",
+    "totalMs": 766,
+    "llmCalls": 1,
+    "jevCalls": 0
+  },
+  {
+    "id": "s2",
+    "category": "sense",
+    "output": {
+      "action": "translate",
+      "text": "Controleer de lading voordat we vertrekken."
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 740,
+    "usage": {
+      "completion_tokens": 23,
+      "prompt_tokens": 266,
+      "total_tokens": 289,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 176
+      }
+    },
+    "finishReason": "stop",
+    "arm": "baseline",
+    "route": "qwen",
+    "totalMs": 740,
+    "llmCalls": 1,
+    "jevCalls": 0
+  },
+  {
+    "id": "s2",
+    "category": "sense",
+    "arm": "assisted",
+    "jev": {
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "translate",
+          "confidence": 0.99,
+          "probabilities": {
+            "clarify": 0,
+            "translate": 1
+          }
+        },
+        "register": {
+          "type": "choice",
+          "choice": "neutral",
+          "confidence": 0.39,
+          "probabilities": {
+            "neutral": 0.54,
+            "informal": 0.31,
+            "formal": 0.03,
+            "plural": 0.12
+          }
+        },
+        "sense": {
+          "type": "choice",
+          "choice": "electrical",
+          "confidence": 1,
+          "probabilities": {
+            "accusation": 0,
+            "UNKNOWN": 0,
+            "electrical": 1,
+            "fee": 0
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 740,
+        "output_tokens": 123
+      },
+      "jevMs": 361
+    },
+    "jevCalls": 1,
+    "output": {
+      "action": "translate",
+      "text": "Controleer de lading voordat we vertrekken."
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 898,
+    "usage": {
+      "completion_tokens": 23,
+      "prompt_tokens": 319,
+      "total_tokens": 342,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 256
+      }
+    },
+    "finishReason": "stop",
+    "route": "jev_guided_qwen",
+    "totalMs": 1259,
+    "llmCalls": 1
+  },
+  {
+    "id": "m6",
+    "category": "memory",
+    "arm": "assisted",
+    "jev": {
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "translate",
+          "confidence": 0.99,
+          "probabilities": {
+            "clarify": 0,
+            "translate": 1
+          }
+        },
+        "register": {
+          "type": "choice",
+          "choice": "formal",
+          "confidence": 0.51,
+          "probabilities": {
+            "neutral": 0.36,
+            "formal": 0.64,
+            "informal": 0,
+            "plural": 0
+          }
+        },
+        "memory": {
+          "type": "choice",
+          "choice": "reservation",
+          "confidence": 0.73,
+          "probabilities": {
+            "repeat": 0,
+            "NONE": 0.24,
+            "slower": 0,
+            "station": 0,
+            "help": 0,
+            "reservation": 0.76,
+            "card": 0,
+            "understand": 0,
+            "receipt": 0
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1282,
+        "output_tokens": 157
+      },
+      "jevMs": 317
+    },
+    "jevCalls": 1,
+    "output": {
+      "action": "translate",
+      "text": "Er is een reservering op mijn naam."
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 735,
+    "usage": {
+      "completion_tokens": 19,
+      "prompt_tokens": 489,
+      "total_tokens": 508,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 176
+      }
+    },
+    "finishReason": "stop",
+    "route": "jev_guided_qwen",
+    "totalMs": 1052,
+    "llmCalls": 1
+  },
+  {
+    "id": "m6",
+    "category": "memory",
+    "output": {
+      "action": "translate",
+      "text": "Er is een reservering op mijn naam."
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 722,
+    "usage": {
+      "completion_tokens": 19,
+      "prompt_tokens": 439,
+      "total_tokens": 458,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 416
+      }
+    },
+    "finishReason": "stop",
+    "arm": "baseline",
+    "route": "qwen",
+    "totalMs": 722,
+    "llmCalls": 1,
+    "jevCalls": 0
+  },
+  {
+    "id": "n4",
+    "category": "meaning",
+    "output": {
+      "action": "translate",
+      "text": "Verplaats de afspraak van dinsdag naar donderdag, niet van donderdag naar dinsdag."
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 1166,
+    "usage": {
+      "completion_tokens": 34,
+      "prompt_tokens": 238,
+      "total_tokens": 272,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 176
+      }
+    },
+    "finishReason": "stop",
+    "arm": "baseline",
+    "route": "qwen",
+    "totalMs": 1166,
+    "llmCalls": 1,
+    "jevCalls": 0
+  },
+  {
+    "id": "n4",
+    "category": "meaning",
+    "arm": "assisted",
+    "jev": {
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "translate",
+          "confidence": 0.99,
+          "probabilities": {
+            "translate": 1,
+            "clarify": 0
+          }
+        },
+        "register": {
+          "type": "choice",
+          "choice": "neutral",
+          "confidence": 0.93,
+          "probabilities": {
+            "neutral": 0.95,
+            "plural": 0,
+            "informal": 0.03,
+            "formal": 0.02
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 586,
+        "output_tokens": 77
+      },
+      "jevMs": 373
+    },
+    "jevCalls": 1,
+    "output": {
+      "action": "translate",
+      "text": "Verschuif de afspraak van dinsdag naar donderdag, niet van donderdag naar dinsdag."
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 1156,
+    "usage": {
+      "completion_tokens": 34,
+      "prompt_tokens": 270,
+      "total_tokens": 304,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 224
+      }
+    },
+    "finishReason": "stop",
+    "route": "jev_guided_qwen",
+    "totalMs": 1529,
+    "llmCalls": 1
+  },
+  {
+    "id": "r2",
+    "category": "register",
+    "arm": "assisted",
+    "jev": {
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "translate",
+          "confidence": 0.99,
+          "probabilities": {
+            "clarify": 0,
+            "translate": 1
+          }
+        },
+        "register": {
+          "type": "choice",
+          "choice": "informal",
+          "confidence": 1,
+          "probabilities": {
+            "plural": 0,
+            "neutral": 0,
+            "formal": 0,
+            "informal": 1
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 585,
+        "output_tokens": 79
+      },
+      "jevMs": 354
+    },
+    "jevCalls": 1,
+    "output": {
+      "action": "translate",
+      "text": "Kun je me je adres sturen?"
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 604,
+    "usage": {
+      "completion_tokens": 18,
+      "prompt_tokens": 268,
+      "total_tokens": 286,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 176
+      }
+    },
+    "finishReason": "stop",
+    "route": "jev_guided_qwen",
+    "totalMs": 958,
+    "llmCalls": 1
+  },
+  {
+    "id": "r2",
+    "category": "register",
+    "output": {
+      "action": "translate",
+      "text": "Kun je me je adres sturen?"
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 567,
+    "usage": {
+      "completion_tokens": 18,
+      "prompt_tokens": 238,
+      "total_tokens": 256,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 224
+      }
+    },
+    "finishReason": "stop",
+    "arm": "baseline",
+    "route": "qwen",
+    "totalMs": 567,
+    "llmCalls": 1,
+    "jevCalls": 0
+  },
+  {
+    "id": "n3",
+    "category": "meaning",
+    "output": {
+      "action": "translate",
+      "text": "Anna schuldt Bram 125 euro, niet andersom."
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 740,
+    "usage": {
+      "completion_tokens": 24,
+      "prompt_tokens": 242,
+      "total_tokens": 266,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 176
+      }
+    },
+    "finishReason": "stop",
+    "arm": "baseline",
+    "route": "qwen",
+    "totalMs": 740,
+    "llmCalls": 1,
+    "jevCalls": 0
+  },
+  {
+    "id": "n3",
+    "category": "meaning",
+    "arm": "assisted",
+    "jev": {
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "translate",
+          "confidence": 1,
+          "probabilities": {
+            "translate": 1,
+            "clarify": 0
+          }
+        },
+        "register": {
+          "type": "choice",
+          "choice": "neutral",
+          "confidence": 1,
+          "probabilities": {
+            "plural": 0,
+            "neutral": 1,
+            "informal": 0,
+            "formal": 0
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 590,
+        "output_tokens": 77
+      },
+      "jevMs": 274
+    },
+    "jevCalls": 1,
+    "output": {
+      "action": "translate",
+      "text": "Anna schuldt Bram 125 euro, niet andersom."
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 859,
+    "usage": {
+      "completion_tokens": 24,
+      "prompt_tokens": 268,
+      "total_tokens": 292,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 224
+      }
+    },
+    "finishReason": "stop",
+    "route": "jev_guided_qwen",
+    "totalMs": 1132,
+    "llmCalls": 1
+  },
+  {
+    "id": "s4",
+    "category": "sense",
+    "arm": "assisted",
+    "jev": {
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "translate",
+          "confidence": 1,
+          "probabilities": {
+            "clarify": 0,
+            "translate": 1
+          }
+        },
+        "register": {
+          "type": "choice",
+          "choice": "neutral",
+          "confidence": 0.63,
+          "probabilities": {
+            "neutral": 0.72,
+            "informal": 0.23,
+            "plural": 0.01,
+            "formal": 0.04
+          }
+        },
+        "sense": {
+          "type": "choice",
+          "choice": "animal",
+          "confidence": 1,
+          "probabilities": {
+            "animal": 1,
+            "sport": 0,
+            "UNKNOWN": 0
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 711,
+        "output_tokens": 112
+      },
+      "jevMs": 341
+    },
+    "jevCalls": 1,
+    "output": {
+      "action": "translate",
+      "text": "Houd de vleermuis binnen tot zonsondergang."
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 912,
+    "usage": {
+      "completion_tokens": 24,
+      "prompt_tokens": 307,
+      "total_tokens": 331,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 176
+      }
+    },
+    "finishReason": "stop",
+    "route": "jev_guided_qwen",
+    "totalMs": 1254,
+    "llmCalls": 1
+  },
+  {
+    "id": "s4",
+    "category": "sense",
+    "output": {
+      "action": "translate",
+      "text": "Houd de knuppel binnen tot zonsondergang."
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 853,
+    "usage": {
+      "completion_tokens": 23,
+      "prompt_tokens": 255,
+      "total_tokens": 278,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 240
+      }
+    },
+    "finishReason": "stop",
+    "arm": "baseline",
+    "route": "qwen",
+    "totalMs": 853,
+    "llmCalls": 1,
+    "jevCalls": 0
+  },
+  {
+    "id": "r1",
+    "category": "register",
+    "output": {
+      "action": "translate",
+      "text": "Kunt u mij uw adres sturen?"
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 922,
+    "usage": {
+      "completion_tokens": 18,
+      "prompt_tokens": 239,
+      "total_tokens": 257,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 192
+      }
+    },
+    "finishReason": "stop",
+    "arm": "baseline",
+    "route": "qwen",
+    "totalMs": 922,
+    "llmCalls": 1,
+    "jevCalls": 0
+  },
+  {
+    "id": "r1",
+    "category": "register",
+    "arm": "assisted",
+    "jev": {
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "translate",
+          "confidence": 1,
+          "probabilities": {
+            "clarify": 0,
+            "translate": 1
+          }
+        },
+        "register": {
+          "type": "choice",
+          "choice": "formal",
+          "confidence": 1,
+          "probabilities": {
+            "informal": 0,
+            "neutral": 0,
+            "plural": 0,
+            "formal": 1
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 586,
+        "output_tokens": 78
+      },
+      "jevMs": 293
+    },
+    "jevCalls": 1,
+    "output": {
+      "action": "translate",
+      "text": "Kunt u mij uw adres sturen?"
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 598,
+    "usage": {
+      "completion_tokens": 18,
+      "prompt_tokens": 266,
+      "total_tokens": 284,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 224
+      }
+    },
+    "finishReason": "stop",
+    "route": "jev_guided_qwen",
+    "totalMs": 891,
+    "llmCalls": 1
+  },
+  {
+    "id": "n1",
+    "category": "meaning",
+    "arm": "assisted",
+    "jev": {
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "translate",
+          "confidence": 0.97,
+          "probabilities": {
+            "clarify": 0.02,
+            "translate": 0.98
+          }
+        },
+        "register": {
+          "type": "choice",
+          "choice": "neutral",
+          "confidence": 0.78,
+          "probabilities": {
+            "plural": 0.01,
+            "informal": 0.06,
+            "neutral": 0.83,
+            "formal": 0.1
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 586,
+        "output_tokens": 77
+      },
+      "jevMs": 374
+    },
+    "jevCalls": 1,
+    "output": {
+      "action": "translate",
+      "text": "Annuleer alleen de tweede reservering, niet beide."
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 733,
+    "usage": {
+      "completion_tokens": 23,
+      "prompt_tokens": 270,
+      "total_tokens": 293,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 176
+      }
+    },
+    "finishReason": "stop",
+    "route": "jev_guided_qwen",
+    "totalMs": 1107,
+    "llmCalls": 1
+  },
+  {
+    "id": "n1",
+    "category": "meaning",
+    "output": {
+      "action": "translate",
+      "text": "Annuleer alleen de tweede reservering, niet beide."
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 764,
+    "usage": {
+      "completion_tokens": 23,
+      "prompt_tokens": 238,
+      "total_tokens": 261,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 224
+      }
+    },
+    "finishReason": "stop",
+    "arm": "baseline",
+    "route": "qwen",
+    "totalMs": 764,
+    "llmCalls": 1,
+    "jevCalls": 0
+  },
+  {
+    "id": "n2",
+    "category": "meaning",
+    "output": {
+      "action": "translate",
+      "text": "Stop niet met het annuleren van de reservering om 14:30."
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 952,
+    "usage": {
+      "completion_tokens": 29,
+      "prompt_tokens": 244,
+      "total_tokens": 273,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 176
+      }
+    },
+    "finishReason": "stop",
+    "arm": "baseline",
+    "route": "qwen",
+    "totalMs": 952,
+    "llmCalls": 1,
+    "jevCalls": 0
+  },
+  {
+    "id": "n2",
+    "category": "meaning",
+    "arm": "assisted",
+    "jev": {
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "translate",
+          "confidence": 0.99,
+          "probabilities": {
+            "translate": 1,
+            "clarify": 0
+          }
+        },
+        "register": {
+          "type": "choice",
+          "choice": "neutral",
+          "confidence": 0.69,
+          "probabilities": {
+            "plural": 0,
+            "neutral": 0.77,
+            "informal": 0.11,
+            "formal": 0.12
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 593,
+        "output_tokens": 77
+      },
+      "jevMs": 307
+    },
+    "jevCalls": 1,
+    "output": {
+      "action": "translate",
+      "text": "Houd de annulering van de reservering om 14:30 niet uit."
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 954,
+    "usage": {
+      "completion_tokens": 30,
+      "prompt_tokens": 276,
+      "total_tokens": 306,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 224
+      }
+    },
+    "finishReason": "stop",
+    "route": "jev_guided_qwen",
+    "totalMs": 1261,
+    "llmCalls": 1
+  },
+  {
+    "id": "r3",
+    "category": "register",
+    "arm": "assisted",
+    "jev": {
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "translate",
+          "confidence": 0.88,
+          "probabilities": {
+            "clarify": 0.06,
+            "translate": 0.94
+          }
+        },
+        "register": {
+          "type": "choice",
+          "choice": "plural",
+          "confidence": 0.99,
+          "probabilities": {
+            "informal": 0,
+            "neutral": 0.01,
+            "plural": 0.99,
+            "formal": 0
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 583,
+        "output_tokens": 77
+      },
+      "jevMs": 329
+    },
+    "jevCalls": 1,
+    "output": {
+      "action": "translate",
+      "text": "Heb je je kaartjes meegebracht?"
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 757,
+    "usage": {
+      "completion_tokens": 20,
+      "prompt_tokens": 268,
+      "total_tokens": 288,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 176
+      }
+    },
+    "finishReason": "stop",
+    "route": "jev_guided_qwen",
+    "totalMs": 1086,
+    "llmCalls": 1
+  },
+  {
+    "id": "r3",
+    "category": "register",
+    "output": {
+      "action": "translate",
+      "text": "Heb je je kaartjes meegebracht?"
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 709,
+    "usage": {
+      "completion_tokens": 20,
+      "prompt_tokens": 236,
+      "total_tokens": 256,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 224
+      }
+    },
+    "finishReason": "stop",
+    "arm": "baseline",
+    "route": "qwen",
+    "totalMs": 709,
+    "llmCalls": 1,
+    "jevCalls": 0
+  },
+  {
+    "id": "m2",
+    "category": "memory",
+    "output": {
+      "action": "translate",
+      "text": "Kunt u een beetje langzamer praten?"
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 738,
+    "usage": {
+      "completion_tokens": 21,
+      "prompt_tokens": 441,
+      "total_tokens": 462,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 176
+      }
+    },
+    "finishReason": "stop",
+    "arm": "baseline",
+    "route": "qwen",
+    "totalMs": 738,
+    "llmCalls": 1,
+    "jevCalls": 0
+  },
+  {
+    "id": "m2",
+    "category": "memory",
+    "arm": "assisted",
+    "jev": {
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "translate",
+          "confidence": 1,
+          "probabilities": {
+            "clarify": 0,
+            "translate": 1
+          }
+        },
+        "register": {
+          "type": "choice",
+          "choice": "formal",
+          "confidence": 1,
+          "probabilities": {
+            "neutral": 0,
+            "formal": 1,
+            "informal": 0,
+            "plural": 0
+          }
+        },
+        "memory": {
+          "type": "choice",
+          "choice": "slower",
+          "confidence": 0.95,
+          "probabilities": {
+            "NONE": 0.04,
+            "understand": 0,
+            "reservation": 0,
+            "help": 0,
+            "card": 0,
+            "station": 0,
+            "slower": 0.96,
+            "receipt": 0,
+            "repeat": 0
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1283,
+        "output_tokens": 158
+      },
+      "jevMs": 253
+    },
+    "jevCalls": 1,
+    "output": {
+      "action": "translate",
+      "text": "Kunt u langzamer spreken?"
+    },
+    "route": "jev_memory",
+    "memoryId": "slower",
+    "llmCalls": 0,
+    "totalMs": 253
+  },
+  {
+    "id": "n8",
+    "category": "memory_trap",
+    "arm": "assisted",
+    "jev": {
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "translate",
+          "confidence": 1,
+          "probabilities": {
+            "translate": 1,
+            "clarify": 0
+          }
+        },
+        "register": {
+          "type": "choice",
+          "choice": "neutral",
+          "confidence": 0.97,
+          "probabilities": {
+            "plural": 0,
+            "formal": 0.02,
+            "neutral": 0.98,
+            "informal": 0
+          }
+        },
+        "memory": {
+          "type": "choice",
+          "choice": "NONE",
+          "confidence": 1,
+          "probabilities": {
+            "card": 0,
+            "receipt": 0,
+            "understand": 0,
+            "station": 0,
+            "help": 0,
+            "reservation": 0,
+            "slower": 0,
+            "repeat": 0,
+            "NONE": 1
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1267,
+        "output_tokens": 156
+      },
+      "jevMs": 303
+    },
+    "jevCalls": 1,
+    "output": {
+      "action": "translate",
+      "text": "Ik heb geen reservering."
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 632,
+    "usage": {
+      "completion_tokens": 16,
+      "prompt_tokens": 467,
+      "total_tokens": 483,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 176
+      }
+    },
+    "finishReason": "stop",
+    "route": "jev_guided_qwen",
+    "totalMs": 935,
+    "llmCalls": 1
+  },
+  {
+    "id": "n8",
+    "category": "memory_trap",
+    "output": {
+      "action": "translate",
+      "text": "Ik heb geen reservering."
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 670,
+    "usage": {
+      "completion_tokens": 16,
+      "prompt_tokens": 424,
+      "total_tokens": 440,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 416
+      }
+    },
+    "finishReason": "stop",
+    "arm": "baseline",
+    "route": "qwen",
+    "totalMs": 670,
+    "llmCalls": 1,
+    "jevCalls": 0
+  },
+  {
+    "id": "a4",
+    "category": "clarification",
+    "output": {
+      "action": "translate",
+      "text": "Stuur het bestand naar hem, niet naar hem."
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 762,
+    "usage": {
+      "completion_tokens": 21,
+      "prompt_tokens": 242,
+      "total_tokens": 263,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 176
+      }
+    },
+    "finishReason": "stop",
+    "arm": "baseline",
+    "route": "qwen",
+    "totalMs": 762,
+    "llmCalls": 1,
+    "jevCalls": 0
+  },
+  {
+    "id": "a4",
+    "category": "clarification",
+    "arm": "assisted",
+    "jev": {
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "clarify",
+          "confidence": 0.76,
+          "probabilities": {
+            "translate": 0.12,
+            "clarify": 0.88
+          }
+        },
+        "register": {
+          "type": "choice",
+          "choice": "neutral",
+          "confidence": 0.64,
+          "probabilities": {
+            "informal": 0.24,
+            "formal": 0.03,
+            "plural": 0.01,
+            "neutral": 0.72
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 590,
+        "output_tokens": 78
+      },
+      "jevMs": 290
+    },
+    "jevCalls": 1,
+    "output": {
+      "action": "clarify",
+      "text": "Wie is 'hem' en wie is 'hem' in de zin 'Send the file to him, not him'?"
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 1184,
+    "usage": {
+      "completion_tokens": 36,
+      "prompt_tokens": 275,
+      "total_tokens": 311,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 224
+      }
+    },
+    "finishReason": "stop",
+    "route": "jev_guided_qwen",
+    "totalMs": 1474,
+    "llmCalls": 1
+  },
+  {
+    "id": "m1",
+    "category": "memory",
+    "arm": "assisted",
+    "jev": {
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "translate",
+          "confidence": 1,
+          "probabilities": {
+            "translate": 1,
+            "clarify": 0
+          }
+        },
+        "register": {
+          "type": "choice",
+          "choice": "formal",
+          "confidence": 1,
+          "probabilities": {
+            "informal": 0,
+            "formal": 1,
+            "plural": 0,
+            "neutral": 0
+          }
+        },
+        "memory": {
+          "type": "choice",
+          "choice": "repeat",
+          "confidence": 0.93,
+          "probabilities": {
+            "help": 0,
+            "understand": 0,
+            "slower": 0,
+            "reservation": 0,
+            "receipt": 0,
+            "station": 0,
+            "NONE": 0.06,
+            "card": 0,
+            "repeat": 0.94
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1281,
+        "output_tokens": 157
+      },
+      "jevMs": 261
+    },
+    "jevCalls": 1,
+    "output": {
+      "action": "translate",
+      "text": "Kunt u dat herhalen?"
+    },
+    "route": "jev_memory",
+    "memoryId": "repeat",
+    "llmCalls": 0,
+    "totalMs": 261
+  },
+  {
+    "id": "m1",
+    "category": "memory",
+    "output": {
+      "action": "translate",
+      "text": "Zou u dat nogmaals kunnen zeggen?"
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 881,
+    "usage": {
+      "completion_tokens": 21,
+      "prompt_tokens": 439,
+      "total_tokens": 460,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 176
+      }
+    },
+    "finishReason": "stop",
+    "arm": "baseline",
+    "route": "qwen",
+    "totalMs": 881,
+    "llmCalls": 1,
+    "jevCalls": 0
+  },
+  {
+    "id": "s6",
+    "category": "sense",
+    "output": {
+      "action": "translate",
+      "text": "Het zegel is beschadigd."
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 706,
+    "usage": {
+      "completion_tokens": 19,
+      "prompt_tokens": 268,
+      "total_tokens": 287,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 176
+      }
+    },
+    "finishReason": "stop",
+    "arm": "baseline",
+    "route": "qwen",
+    "totalMs": 706,
+    "llmCalls": 1,
+    "jevCalls": 0
+  },
+  {
+    "id": "s6",
+    "category": "sense",
+    "arm": "assisted",
+    "jev": {
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "translate",
+          "confidence": 0.99,
+          "probabilities": {
+            "translate": 1,
+            "clarify": 0
+          }
+        },
+        "register": {
+          "type": "choice",
+          "choice": "neutral",
+          "confidence": 1,
+          "probabilities": {
+            "neutral": 1,
+            "informal": 0,
+            "formal": 0,
+            "plural": 0
+          }
+        },
+        "sense": {
+          "type": "choice",
+          "choice": "gasket",
+          "confidence": 1,
+          "probabilities": {
+            "UNKNOWN": 0,
+            "gasket": 1,
+            "animal": 0,
+            "stamp": 0
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 748,
+        "output_tokens": 123
+      },
+      "jevMs": 260
+    },
+    "jevCalls": 1,
+    "output": {
+      "action": "translate",
+      "text": "De afdichting is beschadigd."
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 815,
+    "usage": {
+      "completion_tokens": 20,
+      "prompt_tokens": 322,
+      "total_tokens": 342,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 256
+      }
+    },
+    "finishReason": "stop",
+    "route": "jev_guided_qwen",
+    "totalMs": 1076,
+    "llmCalls": 1
+  },
+  {
+    "id": "s1",
+    "category": "sense",
+    "arm": "assisted",
+    "jev": {
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "translate",
+          "confidence": 0.92,
+          "probabilities": {
+            "translate": 0.96,
+            "clarify": 0.04
+          }
+        },
+        "register": {
+          "type": "choice",
+          "choice": "neutral",
+          "confidence": 0.88,
+          "probabilities": {
+            "plural": 0,
+            "formal": 0,
+            "informal": 0.09,
+            "neutral": 0.91
+          }
+        },
+        "sense": {
+          "type": "choice",
+          "choice": "river",
+          "confidence": 0.99,
+          "probabilities": {
+            "bench": 0,
+            "river": 1,
+            "financial": 0,
+            "UNKNOWN": 0
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 736,
+        "output_tokens": 119
+      },
+      "jevMs": 274
+    },
+    "jevCalls": 1,
+    "output": {
+      "action": "translate",
+      "text": "Ik wacht bij de oever."
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 662,
+    "usage": {
+      "completion_tokens": 17,
+      "prompt_tokens": 319,
+      "total_tokens": 336,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 176
+      }
+    },
+    "finishReason": "stop",
+    "route": "jev_guided_qwen",
+    "totalMs": 937,
+    "llmCalls": 1
+  },
+  {
+    "id": "s1",
+    "category": "sense",
+    "output": {
+      "action": "translate",
+      "text": "Ik wacht bij de oever."
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 502,
+    "usage": {
+      "completion_tokens": 17,
+      "prompt_tokens": 264,
+      "total_tokens": 281,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 256
+      }
+    },
+    "finishReason": "stop",
+    "arm": "baseline",
+    "route": "qwen",
+    "totalMs": 502,
+    "llmCalls": 1,
+    "jevCalls": 0
+  },
+  {
+    "id": "n7",
+    "category": "memory_trap",
+    "output": {
+      "action": "translate",
+      "text": "Herhaal dat alsjeblieft niet."
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 648,
+    "usage": {
+      "completion_tokens": 20,
+      "prompt_tokens": 428,
+      "total_tokens": 448,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 176
+      }
+    },
+    "finishReason": "stop",
+    "arm": "baseline",
+    "route": "qwen",
+    "totalMs": 648,
+    "llmCalls": 1,
+    "jevCalls": 0
+  },
+  {
+    "id": "n7",
+    "category": "memory_trap",
+    "arm": "assisted",
+    "jev": {
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "translate",
+          "confidence": 0.98,
+          "probabilities": {
+            "clarify": 0.01,
+            "translate": 0.99
+          }
+        },
+        "register": {
+          "type": "choice",
+          "choice": "formal",
+          "confidence": 0.58,
+          "probabilities": {
+            "plural": 0,
+            "formal": 0.6900000000000001,
+            "informal": 0.01,
+            "neutral": 0.3
+          }
+        },
+        "memory": {
+          "type": "choice",
+          "choice": "NONE",
+          "confidence": 1,
+          "probabilities": {
+            "station": 0,
+            "help": 0,
+            "card": 0,
+            "repeat": 0,
+            "reservation": 0,
+            "receipt": 0,
+            "slower": 0,
+            "understand": 0,
+            "NONE": 1
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1271,
+        "output_tokens": 157
+      },
+      "jevMs": 274
+    },
+    "jevCalls": 1,
+    "output": {
+      "action": "translate",
+      "text": "Herhaal dat alsjeblieft niet."
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 599,
+    "usage": {
+      "completion_tokens": 20,
+      "prompt_tokens": 475,
+      "total_tokens": 495,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 416
+      }
+    },
+    "finishReason": "stop",
+    "route": "jev_guided_qwen",
+    "totalMs": 873,
+    "llmCalls": 1
+  },
+  {
+    "id": "n5",
+    "category": "meaning",
+    "arm": "assisted",
+    "jev": {
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "translate",
+          "confidence": 1,
+          "probabilities": {
+            "translate": 1,
+            "clarify": 0
+          }
+        },
+        "register": {
+          "type": "choice",
+          "choice": "neutral",
+          "confidence": 1,
+          "probabilities": {
+            "plural": 0,
+            "neutral": 1,
+            "informal": 0,
+            "formal": 0
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 599,
+        "output_tokens": 77
+      },
+      "jevMs": 316
+    },
+    "jevCalls": 1,
+    "output": {
+      "action": "translate",
+      "text": "Ik zei niet dat Eva de sleutels had gestolen."
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 612,
+    "usage": {
+      "completion_tokens": 23,
+      "prompt_tokens": 277,
+      "total_tokens": 300,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 176
+      }
+    },
+    "finishReason": "stop",
+    "route": "jev_guided_qwen",
+    "totalMs": 928,
+    "llmCalls": 1
+  },
+  {
+    "id": "n5",
+    "category": "meaning",
+    "output": {
+      "action": "translate",
+      "text": "Ik zei niet dat Eva de sleutels had gestolen."
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 548,
+    "usage": {
+      "completion_tokens": 23,
+      "prompt_tokens": 251,
+      "total_tokens": 274,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 240
+      }
+    },
+    "finishReason": "stop",
+    "arm": "baseline",
+    "route": "qwen",
+    "totalMs": 548,
+    "llmCalls": 1,
+    "jevCalls": 0
+  },
+  {
+    "id": "s7",
+    "category": "sense",
+    "output": {
+      "action": "translate",
+      "text": "Deze poort is geblokkeerd."
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 490,
+    "usage": {
+      "completion_tokens": 19,
+      "prompt_tokens": 257,
+      "total_tokens": 276,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 176
+      }
+    },
+    "finishReason": "stop",
+    "arm": "baseline",
+    "route": "qwen",
+    "totalMs": 490,
+    "llmCalls": 1,
+    "jevCalls": 0
+  },
+  {
+    "id": "s7",
+    "category": "sense",
+    "arm": "assisted",
+    "jev": {
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "translate",
+          "confidence": 1,
+          "probabilities": {
+            "clarify": 0,
+            "translate": 1
+          }
+        },
+        "register": {
+          "type": "choice",
+          "choice": "neutral",
+          "confidence": 1,
+          "probabilities": {
+            "plural": 0,
+            "neutral": 1,
+            "formal": 0,
+            "informal": 0
+          }
+        },
+        "sense": {
+          "type": "choice",
+          "choice": "network",
+          "confidence": 1,
+          "probabilities": {
+            "network": 1,
+            "harbor": 0,
+            "UNKNOWN": 0,
+            "wine": 0
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 731,
+        "output_tokens": 120
+      },
+      "jevMs": 245
+    },
+    "jevCalls": 1,
+    "output": {
+      "action": "translate",
+      "text": "Deze poort is geblokkeerd."
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 593,
+    "usage": {
+      "completion_tokens": 19,
+      "prompt_tokens": 303,
+      "total_tokens": 322,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 240
+      }
+    },
+    "finishReason": "stop",
+    "route": "jev_guided_qwen",
+    "totalMs": 838,
+    "llmCalls": 1
+  },
+  {
+    "id": "a2",
+    "category": "clarification",
+    "arm": "assisted",
+    "jev": {
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "clarify",
+          "confidence": 0.59,
+          "probabilities": {
+            "translate": 0.21,
+            "clarify": 0.79
+          }
+        },
+        "register": {
+          "type": "choice",
+          "choice": "neutral",
+          "confidence": 0.43,
+          "probabilities": {
+            "informal": 0.28,
+            "formal": 0.14,
+            "plural": 0,
+            "neutral": 0.58
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 593,
+        "output_tokens": 78
+      },
+      "jevMs": 333
+    },
+    "jevCalls": 1,
+    "output": {
+      "action": "clarify",
+      "text": "Kunt u specificeren wat 'het' is en waar 'daar' precies is?"
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 712,
+    "usage": {
+      "completion_tokens": 30,
+      "prompt_tokens": 278,
+      "total_tokens": 308,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 176
+      }
+    },
+    "finishReason": "stop",
+    "route": "jev_guided_qwen",
+    "totalMs": 1045,
+    "llmCalls": 1
+  },
+  {
+    "id": "a2",
+    "category": "clarification",
+    "output": {
+      "action": "clarify",
+      "text": "Wat wordt bedoeld met 'het' en waar precies wordt 'daar' verwijzend naar?"
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 754,
+    "usage": {
+      "completion_tokens": 33,
+      "prompt_tokens": 245,
+      "total_tokens": 278,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 224
+      }
+    },
+    "finishReason": "stop",
+    "arm": "baseline",
+    "route": "qwen",
+    "totalMs": 754,
+    "llmCalls": 1,
+    "jevCalls": 0
+  },
+  {
+    "id": "n6",
+    "category": "meaning",
+    "output": {
+      "action": "translate",
+      "text": "Als de betaling niet is ontvangen vóór maandag, dien je de bestelling niet te verzenden."
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 817,
+    "usage": {
+      "completion_tokens": 35,
+      "prompt_tokens": 247,
+      "total_tokens": 282,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 176
+      }
+    },
+    "finishReason": "stop",
+    "arm": "baseline",
+    "route": "qwen",
+    "totalMs": 817,
+    "llmCalls": 1,
+    "jevCalls": 0
+  },
+  {
+    "id": "n6",
+    "category": "meaning",
+    "arm": "assisted",
+    "jev": {
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "translate",
+          "confidence": 1,
+          "probabilities": {
+            "translate": 1,
+            "clarify": 0
+          }
+        },
+        "register": {
+          "type": "choice",
+          "choice": "neutral",
+          "confidence": 0.85,
+          "probabilities": {
+            "informal": 0.01,
+            "formal": 0.1,
+            "plural": 0,
+            "neutral": 0.89
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 595,
+        "output_tokens": 77
+      },
+      "jevMs": 307
+    },
+    "jevCalls": 1,
+    "output": {
+      "action": "translate",
+      "text": "Als de betaling niet is ontvangen vóór maandag, verzend dan de bestelling niet."
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 797,
+    "usage": {
+      "completion_tokens": 32,
+      "prompt_tokens": 276,
+      "total_tokens": 308,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 224
+      }
+    },
+    "finishReason": "stop",
+    "route": "jev_guided_qwen",
+    "totalMs": 1105,
+    "llmCalls": 1
+  },
+  {
+    "id": "m7",
+    "category": "memory",
+    "arm": "assisted",
+    "jev": {
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "translate",
+          "confidence": 1,
+          "probabilities": {
+            "clarify": 0,
+            "translate": 1
+          }
+        },
+        "register": {
+          "type": "choice",
+          "choice": "formal",
+          "confidence": 0.99,
+          "probabilities": {
+            "neutral": 0.01,
+            "plural": 0,
+            "informal": 0,
+            "formal": 0.99
+          }
+        },
+        "memory": {
+          "type": "choice",
+          "choice": "help",
+          "confidence": 0.92,
+          "probabilities": {
+            "NONE": 0.07,
+            "help": 0.93,
+            "repeat": 0,
+            "card": 0,
+            "receipt": 0,
+            "station": 0,
+            "understand": 0,
+            "reservation": 0,
+            "slower": 0
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1282,
+        "output_tokens": 157
+      },
+      "jevMs": 285
+    },
+    "jevCalls": 1,
+    "output": {
+      "action": "translate",
+      "text": "Kunt u me helpen?"
+    },
+    "route": "jev_memory",
+    "memoryId": "help",
+    "llmCalls": 0,
+    "totalMs": 285
+  },
+  {
+    "id": "m7",
+    "category": "memory",
+    "output": {
+      "action": "translate",
+      "text": "Kunt u me helpen?"
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 570,
+    "usage": {
+      "completion_tokens": 16,
+      "prompt_tokens": 440,
+      "total_tokens": 456,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 176
+      }
+    },
+    "finishReason": "stop",
+    "arm": "baseline",
+    "route": "qwen",
+    "totalMs": 570,
+    "llmCalls": 1,
+    "jevCalls": 0
+  },
+  {
+    "id": "m8",
+    "category": "memory",
+    "output": {
+      "action": "translate",
+      "text": "Ik begrijp het niet."
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 563,
+    "usage": {
+      "completion_tokens": 16,
+      "prompt_tokens": 436,
+      "total_tokens": 452,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 176
+      }
+    },
+    "finishReason": "stop",
+    "arm": "baseline",
+    "route": "qwen",
+    "totalMs": 563,
+    "llmCalls": 1,
+    "jevCalls": 0
+  },
+  {
+    "id": "m8",
+    "category": "memory",
+    "arm": "assisted",
+    "jev": {
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "translate",
+          "confidence": 1,
+          "probabilities": {
+            "translate": 1,
+            "clarify": 0
+          }
+        },
+        "register": {
+          "type": "choice",
+          "choice": "formal",
+          "confidence": 0.55,
+          "probabilities": {
+            "informal": 0,
+            "neutral": 0.33,
+            "plural": 0,
+            "formal": 0.67
+          }
+        },
+        "memory": {
+          "type": "choice",
+          "choice": "understand",
+          "confidence": 1,
+          "probabilities": {
+            "NONE": 0,
+            "understand": 1,
+            "receipt": 0,
+            "help": 0,
+            "slower": 0,
+            "repeat": 0,
+            "reservation": 0,
+            "card": 0,
+            "station": 0
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1279,
+        "output_tokens": 158
+      },
+      "jevMs": 286
+    },
+    "jevCalls": 1,
+    "output": {
+      "action": "translate",
+      "text": "Ik begrijp het niet."
+    },
+    "route": "jev_memory",
+    "memoryId": "understand",
+    "llmCalls": 0,
+    "totalMs": 286
+  },
+  {
+    "id": "r4",
+    "category": "register",
+    "arm": "assisted",
+    "jev": {
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "translate",
+          "confidence": 1,
+          "probabilities": {
+            "clarify": 0,
+            "translate": 1
+          }
+        },
+        "register": {
+          "type": "choice",
+          "choice": "formal",
+          "confidence": 1,
+          "probabilities": {
+            "formal": 1,
+            "plural": 0,
+            "neutral": 0,
+            "informal": 0
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 593,
+        "output_tokens": 78
+      },
+      "jevMs": 257
+    },
+    "jevCalls": 1,
+    "output": {
+      "action": "translate",
+      "text": "Wilt u plaats nemen?"
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 437,
+    "usage": {
+      "completion_tokens": 16,
+      "prompt_tokens": 270,
+      "total_tokens": 286,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 176
+      }
+    },
+    "finishReason": "stop",
+    "route": "jev_guided_qwen",
+    "totalMs": 694,
+    "llmCalls": 1
+  },
+  {
+    "id": "r4",
+    "category": "register",
+    "output": {
+      "action": "translate",
+      "text": "Wilt u plaats nemen?"
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 472,
+    "usage": {
+      "completion_tokens": 16,
+      "prompt_tokens": 243,
+      "total_tokens": 259,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 224
+      }
+    },
+    "finishReason": "stop",
+    "arm": "baseline",
+    "route": "qwen",
+    "totalMs": 472,
+    "llmCalls": 1,
+    "jevCalls": 0
+  },
+  {
+    "id": "a1",
+    "category": "clarification",
+    "output": {
+      "action": "translate",
+      "text": "Treft me op de bank."
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 594,
+    "usage": {
+      "completion_tokens": 16,
+      "prompt_tokens": 255,
+      "total_tokens": 271,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 176
+      }
+    },
+    "finishReason": "stop",
+    "arm": "baseline",
+    "route": "qwen",
+    "totalMs": 594,
+    "llmCalls": 1,
+    "jevCalls": 0
+  },
+  {
+    "id": "a1",
+    "category": "clarification",
+    "arm": "assisted",
+    "jev": {
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "clarify",
+          "confidence": 0.83,
+          "probabilities": {
+            "translate": 0.08,
+            "clarify": 0.92
+          }
+        },
+        "register": {
+          "type": "choice",
+          "choice": "neutral",
+          "confidence": 0.33,
+          "probabilities": {
+            "informal": 0.47,
+            "neutral": 0.5,
+            "plural": 0,
+            "formal": 0.03
+          }
+        },
+        "sense": {
+          "type": "choice",
+          "choice": "UNKNOWN",
+          "confidence": 0.95,
+          "probabilities": {
+            "UNKNOWN": 0.96,
+            "river": 0,
+            "financial": 0.04
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 706,
+        "output_tokens": 113
+      },
+      "jevMs": 248
+    },
+    "jevCalls": 1,
+    "output": {
+      "action": "clarify",
+      "text": "Kun je verduidelijken wat je bedoelt?"
+    },
+    "route": "jev_clarify",
+    "llmCalls": 0,
+    "totalMs": 248
+  },
+  {
+    "id": "s5",
+    "category": "sense",
+    "arm": "assisted",
+    "jev": {
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "translate",
+          "confidence": 1,
+          "probabilities": {
+            "translate": 1,
+            "clarify": 0
+          }
+        },
+        "register": {
+          "type": "choice",
+          "choice": "neutral",
+          "confidence": 1,
+          "probabilities": {
+            "neutral": 1,
+            "plural": 0,
+            "formal": 0,
+            "informal": 0
+          }
+        },
+        "sense": {
+          "type": "choice",
+          "choice": "coil",
+          "confidence": 1,
+          "probabilities": {
+            "water": 0,
+            "UNKNOWN": 0,
+            "coil": 1,
+            "season": 0
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 730,
+        "output_tokens": 119
+      },
+      "jevMs": 307
+    },
+    "jevCalls": 1,
+    "output": {
+      "action": "translate",
+      "text": "De veer moet worden vervangen."
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 440,
+    "usage": {
+      "completion_tokens": 17,
+      "prompt_tokens": 305,
+      "total_tokens": 322,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 176
+      }
+    },
+    "finishReason": "stop",
+    "route": "jev_guided_qwen",
+    "totalMs": 746,
+    "llmCalls": 1
+  },
+  {
+    "id": "s5",
+    "category": "sense",
+    "output": {
+      "action": "translate",
+      "text": "De veer moet worden vervangen."
+    },
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "llmMs": 465,
+    "usage": {
+      "completion_tokens": 17,
+      "prompt_tokens": 259,
+      "total_tokens": 276,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 240
+      }
+    },
+    "finishReason": "stop",
+    "arm": "baseline",
+    "route": "qwen",
+    "totalMs": 465,
+    "llmCalls": 1,
+    "jevCalls": 0
+  }
+]

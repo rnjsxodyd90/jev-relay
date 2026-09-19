@@ -1,0 +1,14 @@
+{
+  "name": "jev-translation-benefit",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.9"
+  },
+  "scripts": {
+    "gateway": "node --env-file-if-exists=.env gateway.mjs",
+    "benchmark": "node --env-file-if-exists=.env run.mjs",
+    "summary": "node summarize.mjs"
+  }
+}

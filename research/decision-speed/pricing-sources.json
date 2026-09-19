@@ -1,0 +1,17 @@
+{
+  "jev": {
+    "source": "https://docs.typesafe.ai/models",
+    "verifiedAt": "2026-09-19T09:00:38.859Z",
+    "model": "jev-1.13.0",
+    "inputUsdPerMillion": 0.042,
+    "outputUsdPerMillion": 0,
+    "documentationQuote": "Charged per input token. Output tokens are free."
+  },
+  "qwen": {
+    "source": "provider-model-metadata.json",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "inputUsdPerMillion": 0.1,
+    "outputUsdPerMillion": 0.3
+  },
+  "scope": "Estimates from standard token rates, not an invoice."
+}

@@ -1,0 +1,8807 @@
+[
+  {
+    "round": 1,
+    "id": "sense_8",
+    "task": "word_sense",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 249,
+    "choices": {
+      "sense": "record"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 239,
+      "total_tokens": 245,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 1,
+    "id": "sense_8",
+    "task": "word_sense",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 251,
+    "choices": {
+      "sense": "record"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 492,
+      "output_tokens": 45
+    },
+    "jevAnswers": {
+      "sense": {
+        "type": "choice",
+        "choice": "record",
+        "confidence": 1,
+        "probabilities": {
+          "record": 1,
+          "NONE": 0,
+          "UNKNOWN": 0,
+          "time": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 1,
+    "id": "bundle_r2",
+    "task": "decision_bundle",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 277,
+    "choices": {
+      "action": "translate",
+      "memory": "NONE",
+      "register": "informal",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 1360,
+      "output_tokens": 188
+    },
+    "jevAnswers": {
+      "action": {
+        "type": "choice",
+        "choice": "translate",
+        "confidence": 0.98,
+        "probabilities": {
+          "translate": 0.99,
+          "clarify": 0.01
+        }
+      },
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 1,
+        "probabilities": {
+          "help": 0,
+          "NONE": 1,
+          "reservation": 0,
+          "understand": 0,
+          "card": 0,
+          "slower": 0,
+          "receipt": 0,
+          "repeat": 0,
+          "station": 0
+        }
+      },
+      "register": {
+        "type": "choice",
+        "choice": "informal",
+        "confidence": 0.99,
+        "probabilities": {
+          "informal": 1,
+          "formal": 0,
+          "unspecified": 0,
+          "plural": 0
+        }
+      },
+      "sense": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.99,
+        "probabilities": {
+          "UNKNOWN": 0,
+          "NONE": 1
+        }
+      }
+    }
+  },
+  {
+    "round": 1,
+    "id": "bundle_r2",
+    "task": "decision_bundle",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 354,
+    "choices": {
+      "action": "translate",
+      "memory": "NONE",
+      "register": "informal",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 19,
+      "prompt_tokens": 883,
+      "total_tokens": 902,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 1,
+    "id": "memory_m6",
+    "task": "memory_selection",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 203,
+    "choices": {
+      "memory": "reservation"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 642,
+      "total_tokens": 648,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 1,
+    "id": "memory_m6",
+    "task": "memory_selection",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 267,
+    "choices": {
+      "memory": "reservation"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "input_tokens": 1027,
+      "output_tokens": 82
+    },
+    "jevAnswers": {
+      "memory": {
+        "type": "choice",
+        "choice": "reservation",
+        "confidence": 0.54,
+        "probabilities": {
+          "NONE": 0.4,
+          "slower": 0,
+          "reservation": 0.6,
+          "station": 0,
+          "receipt": 0,
+          "card": 0,
+          "understand": 0,
+          "repeat": 0,
+          "help": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 1,
+    "id": "memory_n7",
+    "task": "memory_selection",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 264,
+    "choices": {
+      "memory": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "input_tokens": 1016,
+      "output_tokens": 82
+    },
+    "jevAnswers": {
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.99,
+        "probabilities": {
+          "repeat": 0.01,
+          "station": 0,
+          "understand": 0,
+          "reservation": 0,
+          "card": 0,
+          "receipt": 0,
+          "slower": 0,
+          "NONE": 0.99,
+          "help": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 1,
+    "id": "memory_n7",
+    "task": "memory_selection",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 211,
+    "choices": {
+      "memory": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 631,
+      "total_tokens": 637,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 1,
+    "id": "bundle_a3",
+    "task": "decision_bundle",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 368,
+    "choices": {
+      "action": "clarify",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 20,
+      "prompt_tokens": 892,
+      "total_tokens": 912,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 1,
+    "id": "bundle_a3",
+    "task": "decision_bundle",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 258,
+    "choices": {
+      "action": "clarify",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 1369,
+      "output_tokens": 189
+    },
+    "jevAnswers": {
+      "action": {
+        "type": "choice",
+        "choice": "clarify",
+        "confidence": 0.99,
+        "probabilities": {
+          "clarify": 0.99,
+          "translate": 0.01
+        }
+      },
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.99,
+        "probabilities": {
+          "slower": 0,
+          "repeat": 0.01,
+          "reservation": 0,
+          "receipt": 0,
+          "help": 0,
+          "NONE": 0.99,
+          "card": 0,
+          "station": 0,
+          "understand": 0
+        }
+      },
+      "register": {
+        "type": "choice",
+        "choice": "unspecified",
+        "confidence": 0.99,
+        "probabilities": {
+          "unspecified": 0.99,
+          "informal": 0,
+          "plural": 0,
+          "formal": 0.01
+        }
+      },
+      "sense": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.86,
+        "probabilities": {
+          "NONE": 0.93,
+          "UNKNOWN": 0.07
+        }
+      }
+    }
+  },
+  {
+    "round": 1,
+    "id": "sense_4",
+    "task": "word_sense",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 332,
+    "choices": {
+      "sense": "animal"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 496,
+      "output_tokens": 45
+    },
+    "jevAnswers": {
+      "sense": {
+        "type": "choice",
+        "choice": "animal",
+        "confidence": 1,
+        "probabilities": {
+          "UNKNOWN": 0,
+          "animal": 1,
+          "NONE": 0,
+          "sport": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 1,
+    "id": "sense_4",
+    "task": "word_sense",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 208,
+    "choices": {
+      "sense": "animal"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 241,
+      "total_tokens": 247,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 1,
+    "id": "sense_2",
+    "task": "word_sense",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 213,
+    "choices": {
+      "sense": "electrical"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 7,
+      "prompt_tokens": 260,
+      "total_tokens": 267,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 1,
+    "id": "sense_2",
+    "task": "word_sense",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 240,
+    "choices": {
+      "sense": "electrical"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 525,
+      "output_tokens": 56
+    },
+    "jevAnswers": {
+      "sense": {
+        "type": "choice",
+        "choice": "electrical",
+        "confidence": 1,
+        "probabilities": {
+          "accusation": 0,
+          "electrical": 1,
+          "fee": 0,
+          "UNKNOWN": 0,
+          "NONE": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 1,
+    "id": "sense_10",
+    "task": "word_sense",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 269,
+    "choices": {
+      "sense": "air"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 534,
+      "output_tokens": 54
+    },
+    "jevAnswers": {
+      "sense": {
+        "type": "choice",
+        "choice": "air",
+        "confidence": 1,
+        "probabilities": {
+          "air": 1,
+          "conscription": 0,
+          "UNKNOWN": 0,
+          "document": 0,
+          "NONE": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 1,
+    "id": "sense_10",
+    "task": "word_sense",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 196,
+    "choices": {
+      "sense": "air"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 265,
+      "total_tokens": 271,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 80
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 1,
+    "id": "sense_6",
+    "task": "word_sense",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 220,
+    "choices": {
+      "sense": "gasket"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 7,
+      "prompt_tokens": 267,
+      "total_tokens": 274,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 1,
+    "id": "sense_6",
+    "task": "word_sense",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 299,
+    "choices": {
+      "sense": "gasket"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 533,
+      "output_tokens": 56
+    },
+    "jevAnswers": {
+      "sense": {
+        "type": "choice",
+        "choice": "gasket",
+        "confidence": 1,
+        "probabilities": {
+          "UNKNOWN": 0,
+          "gasket": 1,
+          "NONE": 0,
+          "stamp": 0,
+          "animal": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 1,
+    "id": "bundle_r4",
+    "task": "decision_bundle",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 277,
+    "choices": {
+      "action": "translate",
+      "memory": "NONE",
+      "register": "formal",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 1368,
+      "output_tokens": 187
+    },
+    "jevAnswers": {
+      "action": {
+        "type": "choice",
+        "choice": "translate",
+        "confidence": 1,
+        "probabilities": {
+          "clarify": 0,
+          "translate": 1
+        }
+      },
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 1,
+        "probabilities": {
+          "slower": 0,
+          "repeat": 0,
+          "reservation": 0,
+          "receipt": 0,
+          "help": 0,
+          "NONE": 1,
+          "card": 0,
+          "station": 0,
+          "understand": 0
+        }
+      },
+      "register": {
+        "type": "choice",
+        "choice": "formal",
+        "confidence": 1,
+        "probabilities": {
+          "unspecified": 0,
+          "informal": 0,
+          "plural": 0,
+          "formal": 1
+        }
+      },
+      "sense": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 1,
+        "probabilities": {
+          "NONE": 1,
+          "UNKNOWN": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 1,
+    "id": "bundle_r4",
+    "task": "decision_bundle",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 462,
+    "choices": {
+      "action": "translate",
+      "memory": "NONE",
+      "register": "formal",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 19,
+      "prompt_tokens": 888,
+      "total_tokens": 907,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 1,
+    "id": "memory_m7",
+    "task": "memory_selection",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 276,
+    "choices": {
+      "memory": "help"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 643,
+      "total_tokens": 649,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 80
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 1,
+    "id": "memory_m7",
+    "task": "memory_selection",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 351,
+    "choices": {
+      "memory": "help"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "input_tokens": 1027,
+      "output_tokens": 82
+    },
+    "jevAnswers": {
+      "memory": {
+        "type": "choice",
+        "choice": "help",
+        "confidence": 0.82,
+        "probabilities": {
+          "slower": 0,
+          "repeat": 0,
+          "receipt": 0,
+          "reservation": 0,
+          "help": 0.85,
+          "NONE": 0.15,
+          "understand": 0,
+          "station": 0,
+          "card": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 1,
+    "id": "sense_3",
+    "task": "word_sense",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 256,
+    "choices": {
+      "sense": "rate"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 526,
+      "output_tokens": 55
+    },
+    "jevAnswers": {
+      "sense": {
+        "type": "choice",
+        "choice": "rate",
+        "confidence": 0.99,
+        "probabilities": {
+          "UNKNOWN": 0,
+          "curiosity": 0.01,
+          "stake": 0,
+          "rate": 0.99,
+          "NONE": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 1,
+    "id": "sense_3",
+    "task": "word_sense",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 246,
+    "choices": {
+      "sense": "rate"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 258,
+      "total_tokens": 264,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 1,
+    "id": "bundle_s6",
+    "task": "decision_bundle",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 388,
+    "choices": {
+      "action": "clarify",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "gasket"
+    },
+    "valid": true,
+    "correct": false,
+    "labelCorrect": 3,
+    "labelCount": 4,
+    "labels": {
+      "action": false,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 21,
+      "prompt_tokens": 947,
+      "total_tokens": 968,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 144
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 1,
+    "id": "bundle_s6",
+    "task": "decision_bundle",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 296,
+    "choices": {
+      "action": "translate",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "gasket"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 1461,
+      "output_tokens": 213
+    },
+    "jevAnswers": {
+      "action": {
+        "type": "choice",
+        "choice": "translate",
+        "confidence": 0.99,
+        "probabilities": {
+          "translate": 1,
+          "clarify": 0
+        }
+      },
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 1,
+        "probabilities": {
+          "NONE": 1,
+          "reservation": 0,
+          "repeat": 0,
+          "understand": 0,
+          "card": 0,
+          "receipt": 0,
+          "slower": 0,
+          "help": 0,
+          "station": 0
+        }
+      },
+      "register": {
+        "type": "choice",
+        "choice": "unspecified",
+        "confidence": 1,
+        "probabilities": {
+          "plural": 0,
+          "formal": 0,
+          "informal": 0,
+          "unspecified": 1
+        }
+      },
+      "sense": {
+        "type": "choice",
+        "choice": "gasket",
+        "confidence": 1,
+        "probabilities": {
+          "NONE": 0,
+          "gasket": 1,
+          "animal": 0,
+          "stamp": 0,
+          "UNKNOWN": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 1,
+    "id": "bundle_a2",
+    "task": "decision_bundle",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 273,
+    "choices": {
+      "action": "clarify",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 1368,
+      "output_tokens": 189
+    },
+    "jevAnswers": {
+      "action": {
+        "type": "choice",
+        "choice": "clarify",
+        "confidence": 0.98,
+        "probabilities": {
+          "clarify": 0.99,
+          "translate": 0.01
+        }
+      },
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.99,
+        "probabilities": {
+          "receipt": 0,
+          "help": 0,
+          "repeat": 0,
+          "NONE": 1,
+          "card": 0,
+          "station": 0,
+          "understand": 0,
+          "reservation": 0,
+          "slower": 0
+        }
+      },
+      "register": {
+        "type": "choice",
+        "choice": "unspecified",
+        "confidence": 0.99,
+        "probabilities": {
+          "plural": 0,
+          "unspecified": 1,
+          "informal": 0,
+          "formal": 0
+        }
+      },
+      "sense": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.98,
+        "probabilities": {
+          "UNKNOWN": 0.01,
+          "NONE": 0.99
+        }
+      }
+    }
+  },
+  {
+    "round": 1,
+    "id": "bundle_a2",
+    "task": "decision_bundle",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 401,
+    "choices": {
+      "action": "clarify",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 20,
+      "prompt_tokens": 890,
+      "total_tokens": 910,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 1,
+    "id": "memory_m5",
+    "task": "memory_selection",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 283,
+    "choices": {
+      "memory": "receipt"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 643,
+      "total_tokens": 649,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 1,
+    "id": "memory_m5",
+    "task": "memory_selection",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 271,
+    "choices": {
+      "memory": "receipt"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "input_tokens": 1027,
+      "output_tokens": 82
+    },
+    "jevAnswers": {
+      "memory": {
+        "type": "choice",
+        "choice": "receipt",
+        "confidence": 0.94,
+        "probabilities": {
+          "understand": 0,
+          "slower": 0,
+          "receipt": 0.94,
+          "station": 0,
+          "help": 0,
+          "reservation": 0,
+          "repeat": 0,
+          "card": 0,
+          "NONE": 0.06
+        }
+      }
+    }
+  },
+  {
+    "round": 1,
+    "id": "sense_1",
+    "task": "word_sense",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 308,
+    "choices": {
+      "sense": "river"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 521,
+      "output_tokens": 52
+    },
+    "jevAnswers": {
+      "sense": {
+        "type": "choice",
+        "choice": "river",
+        "confidence": 0.98,
+        "probabilities": {
+          "financial": 0.01,
+          "river": 0.99,
+          "NONE": 0,
+          "UNKNOWN": 0,
+          "bench": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 1,
+    "id": "sense_1",
+    "task": "word_sense",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 168,
+    "choices": {
+      "sense": "river"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 254,
+      "total_tokens": 260,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 240
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 1,
+    "id": "bundle_r1",
+    "task": "decision_bundle",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 290,
+    "choices": {
+      "action": "translate",
+      "memory": "NONE",
+      "register": "formal",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 19,
+      "prompt_tokens": 884,
+      "total_tokens": 903,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 1,
+    "id": "bundle_r1",
+    "task": "decision_bundle",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 320,
+    "choices": {
+      "action": "translate",
+      "memory": "NONE",
+      "register": "formal",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 1361,
+      "output_tokens": 187
+    },
+    "jevAnswers": {
+      "action": {
+        "type": "choice",
+        "choice": "translate",
+        "confidence": 0.91,
+        "probabilities": {
+          "translate": 0.96,
+          "clarify": 0.04
+        }
+      },
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 1,
+        "probabilities": {
+          "card": 0,
+          "station": 0,
+          "help": 0,
+          "repeat": 0,
+          "slower": 0,
+          "understand": 0,
+          "reservation": 0,
+          "receipt": 0,
+          "NONE": 1
+        }
+      },
+      "register": {
+        "type": "choice",
+        "choice": "formal",
+        "confidence": 1,
+        "probabilities": {
+          "plural": 0,
+          "informal": 0,
+          "formal": 1,
+          "unspecified": 0
+        }
+      },
+      "sense": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.99,
+        "probabilities": {
+          "UNKNOWN": 0,
+          "NONE": 1
+        }
+      }
+    }
+  },
+  {
+    "round": 1,
+    "id": "sense_5",
+    "task": "word_sense",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 354,
+    "choices": {
+      "sense": "coil"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 515,
+      "output_tokens": 52
+    },
+    "jevAnswers": {
+      "sense": {
+        "type": "choice",
+        "choice": "coil",
+        "confidence": 1,
+        "probabilities": {
+          "UNKNOWN": 0,
+          "coil": 1,
+          "season": 0,
+          "water": 0,
+          "NONE": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 1,
+    "id": "sense_5",
+    "task": "word_sense",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 242,
+    "choices": {
+      "sense": "elastic mechanical coil; veer"
+    },
+    "valid": false,
+    "correct": false,
+    "labelCorrect": 0,
+    "labelCount": 1,
+    "labels": {
+      "sense": false
+    },
+    "usage": {
+      "completion_tokens": 11,
+      "prompt_tokens": 250,
+      "total_tokens": 261,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop",
+    "error": "invalid_choice"
+  },
+  {
+    "round": 1,
+    "id": "memory_m4",
+    "task": "memory_selection",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 280,
+    "choices": {
+      "memory": "station"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 643,
+      "total_tokens": 649,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 1,
+    "id": "memory_m4",
+    "task": "memory_selection",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 359,
+    "choices": {
+      "memory": "station"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "input_tokens": 1027,
+      "output_tokens": 82
+    },
+    "jevAnswers": {
+      "memory": {
+        "type": "choice",
+        "choice": "station",
+        "confidence": 0.91,
+        "probabilities": {
+          "repeat": 0,
+          "reservation": 0,
+          "station": 0.92,
+          "understand": 0,
+          "receipt": 0,
+          "card": 0,
+          "slower": 0,
+          "NONE": 0.08,
+          "help": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 1,
+    "id": "bundle_s4",
+    "task": "decision_bundle",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 320,
+    "choices": {
+      "action": "translate",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "animal"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 1424,
+      "output_tokens": 202
+    },
+    "jevAnswers": {
+      "action": {
+        "type": "choice",
+        "choice": "translate",
+        "confidence": 0.99,
+        "probabilities": {
+          "translate": 1,
+          "clarify": 0
+        }
+      },
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 1,
+        "probabilities": {
+          "card": 0,
+          "station": 0,
+          "help": 0,
+          "repeat": 0,
+          "slower": 0,
+          "understand": 0,
+          "reservation": 0,
+          "receipt": 0,
+          "NONE": 1
+        }
+      },
+      "register": {
+        "type": "choice",
+        "choice": "unspecified",
+        "confidence": 0.97,
+        "probabilities": {
+          "plural": 0,
+          "informal": 0.01,
+          "formal": 0.01,
+          "unspecified": 0.98
+        }
+      },
+      "sense": {
+        "type": "choice",
+        "choice": "animal",
+        "confidence": 1,
+        "probabilities": {
+          "UNKNOWN": 0,
+          "animal": 1,
+          "NONE": 0,
+          "sport": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 1,
+    "id": "bundle_s4",
+    "task": "decision_bundle",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 413,
+    "choices": {
+      "action": "translate",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "animal"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 19,
+      "prompt_tokens": 921,
+      "total_tokens": 940,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 128
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 1,
+    "id": "memory_m2",
+    "task": "memory_selection",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 230,
+    "choices": {
+      "memory": "slower"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "completion_tokens": 7,
+      "prompt_tokens": 642,
+      "total_tokens": 649,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 80
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 1,
+    "id": "memory_m2",
+    "task": "memory_selection",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 273,
+    "choices": {
+      "memory": "slower"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "input_tokens": 1026,
+      "output_tokens": 83
+    },
+    "jevAnswers": {
+      "memory": {
+        "type": "choice",
+        "choice": "slower",
+        "confidence": 0.94,
+        "probabilities": {
+          "reservation": 0,
+          "help": 0,
+          "understand": 0,
+          "repeat": 0,
+          "receipt": 0,
+          "slower": 0.95,
+          "station": 0,
+          "card": 0,
+          "NONE": 0.05
+        }
+      }
+    }
+  },
+  {
+    "round": 1,
+    "id": "bundle_a4",
+    "task": "decision_bundle",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 303,
+    "choices": {
+      "action": "clarify",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 1365,
+      "output_tokens": 189
+    },
+    "jevAnswers": {
+      "action": {
+        "type": "choice",
+        "choice": "clarify",
+        "confidence": 0.94,
+        "probabilities": {
+          "clarify": 0.97,
+          "translate": 0.03
+        }
+      },
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 1,
+        "probabilities": {
+          "station": 0,
+          "help": 0,
+          "card": 0,
+          "repeat": 0,
+          "reservation": 0,
+          "receipt": 0,
+          "slower": 0,
+          "understand": 0,
+          "NONE": 1
+        }
+      },
+      "register": {
+        "type": "choice",
+        "choice": "unspecified",
+        "confidence": 0.98,
+        "probabilities": {
+          "formal": 0,
+          "informal": 0.01,
+          "plural": 0,
+          "unspecified": 0.99
+        }
+      },
+      "sense": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.75,
+        "probabilities": {
+          "UNKNOWN": 0.13,
+          "NONE": 0.87
+        }
+      }
+    }
+  },
+  {
+    "round": 1,
+    "id": "bundle_a4",
+    "task": "decision_bundle",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 306,
+    "choices": {
+      "action": "clarify",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 20,
+      "prompt_tokens": 887,
+      "total_tokens": 907,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 1,
+    "id": "memory_new1",
+    "task": "memory_selection",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 197,
+    "choices": {
+      "memory": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 629,
+      "total_tokens": 635,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 1,
+    "id": "memory_new1",
+    "task": "memory_selection",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 326,
+    "choices": {
+      "memory": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "input_tokens": 1014,
+      "output_tokens": 82
+    },
+    "jevAnswers": {
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 1,
+        "probabilities": {
+          "repeat": 0,
+          "reservation": 0,
+          "receipt": 0,
+          "station": 0,
+          "NONE": 1,
+          "slower": 0,
+          "card": 0,
+          "help": 0,
+          "understand": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 1,
+    "id": "sense_11",
+    "task": "word_sense",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 301,
+    "choices": {
+      "sense": "sound"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 523,
+      "output_tokens": 52
+    },
+    "jevAnswers": {
+      "sense": {
+        "type": "choice",
+        "choice": "sound",
+        "confidence": 1,
+        "probabilities": {
+          "NONE": 0,
+          "field": 0,
+          "sales": 0,
+          "sound": 1,
+          "UNKNOWN": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 1,
+    "id": "sense_11",
+    "task": "word_sense",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 251,
+    "choices": {
+      "sense": "sound"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 262,
+      "total_tokens": 268,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 1,
+    "id": "bundle_m1",
+    "task": "decision_bundle",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 493,
+    "choices": {
+      "action": "translate",
+      "memory": "repeat",
+      "register": "formal",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 19,
+      "prompt_tokens": 903,
+      "total_tokens": 922,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 80
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 1,
+    "id": "bundle_m1",
+    "task": "decision_bundle",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 303,
+    "choices": {
+      "action": "translate",
+      "memory": "repeat",
+      "register": "formal",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 1380,
+      "output_tokens": 187
+    },
+    "jevAnswers": {
+      "action": {
+        "type": "choice",
+        "choice": "translate",
+        "confidence": 0.99,
+        "probabilities": {
+          "clarify": 0,
+          "translate": 1
+        }
+      },
+      "memory": {
+        "type": "choice",
+        "choice": "repeat",
+        "confidence": 0.9,
+        "probabilities": {
+          "reservation": 0,
+          "NONE": 0.09,
+          "help": 0,
+          "understand": 0,
+          "card": 0,
+          "station": 0,
+          "repeat": 0.91,
+          "slower": 0,
+          "receipt": 0
+        }
+      },
+      "register": {
+        "type": "choice",
+        "choice": "formal",
+        "confidence": 0.99,
+        "probabilities": {
+          "unspecified": 0.01,
+          "formal": 0.99,
+          "plural": 0,
+          "informal": 0
+        }
+      },
+      "sense": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.99,
+        "probabilities": {
+          "UNKNOWN": 0.01,
+          "NONE": 0.99
+        }
+      }
+    }
+  },
+  {
+    "round": 1,
+    "id": "sense_9",
+    "task": "word_sense",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 301,
+    "choices": {
+      "sense": "penalty"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 519,
+      "output_tokens": 54
+    },
+    "jevAnswers": {
+      "sense": {
+        "type": "choice",
+        "choice": "penalty",
+        "confidence": 1,
+        "probabilities": {
+          "UNKNOWN": 0,
+          "penalty": 1,
+          "NONE": 0,
+          "thin": 0,
+          "quality": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 1,
+    "id": "sense_9",
+    "task": "word_sense",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 241,
+    "choices": {
+      "sense": "penalty"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 7,
+      "prompt_tokens": 252,
+      "total_tokens": 259,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 1,
+    "id": "memory_new2",
+    "task": "memory_selection",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 203,
+    "choices": {
+      "memory": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 626,
+      "total_tokens": 632,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 1,
+    "id": "memory_new2",
+    "task": "memory_selection",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 270,
+    "choices": {
+      "memory": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "input_tokens": 1011,
+      "output_tokens": 82
+    },
+    "jevAnswers": {
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.99,
+        "probabilities": {
+          "station": 0,
+          "receipt": 0,
+          "slower": 0,
+          "card": 0,
+          "help": 0,
+          "repeat": 0,
+          "NONE": 0.99,
+          "understand": 0,
+          "reservation": 0.01
+        }
+      }
+    }
+  },
+  {
+    "round": 1,
+    "id": "memory_m3",
+    "task": "memory_selection",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 278,
+    "choices": {
+      "memory": "card"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "input_tokens": 1029,
+      "output_tokens": 82
+    },
+    "jevAnswers": {
+      "memory": {
+        "type": "choice",
+        "choice": "card",
+        "confidence": 0.9,
+        "probabilities": {
+          "NONE": 0.08,
+          "station": 0,
+          "slower": 0,
+          "help": 0,
+          "understand": 0,
+          "repeat": 0,
+          "receipt": 0,
+          "card": 0.92,
+          "reservation": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 1,
+    "id": "memory_m3",
+    "task": "memory_selection",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 200,
+    "choices": {
+      "memory": "card"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 645,
+      "total_tokens": 651,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 1,
+    "id": "bundle_r3",
+    "task": "decision_bundle",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 379,
+    "choices": {
+      "action": "translate",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": false,
+    "labelCorrect": 3,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": false,
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 19,
+      "prompt_tokens": 881,
+      "total_tokens": 900,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 1,
+    "id": "bundle_r3",
+    "task": "decision_bundle",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 316,
+    "choices": {
+      "action": "translate",
+      "memory": "NONE",
+      "register": "plural",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 1358,
+      "output_tokens": 186
+    },
+    "jevAnswers": {
+      "action": {
+        "type": "choice",
+        "choice": "translate",
+        "confidence": 0.86,
+        "probabilities": {
+          "translate": 0.93,
+          "clarify": 0.07
+        }
+      },
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 1,
+        "probabilities": {
+          "repeat": 0,
+          "reservation": 0,
+          "receipt": 0,
+          "station": 0,
+          "NONE": 1,
+          "card": 0,
+          "slower": 0,
+          "help": 0,
+          "understand": 0
+        }
+      },
+      "register": {
+        "type": "choice",
+        "choice": "plural",
+        "confidence": 0.67,
+        "probabilities": {
+          "unspecified": 0.23,
+          "plural": 0.76,
+          "informal": 0,
+          "formal": 0.01
+        }
+      },
+      "sense": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.99,
+        "probabilities": {
+          "NONE": 1,
+          "UNKNOWN": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 1,
+    "id": "memory_m8",
+    "task": "memory_selection",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 335,
+    "choices": {
+      "memory": "understand"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "input_tokens": 1024,
+      "output_tokens": 83
+    },
+    "jevAnswers": {
+      "memory": {
+        "type": "choice",
+        "choice": "understand",
+        "confidence": 1,
+        "probabilities": {
+          "repeat": 0,
+          "reservation": 0,
+          "station": 0,
+          "understand": 1,
+          "slower": 0,
+          "card": 0,
+          "receipt": 0,
+          "help": 0,
+          "NONE": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 1,
+    "id": "memory_m8",
+    "task": "memory_selection",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 235,
+    "choices": {
+      "memory": "understand"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "completion_tokens": 7,
+      "prompt_tokens": 639,
+      "total_tokens": 646,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 1,
+    "id": "memory_n8",
+    "task": "memory_selection",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 294,
+    "choices": {
+      "memory": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 627,
+      "total_tokens": 633,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 1,
+    "id": "memory_n8",
+    "task": "memory_selection",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 300,
+    "choices": {
+      "memory": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "input_tokens": 1012,
+      "output_tokens": 82
+    },
+    "jevAnswers": {
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.99,
+        "probabilities": {
+          "receipt": 0,
+          "card": 0,
+          "repeat": 0,
+          "help": 0,
+          "understand": 0,
+          "NONE": 0.99,
+          "station": 0,
+          "reservation": 0.01,
+          "slower": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 1,
+    "id": "bundle_a1",
+    "task": "decision_bundle",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 281,
+    "choices": {
+      "action": "clarify",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "UNKNOWN"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 1419,
+      "output_tokens": 203
+    },
+    "jevAnswers": {
+      "action": {
+        "type": "choice",
+        "choice": "clarify",
+        "confidence": 0.86,
+        "probabilities": {
+          "translate": 0.07,
+          "clarify": 0.93
+        }
+      },
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 1,
+        "probabilities": {
+          "repeat": 0,
+          "reservation": 0,
+          "station": 0,
+          "understand": 0,
+          "slower": 0,
+          "card": 0,
+          "receipt": 0,
+          "help": 0,
+          "NONE": 1
+        }
+      },
+      "register": {
+        "type": "choice",
+        "choice": "unspecified",
+        "confidence": 0.99,
+        "probabilities": {
+          "unspecified": 1,
+          "formal": 0,
+          "informal": 0,
+          "plural": 0
+        }
+      },
+      "sense": {
+        "type": "choice",
+        "choice": "UNKNOWN",
+        "confidence": 0.84,
+        "probabilities": {
+          "UNKNOWN": 0.88,
+          "financial": 0.12,
+          "NONE": 0,
+          "river": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 1,
+    "id": "bundle_a1",
+    "task": "decision_bundle",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 379,
+    "choices": {
+      "action": "clarify",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "UNKNOWN"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 20,
+      "prompt_tokens": 915,
+      "total_tokens": 935,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 1,
+    "id": "memory_m1",
+    "task": "memory_selection",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 185,
+    "choices": {
+      "memory": "repeat"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 642,
+      "total_tokens": 648,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 112
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 1,
+    "id": "memory_m1",
+    "task": "memory_selection",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 279,
+    "choices": {
+      "memory": "repeat"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "input_tokens": 1026,
+      "output_tokens": 82
+    },
+    "jevAnswers": {
+      "memory": {
+        "type": "choice",
+        "choice": "repeat",
+        "confidence": 0.9,
+        "probabilities": {
+          "card": 0,
+          "receipt": 0,
+          "understand": 0,
+          "station": 0,
+          "help": 0,
+          "reservation": 0,
+          "repeat": 0.91,
+          "slower": 0,
+          "NONE": 0.09
+        }
+      }
+    }
+  },
+  {
+    "round": 1,
+    "id": "sense_7",
+    "task": "word_sense",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 275,
+    "choices": {
+      "sense": "network"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 516,
+      "output_tokens": 53
+    },
+    "jevAnswers": {
+      "sense": {
+        "type": "choice",
+        "choice": "network",
+        "confidence": 1,
+        "probabilities": {
+          "wine": 0,
+          "network": 1,
+          "NONE": 0,
+          "harbor": 0,
+          "UNKNOWN": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 1,
+    "id": "sense_7",
+    "task": "word_sense",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 244,
+    "choices": {
+      "sense": "network"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 248,
+      "total_tokens": 254,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 1,
+    "id": "bundle_m2",
+    "task": "decision_bundle",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 353,
+    "choices": {
+      "action": "translate",
+      "memory": "slower",
+      "register": "formal",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 20,
+      "prompt_tokens": 903,
+      "total_tokens": 923,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 80
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 1,
+    "id": "bundle_m2",
+    "task": "decision_bundle",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 272,
+    "choices": {
+      "action": "translate",
+      "memory": "slower",
+      "register": "formal",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 1380,
+      "output_tokens": 188
+    },
+    "jevAnswers": {
+      "action": {
+        "type": "choice",
+        "choice": "translate",
+        "confidence": 1,
+        "probabilities": {
+          "translate": 1,
+          "clarify": 0
+        }
+      },
+      "memory": {
+        "type": "choice",
+        "choice": "slower",
+        "confidence": 0.93,
+        "probabilities": {
+          "NONE": 0.06,
+          "understand": 0,
+          "reservation": 0,
+          "receipt": 0,
+          "station": 0,
+          "slower": 0.9400000000000001,
+          "repeat": 0,
+          "card": 0,
+          "help": 0
+        }
+      },
+      "register": {
+        "type": "choice",
+        "choice": "formal",
+        "confidence": 0.99,
+        "probabilities": {
+          "unspecified": 0.01,
+          "informal": 0,
+          "formal": 0.99,
+          "plural": 0
+        }
+      },
+      "sense": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.99,
+        "probabilities": {
+          "NONE": 0.99,
+          "UNKNOWN": 0.01
+        }
+      }
+    }
+  },
+  {
+    "round": 1,
+    "id": "sense_12",
+    "task": "word_sense",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 288,
+    "choices": {
+      "sense": "water"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 524,
+      "output_tokens": 52
+    },
+    "jevAnswers": {
+      "sense": {
+        "type": "choice",
+        "choice": "water",
+        "confidence": 1,
+        "probabilities": {
+          "NONE": 0,
+          "UNKNOWN": 0,
+          "water": 1,
+          "electric": 0,
+          "present": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 1,
+    "id": "sense_12",
+    "task": "word_sense",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 253,
+    "choices": {
+      "sense": "water flow; stroming"
+    },
+    "valid": false,
+    "correct": false,
+    "labelCorrect": 0,
+    "labelCount": 1,
+    "labels": {
+      "sense": false
+    },
+    "usage": {
+      "completion_tokens": 11,
+      "prompt_tokens": 258,
+      "total_tokens": 269,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop",
+    "error": "invalid_choice"
+  },
+  {
+    "round": 2,
+    "id": "bundle_a1",
+    "task": "decision_bundle",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 323,
+    "choices": {
+      "action": "clarify",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "UNKNOWN"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 1419,
+      "output_tokens": 203
+    },
+    "jevAnswers": {
+      "action": {
+        "type": "choice",
+        "choice": "clarify",
+        "confidence": 0.85,
+        "probabilities": {
+          "translate": 0.08,
+          "clarify": 0.92
+        }
+      },
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 1,
+        "probabilities": {
+          "card": 0,
+          "reservation": 0,
+          "understand": 0,
+          "help": 0,
+          "repeat": 0,
+          "station": 0,
+          "slower": 0,
+          "receipt": 0,
+          "NONE": 1
+        }
+      },
+      "register": {
+        "type": "choice",
+        "choice": "unspecified",
+        "confidence": 0.99,
+        "probabilities": {
+          "plural": 0,
+          "formal": 0,
+          "informal": 0,
+          "unspecified": 1
+        }
+      },
+      "sense": {
+        "type": "choice",
+        "choice": "UNKNOWN",
+        "confidence": 0.81,
+        "probabilities": {
+          "financial": 0.14,
+          "river": 0,
+          "NONE": 0,
+          "UNKNOWN": 0.86
+        }
+      }
+    }
+  },
+  {
+    "round": 2,
+    "id": "bundle_a1",
+    "task": "decision_bundle",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 300,
+    "choices": {
+      "action": "clarify",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "UNKNOWN"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 20,
+      "prompt_tokens": 915,
+      "total_tokens": 935,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 912
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 2,
+    "id": "sense_10",
+    "task": "word_sense",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 182,
+    "choices": {
+      "sense": "air"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 265,
+      "total_tokens": 271,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 256
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 2,
+    "id": "sense_10",
+    "task": "word_sense",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 329,
+    "choices": {
+      "sense": "air"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 534,
+      "output_tokens": 54
+    },
+    "jevAnswers": {
+      "sense": {
+        "type": "choice",
+        "choice": "air",
+        "confidence": 1,
+        "probabilities": {
+          "conscription": 0,
+          "UNKNOWN": 0,
+          "NONE": 0,
+          "document": 0,
+          "air": 1
+        }
+      }
+    }
+  },
+  {
+    "round": 2,
+    "id": "sense_11",
+    "task": "word_sense",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 283,
+    "choices": {
+      "sense": "sound"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 523,
+      "output_tokens": 52
+    },
+    "jevAnswers": {
+      "sense": {
+        "type": "choice",
+        "choice": "sound",
+        "confidence": 1,
+        "probabilities": {
+          "sales": 0,
+          "UNKNOWN": 0,
+          "field": 0,
+          "sound": 1,
+          "NONE": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 2,
+    "id": "sense_11",
+    "task": "word_sense",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 214,
+    "choices": {
+      "sense": "sound"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 262,
+      "total_tokens": 268,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 2,
+    "id": "bundle_a3",
+    "task": "decision_bundle",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 371,
+    "choices": {
+      "action": "clarify",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 20,
+      "prompt_tokens": 892,
+      "total_tokens": 912,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 2,
+    "id": "bundle_a3",
+    "task": "decision_bundle",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 323,
+    "choices": {
+      "action": "clarify",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 1369,
+      "output_tokens": 189
+    },
+    "jevAnswers": {
+      "action": {
+        "type": "choice",
+        "choice": "clarify",
+        "confidence": 0.99,
+        "probabilities": {
+          "clarify": 0.99,
+          "translate": 0.01
+        }
+      },
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.99,
+        "probabilities": {
+          "repeat": 0.01,
+          "reservation": 0,
+          "receipt": 0,
+          "station": 0,
+          "NONE": 0.99,
+          "slower": 0,
+          "card": 0,
+          "help": 0,
+          "understand": 0
+        }
+      },
+      "register": {
+        "type": "choice",
+        "choice": "unspecified",
+        "confidence": 0.99,
+        "probabilities": {
+          "unspecified": 0.99,
+          "plural": 0,
+          "informal": 0,
+          "formal": 0.01
+        }
+      },
+      "sense": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.9,
+        "probabilities": {
+          "NONE": 0.95,
+          "UNKNOWN": 0.05
+        }
+      }
+    }
+  },
+  {
+    "round": 2,
+    "id": "memory_m4",
+    "task": "memory_selection",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 274,
+    "choices": {
+      "memory": "station"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "input_tokens": 1027,
+      "output_tokens": 82
+    },
+    "jevAnswers": {
+      "memory": {
+        "type": "choice",
+        "choice": "station",
+        "confidence": 0.92,
+        "probabilities": {
+          "NONE": 0.06,
+          "help": 0,
+          "understand": 0,
+          "receipt": 0,
+          "station": 0.9400000000000001,
+          "slower": 0,
+          "reservation": 0,
+          "repeat": 0,
+          "card": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 2,
+    "id": "memory_m4",
+    "task": "memory_selection",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 208,
+    "choices": {
+      "memory": "station"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 643,
+      "total_tokens": 649,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 2,
+    "id": "bundle_m2",
+    "task": "decision_bundle",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 266,
+    "choices": {
+      "action": "translate",
+      "memory": "slower",
+      "register": "formal",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 20,
+      "prompt_tokens": 903,
+      "total_tokens": 923,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 896
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 2,
+    "id": "bundle_m2",
+    "task": "decision_bundle",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 311,
+    "choices": {
+      "action": "translate",
+      "memory": "slower",
+      "register": "formal",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 1380,
+      "output_tokens": 188
+    },
+    "jevAnswers": {
+      "action": {
+        "type": "choice",
+        "choice": "translate",
+        "confidence": 1,
+        "probabilities": {
+          "translate": 1,
+          "clarify": 0
+        }
+      },
+      "memory": {
+        "type": "choice",
+        "choice": "slower",
+        "confidence": 0.95,
+        "probabilities": {
+          "card": 0,
+          "understand": 0,
+          "reservation": 0,
+          "NONE": 0.04,
+          "slower": 0.96,
+          "help": 0,
+          "repeat": 0,
+          "receipt": 0,
+          "station": 0
+        }
+      },
+      "register": {
+        "type": "choice",
+        "choice": "formal",
+        "confidence": 0.99,
+        "probabilities": {
+          "informal": 0,
+          "formal": 0.99,
+          "unspecified": 0.01,
+          "plural": 0
+        }
+      },
+      "sense": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.99,
+        "probabilities": {
+          "UNKNOWN": 0.01,
+          "NONE": 0.99
+        }
+      }
+    }
+  },
+  {
+    "round": 2,
+    "id": "sense_7",
+    "task": "word_sense",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 272,
+    "choices": {
+      "sense": "network"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 516,
+      "output_tokens": 53
+    },
+    "jevAnswers": {
+      "sense": {
+        "type": "choice",
+        "choice": "network",
+        "confidence": 1,
+        "probabilities": {
+          "network": 1,
+          "wine": 0,
+          "harbor": 0,
+          "UNKNOWN": 0,
+          "NONE": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 2,
+    "id": "sense_7",
+    "task": "word_sense",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 231,
+    "choices": {
+      "sense": "network"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 248,
+      "total_tokens": 254,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 2,
+    "id": "memory_m7",
+    "task": "memory_selection",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 196,
+    "choices": {
+      "memory": "help"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 643,
+      "total_tokens": 649,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 640
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 2,
+    "id": "memory_m7",
+    "task": "memory_selection",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 299,
+    "choices": {
+      "memory": "help"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "input_tokens": 1027,
+      "output_tokens": 82
+    },
+    "jevAnswers": {
+      "memory": {
+        "type": "choice",
+        "choice": "help",
+        "confidence": 0.83,
+        "probabilities": {
+          "NONE": 0.15,
+          "understand": 0,
+          "reservation": 0,
+          "help": 0.85,
+          "card": 0,
+          "station": 0,
+          "repeat": 0,
+          "receipt": 0,
+          "slower": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 2,
+    "id": "memory_n7",
+    "task": "memory_selection",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 246,
+    "choices": {
+      "memory": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "input_tokens": 1016,
+      "output_tokens": 82
+    },
+    "jevAnswers": {
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.99,
+        "probabilities": {
+          "card": 0,
+          "understand": 0,
+          "reservation": 0,
+          "slower": 0,
+          "NONE": 0.99,
+          "help": 0,
+          "repeat": 0.01,
+          "receipt": 0,
+          "station": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 2,
+    "id": "memory_n7",
+    "task": "memory_selection",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 211,
+    "choices": {
+      "memory": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 631,
+      "total_tokens": 637,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 2,
+    "id": "sense_8",
+    "task": "word_sense",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 134,
+    "choices": {
+      "sense": "record"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 239,
+      "total_tokens": 245,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 224
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 2,
+    "id": "sense_8",
+    "task": "word_sense",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 286,
+    "choices": {
+      "sense": "record"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 492,
+      "output_tokens": 45
+    },
+    "jevAnswers": {
+      "sense": {
+        "type": "choice",
+        "choice": "record",
+        "confidence": 1,
+        "probabilities": {
+          "time": 0,
+          "UNKNOWN": 0,
+          "NONE": 0,
+          "record": 1
+        }
+      }
+    }
+  },
+  {
+    "round": 2,
+    "id": "sense_12",
+    "task": "word_sense",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 248,
+    "choices": {
+      "sense": "water"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 524,
+      "output_tokens": 52
+    },
+    "jevAnswers": {
+      "sense": {
+        "type": "choice",
+        "choice": "water",
+        "confidence": 1,
+        "probabilities": {
+          "present": 0,
+          "NONE": 0,
+          "water": 1,
+          "electric": 0,
+          "UNKNOWN": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 2,
+    "id": "sense_12",
+    "task": "word_sense",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 204,
+    "choices": {
+      "sense": "water flow; stroming"
+    },
+    "valid": false,
+    "correct": false,
+    "labelCorrect": 0,
+    "labelCount": 1,
+    "labels": {
+      "sense": false
+    },
+    "usage": {
+      "completion_tokens": 11,
+      "prompt_tokens": 258,
+      "total_tokens": 269,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 256
+      }
+    },
+    "finishReason": "stop",
+    "error": "invalid_choice"
+  },
+  {
+    "round": 2,
+    "id": "memory_m2",
+    "task": "memory_selection",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 250,
+    "choices": {
+      "memory": "slower"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "completion_tokens": 7,
+      "prompt_tokens": 642,
+      "total_tokens": 649,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 80
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 2,
+    "id": "memory_m2",
+    "task": "memory_selection",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 253,
+    "choices": {
+      "memory": "slower"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "input_tokens": 1026,
+      "output_tokens": 83
+    },
+    "jevAnswers": {
+      "memory": {
+        "type": "choice",
+        "choice": "slower",
+        "confidence": 0.92,
+        "probabilities": {
+          "repeat": 0,
+          "station": 0,
+          "understand": 0,
+          "reservation": 0,
+          "card": 0,
+          "NONE": 0.07,
+          "slower": 0.93,
+          "receipt": 0,
+          "help": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 2,
+    "id": "memory_m6",
+    "task": "memory_selection",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 304,
+    "choices": {
+      "memory": "reservation"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "input_tokens": 1027,
+      "output_tokens": 82
+    },
+    "jevAnswers": {
+      "memory": {
+        "type": "choice",
+        "choice": "reservation",
+        "confidence": 0.6,
+        "probabilities": {
+          "card": 0,
+          "receipt": 0,
+          "understand": 0,
+          "station": 0,
+          "help": 0,
+          "reservation": 0.65,
+          "slower": 0,
+          "repeat": 0,
+          "NONE": 0.35
+        }
+      }
+    }
+  },
+  {
+    "round": 2,
+    "id": "memory_m6",
+    "task": "memory_selection",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 183,
+    "choices": {
+      "memory": "reservation"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 642,
+      "total_tokens": 648,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 640
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 2,
+    "id": "bundle_s6",
+    "task": "decision_bundle",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 346,
+    "choices": {
+      "action": "clarify",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "gasket"
+    },
+    "valid": true,
+    "correct": false,
+    "labelCorrect": 3,
+    "labelCount": 4,
+    "labels": {
+      "action": false,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 21,
+      "prompt_tokens": 947,
+      "total_tokens": 968,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 944
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 2,
+    "id": "bundle_s6",
+    "task": "decision_bundle",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 292,
+    "choices": {
+      "action": "translate",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "gasket"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 1461,
+      "output_tokens": 213
+    },
+    "jevAnswers": {
+      "action": {
+        "type": "choice",
+        "choice": "translate",
+        "confidence": 0.99,
+        "probabilities": {
+          "translate": 1,
+          "clarify": 0
+        }
+      },
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 1,
+        "probabilities": {
+          "card": 0,
+          "receipt": 0,
+          "understand": 0,
+          "station": 0,
+          "help": 0,
+          "reservation": 0,
+          "repeat": 0,
+          "slower": 0,
+          "NONE": 1
+        }
+      },
+      "register": {
+        "type": "choice",
+        "choice": "unspecified",
+        "confidence": 1,
+        "probabilities": {
+          "plural": 0,
+          "formal": 0,
+          "unspecified": 1,
+          "informal": 0
+        }
+      },
+      "sense": {
+        "type": "choice",
+        "choice": "gasket",
+        "confidence": 1,
+        "probabilities": {
+          "UNKNOWN": 0,
+          "stamp": 0,
+          "animal": 0,
+          "gasket": 1,
+          "NONE": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 2,
+    "id": "bundle_m1",
+    "task": "decision_bundle",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 302,
+    "choices": {
+      "action": "translate",
+      "memory": "repeat",
+      "register": "formal",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 1380,
+      "output_tokens": 187
+    },
+    "jevAnswers": {
+      "action": {
+        "type": "choice",
+        "choice": "translate",
+        "confidence": 0.99,
+        "probabilities": {
+          "translate": 0.99,
+          "clarify": 0.01
+        }
+      },
+      "memory": {
+        "type": "choice",
+        "choice": "repeat",
+        "confidence": 0.87,
+        "probabilities": {
+          "NONE": 0.11,
+          "repeat": 0.89,
+          "help": 0,
+          "card": 0,
+          "receipt": 0,
+          "station": 0,
+          "slower": 0,
+          "reservation": 0,
+          "understand": 0
+        }
+      },
+      "register": {
+        "type": "choice",
+        "choice": "formal",
+        "confidence": 0.99,
+        "probabilities": {
+          "formal": 0.99,
+          "unspecified": 0.01,
+          "plural": 0,
+          "informal": 0
+        }
+      },
+      "sense": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.99,
+        "probabilities": {
+          "NONE": 0.99,
+          "UNKNOWN": 0.01
+        }
+      }
+    }
+  },
+  {
+    "round": 2,
+    "id": "bundle_m1",
+    "task": "decision_bundle",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 316,
+    "choices": {
+      "action": "translate",
+      "memory": "NONE",
+      "register": "formal",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": false,
+    "labelCorrect": 3,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": false,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 19,
+      "prompt_tokens": 903,
+      "total_tokens": 922,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 896
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 2,
+    "id": "bundle_a4",
+    "task": "decision_bundle",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 368,
+    "choices": {
+      "action": "clarify",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 20,
+      "prompt_tokens": 887,
+      "total_tokens": 907,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 2,
+    "id": "bundle_a4",
+    "task": "decision_bundle",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 349,
+    "choices": {
+      "action": "clarify",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 1365,
+      "output_tokens": 189
+    },
+    "jevAnswers": {
+      "action": {
+        "type": "choice",
+        "choice": "clarify",
+        "confidence": 0.93,
+        "probabilities": {
+          "translate": 0.03,
+          "clarify": 0.97
+        }
+      },
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 1,
+        "probabilities": {
+          "station": 0,
+          "repeat": 0,
+          "NONE": 1,
+          "reservation": 0,
+          "card": 0,
+          "slower": 0,
+          "help": 0,
+          "understand": 0,
+          "receipt": 0
+        }
+      },
+      "register": {
+        "type": "choice",
+        "choice": "unspecified",
+        "confidence": 0.99,
+        "probabilities": {
+          "unspecified": 0.99,
+          "plural": 0,
+          "formal": 0,
+          "informal": 0.01
+        }
+      },
+      "sense": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.77,
+        "probabilities": {
+          "UNKNOWN": 0.12,
+          "NONE": 0.88
+        }
+      }
+    }
+  },
+  {
+    "round": 2,
+    "id": "bundle_r2",
+    "task": "decision_bundle",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 378,
+    "choices": {
+      "action": "translate",
+      "memory": "NONE",
+      "register": "informal",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 1360,
+      "output_tokens": 188
+    },
+    "jevAnswers": {
+      "action": {
+        "type": "choice",
+        "choice": "translate",
+        "confidence": 0.98,
+        "probabilities": {
+          "translate": 0.99,
+          "clarify": 0.01
+        }
+      },
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 1,
+        "probabilities": {
+          "repeat": 0,
+          "understand": 0,
+          "station": 0,
+          "reservation": 0,
+          "slower": 0,
+          "receipt": 0,
+          "card": 0,
+          "NONE": 1,
+          "help": 0
+        }
+      },
+      "register": {
+        "type": "choice",
+        "choice": "informal",
+        "confidence": 0.99,
+        "probabilities": {
+          "unspecified": 0.01,
+          "plural": 0,
+          "informal": 0.99,
+          "formal": 0
+        }
+      },
+      "sense": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.99,
+        "probabilities": {
+          "UNKNOWN": 0,
+          "NONE": 1
+        }
+      }
+    }
+  },
+  {
+    "round": 2,
+    "id": "bundle_r2",
+    "task": "decision_bundle",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 346,
+    "choices": {
+      "action": "translate",
+      "memory": "NONE",
+      "register": "informal",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 19,
+      "prompt_tokens": 883,
+      "total_tokens": 902,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 2,
+    "id": "bundle_r4",
+    "task": "decision_bundle",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 357,
+    "choices": {
+      "action": "translate",
+      "memory": "NONE",
+      "register": "formal",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 19,
+      "prompt_tokens": 888,
+      "total_tokens": 907,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 880
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 2,
+    "id": "bundle_r4",
+    "task": "decision_bundle",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 342,
+    "choices": {
+      "action": "translate",
+      "memory": "NONE",
+      "register": "formal",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 1368,
+      "output_tokens": 187
+    },
+    "jevAnswers": {
+      "action": {
+        "type": "choice",
+        "choice": "translate",
+        "confidence": 1,
+        "probabilities": {
+          "translate": 1,
+          "clarify": 0
+        }
+      },
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 1,
+        "probabilities": {
+          "card": 0,
+          "receipt": 0,
+          "understand": 0,
+          "station": 0,
+          "help": 0,
+          "reservation": 0,
+          "slower": 0,
+          "repeat": 0,
+          "NONE": 1
+        }
+      },
+      "register": {
+        "type": "choice",
+        "choice": "formal",
+        "confidence": 1,
+        "probabilities": {
+          "plural": 0,
+          "formal": 1,
+          "unspecified": 0,
+          "informal": 0
+        }
+      },
+      "sense": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 1,
+        "probabilities": {
+          "UNKNOWN": 0,
+          "NONE": 1
+        }
+      }
+    }
+  },
+  {
+    "round": 2,
+    "id": "memory_m3",
+    "task": "memory_selection",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 270,
+    "choices": {
+      "memory": "card"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "input_tokens": 1029,
+      "output_tokens": 82
+    },
+    "jevAnswers": {
+      "memory": {
+        "type": "choice",
+        "choice": "card",
+        "confidence": 0.9,
+        "probabilities": {
+          "help": 0,
+          "reservation": 0,
+          "station": 0,
+          "understand": 0,
+          "NONE": 0.08,
+          "receipt": 0,
+          "repeat": 0,
+          "slower": 0,
+          "card": 0.92
+        }
+      }
+    }
+  },
+  {
+    "round": 2,
+    "id": "memory_m3",
+    "task": "memory_selection",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 202,
+    "choices": {
+      "memory": "card"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 645,
+      "total_tokens": 651,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 640
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 2,
+    "id": "sense_2",
+    "task": "word_sense",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 242,
+    "choices": {
+      "sense": "electrical"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 7,
+      "prompt_tokens": 260,
+      "total_tokens": 267,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 256
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 2,
+    "id": "sense_2",
+    "task": "word_sense",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 285,
+    "choices": {
+      "sense": "electrical"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 525,
+      "output_tokens": 56
+    },
+    "jevAnswers": {
+      "sense": {
+        "type": "choice",
+        "choice": "electrical",
+        "confidence": 1,
+        "probabilities": {
+          "NONE": 0,
+          "fee": 0,
+          "UNKNOWN": 0,
+          "accusation": 0,
+          "electrical": 1
+        }
+      }
+    }
+  },
+  {
+    "round": 2,
+    "id": "memory_new2",
+    "task": "memory_selection",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 333,
+    "choices": {
+      "memory": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "input_tokens": 1011,
+      "output_tokens": 82
+    },
+    "jevAnswers": {
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.99,
+        "probabilities": {
+          "reservation": 0.01,
+          "slower": 0,
+          "receipt": 0,
+          "station": 0,
+          "help": 0,
+          "understand": 0,
+          "repeat": 0,
+          "card": 0,
+          "NONE": 0.99
+        }
+      }
+    }
+  },
+  {
+    "round": 2,
+    "id": "memory_new2",
+    "task": "memory_selection",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 156,
+    "choices": {
+      "memory": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 626,
+      "total_tokens": 632,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 624
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 2,
+    "id": "sense_4",
+    "task": "word_sense",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 146,
+    "choices": {
+      "sense": "animal"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 241,
+      "total_tokens": 247,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 240
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 2,
+    "id": "sense_4",
+    "task": "word_sense",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 310,
+    "choices": {
+      "sense": "animal"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 496,
+      "output_tokens": 45
+    },
+    "jevAnswers": {
+      "sense": {
+        "type": "choice",
+        "choice": "animal",
+        "confidence": 1,
+        "probabilities": {
+          "UNKNOWN": 0,
+          "sport": 0,
+          "NONE": 0,
+          "animal": 1
+        }
+      }
+    }
+  },
+  {
+    "round": 2,
+    "id": "sense_6",
+    "task": "word_sense",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 276,
+    "choices": {
+      "sense": "gasket"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 533,
+      "output_tokens": 56
+    },
+    "jevAnswers": {
+      "sense": {
+        "type": "choice",
+        "choice": "gasket",
+        "confidence": 1,
+        "probabilities": {
+          "NONE": 0,
+          "UNKNOWN": 0,
+          "stamp": 0,
+          "animal": 0,
+          "gasket": 1
+        }
+      }
+    }
+  },
+  {
+    "round": 2,
+    "id": "sense_6",
+    "task": "word_sense",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 212,
+    "choices": {
+      "sense": "gasket"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 7,
+      "prompt_tokens": 267,
+      "total_tokens": 274,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 256
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 2,
+    "id": "memory_n8",
+    "task": "memory_selection",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 181,
+    "choices": {
+      "memory": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 627,
+      "total_tokens": 633,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 624
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 2,
+    "id": "memory_n8",
+    "task": "memory_selection",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 256,
+    "choices": {
+      "memory": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "input_tokens": 1012,
+      "output_tokens": 82
+    },
+    "jevAnswers": {
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.99,
+        "probabilities": {
+          "card": 0,
+          "receipt": 0,
+          "slower": 0,
+          "NONE": 0.99,
+          "help": 0,
+          "understand": 0,
+          "repeat": 0,
+          "station": 0,
+          "reservation": 0.01
+        }
+      }
+    }
+  },
+  {
+    "round": 2,
+    "id": "sense_9",
+    "task": "word_sense",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 258,
+    "choices": {
+      "sense": "penalty"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 519,
+      "output_tokens": 54
+    },
+    "jevAnswers": {
+      "sense": {
+        "type": "choice",
+        "choice": "penalty",
+        "confidence": 1,
+        "probabilities": {
+          "quality": 0,
+          "NONE": 0,
+          "UNKNOWN": 0,
+          "penalty": 1,
+          "thin": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 2,
+    "id": "sense_9",
+    "task": "word_sense",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 191,
+    "choices": {
+      "sense": "penalty"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 7,
+      "prompt_tokens": 252,
+      "total_tokens": 259,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 240
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 2,
+    "id": "bundle_r1",
+    "task": "decision_bundle",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 486,
+    "choices": {
+      "action": "translate",
+      "memory": "NONE",
+      "register": "formal",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 19,
+      "prompt_tokens": 884,
+      "total_tokens": 903,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 80
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 2,
+    "id": "bundle_r1",
+    "task": "decision_bundle",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 261,
+    "choices": {
+      "action": "translate",
+      "memory": "NONE",
+      "register": "formal",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 1361,
+      "output_tokens": 187
+    },
+    "jevAnswers": {
+      "action": {
+        "type": "choice",
+        "choice": "translate",
+        "confidence": 0.9,
+        "probabilities": {
+          "clarify": 0.05,
+          "translate": 0.95
+        }
+      },
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 1,
+        "probabilities": {
+          "NONE": 1,
+          "understand": 0,
+          "reservation": 0,
+          "help": 0,
+          "card": 0,
+          "station": 0,
+          "slower": 0,
+          "receipt": 0,
+          "repeat": 0
+        }
+      },
+      "register": {
+        "type": "choice",
+        "choice": "formal",
+        "confidence": 1,
+        "probabilities": {
+          "unspecified": 0,
+          "informal": 0,
+          "formal": 1,
+          "plural": 0
+        }
+      },
+      "sense": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.99,
+        "probabilities": {
+          "NONE": 1,
+          "UNKNOWN": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 2,
+    "id": "memory_new1",
+    "task": "memory_selection",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 249,
+    "choices": {
+      "memory": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "input_tokens": 1014,
+      "output_tokens": 82
+    },
+    "jevAnswers": {
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 1,
+        "probabilities": {
+          "receipt": 0,
+          "slower": 0,
+          "help": 0,
+          "reservation": 0,
+          "repeat": 0,
+          "station": 0,
+          "understand": 0,
+          "NONE": 1,
+          "card": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 2,
+    "id": "memory_new1",
+    "task": "memory_selection",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 216,
+    "choices": {
+      "memory": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 629,
+      "total_tokens": 635,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 2,
+    "id": "bundle_s4",
+    "task": "decision_bundle",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 291,
+    "choices": {
+      "action": "translate",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "animal"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 19,
+      "prompt_tokens": 921,
+      "total_tokens": 940,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 912
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 2,
+    "id": "bundle_s4",
+    "task": "decision_bundle",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 298,
+    "choices": {
+      "action": "translate",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "animal"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 1424,
+      "output_tokens": 202
+    },
+    "jevAnswers": {
+      "action": {
+        "type": "choice",
+        "choice": "translate",
+        "confidence": 0.99,
+        "probabilities": {
+          "clarify": 0,
+          "translate": 1
+        }
+      },
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 1,
+        "probabilities": {
+          "NONE": 1,
+          "reservation": 0,
+          "help": 0,
+          "slower": 0,
+          "card": 0,
+          "station": 0,
+          "repeat": 0,
+          "understand": 0,
+          "receipt": 0
+        }
+      },
+      "register": {
+        "type": "choice",
+        "choice": "unspecified",
+        "confidence": 0.97,
+        "probabilities": {
+          "unspecified": 0.98,
+          "informal": 0.01,
+          "plural": 0,
+          "formal": 0.01
+        }
+      },
+      "sense": {
+        "type": "choice",
+        "choice": "animal",
+        "confidence": 1,
+        "probabilities": {
+          "UNKNOWN": 0,
+          "NONE": 0,
+          "sport": 0,
+          "animal": 1
+        }
+      }
+    }
+  },
+  {
+    "round": 2,
+    "id": "sense_3",
+    "task": "word_sense",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 271,
+    "choices": {
+      "sense": "rate"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 526,
+      "output_tokens": 55
+    },
+    "jevAnswers": {
+      "sense": {
+        "type": "choice",
+        "choice": "rate",
+        "confidence": 0.99,
+        "probabilities": {
+          "UNKNOWN": 0,
+          "NONE": 0,
+          "curiosity": 0.01,
+          "stake": 0,
+          "rate": 0.99
+        }
+      }
+    }
+  },
+  {
+    "round": 2,
+    "id": "sense_3",
+    "task": "word_sense",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 137,
+    "choices": {
+      "sense": "rate"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 258,
+      "total_tokens": 264,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 256
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 2,
+    "id": "memory_m1",
+    "task": "memory_selection",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 149,
+    "choices": {
+      "memory": "repeat"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 642,
+      "total_tokens": 648,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 640
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 2,
+    "id": "memory_m1",
+    "task": "memory_selection",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 288,
+    "choices": {
+      "memory": "repeat"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "input_tokens": 1026,
+      "output_tokens": 82
+    },
+    "jevAnswers": {
+      "memory": {
+        "type": "choice",
+        "choice": "repeat",
+        "confidence": 0.9,
+        "probabilities": {
+          "NONE": 0.08,
+          "card": 0,
+          "station": 0,
+          "receipt": 0,
+          "slower": 0,
+          "understand": 0,
+          "repeat": 0.92,
+          "help": 0,
+          "reservation": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 2,
+    "id": "sense_5",
+    "task": "word_sense",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 246,
+    "choices": {
+      "sense": "coil"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 515,
+      "output_tokens": 52
+    },
+    "jevAnswers": {
+      "sense": {
+        "type": "choice",
+        "choice": "coil",
+        "confidence": 1,
+        "probabilities": {
+          "water": 0,
+          "NONE": 0,
+          "coil": 1,
+          "UNKNOWN": 0,
+          "season": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 2,
+    "id": "sense_5",
+    "task": "word_sense",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 170,
+    "choices": {
+      "sense": "elastic mechanical coil; veer"
+    },
+    "valid": false,
+    "correct": false,
+    "labelCorrect": 0,
+    "labelCount": 1,
+    "labels": {
+      "sense": false
+    },
+    "usage": {
+      "completion_tokens": 11,
+      "prompt_tokens": 250,
+      "total_tokens": 261,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 240
+      }
+    },
+    "finishReason": "stop",
+    "error": "invalid_choice"
+  },
+  {
+    "round": 2,
+    "id": "bundle_r3",
+    "task": "decision_bundle",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 407,
+    "choices": {
+      "action": "translate",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": false,
+    "labelCorrect": 3,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": false,
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 19,
+      "prompt_tokens": 881,
+      "total_tokens": 900,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 2,
+    "id": "bundle_r3",
+    "task": "decision_bundle",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 303,
+    "choices": {
+      "action": "translate",
+      "memory": "NONE",
+      "register": "plural",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 1358,
+      "output_tokens": 186
+    },
+    "jevAnswers": {
+      "action": {
+        "type": "choice",
+        "choice": "translate",
+        "confidence": 0.89,
+        "probabilities": {
+          "clarify": 0.06,
+          "translate": 0.94
+        }
+      },
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 1,
+        "probabilities": {
+          "card": 0,
+          "receipt": 0,
+          "slower": 0,
+          "NONE": 1,
+          "help": 0,
+          "understand": 0,
+          "repeat": 0,
+          "station": 0,
+          "reservation": 0
+        }
+      },
+      "register": {
+        "type": "choice",
+        "choice": "plural",
+        "confidence": 0.67,
+        "probabilities": {
+          "formal": 0.02,
+          "plural": 0.75,
+          "unspecified": 0.23,
+          "informal": 0
+        }
+      },
+      "sense": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.99,
+        "probabilities": {
+          "UNKNOWN": 0,
+          "NONE": 1
+        }
+      }
+    }
+  },
+  {
+    "round": 2,
+    "id": "bundle_a2",
+    "task": "decision_bundle",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 264,
+    "choices": {
+      "action": "clarify",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 1368,
+      "output_tokens": 189
+    },
+    "jevAnswers": {
+      "action": {
+        "type": "choice",
+        "choice": "clarify",
+        "confidence": 0.98,
+        "probabilities": {
+          "translate": 0.01,
+          "clarify": 0.99
+        }
+      },
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.99,
+        "probabilities": {
+          "help": 0,
+          "reservation": 0,
+          "station": 0,
+          "understand": 0,
+          "NONE": 1,
+          "receipt": 0,
+          "repeat": 0,
+          "slower": 0,
+          "card": 0
+        }
+      },
+      "register": {
+        "type": "choice",
+        "choice": "unspecified",
+        "confidence": 0.99,
+        "probabilities": {
+          "plural": 0,
+          "informal": 0,
+          "formal": 0,
+          "unspecified": 1
+        }
+      },
+      "sense": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.98,
+        "probabilities": {
+          "NONE": 0.99,
+          "UNKNOWN": 0.01
+        }
+      }
+    }
+  },
+  {
+    "round": 2,
+    "id": "bundle_a2",
+    "task": "decision_bundle",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 392,
+    "choices": {
+      "action": "clarify",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 20,
+      "prompt_tokens": 890,
+      "total_tokens": 910,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 880
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 2,
+    "id": "sense_1",
+    "task": "word_sense",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 239,
+    "choices": {
+      "sense": "river"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 254,
+      "total_tokens": 260,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 2,
+    "id": "sense_1",
+    "task": "word_sense",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 266,
+    "choices": {
+      "sense": "river"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 521,
+      "output_tokens": 52
+    },
+    "jevAnswers": {
+      "sense": {
+        "type": "choice",
+        "choice": "river",
+        "confidence": 0.99,
+        "probabilities": {
+          "bench": 0,
+          "UNKNOWN": 0,
+          "NONE": 0,
+          "financial": 0,
+          "river": 1
+        }
+      }
+    }
+  },
+  {
+    "round": 2,
+    "id": "memory_m5",
+    "task": "memory_selection",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 261,
+    "choices": {
+      "memory": "receipt"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "input_tokens": 1027,
+      "output_tokens": 82
+    },
+    "jevAnswers": {
+      "memory": {
+        "type": "choice",
+        "choice": "receipt",
+        "confidence": 0.94,
+        "probabilities": {
+          "understand": 0,
+          "slower": 0,
+          "reservation": 0,
+          "card": 0,
+          "receipt": 0.94,
+          "repeat": 0,
+          "help": 0,
+          "NONE": 0.06,
+          "station": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 2,
+    "id": "memory_m5",
+    "task": "memory_selection",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 185,
+    "choices": {
+      "memory": "receipt"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 643,
+      "total_tokens": 649,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 640
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 2,
+    "id": "memory_m8",
+    "task": "memory_selection",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 208,
+    "choices": {
+      "memory": "understand"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "completion_tokens": 7,
+      "prompt_tokens": 639,
+      "total_tokens": 646,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 624
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 2,
+    "id": "memory_m8",
+    "task": "memory_selection",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 283,
+    "choices": {
+      "memory": "understand"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "input_tokens": 1024,
+      "output_tokens": 83
+    },
+    "jevAnswers": {
+      "memory": {
+        "type": "choice",
+        "choice": "understand",
+        "confidence": 0.99,
+        "probabilities": {
+          "station": 0,
+          "help": 0,
+          "card": 0,
+          "repeat": 0,
+          "reservation": 0,
+          "receipt": 0,
+          "slower": 0,
+          "understand": 1,
+          "NONE": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 3,
+    "id": "sense_10",
+    "task": "word_sense",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 178,
+    "choices": {
+      "sense": "air"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 265,
+      "total_tokens": 271,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 256
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 3,
+    "id": "sense_10",
+    "task": "word_sense",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 312,
+    "choices": {
+      "sense": "air"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 534,
+      "output_tokens": 54
+    },
+    "jevAnswers": {
+      "sense": {
+        "type": "choice",
+        "choice": "air",
+        "confidence": 1,
+        "probabilities": {
+          "conscription": 0,
+          "NONE": 0,
+          "air": 1,
+          "UNKNOWN": 0,
+          "document": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 3,
+    "id": "memory_m7",
+    "task": "memory_selection",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 327,
+    "choices": {
+      "memory": "help"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "input_tokens": 1027,
+      "output_tokens": 82
+    },
+    "jevAnswers": {
+      "memory": {
+        "type": "choice",
+        "choice": "help",
+        "confidence": 0.83,
+        "probabilities": {
+          "understand": 0,
+          "reservation": 0,
+          "receipt": 0,
+          "station": 0,
+          "NONE": 0.15,
+          "help": 0.85,
+          "repeat": 0,
+          "slower": 0,
+          "card": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 3,
+    "id": "memory_m7",
+    "task": "memory_selection",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 202,
+    "choices": {
+      "memory": "help"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 643,
+      "total_tokens": 649,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 640
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 3,
+    "id": "memory_n8",
+    "task": "memory_selection",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 194,
+    "choices": {
+      "memory": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 627,
+      "total_tokens": 633,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 624
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 3,
+    "id": "memory_n8",
+    "task": "memory_selection",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 259,
+    "choices": {
+      "memory": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "input_tokens": 1012,
+      "output_tokens": 82
+    },
+    "jevAnswers": {
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.98,
+        "probabilities": {
+          "understand": 0.01,
+          "reservation": 0.01,
+          "station": 0,
+          "help": 0,
+          "NONE": 0.98,
+          "receipt": 0,
+          "repeat": 0,
+          "card": 0,
+          "slower": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 3,
+    "id": "bundle_r1",
+    "task": "decision_bundle",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 320,
+    "choices": {
+      "action": "translate",
+      "memory": "NONE",
+      "register": "formal",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 1361,
+      "output_tokens": 187
+    },
+    "jevAnswers": {
+      "action": {
+        "type": "choice",
+        "choice": "translate",
+        "confidence": 0.92,
+        "probabilities": {
+          "translate": 0.96,
+          "clarify": 0.04
+        }
+      },
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 1,
+        "probabilities": {
+          "NONE": 1,
+          "understand": 0,
+          "receipt": 0,
+          "help": 0,
+          "slower": 0,
+          "repeat": 0,
+          "reservation": 0,
+          "card": 0,
+          "station": 0
+        }
+      },
+      "register": {
+        "type": "choice",
+        "choice": "formal",
+        "confidence": 0.99,
+        "probabilities": {
+          "informal": 0,
+          "plural": 0,
+          "formal": 1,
+          "unspecified": 0
+        }
+      },
+      "sense": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.99,
+        "probabilities": {
+          "NONE": 1,
+          "UNKNOWN": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 3,
+    "id": "bundle_r1",
+    "task": "decision_bundle",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 351,
+    "choices": {
+      "action": "translate",
+      "memory": "NONE",
+      "register": "formal",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 19,
+      "prompt_tokens": 884,
+      "total_tokens": 903,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 880
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 3,
+    "id": "memory_m3",
+    "task": "memory_selection",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 346,
+    "choices": {
+      "memory": "card"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 645,
+      "total_tokens": 651,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 640
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 3,
+    "id": "memory_m3",
+    "task": "memory_selection",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 296,
+    "choices": {
+      "memory": "card"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "input_tokens": 1029,
+      "output_tokens": 82
+    },
+    "jevAnswers": {
+      "memory": {
+        "type": "choice",
+        "choice": "card",
+        "confidence": 0.92,
+        "probabilities": {
+          "NONE": 0.07,
+          "understand": 0,
+          "reservation": 0,
+          "help": 0,
+          "card": 0.93,
+          "station": 0,
+          "slower": 0,
+          "receipt": 0,
+          "repeat": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 3,
+    "id": "sense_1",
+    "task": "word_sense",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 287,
+    "choices": {
+      "sense": "river"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 521,
+      "output_tokens": 52
+    },
+    "jevAnswers": {
+      "sense": {
+        "type": "choice",
+        "choice": "river",
+        "confidence": 0.99,
+        "probabilities": {
+          "river": 0.99,
+          "UNKNOWN": 0,
+          "NONE": 0,
+          "financial": 0.01,
+          "bench": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 3,
+    "id": "sense_1",
+    "task": "word_sense",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 179,
+    "choices": {
+      "sense": "river"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 254,
+      "total_tokens": 260,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 240
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 3,
+    "id": "sense_2",
+    "task": "word_sense",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 212,
+    "choices": {
+      "sense": "electrical"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 7,
+      "prompt_tokens": 260,
+      "total_tokens": 267,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 256
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 3,
+    "id": "sense_2",
+    "task": "word_sense",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 306,
+    "choices": {
+      "sense": "electrical"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 525,
+      "output_tokens": 56
+    },
+    "jevAnswers": {
+      "sense": {
+        "type": "choice",
+        "choice": "electrical",
+        "confidence": 1,
+        "probabilities": {
+          "NONE": 0,
+          "electrical": 1,
+          "accusation": 0,
+          "UNKNOWN": 0,
+          "fee": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 3,
+    "id": "memory_m4",
+    "task": "memory_selection",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 275,
+    "choices": {
+      "memory": "station"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "input_tokens": 1027,
+      "output_tokens": 82
+    },
+    "jevAnswers": {
+      "memory": {
+        "type": "choice",
+        "choice": "station",
+        "confidence": 0.93,
+        "probabilities": {
+          "help": 0,
+          "NONE": 0.06,
+          "reservation": 0,
+          "understand": 0,
+          "card": 0,
+          "slower": 0,
+          "receipt": 0,
+          "station": 0.94,
+          "repeat": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 3,
+    "id": "memory_m4",
+    "task": "memory_selection",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 216,
+    "choices": {
+      "memory": "station"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 643,
+      "total_tokens": 649,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 640
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 3,
+    "id": "bundle_a4",
+    "task": "decision_bundle",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 348,
+    "choices": {
+      "action": "clarify",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 20,
+      "prompt_tokens": 887,
+      "total_tokens": 907,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 880
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 3,
+    "id": "bundle_a4",
+    "task": "decision_bundle",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 402,
+    "choices": {
+      "action": "clarify",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 1365,
+      "output_tokens": 189
+    },
+    "jevAnswers": {
+      "action": {
+        "type": "choice",
+        "choice": "clarify",
+        "confidence": 0.94,
+        "probabilities": {
+          "clarify": 0.97,
+          "translate": 0.03
+        }
+      },
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 1,
+        "probabilities": {
+          "slower": 0,
+          "repeat": 0,
+          "reservation": 0,
+          "receipt": 0,
+          "help": 0,
+          "NONE": 1,
+          "understand": 0,
+          "station": 0,
+          "card": 0
+        }
+      },
+      "register": {
+        "type": "choice",
+        "choice": "unspecified",
+        "confidence": 0.99,
+        "probabilities": {
+          "unspecified": 0.99,
+          "informal": 0.01,
+          "plural": 0,
+          "formal": 0
+        }
+      },
+      "sense": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.77,
+        "probabilities": {
+          "NONE": 0.88,
+          "UNKNOWN": 0.12
+        }
+      }
+    }
+  },
+  {
+    "round": 3,
+    "id": "sense_3",
+    "task": "word_sense",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 246,
+    "choices": {
+      "sense": "rate"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 526,
+      "output_tokens": 55
+    },
+    "jevAnswers": {
+      "sense": {
+        "type": "choice",
+        "choice": "rate",
+        "confidence": 0.98,
+        "probabilities": {
+          "NONE": 0,
+          "UNKNOWN": 0,
+          "rate": 0.99,
+          "curiosity": 0.01,
+          "stake": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 3,
+    "id": "sense_3",
+    "task": "word_sense",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 332,
+    "choices": {
+      "sense": "rate"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 258,
+      "total_tokens": 264,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 3,
+    "id": "bundle_a1",
+    "task": "decision_bundle",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 469,
+    "choices": {
+      "action": "clarify",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "UNKNOWN"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 20,
+      "prompt_tokens": 915,
+      "total_tokens": 935,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 3,
+    "id": "bundle_a1",
+    "task": "decision_bundle",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 313,
+    "choices": {
+      "action": "clarify",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "UNKNOWN"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 1419,
+      "output_tokens": 203
+    },
+    "jevAnswers": {
+      "action": {
+        "type": "choice",
+        "choice": "clarify",
+        "confidence": 0.89,
+        "probabilities": {
+          "translate": 0.06,
+          "clarify": 0.94
+        }
+      },
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 1,
+        "probabilities": {
+          "card": 0,
+          "reservation": 0,
+          "repeat": 0,
+          "help": 0,
+          "understand": 0,
+          "station": 0,
+          "slower": 0,
+          "receipt": 0,
+          "NONE": 1
+        }
+      },
+      "register": {
+        "type": "choice",
+        "choice": "unspecified",
+        "confidence": 1,
+        "probabilities": {
+          "plural": 0,
+          "formal": 0,
+          "informal": 0,
+          "unspecified": 1
+        }
+      },
+      "sense": {
+        "type": "choice",
+        "choice": "UNKNOWN",
+        "confidence": 0.87,
+        "probabilities": {
+          "financial": 0.09,
+          "river": 0,
+          "NONE": 0,
+          "UNKNOWN": 0.91
+        }
+      }
+    }
+  },
+  {
+    "round": 3,
+    "id": "bundle_m1",
+    "task": "decision_bundle",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 293,
+    "choices": {
+      "action": "translate",
+      "memory": "repeat",
+      "register": "formal",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 1380,
+      "output_tokens": 187
+    },
+    "jevAnswers": {
+      "action": {
+        "type": "choice",
+        "choice": "translate",
+        "confidence": 0.99,
+        "probabilities": {
+          "translate": 1,
+          "clarify": 0
+        }
+      },
+      "memory": {
+        "type": "choice",
+        "choice": "repeat",
+        "confidence": 0.87,
+        "probabilities": {
+          "receipt": 0,
+          "card": 0,
+          "repeat": 0.89,
+          "help": 0,
+          "understand": 0,
+          "NONE": 0.11,
+          "station": 0,
+          "reservation": 0,
+          "slower": 0
+        }
+      },
+      "register": {
+        "type": "choice",
+        "choice": "formal",
+        "confidence": 0.99,
+        "probabilities": {
+          "plural": 0,
+          "informal": 0,
+          "unspecified": 0.01,
+          "formal": 0.99
+        }
+      },
+      "sense": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.98,
+        "probabilities": {
+          "NONE": 0.99,
+          "UNKNOWN": 0.01
+        }
+      }
+    }
+  },
+  {
+    "round": 3,
+    "id": "bundle_m1",
+    "task": "decision_bundle",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 546,
+    "choices": {
+      "action": "translate",
+      "memory": "NONE",
+      "register": "formal",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": false,
+    "labelCorrect": 3,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": false,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 19,
+      "prompt_tokens": 903,
+      "total_tokens": 922,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 896
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 3,
+    "id": "sense_7",
+    "task": "word_sense",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 196,
+    "choices": {
+      "sense": "network"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 248,
+      "total_tokens": 254,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 240
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 3,
+    "id": "sense_7",
+    "task": "word_sense",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 289,
+    "choices": {
+      "sense": "network"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 516,
+      "output_tokens": 53
+    },
+    "jevAnswers": {
+      "sense": {
+        "type": "choice",
+        "choice": "network",
+        "confidence": 1,
+        "probabilities": {
+          "wine": 0,
+          "NONE": 0,
+          "harbor": 0,
+          "network": 1,
+          "UNKNOWN": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 3,
+    "id": "memory_m6",
+    "task": "memory_selection",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 292,
+    "choices": {
+      "memory": "reservation"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "input_tokens": 1027,
+      "output_tokens": 82
+    },
+    "jevAnswers": {
+      "memory": {
+        "type": "choice",
+        "choice": "reservation",
+        "confidence": 0.55,
+        "probabilities": {
+          "station": 0,
+          "NONE": 0.39,
+          "reservation": 0.61,
+          "repeat": 0,
+          "receipt": 0,
+          "understand": 0,
+          "help": 0,
+          "slower": 0,
+          "card": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 3,
+    "id": "memory_m6",
+    "task": "memory_selection",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 284,
+    "choices": {
+      "memory": "reservation"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 642,
+      "total_tokens": 648,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 640
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 3,
+    "id": "sense_12",
+    "task": "word_sense",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 427,
+    "choices": {
+      "sense": "water flow; stroming"
+    },
+    "valid": false,
+    "correct": false,
+    "labelCorrect": 0,
+    "labelCount": 1,
+    "labels": {
+      "sense": false
+    },
+    "usage": {
+      "completion_tokens": 11,
+      "prompt_tokens": 258,
+      "total_tokens": 269,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop",
+    "error": "invalid_choice"
+  },
+  {
+    "round": 3,
+    "id": "sense_12",
+    "task": "word_sense",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 285,
+    "choices": {
+      "sense": "water"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 524,
+      "output_tokens": 52
+    },
+    "jevAnswers": {
+      "sense": {
+        "type": "choice",
+        "choice": "water",
+        "confidence": 1,
+        "probabilities": {
+          "water": 1,
+          "UNKNOWN": 0,
+          "NONE": 0,
+          "electric": 0,
+          "present": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 3,
+    "id": "memory_new1",
+    "task": "memory_selection",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 294,
+    "choices": {
+      "memory": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "input_tokens": 1014,
+      "output_tokens": 82
+    },
+    "jevAnswers": {
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 1,
+        "probabilities": {
+          "understand": 0,
+          "station": 0,
+          "repeat": 0,
+          "card": 0,
+          "reservation": 0,
+          "NONE": 1,
+          "slower": 0,
+          "receipt": 0,
+          "help": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 3,
+    "id": "memory_new1",
+    "task": "memory_selection",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 309,
+    "choices": {
+      "memory": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 629,
+      "total_tokens": 635,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 624
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 3,
+    "id": "memory_m1",
+    "task": "memory_selection",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 189,
+    "choices": {
+      "memory": "repeat"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 642,
+      "total_tokens": 648,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 640
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 3,
+    "id": "memory_m1",
+    "task": "memory_selection",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 311,
+    "choices": {
+      "memory": "repeat"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "input_tokens": 1026,
+      "output_tokens": 82
+    },
+    "jevAnswers": {
+      "memory": {
+        "type": "choice",
+        "choice": "repeat",
+        "confidence": 0.88,
+        "probabilities": {
+          "station": 0,
+          "receipt": 0,
+          "understand": 0,
+          "NONE": 0.11,
+          "slower": 0,
+          "card": 0,
+          "repeat": 0.89,
+          "reservation": 0,
+          "help": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 3,
+    "id": "memory_m5",
+    "task": "memory_selection",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 308,
+    "choices": {
+      "memory": "receipt"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "input_tokens": 1027,
+      "output_tokens": 82
+    },
+    "jevAnswers": {
+      "memory": {
+        "type": "choice",
+        "choice": "receipt",
+        "confidence": 0.94,
+        "probabilities": {
+          "slower": 0,
+          "card": 0,
+          "reservation": 0,
+          "help": 0,
+          "NONE": 0.05,
+          "receipt": 0.95,
+          "repeat": 0,
+          "station": 0,
+          "understand": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 3,
+    "id": "memory_m5",
+    "task": "memory_selection",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 323,
+    "choices": {
+      "memory": "receipt"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 643,
+      "total_tokens": 649,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 640
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 3,
+    "id": "sense_11",
+    "task": "word_sense",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 256,
+    "choices": {
+      "sense": "sound"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 262,
+      "total_tokens": 268,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 3,
+    "id": "sense_11",
+    "task": "word_sense",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 318,
+    "choices": {
+      "sense": "sound"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 523,
+      "output_tokens": 52
+    },
+    "jevAnswers": {
+      "sense": {
+        "type": "choice",
+        "choice": "sound",
+        "confidence": 1,
+        "probabilities": {
+          "field": 0,
+          "sales": 0,
+          "NONE": 0,
+          "UNKNOWN": 0,
+          "sound": 1
+        }
+      }
+    }
+  },
+  {
+    "round": 3,
+    "id": "bundle_a2",
+    "task": "decision_bundle",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 308,
+    "choices": {
+      "action": "clarify",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 1368,
+      "output_tokens": 189
+    },
+    "jevAnswers": {
+      "action": {
+        "type": "choice",
+        "choice": "clarify",
+        "confidence": 0.94,
+        "probabilities": {
+          "translate": 0.03,
+          "clarify": 0.97
+        }
+      },
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.99,
+        "probabilities": {
+          "help": 0,
+          "card": 0,
+          "station": 0,
+          "receipt": 0,
+          "slower": 0,
+          "understand": 0,
+          "repeat": 0,
+          "NONE": 1,
+          "reservation": 0
+        }
+      },
+      "register": {
+        "type": "choice",
+        "choice": "unspecified",
+        "confidence": 0.99,
+        "probabilities": {
+          "plural": 0,
+          "formal": 0,
+          "informal": 0,
+          "unspecified": 1
+        }
+      },
+      "sense": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.97,
+        "probabilities": {
+          "UNKNOWN": 0.01,
+          "NONE": 0.99
+        }
+      }
+    }
+  },
+  {
+    "round": 3,
+    "id": "bundle_a2",
+    "task": "decision_bundle",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 618,
+    "choices": {
+      "action": "clarify",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 20,
+      "prompt_tokens": 890,
+      "total_tokens": 910,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 880
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 3,
+    "id": "sense_5",
+    "task": "word_sense",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 223,
+    "choices": {
+      "sense": "elastic mechanical coil; veer"
+    },
+    "valid": false,
+    "correct": false,
+    "labelCorrect": 0,
+    "labelCount": 1,
+    "labels": {
+      "sense": false
+    },
+    "usage": {
+      "completion_tokens": 11,
+      "prompt_tokens": 250,
+      "total_tokens": 261,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 240
+      }
+    },
+    "finishReason": "stop",
+    "error": "invalid_choice"
+  },
+  {
+    "round": 3,
+    "id": "sense_5",
+    "task": "word_sense",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 395,
+    "choices": {
+      "sense": "coil"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 515,
+      "output_tokens": 52
+    },
+    "jevAnswers": {
+      "sense": {
+        "type": "choice",
+        "choice": "coil",
+        "confidence": 1,
+        "probabilities": {
+          "NONE": 0,
+          "water": 0,
+          "UNKNOWN": 0,
+          "coil": 1,
+          "season": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 3,
+    "id": "bundle_s6",
+    "task": "decision_bundle",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 310,
+    "choices": {
+      "action": "translate",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "gasket"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 1461,
+      "output_tokens": 213
+    },
+    "jevAnswers": {
+      "action": {
+        "type": "choice",
+        "choice": "translate",
+        "confidence": 1,
+        "probabilities": {
+          "clarify": 0,
+          "translate": 1
+        }
+      },
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 1,
+        "probabilities": {
+          "station": 0,
+          "help": 0,
+          "card": 0,
+          "repeat": 0,
+          "reservation": 0,
+          "receipt": 0,
+          "slower": 0,
+          "understand": 0,
+          "NONE": 1
+        }
+      },
+      "register": {
+        "type": "choice",
+        "choice": "unspecified",
+        "confidence": 1,
+        "probabilities": {
+          "plural": 0,
+          "formal": 0,
+          "informal": 0,
+          "unspecified": 1
+        }
+      },
+      "sense": {
+        "type": "choice",
+        "choice": "gasket",
+        "confidence": 1,
+        "probabilities": {
+          "stamp": 0,
+          "UNKNOWN": 0,
+          "animal": 0,
+          "gasket": 1,
+          "NONE": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 3,
+    "id": "bundle_s6",
+    "task": "decision_bundle",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 651,
+    "choices": {
+      "action": "clarify",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "gasket"
+    },
+    "valid": true,
+    "correct": false,
+    "labelCorrect": 3,
+    "labelCount": 4,
+    "labels": {
+      "action": false,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 21,
+      "prompt_tokens": 947,
+      "total_tokens": 968,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 944
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 3,
+    "id": "bundle_a3",
+    "task": "decision_bundle",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 365,
+    "choices": {
+      "action": "clarify",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 20,
+      "prompt_tokens": 892,
+      "total_tokens": 912,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 3,
+    "id": "bundle_a3",
+    "task": "decision_bundle",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 289,
+    "choices": {
+      "action": "clarify",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 1369,
+      "output_tokens": 189
+    },
+    "jevAnswers": {
+      "action": {
+        "type": "choice",
+        "choice": "clarify",
+        "confidence": 0.98,
+        "probabilities": {
+          "translate": 0.01,
+          "clarify": 0.99
+        }
+      },
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.99,
+        "probabilities": {
+          "understand": 0,
+          "slower": 0,
+          "reservation": 0,
+          "card": 0,
+          "receipt": 0,
+          "repeat": 0.01,
+          "help": 0,
+          "NONE": 0.99,
+          "station": 0
+        }
+      },
+      "register": {
+        "type": "choice",
+        "choice": "unspecified",
+        "confidence": 0.98,
+        "probabilities": {
+          "unspecified": 0.99,
+          "formal": 0.01,
+          "informal": 0,
+          "plural": 0
+        }
+      },
+      "sense": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.9,
+        "probabilities": {
+          "UNKNOWN": 0.05,
+          "NONE": 0.95
+        }
+      }
+    }
+  },
+  {
+    "round": 3,
+    "id": "memory_new2",
+    "task": "memory_selection",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 276,
+    "choices": {
+      "memory": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "input_tokens": 1011,
+      "output_tokens": 82
+    },
+    "jevAnswers": {
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.98,
+        "probabilities": {
+          "NONE": 0.99,
+          "station": 0,
+          "receipt": 0,
+          "slower": 0,
+          "help": 0,
+          "card": 0,
+          "understand": 0,
+          "reservation": 0.01,
+          "repeat": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 3,
+    "id": "memory_new2",
+    "task": "memory_selection",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 339,
+    "choices": {
+      "memory": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 626,
+      "total_tokens": 632,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 3,
+    "id": "sense_9",
+    "task": "word_sense",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 262,
+    "choices": {
+      "sense": "penalty"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 7,
+      "prompt_tokens": 252,
+      "total_tokens": 259,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 3,
+    "id": "sense_9",
+    "task": "word_sense",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 257,
+    "choices": {
+      "sense": "penalty"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 519,
+      "output_tokens": 54
+    },
+    "jevAnswers": {
+      "sense": {
+        "type": "choice",
+        "choice": "penalty",
+        "confidence": 1,
+        "probabilities": {
+          "NONE": 0,
+          "UNKNOWN": 0,
+          "penalty": 1,
+          "thin": 0,
+          "quality": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 3,
+    "id": "bundle_r2",
+    "task": "decision_bundle",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 294,
+    "choices": {
+      "action": "translate",
+      "memory": "NONE",
+      "register": "informal",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 1360,
+      "output_tokens": 188
+    },
+    "jevAnswers": {
+      "action": {
+        "type": "choice",
+        "choice": "translate",
+        "confidence": 0.98,
+        "probabilities": {
+          "clarify": 0.01,
+          "translate": 0.99
+        }
+      },
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 1,
+        "probabilities": {
+          "reservation": 0,
+          "help": 0,
+          "understand": 0,
+          "repeat": 0,
+          "receipt": 0,
+          "slower": 0,
+          "station": 0,
+          "card": 0,
+          "NONE": 1
+        }
+      },
+      "register": {
+        "type": "choice",
+        "choice": "informal",
+        "confidence": 0.99,
+        "probabilities": {
+          "formal": 0,
+          "unspecified": 0.01,
+          "plural": 0,
+          "informal": 0.99
+        }
+      },
+      "sense": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.99,
+        "probabilities": {
+          "UNKNOWN": 0,
+          "NONE": 1
+        }
+      }
+    }
+  },
+  {
+    "round": 3,
+    "id": "bundle_r2",
+    "task": "decision_bundle",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 647,
+    "choices": {
+      "action": "translate",
+      "memory": "NONE",
+      "register": "informal",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 19,
+      "prompt_tokens": 883,
+      "total_tokens": 902,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 880
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 3,
+    "id": "sense_6",
+    "task": "word_sense",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 283,
+    "choices": {
+      "sense": "gasket"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 7,
+      "prompt_tokens": 267,
+      "total_tokens": 274,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 256
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 3,
+    "id": "sense_6",
+    "task": "word_sense",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 272,
+    "choices": {
+      "sense": "gasket"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 533,
+      "output_tokens": 56
+    },
+    "jevAnswers": {
+      "sense": {
+        "type": "choice",
+        "choice": "gasket",
+        "confidence": 1,
+        "probabilities": {
+          "UNKNOWN": 0,
+          "gasket": 1,
+          "stamp": 0,
+          "animal": 0,
+          "NONE": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 3,
+    "id": "bundle_r4",
+    "task": "decision_bundle",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 348,
+    "choices": {
+      "action": "translate",
+      "memory": "NONE",
+      "register": "formal",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 1368,
+      "output_tokens": 187
+    },
+    "jevAnswers": {
+      "action": {
+        "type": "choice",
+        "choice": "translate",
+        "confidence": 1,
+        "probabilities": {
+          "translate": 1,
+          "clarify": 0
+        }
+      },
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 1,
+        "probabilities": {
+          "slower": 0,
+          "repeat": 0,
+          "card": 0,
+          "receipt": 0,
+          "reservation": 0,
+          "NONE": 1,
+          "station": 0,
+          "help": 0,
+          "understand": 0
+        }
+      },
+      "register": {
+        "type": "choice",
+        "choice": "formal",
+        "confidence": 1,
+        "probabilities": {
+          "formal": 1,
+          "informal": 0,
+          "unspecified": 0,
+          "plural": 0
+        }
+      },
+      "sense": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 1,
+        "probabilities": {
+          "UNKNOWN": 0,
+          "NONE": 1
+        }
+      }
+    }
+  },
+  {
+    "round": 3,
+    "id": "bundle_r4",
+    "task": "decision_bundle",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 366,
+    "choices": {
+      "action": "translate",
+      "memory": "NONE",
+      "register": "formal",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 19,
+      "prompt_tokens": 888,
+      "total_tokens": 907,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 80
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 3,
+    "id": "sense_4",
+    "task": "word_sense",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 307,
+    "choices": {
+      "sense": "animal"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 241,
+      "total_tokens": 247,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 3,
+    "id": "sense_4",
+    "task": "word_sense",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 318,
+    "choices": {
+      "sense": "animal"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 496,
+      "output_tokens": 45
+    },
+    "jevAnswers": {
+      "sense": {
+        "type": "choice",
+        "choice": "animal",
+        "confidence": 1,
+        "probabilities": {
+          "sport": 0,
+          "animal": 1,
+          "NONE": 0,
+          "UNKNOWN": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 3,
+    "id": "bundle_m2",
+    "task": "decision_bundle",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 304,
+    "choices": {
+      "action": "translate",
+      "memory": "slower",
+      "register": "formal",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 1380,
+      "output_tokens": 188
+    },
+    "jevAnswers": {
+      "action": {
+        "type": "choice",
+        "choice": "translate",
+        "confidence": 1,
+        "probabilities": {
+          "translate": 1,
+          "clarify": 0
+        }
+      },
+      "memory": {
+        "type": "choice",
+        "choice": "slower",
+        "confidence": 0.93,
+        "probabilities": {
+          "card": 0,
+          "understand": 0,
+          "reservation": 0,
+          "slower": 0.94,
+          "NONE": 0.06,
+          "help": 0,
+          "repeat": 0,
+          "receipt": 0,
+          "station": 0
+        }
+      },
+      "register": {
+        "type": "choice",
+        "choice": "formal",
+        "confidence": 0.99,
+        "probabilities": {
+          "informal": 0,
+          "formal": 0.99,
+          "unspecified": 0.01,
+          "plural": 0
+        }
+      },
+      "sense": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.99,
+        "probabilities": {
+          "UNKNOWN": 0.01,
+          "NONE": 0.99
+        }
+      }
+    }
+  },
+  {
+    "round": 3,
+    "id": "bundle_m2",
+    "task": "decision_bundle",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 663,
+    "choices": {
+      "action": "translate",
+      "memory": "slower",
+      "register": "formal",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 20,
+      "prompt_tokens": 903,
+      "total_tokens": 923,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 112
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 3,
+    "id": "bundle_r3",
+    "task": "decision_bundle",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 599,
+    "choices": {
+      "action": "translate",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": false,
+    "labelCorrect": 3,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": false,
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 19,
+      "prompt_tokens": 881,
+      "total_tokens": 900,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 880
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 3,
+    "id": "bundle_r3",
+    "task": "decision_bundle",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 333,
+    "choices": {
+      "action": "translate",
+      "memory": "NONE",
+      "register": "plural",
+      "sense": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 1358,
+      "output_tokens": 186
+    },
+    "jevAnswers": {
+      "action": {
+        "type": "choice",
+        "choice": "translate",
+        "confidence": 0.82,
+        "probabilities": {
+          "clarify": 0.09,
+          "translate": 0.91
+        }
+      },
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 1,
+        "probabilities": {
+          "receipt": 0,
+          "station": 0,
+          "understand": 0,
+          "NONE": 1,
+          "repeat": 0,
+          "reservation": 0,
+          "card": 0,
+          "slower": 0,
+          "help": 0
+        }
+      },
+      "register": {
+        "type": "choice",
+        "choice": "plural",
+        "confidence": 0.71,
+        "probabilities": {
+          "plural": 0.79,
+          "unspecified": 0.2,
+          "formal": 0.01,
+          "informal": 0
+        }
+      },
+      "sense": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.99,
+        "probabilities": {
+          "NONE": 1,
+          "UNKNOWN": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 3,
+    "id": "sense_8",
+    "task": "word_sense",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 248,
+    "choices": {
+      "sense": "record"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 492,
+      "output_tokens": 45
+    },
+    "jevAnswers": {
+      "sense": {
+        "type": "choice",
+        "choice": "record",
+        "confidence": 1,
+        "probabilities": {
+          "NONE": 0,
+          "time": 0,
+          "UNKNOWN": 0,
+          "record": 1
+        }
+      }
+    }
+  },
+  {
+    "round": 3,
+    "id": "sense_8",
+    "task": "word_sense",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 431,
+    "choices": {
+      "sense": "record"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 239,
+      "total_tokens": 245,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 64
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 3,
+    "id": "memory_n7",
+    "task": "memory_selection",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 274,
+    "choices": {
+      "memory": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 631,
+      "total_tokens": 637,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 624
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 3,
+    "id": "memory_n7",
+    "task": "memory_selection",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 313,
+    "choices": {
+      "memory": "NONE"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "input_tokens": 1016,
+      "output_tokens": 82
+    },
+    "jevAnswers": {
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 0.99,
+        "probabilities": {
+          "NONE": 0.99,
+          "station": 0,
+          "receipt": 0,
+          "slower": 0,
+          "card": 0,
+          "help": 0,
+          "understand": 0,
+          "reservation": 0,
+          "repeat": 0.01
+        }
+      }
+    }
+  },
+  {
+    "round": 3,
+    "id": "bundle_s4",
+    "task": "decision_bundle",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 274,
+    "choices": {
+      "action": "translate",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "animal"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "input_tokens": 1424,
+      "output_tokens": 202
+    },
+    "jevAnswers": {
+      "action": {
+        "type": "choice",
+        "choice": "translate",
+        "confidence": 0.99,
+        "probabilities": {
+          "translate": 1,
+          "clarify": 0
+        }
+      },
+      "memory": {
+        "type": "choice",
+        "choice": "NONE",
+        "confidence": 1,
+        "probabilities": {
+          "repeat": 0,
+          "NONE": 1,
+          "reservation": 0,
+          "understand": 0,
+          "card": 0,
+          "receipt": 0,
+          "slower": 0,
+          "help": 0,
+          "station": 0
+        }
+      },
+      "register": {
+        "type": "choice",
+        "choice": "unspecified",
+        "confidence": 0.97,
+        "probabilities": {
+          "plural": 0,
+          "formal": 0.01,
+          "informal": 0.02,
+          "unspecified": 0.97
+        }
+      },
+      "sense": {
+        "type": "choice",
+        "choice": "animal",
+        "confidence": 1,
+        "probabilities": {
+          "NONE": 0,
+          "animal": 1,
+          "sport": 0,
+          "UNKNOWN": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 3,
+    "id": "bundle_s4",
+    "task": "decision_bundle",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 652,
+    "choices": {
+      "action": "translate",
+      "memory": "NONE",
+      "register": "unspecified",
+      "sense": "animal"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 4,
+    "labelCount": 4,
+    "labels": {
+      "action": true,
+      "memory": true,
+      "register": true,
+      "sense": true
+    },
+    "usage": {
+      "completion_tokens": 19,
+      "prompt_tokens": 921,
+      "total_tokens": 940,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 128
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 3,
+    "id": "memory_m8",
+    "task": "memory_selection",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 284,
+    "choices": {
+      "memory": "understand"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "completion_tokens": 7,
+      "prompt_tokens": 639,
+      "total_tokens": 646,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 624
+      }
+    },
+    "finishReason": "stop"
+  },
+  {
+    "round": 3,
+    "id": "memory_m8",
+    "task": "memory_selection",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 303,
+    "choices": {
+      "memory": "understand"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "input_tokens": 1024,
+      "output_tokens": 83
+    },
+    "jevAnswers": {
+      "memory": {
+        "type": "choice",
+        "choice": "understand",
+        "confidence": 1,
+        "probabilities": {
+          "understand": 1,
+          "slower": 0,
+          "reservation": 0,
+          "card": 0,
+          "receipt": 0,
+          "repeat": 0,
+          "help": 0,
+          "NONE": 0,
+          "station": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 3,
+    "id": "memory_m2",
+    "task": "memory_selection",
+    "provider": "jev",
+    "model": "jev-1.13.0",
+    "elapsedMs": 269,
+    "choices": {
+      "memory": "slower"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "input_tokens": 1026,
+      "output_tokens": 83
+    },
+    "jevAnswers": {
+      "memory": {
+        "type": "choice",
+        "choice": "slower",
+        "confidence": 0.95,
+        "probabilities": {
+          "help": 0,
+          "understand": 0,
+          "slower": 0.95,
+          "reservation": 0,
+          "receipt": 0,
+          "station": 0,
+          "NONE": 0.05,
+          "card": 0,
+          "repeat": 0
+        }
+      }
+    }
+  },
+  {
+    "round": 3,
+    "id": "memory_m2",
+    "task": "memory_selection",
+    "provider": "qwen",
+    "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "elapsedMs": 174,
+    "choices": {
+      "memory": "slower"
+    },
+    "valid": true,
+    "correct": true,
+    "labelCorrect": 1,
+    "labelCount": 1,
+    "labels": {
+      "memory": true
+    },
+    "usage": {
+      "completion_tokens": 7,
+      "prompt_tokens": 642,
+      "total_tokens": 649,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 640
+      }
+    },
+    "finishReason": "stop"
+  }
+]

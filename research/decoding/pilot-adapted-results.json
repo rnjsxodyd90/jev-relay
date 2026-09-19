@@ -1,0 +1,76 @@
+[
+  {
+    "mode": "parallel_characters",
+    "source": "I am tired.",
+    "text": "i       ",
+    "ended": true,
+    "latencyMs": 1437,
+    "calls": 1,
+    "model": "jev-1.13.0",
+    "inputTokens": 30238,
+    "confidences": [
+      0.3,
+      0.46,
+      0.34,
+      0.29,
+      0.25,
+      0.23,
+      0.15,
+      0.1,
+      0.1
+    ]
+  },
+  {
+    "mode": "hierarchical_parallel_words",
+    "source": "I am tired.",
+    "text": "[unavailable] [unavailable]",
+    "tokens": [
+      "[unavailable]",
+      "[unavailable]"
+    ],
+    "ended": true,
+    "unavailable": 2,
+    "latencyMs": 1178,
+    "calls": 2,
+    "model": "jev-1.13.0",
+    "inputTokens": 39562,
+    "confidences": [
+      {
+        "group": 0.18,
+        "word": 0.92
+      },
+      {
+        "group": 0.06,
+        "word": 0.55
+      }
+    ]
+  },
+  {
+    "mode": "hierarchical_sequential_words",
+    "source": "I am tired.",
+    "text": "[unavailable]",
+    "tokens": [
+      "[unavailable]"
+    ],
+    "ended": false,
+    "unavailable": 1,
+    "latencyMs": 655,
+    "calls": 2,
+    "model": "jev-1.13.0",
+    "inputTokens": 3979,
+    "confidences": [
+      {
+        "group": 0.19,
+        "word": 0.9
+      }
+    ]
+  },
+  {
+    "mode": "mymemory_service",
+    "source": "I am tired.",
+    "text": "Alstublieft.",
+    "latencyMs": 605,
+    "calls": 1,
+    "model": "Undisclosed service backend; not a named-model benchmark"
+  }
+]

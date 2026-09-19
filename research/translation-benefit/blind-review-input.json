@@ -1,0 +1,788 @@
+[
+  {
+    "id": "m1",
+    "source": "Would you mind saying that again?",
+    "context": "Polite service conversation with one unfamiliar adult. A debit-card question, if present, concerns a debit card, not credit.",
+    "gold": {
+      "action": "translate",
+      "memory": "repeat",
+      "reference": "Kunt u dat herhalen?",
+      "requirements": [
+        "Preserve the request or statement; polite u is appropriate when addressing the listener."
+      ]
+    },
+    "outputs": [
+      {
+        "code": "o001",
+        "action": "translate",
+        "text": "Zou u dat nogmaals kunnen zeggen?"
+      },
+      {
+        "code": "o002",
+        "action": "translate",
+        "text": "Kunt u dat herhalen?"
+      }
+    ]
+  },
+  {
+    "id": "m2",
+    "source": "Would you mind talking a bit more slowly?",
+    "context": "Polite service conversation with one unfamiliar adult. A debit-card question, if present, concerns a debit card, not credit.",
+    "gold": {
+      "action": "translate",
+      "memory": "slower",
+      "reference": "Kunt u langzamer spreken?",
+      "requirements": [
+        "Preserve the request or statement; polite u is appropriate when addressing the listener."
+      ]
+    },
+    "outputs": [
+      {
+        "code": "o003",
+        "action": "translate",
+        "text": "Kunt u een beetje langzamer praten?"
+      },
+      {
+        "code": "o004",
+        "action": "translate",
+        "text": "Kunt u langzamer spreken?"
+      }
+    ]
+  },
+  {
+    "id": "m3",
+    "source": "Is it possible to pay with my debit card?",
+    "context": "Polite service conversation with one unfamiliar adult. A debit-card question, if present, concerns a debit card, not credit.",
+    "gold": {
+      "action": "translate",
+      "memory": "card",
+      "reference": "Kan ik pinnen?",
+      "requirements": [
+        "Preserve the request or statement; polite u is appropriate when addressing the listener."
+      ]
+    },
+    "outputs": [
+      {
+        "code": "o005",
+        "action": "translate",
+        "text": "Kan ik met mijn pinpas betalen?"
+      },
+      {
+        "code": "o006",
+        "action": "translate",
+        "text": "Kan ik pinnen?"
+      }
+    ]
+  },
+  {
+    "id": "m4",
+    "source": "Where can I find the railway station?",
+    "context": "Polite service conversation with one unfamiliar adult. A debit-card question, if present, concerns a debit card, not credit.",
+    "gold": {
+      "action": "translate",
+      "memory": "station",
+      "reference": "Waar is het treinstation?",
+      "requirements": [
+        "Preserve the request or statement; polite u is appropriate when addressing the listener."
+      ]
+    },
+    "outputs": [
+      {
+        "code": "o007",
+        "action": "translate",
+        "text": "Waar kan ik het treinstation vinden?"
+      },
+      {
+        "code": "o008",
+        "action": "translate",
+        "text": "Waar is het treinstation?"
+      }
+    ]
+  },
+  {
+    "id": "m5",
+    "source": "Could I have the receipt, please?",
+    "context": "Polite service conversation with one unfamiliar adult. A debit-card question, if present, concerns a debit card, not credit.",
+    "gold": {
+      "action": "translate",
+      "memory": "receipt",
+      "reference": "Mag ik de bon?",
+      "requirements": [
+        "Preserve the request or statement; polite u is appropriate when addressing the listener."
+      ]
+    },
+    "outputs": [
+      {
+        "code": "o009",
+        "action": "translate",
+        "text": "Kan ik de bon hebben, alstublieft?"
+      },
+      {
+        "code": "o010",
+        "action": "translate",
+        "text": "Mag ik de bon?"
+      }
+    ]
+  },
+  {
+    "id": "m6",
+    "source": "There is a reservation in my name.",
+    "context": "Polite service conversation with one unfamiliar adult. A debit-card question, if present, concerns a debit card, not credit.",
+    "gold": {
+      "action": "translate",
+      "memory": "reservation",
+      "reference": "Ik heb een reservering.",
+      "requirements": [
+        "Preserve the request or statement; polite u is appropriate when addressing the listener."
+      ]
+    },
+    "outputs": [
+      {
+        "code": "o011",
+        "action": "translate",
+        "text": "Er is een reservering op mijn naam."
+      },
+      {
+        "code": "o012",
+        "action": "translate",
+        "text": "Er is een reservering op mijn naam."
+      }
+    ]
+  },
+  {
+    "id": "m7",
+    "source": "Would you be able to help me?",
+    "context": "Polite service conversation with one unfamiliar adult. A debit-card question, if present, concerns a debit card, not credit.",
+    "gold": {
+      "action": "translate",
+      "memory": "help",
+      "reference": "Kunt u me helpen?",
+      "requirements": [
+        "Preserve the request or statement; polite u is appropriate when addressing the listener."
+      ]
+    },
+    "outputs": [
+      {
+        "code": "o013",
+        "action": "translate",
+        "text": "Kunt u me helpen?"
+      },
+      {
+        "code": "o014",
+        "action": "translate",
+        "text": "Kunt u me helpen?"
+      }
+    ]
+  },
+  {
+    "id": "m8",
+    "source": "I don't understand.",
+    "context": "Polite service conversation with one unfamiliar adult. A debit-card question, if present, concerns a debit card, not credit.",
+    "gold": {
+      "action": "translate",
+      "memory": "understand",
+      "reference": "Ik begrijp het niet.",
+      "requirements": [
+        "Preserve the request or statement; polite u is appropriate when addressing the listener."
+      ]
+    },
+    "outputs": [
+      {
+        "code": "o015",
+        "action": "translate",
+        "text": "Ik begrijp het niet."
+      },
+      {
+        "code": "o016",
+        "action": "translate",
+        "text": "Ik begrijp het niet."
+      }
+    ]
+  },
+  {
+    "id": "s1",
+    "source": "I'll wait by the bank.",
+    "context": "Two kayakers discuss where to meet along a river. There is no financial business involved.",
+    "gold": {
+      "action": "translate",
+      "sense": "river",
+      "reference": "Ik wacht bij de oever.",
+      "requirements": [
+        "bank must mean riverbank/oever, not financial bank."
+      ]
+    },
+    "outputs": [
+      {
+        "code": "o017",
+        "action": "translate",
+        "text": "Ik wacht bij de oever."
+      },
+      {
+        "code": "o018",
+        "action": "translate",
+        "text": "Ik wacht bij de oever."
+      }
+    ]
+  },
+  {
+    "id": "s2",
+    "source": "Check the charge before we leave.",
+    "context": "An engineer is talking about a rechargeable battery, not an invoice or accusation.",
+    "gold": {
+      "action": "translate",
+      "sense": "electrical",
+      "reference": "Controleer de lading voordat we vertrekken.",
+      "requirements": [
+        "charge refers to battery charge/lading."
+      ]
+    },
+    "outputs": [
+      {
+        "code": "o019",
+        "action": "translate",
+        "text": "Controleer de lading voordat we vertrekken."
+      },
+      {
+        "code": "o020",
+        "action": "translate",
+        "text": "Controleer de lading voordat we vertrekken."
+      }
+    ]
+  },
+  {
+    "id": "s3",
+    "source": "Has the interest changed?",
+    "context": "The customer asks a bank about the annual percentage paid on a savings account.",
+    "gold": {
+      "action": "translate",
+      "sense": "rate",
+      "reference": "Is de rente veranderd?",
+      "requirements": [
+        "interest must be rente, not belangstelling."
+      ]
+    },
+    "outputs": [
+      {
+        "code": "o021",
+        "action": "translate",
+        "text": "Is de rente veranderd?"
+      },
+      {
+        "code": "o022",
+        "action": "translate",
+        "text": "Is de rente veranderd?"
+      }
+    ]
+  },
+  {
+    "id": "s4",
+    "source": "Keep the bat inside until sunset.",
+    "context": "A wildlife carer is rehabilitating an injured flying mammal.",
+    "gold": {
+      "action": "translate",
+      "sense": "animal",
+      "reference": "Houd de vleermuis tot zonsondergang binnen.",
+      "requirements": [
+        "bat is vleermuis, not a sports implement."
+      ]
+    },
+    "outputs": [
+      {
+        "code": "o023",
+        "action": "translate",
+        "text": "Houd de vleermuis binnen tot zonsondergang."
+      },
+      {
+        "code": "o024",
+        "action": "translate",
+        "text": "Houd de knuppel binnen tot zonsondergang."
+      }
+    ]
+  },
+  {
+    "id": "s5",
+    "source": "The spring needs replacing.",
+    "context": "A mechanic is repairing the coiled metal component in a door closer.",
+    "gold": {
+      "action": "translate",
+      "sense": "coil",
+      "reference": "De veer moet worden vervangen.",
+      "requirements": [
+        "spring is mechanical veer, not season or water source."
+      ]
+    },
+    "outputs": [
+      {
+        "code": "o025",
+        "action": "translate",
+        "text": "De veer moet worden vervangen."
+      },
+      {
+        "code": "o026",
+        "action": "translate",
+        "text": "De veer moet worden vervangen."
+      }
+    ]
+  },
+  {
+    "id": "s6",
+    "source": "The seal is damaged.",
+    "context": "A plumber is inspecting the rubber ring that prevents a tap from leaking.",
+    "gold": {
+      "action": "translate",
+      "sense": "gasket",
+      "reference": "De afdichting is beschadigd.",
+      "requirements": [
+        "seal is afdichting, not animal or official stamp."
+      ]
+    },
+    "outputs": [
+      {
+        "code": "o027",
+        "action": "translate",
+        "text": "Het zegel is beschadigd."
+      },
+      {
+        "code": "o028",
+        "action": "translate",
+        "text": "De afdichting is beschadigd."
+      }
+    ]
+  },
+  {
+    "id": "s7",
+    "source": "This port is blocked.",
+    "context": "The IT team is inspecting firewall rules for network connections.",
+    "gold": {
+      "action": "translate",
+      "sense": "network",
+      "reference": "Deze poort is geblokkeerd.",
+      "requirements": [
+        "port is network poort, not harbor or wine."
+      ]
+    },
+    "outputs": [
+      {
+        "code": "o029",
+        "action": "translate",
+        "text": "Deze poort is geblokkeerd."
+      },
+      {
+        "code": "o030",
+        "action": "translate",
+        "text": "Deze poort is geblokkeerd."
+      }
+    ]
+  },
+  {
+    "id": "s8",
+    "source": "Please prepare the minutes by Friday.",
+    "context": "A secretary is asked to write the record of a committee meeting.",
+    "gold": {
+      "action": "translate",
+      "sense": "record",
+      "reference": "Stel de notulen alstublieft uiterlijk vrijdag op.",
+      "requirements": [
+        "minutes are meeting notulen; by Friday is a deadline."
+      ]
+    },
+    "outputs": [
+      {
+        "code": "o031",
+        "action": "translate",
+        "text": "Zorg er tegen vrijdag voor dat de notulen zijn opgesteld."
+      },
+      {
+        "code": "o032",
+        "action": "translate",
+        "text": "Zorg er tegen vrijdag voor dat de notulen zijn opgesteld."
+      }
+    ]
+  },
+  {
+    "id": "r1",
+    "source": "Can you send me your address?",
+    "context": "A business representative politely addresses one unfamiliar adult customer. Use formal singular Dutch.",
+    "gold": {
+      "action": "translate",
+      "register": "formal",
+      "reference": "Kunt u mij uw adres sturen?",
+      "requirements": [
+        "Use u/uw, not jij/je or jullie."
+      ]
+    },
+    "outputs": [
+      {
+        "code": "o033",
+        "action": "translate",
+        "text": "Kunt u mij uw adres sturen?"
+      },
+      {
+        "code": "o034",
+        "action": "translate",
+        "text": "Kunt u mij uw adres sturen?"
+      }
+    ]
+  },
+  {
+    "id": "r2",
+    "source": "Can you send me your address?",
+    "context": "A teenager speaks casually to one close friend. Use informal singular Dutch.",
+    "gold": {
+      "action": "translate",
+      "register": "informal",
+      "reference": "Kun je me je adres sturen?",
+      "requirements": [
+        "Use je/jij and je/jouw; do not use formal u."
+      ]
+    },
+    "outputs": [
+      {
+        "code": "o035",
+        "action": "translate",
+        "text": "Kun je me je adres sturen?"
+      },
+      {
+        "code": "o036",
+        "action": "translate",
+        "text": "Kun je me je adres sturen?"
+      }
+    ]
+  },
+  {
+    "id": "r3",
+    "source": "Have you brought your tickets?",
+    "context": "A teacher addresses a group of students, not a single person.",
+    "gold": {
+      "action": "translate",
+      "register": "plural",
+      "reference": "Hebben jullie jullie kaartjes meegenomen?",
+      "requirements": [
+        "Address the group with jullie; preserve plural tickets."
+      ]
+    },
+    "outputs": [
+      {
+        "code": "o037",
+        "action": "translate",
+        "text": "Heb je je kaartjes meegebracht?"
+      },
+      {
+        "code": "o038",
+        "action": "translate",
+        "text": "Heb je je kaartjes meegebracht?"
+      }
+    ]
+  },
+  {
+    "id": "r4",
+    "source": "Would you like to take a seat?",
+    "context": "A receptionist speaks courteously to an unfamiliar older customer. Formal singular Dutch is required.",
+    "gold": {
+      "action": "translate",
+      "register": "formal",
+      "reference": "Wilt u plaatsnemen?",
+      "requirements": [
+        "Use formal u, not informal je."
+      ]
+    },
+    "outputs": [
+      {
+        "code": "o039",
+        "action": "translate",
+        "text": "Wilt u plaats nemen?"
+      },
+      {
+        "code": "o040",
+        "action": "translate",
+        "text": "Wilt u plaats nemen?"
+      }
+    ]
+  },
+  {
+    "id": "n1",
+    "source": "Only cancel the second booking, not both.",
+    "context": "There are exactly two bookings. The first booking must remain active.",
+    "gold": {
+      "action": "translate",
+      "reference": "Annuleer alleen de tweede boeking, niet allebei.",
+      "requirements": [
+        "Cancel second only; preserve first."
+      ]
+    },
+    "outputs": [
+      {
+        "code": "o041",
+        "action": "translate",
+        "text": "Annuleer alleen de tweede reservering, niet beide."
+      },
+      {
+        "code": "o042",
+        "action": "translate",
+        "text": "Annuleer alleen de tweede reservering, niet beide."
+      }
+    ]
+  },
+  {
+    "id": "n2",
+    "source": "Do not delay canceling the 14:30 booking.",
+    "context": "The speaker wants the cancellation to happen immediately, not to postpone it.",
+    "gold": {
+      "action": "translate",
+      "reference": "Stel het annuleren van de boeking van 14:30 niet uit.",
+      "requirements": [
+        "Cancel without delay; do not invert into do not cancel. Preserve 14:30."
+      ]
+    },
+    "outputs": [
+      {
+        "code": "o043",
+        "action": "translate",
+        "text": "Stop niet met het annuleren van de reservering om 14:30."
+      },
+      {
+        "code": "o044",
+        "action": "translate",
+        "text": "Houd de annulering van de reservering om 14:30 niet uit."
+      }
+    ]
+  },
+  {
+    "id": "n3",
+    "source": "Anna owes Bram 125 euros, not the other way around.",
+    "context": "The named people and the amount must be preserved exactly.",
+    "gold": {
+      "action": "translate",
+      "reference": "Anna is Bram 125 euro schuldig, niet andersom.",
+      "requirements": [
+        "Anna is debtor; Bram creditor; amount 125 euros."
+      ]
+    },
+    "outputs": [
+      {
+        "code": "o045",
+        "action": "translate",
+        "text": "Anna schuldt Bram 125 euro, niet andersom."
+      },
+      {
+        "code": "o046",
+        "action": "translate",
+        "text": "Anna schuldt Bram 125 euro, niet andersom."
+      }
+    ]
+  },
+  {
+    "id": "n4",
+    "source": "Move the appointment from Tuesday to Thursday, not from Thursday to Tuesday.",
+    "context": "The appointment is currently scheduled for Tuesday.",
+    "gold": {
+      "action": "translate",
+      "reference": "Verplaats de afspraak van dinsdag naar donderdag, niet andersom.",
+      "requirements": [
+        "New day Thursday; original day Tuesday."
+      ]
+    },
+    "outputs": [
+      {
+        "code": "o047",
+        "action": "translate",
+        "text": "Verplaats de afspraak van dinsdag naar donderdag, niet van donderdag naar dinsdag."
+      },
+      {
+        "code": "o048",
+        "action": "translate",
+        "text": "Verschuif de afspraak van dinsdag naar donderdag, niet van donderdag naar dinsdag."
+      }
+    ]
+  },
+  {
+    "id": "n5",
+    "source": "I did not say that Eva stole the keys.",
+    "context": "Do not add a claim that Eva is innocent or that someone else stole them; preserve only the stated denial of saying this.",
+    "gold": {
+      "action": "translate",
+      "reference": "Ik heb niet gezegd dat Eva de sleutels heeft gestolen.",
+      "requirements": [
+        "Negation applies to saying; do not turn it into Eva did not steal."
+      ]
+    },
+    "outputs": [
+      {
+        "code": "o049",
+        "action": "translate",
+        "text": "Ik zei niet dat Eva de sleutels had gestolen."
+      },
+      {
+        "code": "o050",
+        "action": "translate",
+        "text": "Ik zei niet dat Eva de sleutels had gestolen."
+      }
+    ]
+  },
+  {
+    "id": "n6",
+    "source": "If the payment has not arrived by Monday, do not ship the order.",
+    "context": "The condition must be retained; this is not an unconditional instruction never to ship.",
+    "gold": {
+      "action": "translate",
+      "reference": "Als de betaling maandag nog niet is ontvangen, verstuur de bestelling dan niet.",
+      "requirements": [
+        "Conditional no-shipping if payment absent by Monday."
+      ]
+    },
+    "outputs": [
+      {
+        "code": "o051",
+        "action": "translate",
+        "text": "Als de betaling niet is ontvangen vóór maandag, dien je de bestelling niet te verzenden."
+      },
+      {
+        "code": "o052",
+        "action": "translate",
+        "text": "Als de betaling niet is ontvangen vóór maandag, verzend dan de bestelling niet."
+      }
+    ]
+  },
+  {
+    "id": "n7",
+    "source": "Please do not repeat that.",
+    "context": "The listener should not repeat the previous statement. This is a negated request.",
+    "gold": {
+      "action": "translate",
+      "memory": "NONE",
+      "reference": "Herhaal dat alstublieft niet.",
+      "requirements": [
+        "Do not choose the positive repeat phrase from memory."
+      ]
+    },
+    "outputs": [
+      {
+        "code": "o053",
+        "action": "translate",
+        "text": "Herhaal dat alsjeblieft niet."
+      },
+      {
+        "code": "o054",
+        "action": "translate",
+        "text": "Herhaal dat alsjeblieft niet."
+      }
+    ]
+  },
+  {
+    "id": "n8",
+    "source": "I do not have a reservation.",
+    "context": "The person has no reservation. Preserve the negation.",
+    "gold": {
+      "action": "translate",
+      "memory": "NONE",
+      "reference": "Ik heb geen reservering.",
+      "requirements": [
+        "Do not choose the positive reservation phrase from memory."
+      ]
+    },
+    "outputs": [
+      {
+        "code": "o055",
+        "action": "translate",
+        "text": "Ik heb geen reservering."
+      },
+      {
+        "code": "o056",
+        "action": "translate",
+        "text": "Ik heb geen reservering."
+      }
+    ]
+  },
+  {
+    "id": "a1",
+    "source": "Meet me at the bank.",
+    "context": "No further context is available. It is unknown whether bank means a financial institution or a riverbank.",
+    "gold": {
+      "action": "clarify",
+      "requirements": [
+        "Ask which meaning of bank; do not choose arbitrarily."
+      ]
+    },
+    "outputs": [
+      {
+        "code": "o057",
+        "action": "clarify",
+        "text": "Kun je verduidelijken wat je bedoelt?"
+      },
+      {
+        "code": "o058",
+        "action": "translate",
+        "text": "Treft me op de bank."
+      }
+    ]
+  },
+  {
+    "id": "a2",
+    "source": "Please move it there.",
+    "context": "There is no preceding conversation, no visible object, and no indicated destination. The listener cannot identify either it or there.",
+    "gold": {
+      "action": "clarify",
+      "requirements": [
+        "Ask for the object and destination rather than inventing them."
+      ]
+    },
+    "outputs": [
+      {
+        "code": "o059",
+        "action": "clarify",
+        "text": "Kunt u specificeren wat 'het' is en waar 'daar' precies is?"
+      },
+      {
+        "code": "o060",
+        "action": "clarify",
+        "text": "Wat wordt bedoeld met 'het' en waar precies wordt 'daar' verwijzend naar?"
+      }
+    ]
+  },
+  {
+    "id": "a3",
+    "source": "Set the amount to fifteen—no, fifty—",
+    "context": "The transcript ends immediately after the correction; the speaker was interrupted and has not confirmed the final amount.",
+    "gold": {
+      "action": "clarify",
+      "requirements": [
+        "Ask the final intended amount. Do not guess 15 or 50."
+      ]
+    },
+    "outputs": [
+      {
+        "code": "o061",
+        "action": "clarify",
+        "text": "Kun je verduidelijken wat je bedoelt?"
+      },
+      {
+        "code": "o062",
+        "action": "translate",
+        "text": "Zet het bedrag op vijftien—nee, vijftig—"
+      }
+    ]
+  },
+  {
+    "id": "a4",
+    "source": "Send the file to him, not him.",
+    "context": "Two different men were being pointed at, but the visual gestures and identities are unavailable.",
+    "gold": {
+      "action": "clarify",
+      "requirements": [
+        "Ask which recipient; the text alone does not distinguish the men."
+      ]
+    },
+    "outputs": [
+      {
+        "code": "o063",
+        "action": "translate",
+        "text": "Stuur het bestand naar hem, niet naar hem."
+      },
+      {
+        "code": "o064",
+        "action": "clarify",
+        "text": "Wie is 'hem' en wie is 'hem' in de zin 'Send the file to him, not him'?"
+      }
+    ]
+  }
+]

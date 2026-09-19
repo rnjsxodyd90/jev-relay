@@ -1,0 +1,1014 @@
+[
+  {
+    "id": "t01",
+    "reference": "Ik heb geen honger.",
+    "focus": "negation; idiomatic verb",
+    "mode": "hierarchical_parallel_words",
+    "source": "I am not hungry.",
+    "text": "[unavailable] [unavailable]",
+    "tokens": [
+      "[unavailable]",
+      "[unavailable]"
+    ],
+    "ended": true,
+    "unavailable": 2,
+    "latencyMs": 1375,
+    "calls": 2,
+    "model": "jev-1.13.0",
+    "inputTokens": 39637,
+    "confidences": [
+      {
+        "group": 0.26,
+        "word": 0.94
+      },
+      {
+        "group": 0.1,
+        "word": 0.83
+      }
+    ]
+  },
+  {
+    "id": "t01",
+    "reference": "Ik heb geen honger.",
+    "focus": "negation; idiomatic verb",
+    "mode": "parallel_characters",
+    "source": "I am not hungry.",
+    "text": "i          ",
+    "ended": true,
+    "latencyMs": 752,
+    "calls": 1,
+    "model": "jev-1.13.0",
+    "inputTokens": 30239,
+    "confidences": [
+      0.29,
+      0.51,
+      0.37,
+      0.28,
+      0.23,
+      0.29,
+      0.19,
+      0.14,
+      0.12,
+      0.13,
+      0.11,
+      0.23
+    ]
+  },
+  {
+    "id": "t01",
+    "reference": "Ik heb geen honger.",
+    "focus": "negation; idiomatic verb",
+    "mode": "mymemory_service",
+    "source": "I am not hungry.",
+    "text": "Ik heb niet veel honger.",
+    "latencyMs": 838,
+    "calls": 1,
+    "model": "Undisclosed service backend; not a named-model benchmark"
+  },
+  {
+    "id": "t01",
+    "reference": "Ik heb geen honger.",
+    "focus": "negation; idiomatic verb",
+    "mode": "hierarchical_sequential_words",
+    "source": "I am not hungry.",
+    "text": "[unavailable]",
+    "tokens": [
+      "[unavailable]"
+    ],
+    "ended": false,
+    "unavailable": 1,
+    "latencyMs": 541,
+    "calls": 2,
+    "model": "jev-1.13.0",
+    "inputTokens": 3981,
+    "confidences": [
+      {
+        "group": 0.25,
+        "word": 0.93
+      }
+    ]
+  },
+  {
+    "id": "t02",
+    "reference": "Ze heeft hem gisteren het boek gegeven.",
+    "focus": "agent and recipient; past tense",
+    "mode": "mymemory_service",
+    "source": "She gave him the book yesterday.",
+    "text": "Ze gaf hem gisteren het boek.",
+    "latencyMs": 664,
+    "calls": 1,
+    "model": "Undisclosed service backend; not a named-model benchmark"
+  },
+  {
+    "id": "t02",
+    "reference": "Ze heeft hem gisteren het boek gegeven.",
+    "focus": "agent and recipient; past tense",
+    "mode": "parallel_characters",
+    "source": "She gave him the book yesterday.",
+    "text": "s               ",
+    "ended": true,
+    "latencyMs": 695,
+    "calls": 1,
+    "model": "jev-1.13.0",
+    "inputTokens": 30241,
+    "confidences": [
+      0.23,
+      0.47,
+      0.31,
+      0.28,
+      0.2,
+      0.21,
+      0.2,
+      0.21,
+      0.19,
+      0.18,
+      0.16,
+      0.18,
+      0.18,
+      0.16,
+      0.15,
+      0.14,
+      0.18
+    ]
+  },
+  {
+    "id": "t02",
+    "reference": "Ze heeft hem gisteren het boek gegeven.",
+    "focus": "agent and recipient; past tense",
+    "mode": "hierarchical_parallel_words",
+    "source": "She gave him the book yesterday.",
+    "text": "[unavailable] [unavailable] [unavailable]",
+    "tokens": [
+      "[unavailable]",
+      "[unavailable]",
+      "[unavailable]"
+    ],
+    "ended": true,
+    "unavailable": 3,
+    "latencyMs": 775,
+    "calls": 2,
+    "model": "jev-1.13.0",
+    "inputTokens": 40694,
+    "confidences": [
+      {
+        "group": 0.17,
+        "word": 0.91
+      },
+      {
+        "group": 0.08,
+        "word": 0.39
+      },
+      {
+        "group": 0.06,
+        "word": 0.45
+      }
+    ]
+  },
+  {
+    "id": "t02",
+    "reference": "Ze heeft hem gisteren het boek gegeven.",
+    "focus": "agent and recipient; past tense",
+    "mode": "hierarchical_sequential_words",
+    "source": "She gave him the book yesterday.",
+    "text": "[unavailable]",
+    "tokens": [
+      "[unavailable]"
+    ],
+    "ended": false,
+    "unavailable": 1,
+    "latencyMs": 718,
+    "calls": 2,
+    "model": "jev-1.13.0",
+    "inputTokens": 3984,
+    "confidences": [
+      {
+        "group": 0.15,
+        "word": 0.89
+      }
+    ]
+  },
+  {
+    "id": "t03",
+    "reference": "Waar kan ik een kaartje kopen?",
+    "focus": "question word order",
+    "mode": "hierarchical_parallel_words",
+    "source": "Where can I buy a ticket?",
+    "text": "[unavailable] [unavailable] [unavailable]",
+    "tokens": [
+      "[unavailable]",
+      "[unavailable]",
+      "[unavailable]"
+    ],
+    "ended": true,
+    "unavailable": 3,
+    "latencyMs": 702,
+    "calls": 2,
+    "model": "jev-1.13.0",
+    "inputTokens": 40661,
+    "confidences": [
+      {
+        "group": 0.22,
+        "word": 0.82
+      },
+      {
+        "group": 0.08,
+        "word": 0.76
+      },
+      {
+        "group": 0.06,
+        "word": 0.76
+      }
+    ]
+  },
+  {
+    "id": "t03",
+    "reference": "Waar kan ik een kaartje kopen?",
+    "focus": "question word order",
+    "mode": "parallel_characters",
+    "source": "Where can I buy a ticket?",
+    "text": "w               ",
+    "ended": true,
+    "latencyMs": 598,
+    "calls": 1,
+    "model": "jev-1.13.0",
+    "inputTokens": 30241,
+    "confidences": [
+      0.3,
+      0.4,
+      0.38,
+      0.32,
+      0.28,
+      0.26,
+      0.21,
+      0.24,
+      0.16,
+      0.22,
+      0.21,
+      0.18,
+      0.21,
+      0.18,
+      0.18,
+      0.18,
+      0.16
+    ]
+  },
+  {
+    "id": "t03",
+    "reference": "Waar kan ik een kaartje kopen?",
+    "focus": "question word order",
+    "mode": "mymemory_service",
+    "source": "Where can I buy a ticket?",
+    "text": "Waar kan ik een kaartje kopen?",
+    "latencyMs": 605,
+    "calls": 1,
+    "model": "Undisclosed service backend; not a named-model benchmark"
+  },
+  {
+    "id": "t03",
+    "reference": "Waar kan ik een kaartje kopen?",
+    "focus": "question word order",
+    "mode": "hierarchical_sequential_words",
+    "source": "Where can I buy a ticket?",
+    "text": "[unavailable]",
+    "tokens": [
+      "[unavailable]"
+    ],
+    "ended": false,
+    "unavailable": 1,
+    "latencyMs": 628,
+    "calls": 2,
+    "model": "jev-1.13.0",
+    "inputTokens": 3944,
+    "confidences": [
+      {
+        "group": 0.17,
+        "word": 0.81
+      }
+    ]
+  },
+  {
+    "id": "t04",
+    "reference": "Spreek alstublieft iets langzamer.",
+    "focus": "polite request",
+    "mode": "mymemory_service",
+    "source": "Please speak a little more slowly.",
+    "text": "Praat alsjeblieft iets langzamer.",
+    "latencyMs": 640,
+    "calls": 1,
+    "model": "Undisclosed service backend; not a named-model benchmark"
+  },
+  {
+    "id": "t04",
+    "reference": "Spreek alstublieft iets langzamer.",
+    "focus": "polite request",
+    "mode": "parallel_characters",
+    "source": "Please speak a little more slowly.",
+    "text": "s                ",
+    "ended": true,
+    "latencyMs": 688,
+    "calls": 1,
+    "model": "jev-1.13.0",
+    "inputTokens": 30241,
+    "confidences": [
+      0.17,
+      0.34,
+      0.33,
+      0.29,
+      0.28,
+      0.31,
+      0.25,
+      0.25,
+      0.2,
+      0.21,
+      0.2,
+      0.21,
+      0.21,
+      0.19,
+      0.17,
+      0.17,
+      0.15,
+      0.17
+    ]
+  },
+  {
+    "id": "t04",
+    "reference": "Spreek alstublieft iets langzamer.",
+    "focus": "polite request",
+    "mode": "hierarchical_parallel_words",
+    "source": "Please speak a little more slowly.",
+    "text": "[unavailable] meer meer",
+    "tokens": [
+      "[unavailable]",
+      "meer",
+      "meer"
+    ],
+    "ended": true,
+    "unavailable": 1,
+    "latencyMs": 2227,
+    "calls": 2,
+    "model": "jev-1.13.0",
+    "inputTokens": 40620,
+    "confidences": [
+      {
+        "group": 0.18,
+        "word": 0.89
+      },
+      {
+        "group": 0.19,
+        "word": 0.62
+      },
+      {
+        "group": 0.22,
+        "word": 0.59
+      }
+    ]
+  },
+  {
+    "id": "t05",
+    "reference": "Ik dacht dat hij morgen zou komen.",
+    "focus": "embedded clause; tense",
+    "mode": "hierarchical_parallel_words",
+    "source": "I thought he would come tomorrow.",
+    "text": "[unavailable] [unavailable] [unavailable]",
+    "tokens": [
+      "[unavailable]",
+      "[unavailable]",
+      "[unavailable]"
+    ],
+    "ended": true,
+    "unavailable": 3,
+    "latencyMs": 1245,
+    "calls": 2,
+    "model": "jev-1.13.0",
+    "inputTokens": 40754,
+    "confidences": [
+      {
+        "group": 0.27,
+        "word": 0.92
+      },
+      {
+        "group": 0.14,
+        "word": 0.79
+      },
+      {
+        "group": 0.08,
+        "word": 0.74
+      }
+    ]
+  },
+  {
+    "id": "t05",
+    "reference": "Ik dacht dat hij morgen zou komen.",
+    "focus": "embedded clause; tense",
+    "mode": "parallel_characters",
+    "source": "I thought he would come tomorrow.",
+    "text": "i              ",
+    "ended": true,
+    "latencyMs": 612,
+    "calls": 1,
+    "model": "jev-1.13.0",
+    "inputTokens": 30241,
+    "confidences": [
+      0.39,
+      0.35,
+      0.34,
+      0.3,
+      0.25,
+      0.25,
+      0.21,
+      0.24,
+      0.2,
+      0.27,
+      0.23,
+      0.21,
+      0.19,
+      0.21,
+      0.18,
+      0.18
+    ]
+  },
+  {
+    "id": "t05",
+    "reference": "Ik dacht dat hij morgen zou komen.",
+    "focus": "embedded clause; tense",
+    "mode": "mymemory_service",
+    "source": "I thought he would come tomorrow.",
+    "text": "Ik dacht dat hij morgen zou komen.",
+    "latencyMs": 555,
+    "calls": 1,
+    "model": "Undisclosed service backend; not a named-model benchmark"
+  },
+  {
+    "id": "t06",
+    "reference": "De rode auto is kleiner dan de blauwe.",
+    "focus": "comparison; adjective agreement",
+    "mode": "mymemory_service",
+    "source": "The red car is smaller than the blue one.",
+    "text": "De rode auto is kleiner dan de blauwe.",
+    "latencyMs": 520,
+    "calls": 1,
+    "model": "Undisclosed service backend; not a named-model benchmark"
+  },
+  {
+    "id": "t06",
+    "reference": "De rode auto is kleiner dan de blauwe.",
+    "focus": "comparison; adjective agreement",
+    "mode": "parallel_characters",
+    "source": "The red car is smaller than the blue one.",
+    "text": "r                   ",
+    "ended": true,
+    "latencyMs": 701,
+    "calls": 1,
+    "model": "jev-1.13.0",
+    "inputTokens": 30244,
+    "confidences": [
+      0.41,
+      0.31,
+      0.23,
+      0.27,
+      0.2,
+      0.23,
+      0.21,
+      0.19,
+      0.16,
+      0.19,
+      0.17,
+      0.18,
+      0.18,
+      0.18,
+      0.16,
+      0.18,
+      0.13,
+      0.15,
+      0.14,
+      0.16,
+      0.13
+    ]
+  },
+  {
+    "id": "t06",
+    "reference": "De rode auto is kleiner dan de blauwe.",
+    "focus": "comparison; adjective agreement",
+    "mode": "hierarchical_parallel_words",
+    "source": "The red car is smaller than the blue one.",
+    "text": "[unavailable] [unavailable] [unavailable]",
+    "tokens": [
+      "[unavailable]",
+      "[unavailable]",
+      "[unavailable]"
+    ],
+    "ended": true,
+    "unavailable": 3,
+    "latencyMs": 783,
+    "calls": 2,
+    "model": "jev-1.13.0",
+    "inputTokens": 40655,
+    "confidences": [
+      {
+        "group": 0.37,
+        "word": 0.93
+      },
+      {
+        "group": 0.12,
+        "word": 0.84
+      },
+      {
+        "group": 0.08,
+        "word": 0.54
+      }
+    ]
+  },
+  {
+    "id": "t07",
+    "reference": "Als het regent, blijven we thuis.",
+    "focus": "condition and Dutch inversion",
+    "mode": "hierarchical_parallel_words",
+    "source": "If it rains, we will stay home.",
+    "text": "[unavailable] [unavailable] [unavailable] [unavailable]",
+    "tokens": [
+      "[unavailable]",
+      "[unavailable]",
+      "[unavailable]",
+      "[unavailable]"
+    ],
+    "ended": true,
+    "unavailable": 4,
+    "latencyMs": 791,
+    "calls": 2,
+    "model": "jev-1.13.0",
+    "inputTokens": 41782,
+    "confidences": [
+      {
+        "group": 0.26,
+        "word": 0.91
+      },
+      {
+        "group": 0.12,
+        "word": 0.74
+      },
+      {
+        "group": 0.13,
+        "word": 0.61
+      },
+      {
+        "group": 0.05,
+        "word": 0.72
+      }
+    ]
+  },
+  {
+    "id": "t07",
+    "reference": "Als het regent, blijven we thuis.",
+    "focus": "condition and Dutch inversion",
+    "mode": "parallel_characters",
+    "source": "If it rains, we will stay home.",
+    "text": "i                 ",
+    "ended": true,
+    "latencyMs": 595,
+    "calls": 1,
+    "model": "jev-1.13.0",
+    "inputTokens": 30243,
+    "confidences": [
+      0.28,
+      0.26,
+      0.34,
+      0.26,
+      0.25,
+      0.27,
+      0.24,
+      0.24,
+      0.19,
+      0.21,
+      0.23,
+      0.21,
+      0.21,
+      0.2,
+      0.21,
+      0.18,
+      0.19,
+      0.17,
+      0.18
+    ]
+  },
+  {
+    "id": "t07",
+    "reference": "Als het regent, blijven we thuis.",
+    "focus": "condition and Dutch inversion",
+    "mode": "mymemory_service",
+    "source": "If it rains, we will stay home.",
+    "text": "Als het regent, blijven we thuis.",
+    "latencyMs": 493,
+    "calls": 1,
+    "model": "Undisclosed service backend; not a named-model benchmark"
+  },
+  {
+    "id": "t08",
+    "reference": "Ik woon hier al drie jaar.",
+    "focus": "duration; tense equivalence",
+    "mode": "mymemory_service",
+    "source": "I have lived here for three years.",
+    "text": "Ik woon hier al drie jaar.",
+    "latencyMs": 537,
+    "calls": 1,
+    "model": "Undisclosed service backend; not a named-model benchmark"
+  },
+  {
+    "id": "t08",
+    "reference": "Ik woon hier al drie jaar.",
+    "focus": "duration; tense equivalence",
+    "mode": "parallel_characters",
+    "source": "I have lived here for three years.",
+    "text": "i               ",
+    "ended": true,
+    "latencyMs": 720,
+    "calls": 1,
+    "model": "jev-1.13.0",
+    "inputTokens": 30242,
+    "confidences": [
+      0.28,
+      0.35,
+      0.42,
+      0.34,
+      0.29,
+      0.28,
+      0.23,
+      0.18,
+      0.21,
+      0.2,
+      0.2,
+      0.18,
+      0.15,
+      0.17,
+      0.16,
+      0.16,
+      0.14
+    ]
+  },
+  {
+    "id": "t08",
+    "reference": "Ik woon hier al drie jaar.",
+    "focus": "duration; tense equivalence",
+    "mode": "hierarchical_parallel_words",
+    "source": "I have lived here for three years.",
+    "text": "[unavailable] [unavailable] [unavailable]",
+    "tokens": [
+      "[unavailable]",
+      "[unavailable]",
+      "[unavailable]"
+    ],
+    "ended": true,
+    "unavailable": 3,
+    "latencyMs": 741,
+    "calls": 2,
+    "model": "jev-1.13.0",
+    "inputTokens": 40756,
+    "confidences": [
+      {
+        "group": 0.2,
+        "word": 0.89
+      },
+      {
+        "group": 0.1,
+        "word": 0.78
+      },
+      {
+        "group": 0.08,
+        "word": 0.74
+      }
+    ]
+  },
+  {
+    "id": "t09",
+    "reference": "Stuur het bericht alstublieft nog niet.",
+    "focus": "negation scope; yet",
+    "mode": "hierarchical_parallel_words",
+    "source": "Please do not send the message yet.",
+    "text": "[unavailable] [unavailable] [unavailable]",
+    "tokens": [
+      "[unavailable]",
+      "[unavailable]",
+      "[unavailable]"
+    ],
+    "ended": true,
+    "unavailable": 3,
+    "latencyMs": 733,
+    "calls": 2,
+    "model": "jev-1.13.0",
+    "inputTokens": 40764,
+    "confidences": [
+      {
+        "group": 0.23,
+        "word": 0.85
+      },
+      {
+        "group": 0.07,
+        "word": 0.41
+      },
+      {
+        "group": 0.05,
+        "word": 0.59
+      }
+    ]
+  },
+  {
+    "id": "t09",
+    "reference": "Stuur het bericht alstublieft nog niet.",
+    "focus": "negation scope; yet",
+    "mode": "parallel_characters",
+    "source": "Please do not send the message yet.",
+    "text": "                  ",
+    "ended": true,
+    "latencyMs": 714,
+    "calls": 1,
+    "model": "jev-1.13.0",
+    "inputTokens": 30242,
+    "confidences": [
+      0.17,
+      0.36,
+      0.42,
+      0.32,
+      0.31,
+      0.31,
+      0.25,
+      0.25,
+      0.21,
+      0.2,
+      0.22,
+      0.22,
+      0.21,
+      0.22,
+      0.18,
+      0.18,
+      0.17,
+      0.14,
+      0.19
+    ]
+  },
+  {
+    "id": "t09",
+    "reference": "Stuur het bericht alstublieft nog niet.",
+    "focus": "negation scope; yet",
+    "mode": "mymemory_service",
+    "source": "Please do not send the message yet.",
+    "text": "Verstuur het bericht nog niet.",
+    "latencyMs": 438,
+    "calls": 1,
+    "model": "Undisclosed service backend; not a named-model benchmark"
+  },
+  {
+    "id": "t10",
+    "reference": "Anna komt om 14:30 aan, niet om 13:30.",
+    "focus": "name; times; negation",
+    "mode": "mymemory_service",
+    "source": "Anna will arrive at 14:30, not at 13:30.",
+    "text": "Anna komt om 14.30 uur aan, niet om 13.30 uur.",
+    "latencyMs": 359,
+    "calls": 1,
+    "model": "Undisclosed service backend; not a named-model benchmark"
+  },
+  {
+    "id": "t10",
+    "reference": "Anna komt om 14:30 aan, niet om 13:30.",
+    "focus": "name; times; negation",
+    "mode": "parallel_characters",
+    "source": "Anna will arrive at 14:30, not at 13:30.",
+    "text": "a                     ",
+    "ended": true,
+    "latencyMs": 853,
+    "calls": 1,
+    "model": "jev-1.13.0",
+    "inputTokens": 30254,
+    "confidences": [
+      0.67,
+      0.29,
+      0.42,
+      0.32,
+      0.3,
+      0.29,
+      0.26,
+      0.2,
+      0.16,
+      0.19,
+      0.17,
+      0.19,
+      0.19,
+      0.17,
+      0.16,
+      0.17,
+      0.19,
+      0.16,
+      0.14,
+      0.16,
+      0.16,
+      0.11,
+      0.17
+    ]
+  },
+  {
+    "id": "t10",
+    "reference": "Anna komt om 14:30 aan, niet om 13:30.",
+    "focus": "name; times; negation",
+    "mode": "hierarchical_parallel_words",
+    "source": "Anna will arrive at 14:30, not at 13:30.",
+    "text": "[unavailable] aankomt [unavailable] 14:30",
+    "tokens": [
+      "[unavailable]",
+      "aankomt",
+      "[unavailable]",
+      "14:30"
+    ],
+    "ended": true,
+    "unavailable": 2,
+    "latencyMs": 1846,
+    "calls": 2,
+    "model": "jev-1.13.0",
+    "inputTokens": 41949,
+    "confidences": [
+      {
+        "group": 0.57,
+        "word": 0.59
+      },
+      {
+        "group": 0.15,
+        "word": 0.31
+      },
+      {
+        "group": 0.14,
+        "word": 0.67
+      },
+      {
+        "group": 0.09,
+        "word": 0.32
+      }
+    ]
+  },
+  {
+    "id": "t11",
+    "reference": "Die beslissing heeft me een fortuin gekost.",
+    "focus": "idiom; nonliteral meaning",
+    "mode": "hierarchical_parallel_words",
+    "source": "That decision cost me an arm and a leg.",
+    "text": "[unavailable] [unavailable] [unavailable] [unavailable]",
+    "tokens": [
+      "[unavailable]",
+      "[unavailable]",
+      "[unavailable]",
+      "[unavailable]"
+    ],
+    "ended": true,
+    "unavailable": 4,
+    "latencyMs": 1091,
+    "calls": 2,
+    "model": "jev-1.13.0",
+    "inputTokens": 41817,
+    "confidences": [
+      {
+        "group": 0.19,
+        "word": 0.72
+      },
+      {
+        "group": 0.14,
+        "word": 0.32
+      },
+      {
+        "group": 0.09,
+        "word": 0.33
+      },
+      {
+        "group": 0.08,
+        "word": 0.44
+      }
+    ]
+  },
+  {
+    "id": "t11",
+    "reference": "Die beslissing heeft me een fortuin gekost.",
+    "focus": "idiom; nonliteral meaning",
+    "mode": "parallel_characters",
+    "source": "That decision cost me an arm and a leg.",
+    "text": "t               ",
+    "ended": true,
+    "latencyMs": 637,
+    "calls": 1,
+    "model": "jev-1.13.0",
+    "inputTokens": 30244,
+    "confidences": [
+      0.21,
+      0.27,
+      0.3,
+      0.28,
+      0.23,
+      0.25,
+      0.24,
+      0.21,
+      0.2,
+      0.2,
+      0.22,
+      0.21,
+      0.22,
+      0.16,
+      0.15,
+      0.13,
+      0.13
+    ]
+  },
+  {
+    "id": "t11",
+    "reference": "Die beslissing heeft me een fortuin gekost.",
+    "focus": "idiom; nonliteral meaning",
+    "mode": "mymemory_service",
+    "source": "That decision cost me an arm and a leg.",
+    "text": "Die beslissing heeft me een arm en een been gekost.",
+    "latencyMs": 677,
+    "calls": 1,
+    "model": "Undisclosed service backend; not a named-model benchmark"
+  },
+  {
+    "id": "t12",
+    "reference": "De afspraak is verplaatst van dinsdag naar donderdag.",
+    "focus": "passive; direction; days",
+    "mode": "mymemory_service",
+    "source": "The appointment was moved from Tuesday to Thursday.",
+    "text": "De afspraak is verplaatst van dinsdag naar donderdag.",
+    "latencyMs": 455,
+    "calls": 1,
+    "model": "Undisclosed service backend; not a named-model benchmark"
+  },
+  {
+    "id": "t12",
+    "reference": "De afspraak is verplaatst van dinsdag naar donderdag.",
+    "focus": "passive; direction; days",
+    "mode": "parallel_characters",
+    "source": "The appointment was moved from Tuesday to Thursday.",
+    "text": "a                 ",
+    "ended": true,
+    "latencyMs": 822,
+    "calls": 1,
+    "model": "jev-1.13.0",
+    "inputTokens": 30243,
+    "confidences": [
+      0.2,
+      0.2,
+      0.32,
+      0.28,
+      0.22,
+      0.27,
+      0.2,
+      0.2,
+      0.19,
+      0.2,
+      0.2,
+      0.23,
+      0.2,
+      0.21,
+      0.19,
+      0.19,
+      0.18,
+      0.16,
+      0.22
+    ]
+  },
+  {
+    "id": "t12",
+    "reference": "De afspraak is verplaatst van dinsdag naar donderdag.",
+    "focus": "passive; direction; days",
+    "mode": "hierarchical_parallel_words",
+    "source": "The appointment was moved from Tuesday to Thursday.",
+    "text": "[unavailable] verhuisde verhuisde verhuisde verhuisde",
+    "tokens": [
+      "[unavailable]",
+      "verhuisde",
+      "verhuisde",
+      "verhuisde",
+      "verhuisde"
+    ],
+    "ended": true,
+    "unavailable": 1,
+    "latencyMs": 1919,
+    "calls": 2,
+    "model": "jev-1.13.0",
+    "inputTokens": 43004,
+    "confidences": [
+      {
+        "group": 0.25,
+        "word": 0.77
+      },
+      {
+        "group": 0.3,
+        "word": 0.44
+      },
+      {
+        "group": 0.19,
+        "word": 0.47
+      },
+      {
+        "group": 0.09,
+        "word": 0.44
+      },
+      {
+        "group": 0.1,
+        "word": 0.39
+      }
+    ]
+  }
+]

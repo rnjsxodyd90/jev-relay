@@ -1,0 +1,28 @@
+{
+  "elapsedMs": 739,
+  "data": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "translation": {
+        "type": "choice",
+        "choice": "tired",
+        "confidence": 1,
+        "probabilities": {
+          "afraid": 0,
+          "angry": 0,
+          "none": 0,
+          "healthy": 0,
+          "lost": 0,
+          "thirsty": 0,
+          "tired": 1,
+          "cold": 0,
+          "hungry": 0
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 476,
+      "output_tokens": 87
+    }
+  }
+}

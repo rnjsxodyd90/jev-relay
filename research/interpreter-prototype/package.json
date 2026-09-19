@@ -1,0 +1,17 @@
+{
+  "name": "jev-interpreter",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "A turn-based voice interpretation prototype with TypeSafe Jev candidate selection",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env launch.mjs",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@huggingface/transformers": "4.3.0"
+  }
+}

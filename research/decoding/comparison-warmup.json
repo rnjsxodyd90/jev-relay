@@ -1,0 +1,16 @@
+{
+  "mode": "qwen_30b_a3b",
+  "source": "I am tired.",
+  "text": "Ik ben moe.",
+  "latencyMs": 363,
+  "calls": 1,
+  "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+  "usage": {
+    "completion_tokens": 6,
+    "prompt_tokens": 67,
+    "total_tokens": 73,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "finishReason": "stop"
+}

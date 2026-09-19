@@ -1,0 +1,9 @@
+{
+  "completedAt": "2026-09-19T08:50:36.556Z",
+  "pairedTrials": 108,
+  "measuredCalls": 216,
+  "callsIncludingWarmups": {
+    "jev": 111,
+    "qwen": 111
+  }
+}

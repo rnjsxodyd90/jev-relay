@@ -1,0 +1,271 @@
+{
+  "counts": {
+    "raterA": {
+      "baseline": {
+        "primaryPass": 24,
+        "actionCorrect": 29,
+        "meaning": 25,
+        "context": 24,
+        "natural": 29
+      },
+      "assisted": {
+        "primaryPass": 27,
+        "actionCorrect": 32,
+        "meaning": 30,
+        "context": 27,
+        "natural": 29
+      }
+    },
+    "raterB": {
+      "baseline": {
+        "primaryPass": 25,
+        "actionCorrect": 29,
+        "meaning": 25,
+        "context": 25,
+        "natural": 29
+      },
+      "assisted": {
+        "primaryPass": 28,
+        "actionCorrect": 32,
+        "meaning": 30,
+        "context": 28,
+        "natural": 29
+      }
+    }
+  },
+  "primaryBoth": {
+    "baseline": 24,
+    "assisted": 27
+  },
+  "primaryEither": {
+    "baseline": 25,
+    "assisted": 28
+  },
+  "outputsWithAnyDimensionDisagreement": 8,
+  "disagreements": [
+    {
+      "mapping": {
+        "id": "r3",
+        "arm": "baseline"
+      },
+      "source": "Have you brought your tickets?",
+      "output": {
+        "code": "o037",
+        "action": "translate",
+        "text": "Heb je je kaartjes meegebracht?"
+      },
+      "reviewA": {
+        "code": "o037",
+        "actionCorrect": true,
+        "meaning": true,
+        "context": false,
+        "natural": true,
+        "reason": "Addresses one person with je rather than the required group with jullie."
+      },
+      "reviewB": {
+        "code": "o037",
+        "actionCorrect": true,
+        "meaning": false,
+        "context": false,
+        "natural": true,
+        "reason": "The singular ‘je’ addresses one person rather than the specified group (‘jullie’)."
+      }
+    },
+    {
+      "mapping": {
+        "id": "r3",
+        "arm": "assisted"
+      },
+      "source": "Have you brought your tickets?",
+      "output": {
+        "code": "o038",
+        "action": "translate",
+        "text": "Heb je je kaartjes meegebracht?"
+      },
+      "reviewA": {
+        "code": "o038",
+        "actionCorrect": true,
+        "meaning": true,
+        "context": false,
+        "natural": true,
+        "reason": "Addresses one person with je rather than the required group with jullie."
+      },
+      "reviewB": {
+        "code": "o038",
+        "actionCorrect": true,
+        "meaning": false,
+        "context": false,
+        "natural": true,
+        "reason": "The singular ‘je’ addresses one person rather than the specified group (‘jullie’)."
+      }
+    },
+    {
+      "mapping": {
+        "id": "n3",
+        "arm": "assisted"
+      },
+      "source": "Anna owes Bram 125 euros, not the other way around.",
+      "output": {
+        "code": "o045",
+        "action": "translate",
+        "text": "Anna schuldt Bram 125 euro, niet andersom."
+      },
+      "reviewA": {
+        "code": "o045",
+        "actionCorrect": true,
+        "meaning": true,
+        "context": true,
+        "natural": false,
+        "reason": "“Anna schuldt Bram” is not standard natural Dutch for owing; use “is Bram ... schuldig.”"
+      },
+      "reviewB": {
+        "code": "o045",
+        "actionCorrect": true,
+        "meaning": true,
+        "context": true,
+        "natural": true,
+        "reason": ""
+      }
+    },
+    {
+      "mapping": {
+        "id": "n3",
+        "arm": "baseline"
+      },
+      "source": "Anna owes Bram 125 euros, not the other way around.",
+      "output": {
+        "code": "o046",
+        "action": "translate",
+        "text": "Anna schuldt Bram 125 euro, niet andersom."
+      },
+      "reviewA": {
+        "code": "o046",
+        "actionCorrect": true,
+        "meaning": true,
+        "context": true,
+        "natural": false,
+        "reason": "“Anna schuldt Bram” is not standard natural Dutch for owing; use “is Bram ... schuldig.”"
+      },
+      "reviewB": {
+        "code": "o046",
+        "actionCorrect": true,
+        "meaning": true,
+        "context": true,
+        "natural": true,
+        "reason": ""
+      }
+    },
+    {
+      "mapping": {
+        "id": "n6",
+        "arm": "baseline"
+      },
+      "source": "If the payment has not arrived by Monday, do not ship the order.",
+      "output": {
+        "code": "o051",
+        "action": "translate",
+        "text": "Als de betaling niet is ontvangen vóór maandag, dien je de bestelling niet te verzenden."
+      },
+      "reviewA": {
+        "code": "o051",
+        "actionCorrect": true,
+        "meaning": false,
+        "context": false,
+        "natural": true,
+        "reason": "“Vóór maandag” changes the deadline from by Monday to before Monday."
+      },
+      "reviewB": {
+        "code": "o051",
+        "actionCorrect": true,
+        "meaning": true,
+        "context": true,
+        "natural": true,
+        "reason": ""
+      }
+    },
+    {
+      "mapping": {
+        "id": "n6",
+        "arm": "assisted"
+      },
+      "source": "If the payment has not arrived by Monday, do not ship the order.",
+      "output": {
+        "code": "o052",
+        "action": "translate",
+        "text": "Als de betaling niet is ontvangen vóór maandag, verzend dan de bestelling niet."
+      },
+      "reviewA": {
+        "code": "o052",
+        "actionCorrect": true,
+        "meaning": false,
+        "context": false,
+        "natural": true,
+        "reason": "“Vóór maandag” changes the deadline from by Monday to before Monday."
+      },
+      "reviewB": {
+        "code": "o052",
+        "actionCorrect": true,
+        "meaning": true,
+        "context": true,
+        "natural": true,
+        "reason": ""
+      }
+    },
+    {
+      "mapping": {
+        "id": "a2",
+        "arm": "baseline"
+      },
+      "source": "Please move it there.",
+      "output": {
+        "code": "o060",
+        "action": "clarify",
+        "text": "Wat wordt bedoeld met 'het' en waar precies wordt 'daar' verwijzend naar?"
+      },
+      "reviewA": {
+        "code": "o060",
+        "actionCorrect": true,
+        "meaning": true,
+        "context": true,
+        "natural": true,
+        "reason": ""
+      },
+      "reviewB": {
+        "code": "o060",
+        "actionCorrect": true,
+        "meaning": true,
+        "context": true,
+        "natural": false,
+        "reason": "‘Waar precies wordt daar verwijzend naar?’ is ungrammatical and non-idiomatic Dutch."
+      }
+    },
+    {
+      "mapping": {
+        "id": "a4",
+        "arm": "assisted"
+      },
+      "source": "Send the file to him, not him.",
+      "output": {
+        "code": "o064",
+        "action": "clarify",
+        "text": "Wie is 'hem' en wie is 'hem' in de zin 'Send the file to him, not him'?"
+      },
+      "reviewA": {
+        "code": "o064",
+        "actionCorrect": true,
+        "meaning": true,
+        "context": true,
+        "natural": true,
+        "reason": ""
+      },
+      "reviewB": {
+        "code": "o064",
+        "actionCorrect": true,
+        "meaning": true,
+        "context": true,
+        "natural": false,
+        "reason": "The repeated ‘Wie is hem en wie is hem’ wording is awkward and non-idiomatic; ‘de eerste en de tweede hem’ would be natural."
+      }
+    }
+  ]
+}

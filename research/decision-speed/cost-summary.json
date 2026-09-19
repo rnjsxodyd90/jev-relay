@@ -1,0 +1,17 @@
+{
+  "word_sense": {
+    "jevEstimatedUsd": 0.000784224,
+    "qwenEstimatedUsd": 0.0009927,
+    "jevCostReductionPercent": 21.000906618313685
+  },
+  "decision_bundle": {
+    "jevEstimatedUsd": 0.002093238,
+    "qwenEstimatedUsd": 0.0034496999999999996,
+    "jevCostReductionPercent": 39.32115836159665
+  },
+  "memory_selection": {
+    "jevEstimatedUsd": 0.001545516,
+    "qwenEstimatedUsd": 0.0023622,
+    "jevCostReductionPercent": 34.5730251460503
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "finishedAt": "2026-09-19T08:19:12.386Z",
+  "cases": 12,
+  "rows": 39,
+  "budget": {
+    "jevCalls": 82,
+    "comparisonCalls": 1,
+    "jevTokens": 962804,
+    "comparisonTokens": 0,
+    "limits": {
+      "jevCalls": 150,
+      "comparisonCalls": 16,
+      "jevTokens": 1500000
+    }
+  }
+}

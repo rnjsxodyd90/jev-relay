@@ -1,0 +1,226 @@
+[
+  {
+    "id": "a3",
+    "arms": [
+      "baseline",
+      "assisted"
+    ]
+  },
+  {
+    "id": "m3",
+    "arms": [
+      "assisted",
+      "baseline"
+    ]
+  },
+  {
+    "id": "s8",
+    "arms": [
+      "baseline",
+      "assisted"
+    ]
+  },
+  {
+    "id": "s3",
+    "arms": [
+      "assisted",
+      "baseline"
+    ]
+  },
+  {
+    "id": "m4",
+    "arms": [
+      "baseline",
+      "assisted"
+    ]
+  },
+  {
+    "id": "m5",
+    "arms": [
+      "assisted",
+      "baseline"
+    ]
+  },
+  {
+    "id": "s2",
+    "arms": [
+      "baseline",
+      "assisted"
+    ]
+  },
+  {
+    "id": "m6",
+    "arms": [
+      "assisted",
+      "baseline"
+    ]
+  },
+  {
+    "id": "n4",
+    "arms": [
+      "baseline",
+      "assisted"
+    ]
+  },
+  {
+    "id": "r2",
+    "arms": [
+      "assisted",
+      "baseline"
+    ]
+  },
+  {
+    "id": "n3",
+    "arms": [
+      "baseline",
+      "assisted"
+    ]
+  },
+  {
+    "id": "s4",
+    "arms": [
+      "assisted",
+      "baseline"
+    ]
+  },
+  {
+    "id": "r1",
+    "arms": [
+      "baseline",
+      "assisted"
+    ]
+  },
+  {
+    "id": "n1",
+    "arms": [
+      "assisted",
+      "baseline"
+    ]
+  },
+  {
+    "id": "n2",
+    "arms": [
+      "baseline",
+      "assisted"
+    ]
+  },
+  {
+    "id": "r3",
+    "arms": [
+      "assisted",
+      "baseline"
+    ]
+  },
+  {
+    "id": "m2",
+    "arms": [
+      "baseline",
+      "assisted"
+    ]
+  },
+  {
+    "id": "n8",
+    "arms": [
+      "assisted",
+      "baseline"
+    ]
+  },
+  {
+    "id": "a4",
+    "arms": [
+      "baseline",
+      "assisted"
+    ]
+  },
+  {
+    "id": "m1",
+    "arms": [
+      "assisted",
+      "baseline"
+    ]
+  },
+  {
+    "id": "s6",
+    "arms": [
+      "baseline",
+      "assisted"
+    ]
+  },
+  {
+    "id": "s1",
+    "arms": [
+      "assisted",
+      "baseline"
+    ]
+  },
+  {
+    "id": "n7",
+    "arms": [
+      "baseline",
+      "assisted"
+    ]
+  },
+  {
+    "id": "n5",
+    "arms": [
+      "assisted",
+      "baseline"
+    ]
+  },
+  {
+    "id": "s7",
+    "arms": [
+      "baseline",
+      "assisted"
+    ]
+  },
+  {
+    "id": "a2",
+    "arms": [
+      "assisted",
+      "baseline"
+    ]
+  },
+  {
+    "id": "n6",
+    "arms": [
+      "baseline",
+      "assisted"
+    ]
+  },
+  {
+    "id": "m7",
+    "arms": [
+      "assisted",
+      "baseline"
+    ]
+  },
+  {
+    "id": "m8",
+    "arms": [
+      "baseline",
+      "assisted"
+    ]
+  },
+  {
+    "id": "r4",
+    "arms": [
+      "assisted",
+      "baseline"
+    ]
+  },
+  {
+    "id": "a1",
+    "arms": [
+      "baseline",
+      "assisted"
+    ]
+  },
+  {
+    "id": "s5",
+    "arms": [
+      "assisted",
+      "baseline"
+    ]
+  }
+]

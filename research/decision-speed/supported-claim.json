@@ -1,0 +1,74 @@
+{
+  "scope": "12 synthetic four-decision routing cases, each repeated three times; 36 requests per provider",
+  "comparedModel": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+  "jevModel": "jev-1.13.0",
+  "jevMedianMs": 303,
+  "qwenMedianMs": 375,
+  "speedRatio": 1.2376237623762376,
+  "latencyReductionPercent": 19.199999999999996,
+  "jevP95Ms": 378,
+  "qwenP95Ms": 652,
+  "p95ReductionPercent": 42.02453987730061,
+  "exactBundleCorrect": {
+    "jev": 36,
+    "qwen": 28,
+    "outOf": 36
+  },
+  "individualLabelCorrect": {
+    "jev": 144,
+    "qwen": 136,
+    "outOf": 144
+  },
+  "bootstrapRatio95CI": [
+    1.1683168316831682,
+    1.3234323432343233
+  ],
+  "cost": {
+    "jevEstimatedUsd": 0.002093238,
+    "qwenEstimatedUsd": 0.0034496999999999996,
+    "jevCostReductionPercent": 39.32115836159665
+  },
+  "fieldAccuracy": {
+    "action": {
+      "jev": {
+        "correct": 36,
+        "n": 36
+      },
+      "qwen": {
+        "correct": 33,
+        "n": 36
+      }
+    },
+    "memory": {
+      "jev": {
+        "correct": 36,
+        "n": 36
+      },
+      "qwen": {
+        "correct": 34,
+        "n": 36
+      }
+    },
+    "register": {
+      "jev": {
+        "correct": 36,
+        "n": 36
+      },
+      "qwen": {
+        "correct": 33,
+        "n": 36
+      }
+    },
+    "sense": {
+      "jev": {
+        "correct": 36,
+        "n": 36
+      },
+      "qwen": {
+        "correct": 36,
+        "n": 36
+      }
+    }
+  },
+  "caveat": "One controlled native-API benchmark, not an intrinsic GPU inference comparison or production-wide accuracy guarantee."
+}

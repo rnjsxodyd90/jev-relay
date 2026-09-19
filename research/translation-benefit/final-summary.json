@@ -1,0 +1,166 @@
+{
+  "scope": "Text interpretation only; no microphone/ASR/TTS evaluation",
+  "cases": 32,
+  "models": {
+    "translator": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "decision": "jev-1.13.0"
+  },
+  "performance": {
+    "costs": {
+      "qwenInputPerToken": 1e-7,
+      "qwenOutputPerToken": 3e-7,
+      "jevInputPerToken": 4.2e-8
+    },
+    "costNote": "Estimated from observed token usage; Qwen rates from saved provider metadata, Jev $0.042/MTok per TypeSafe models documentation. Not an invoice.",
+    "summaries": {
+      "baseline": {
+        "n": 32,
+        "meanMs": 735.46875,
+        "medianMs": 739,
+        "minMs": 465,
+        "maxMs": 1166,
+        "estimatedUsd": 0.0011916000000000003,
+        "qwenInputTokens": 9861,
+        "qwenOutputTokens": 685,
+        "jevInputTokens": 0,
+        "llmCalls": 32,
+        "jevCalls": 0,
+        "routes": {
+          "qwen": 32
+        }
+      },
+      "assisted": {
+        "n": 32,
+        "meanMs": 835.75,
+        "medianMs": 936,
+        "minMs": 248,
+        "maxMs": 1529,
+        "estimatedUsd": 0.002009872,
+        "qwenInputTokens": 7189,
+        "qwenOutputTokens": 521,
+        "jevInputTokens": 27016,
+        "llmCalls": 23,
+        "jevCalls": 32,
+        "routes": {
+          "jev_clarify": 2,
+          "jev_memory": 7,
+          "jev_guided_qwen": 23
+        }
+      }
+    },
+    "paired": {
+      "meanDeltaMs": 100.28125,
+      "medianDeltaMs": 284.5,
+      "bootstrapMeanDelta95CI": [
+        -34.46875,
+        225.875
+      ],
+      "pairedBootstrapCaveat": "Describes this fixed selected case set, not a random sample of real conversations."
+    },
+    "categories": {
+      "memory": {
+        "n": 8,
+        "baselineMeanMs": 727.625,
+        "assistedMeanMs": 376.5,
+        "meanDeltaMs": -351.125,
+        "baselineMedianMs": 730,
+        "assistedMedianMs": 283,
+        "baselineActionCorrect": 8,
+        "assistedActionCorrect": 8
+      },
+      "sense": {
+        "n": 8,
+        "baselineMeanMs": 721.25,
+        "assistedMeanMs": 1025.375,
+        "meanDeltaMs": 304.125,
+        "baselineMedianMs": 723,
+        "assistedMedianMs": 1008,
+        "baselineActionCorrect": 8,
+        "assistedActionCorrect": 8
+      },
+      "register": {
+        "n": 4,
+        "baselineMeanMs": 667.5,
+        "assistedMeanMs": 907.25,
+        "meanDeltaMs": 239.75,
+        "baselineMedianMs": 638,
+        "assistedMedianMs": 924.5,
+        "baselineActionCorrect": 4,
+        "assistedActionCorrect": 4
+      },
+      "meaning": {
+        "n": 6,
+        "baselineMeanMs": 831.1666666666666,
+        "assistedMeanMs": 1177,
+        "meanDeltaMs": 345.8333333333333,
+        "baselineMedianMs": 790.5,
+        "assistedMedianMs": 1119.5,
+        "baselineActionCorrect": 6,
+        "assistedActionCorrect": 6
+      },
+      "memory_trap": {
+        "n": 2,
+        "baselineMeanMs": 659,
+        "assistedMeanMs": 904,
+        "meanDeltaMs": 245,
+        "baselineMedianMs": 659,
+        "assistedMedianMs": 904,
+        "baselineActionCorrect": 2,
+        "assistedActionCorrect": 2
+      },
+      "clarification": {
+        "n": 4,
+        "baselineMeanMs": 742.25,
+        "assistedMeanMs": 757.5,
+        "meanDeltaMs": 15.25,
+        "baselineMedianMs": 758,
+        "assistedMedianMs": 654,
+        "baselineActionCorrect": 1,
+        "assistedActionCorrect": 4
+      }
+    }
+  },
+  "pairedQuality": {
+    "A": {
+      "wins": 3,
+      "losses": 0,
+      "unchanged": 29,
+      "netPercentagePoints": 9.375,
+      "exactMcNemarTwoSidedP": 0.25
+    },
+    "B": {
+      "wins": 3,
+      "losses": 0,
+      "unchanged": 29,
+      "netPercentagePoints": 9.375,
+      "exactMcNemarTwoSidedP": 0.25
+    }
+  },
+  "clarification": {
+    "requiredCases": 4,
+    "baselineAppropriateAction": 1,
+    "assistedAppropriateAction": 4,
+    "assistedGenericQuestions": 2,
+    "warning": "Two generic questions chose the right action but failed the stricter requirement to ask for specific missing information."
+  },
+  "memory": {
+    "eligibleCases": 8,
+    "jevFastPathMatches": 7,
+    "baselineMedianMs": 730,
+    "assistedMedianMs": 283,
+    "medianReductionPercent": 61.23287671232877,
+    "falsePositiveCacheMatchesOnTwoNegatedControls": 0
+  },
+  "costIncreasePercent": 68.670023497818,
+  "medianLatencyIncreasePercent": 26.65764546684708,
+  "nativeHumanReview": false,
+  "limitations": [
+    "Small selected English-to-Dutch set, one live paired run, no production-frequency weighting.",
+    "AI-rater absolute primary counts differ by one case per arm; both agree on the same three improvements and zero regressions.",
+    "Exact paired test p=0.25 does not establish a population-wide accuracy improvement.",
+    "Naturalness did not improve in aggregate; no pronunciation measurements.",
+    "The comparator is one fast inexpensive model, not all translation models.",
+    "This tests the combined Jev decision layer, not the separate causal contribution of each label.",
+    "No comparison against embeddings or rules for memory selection."
+  ]
+}

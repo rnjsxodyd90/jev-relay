@@ -1,0 +1,8 @@
+import{readFile,writeFile}from'node:fs/promises';
+const a=JSON.parse(await readFile('review-a.json','utf8'));const b=JSON.parse(await readFile('review-b.json','utf8'));const mapping=JSON.parse(await readFile('review-mapping.json','utf8'));const blind=JSON.parse(await readFile('blind-review-input.json','utf8'));const pass=r=>r.actionCorrect&&r.meaning&&r.context;const fields=['actionCorrect','meaning','context','natural'];
+if(a.length!==64||b.length!==64)throw Error('Missing review outputs');
+const counts={};for(const [name,rr]of [['raterA',a],['raterB',b]])counts[name]=Object.fromEntries(['baseline','assisted'].map(arm=>{const selected=rr.filter(r=>mapping[r.code].arm===arm);return[arm,{primaryPass:selected.filter(pass).length,...Object.fromEntries(fields.map(f=>[f,selected.filter(r=>r[f]).length]))}];}));
+const disagreements=a.filter(x=>{const y=b.find(v=>v.code===x.code);return fields.some(f=>x[f]!==y[f]);}).map(x=>({mapping:mapping[x.code],source:blind.find(c=>c.outputs.some(o=>o.code===x.code)).source,output:blind.flatMap(c=>c.outputs).find(o=>o.code===x.code),reviewA:x,reviewB:b.find(y=>y.code===x.code)}));
+const primaryBoth=Object.fromEntries(['baseline','assisted'].map(arm=>[arm,a.filter(x=>mapping[x.code].arm===arm&&pass(x)&&pass(b.find(y=>y.code===x.code))).length]));
+const primaryEither=Object.fromEntries(['baseline','assisted'].map(arm=>[arm,a.filter(x=>mapping[x.code].arm===arm&&(pass(x)||pass(b.find(y=>y.code===x.code)))).length]));
+const summary={counts,primaryBoth,primaryEither,outputsWithAnyDimensionDisagreement:disagreements.length,disagreements};await writeFile('review-summary.json',JSON.stringify(summary,null,2)+'\n');console.log(JSON.stringify(summary,null,2));

@@ -1,0 +1,359 @@
+[
+  {
+    "id": "t01",
+    "system": "B",
+    "source": "I am not hungry.",
+    "reference": "Ik heb geen honger.",
+    "output": "[unavailable] [unavailable]"
+  },
+  {
+    "id": "t01",
+    "system": "A",
+    "source": "I am not hungry.",
+    "reference": "Ik heb geen honger.",
+    "output": "i          "
+  },
+  {
+    "id": "t01",
+    "system": "D",
+    "source": "I am not hungry.",
+    "reference": "Ik heb geen honger.",
+    "output": "Ik heb niet veel honger."
+  },
+  {
+    "id": "t01",
+    "system": "C",
+    "source": "I am not hungry.",
+    "reference": "Ik heb geen honger.",
+    "output": "[unavailable]"
+  },
+  {
+    "id": "t02",
+    "system": "D",
+    "source": "She gave him the book yesterday.",
+    "reference": "Ze heeft hem gisteren het boek gegeven.",
+    "output": "Ze gaf hem gisteren het boek."
+  },
+  {
+    "id": "t02",
+    "system": "A",
+    "source": "She gave him the book yesterday.",
+    "reference": "Ze heeft hem gisteren het boek gegeven.",
+    "output": "s               "
+  },
+  {
+    "id": "t02",
+    "system": "B",
+    "source": "She gave him the book yesterday.",
+    "reference": "Ze heeft hem gisteren het boek gegeven.",
+    "output": "[unavailable] [unavailable] [unavailable]"
+  },
+  {
+    "id": "t02",
+    "system": "C",
+    "source": "She gave him the book yesterday.",
+    "reference": "Ze heeft hem gisteren het boek gegeven.",
+    "output": "[unavailable]"
+  },
+  {
+    "id": "t03",
+    "system": "B",
+    "source": "Where can I buy a ticket?",
+    "reference": "Waar kan ik een kaartje kopen?",
+    "output": "[unavailable] [unavailable] [unavailable]"
+  },
+  {
+    "id": "t03",
+    "system": "A",
+    "source": "Where can I buy a ticket?",
+    "reference": "Waar kan ik een kaartje kopen?",
+    "output": "w               "
+  },
+  {
+    "id": "t03",
+    "system": "D",
+    "source": "Where can I buy a ticket?",
+    "reference": "Waar kan ik een kaartje kopen?",
+    "output": "Waar kan ik een kaartje kopen?"
+  },
+  {
+    "id": "t03",
+    "system": "C",
+    "source": "Where can I buy a ticket?",
+    "reference": "Waar kan ik een kaartje kopen?",
+    "output": "[unavailable]"
+  },
+  {
+    "id": "t04",
+    "system": "D",
+    "source": "Please speak a little more slowly.",
+    "reference": "Spreek alstublieft iets langzamer.",
+    "output": "Praat alsjeblieft iets langzamer."
+  },
+  {
+    "id": "t04",
+    "system": "A",
+    "source": "Please speak a little more slowly.",
+    "reference": "Spreek alstublieft iets langzamer.",
+    "output": "s                "
+  },
+  {
+    "id": "t04",
+    "system": "B",
+    "source": "Please speak a little more slowly.",
+    "reference": "Spreek alstublieft iets langzamer.",
+    "output": "[unavailable] meer meer"
+  },
+  {
+    "id": "t05",
+    "system": "B",
+    "source": "I thought he would come tomorrow.",
+    "reference": "Ik dacht dat hij morgen zou komen.",
+    "output": "[unavailable] [unavailable] [unavailable]"
+  },
+  {
+    "id": "t05",
+    "system": "A",
+    "source": "I thought he would come tomorrow.",
+    "reference": "Ik dacht dat hij morgen zou komen.",
+    "output": "i              "
+  },
+  {
+    "id": "t05",
+    "system": "D",
+    "source": "I thought he would come tomorrow.",
+    "reference": "Ik dacht dat hij morgen zou komen.",
+    "output": "Ik dacht dat hij morgen zou komen."
+  },
+  {
+    "id": "t06",
+    "system": "D",
+    "source": "The red car is smaller than the blue one.",
+    "reference": "De rode auto is kleiner dan de blauwe.",
+    "output": "De rode auto is kleiner dan de blauwe."
+  },
+  {
+    "id": "t06",
+    "system": "A",
+    "source": "The red car is smaller than the blue one.",
+    "reference": "De rode auto is kleiner dan de blauwe.",
+    "output": "r                   "
+  },
+  {
+    "id": "t06",
+    "system": "B",
+    "source": "The red car is smaller than the blue one.",
+    "reference": "De rode auto is kleiner dan de blauwe.",
+    "output": "[unavailable] [unavailable] [unavailable]"
+  },
+  {
+    "id": "t07",
+    "system": "B",
+    "source": "If it rains, we will stay home.",
+    "reference": "Als het regent, blijven we thuis.",
+    "output": "[unavailable] [unavailable] [unavailable] [unavailable]"
+  },
+  {
+    "id": "t07",
+    "system": "A",
+    "source": "If it rains, we will stay home.",
+    "reference": "Als het regent, blijven we thuis.",
+    "output": "i                 "
+  },
+  {
+    "id": "t07",
+    "system": "D",
+    "source": "If it rains, we will stay home.",
+    "reference": "Als het regent, blijven we thuis.",
+    "output": "Als het regent, blijven we thuis."
+  },
+  {
+    "id": "t08",
+    "system": "D",
+    "source": "I have lived here for three years.",
+    "reference": "Ik woon hier al drie jaar.",
+    "output": "Ik woon hier al drie jaar."
+  },
+  {
+    "id": "t08",
+    "system": "A",
+    "source": "I have lived here for three years.",
+    "reference": "Ik woon hier al drie jaar.",
+    "output": "i               "
+  },
+  {
+    "id": "t08",
+    "system": "B",
+    "source": "I have lived here for three years.",
+    "reference": "Ik woon hier al drie jaar.",
+    "output": "[unavailable] [unavailable] [unavailable]"
+  },
+  {
+    "id": "t09",
+    "system": "B",
+    "source": "Please do not send the message yet.",
+    "reference": "Stuur het bericht alstublieft nog niet.",
+    "output": "[unavailable] [unavailable] [unavailable]"
+  },
+  {
+    "id": "t09",
+    "system": "A",
+    "source": "Please do not send the message yet.",
+    "reference": "Stuur het bericht alstublieft nog niet.",
+    "output": "                  "
+  },
+  {
+    "id": "t09",
+    "system": "D",
+    "source": "Please do not send the message yet.",
+    "reference": "Stuur het bericht alstublieft nog niet.",
+    "output": "Verstuur het bericht nog niet."
+  },
+  {
+    "id": "t10",
+    "system": "D",
+    "source": "Anna will arrive at 14:30, not at 13:30.",
+    "reference": "Anna komt om 14:30 aan, niet om 13:30.",
+    "output": "Anna komt om 14.30 uur aan, niet om 13.30 uur."
+  },
+  {
+    "id": "t10",
+    "system": "A",
+    "source": "Anna will arrive at 14:30, not at 13:30.",
+    "reference": "Anna komt om 14:30 aan, niet om 13:30.",
+    "output": "a                     "
+  },
+  {
+    "id": "t10",
+    "system": "B",
+    "source": "Anna will arrive at 14:30, not at 13:30.",
+    "reference": "Anna komt om 14:30 aan, niet om 13:30.",
+    "output": "[unavailable] aankomt [unavailable] 14:30"
+  },
+  {
+    "id": "t11",
+    "system": "B",
+    "source": "That decision cost me an arm and a leg.",
+    "reference": "Die beslissing heeft me een fortuin gekost.",
+    "output": "[unavailable] [unavailable] [unavailable] [unavailable]"
+  },
+  {
+    "id": "t11",
+    "system": "A",
+    "source": "That decision cost me an arm and a leg.",
+    "reference": "Die beslissing heeft me een fortuin gekost.",
+    "output": "t               "
+  },
+  {
+    "id": "t11",
+    "system": "D",
+    "source": "That decision cost me an arm and a leg.",
+    "reference": "Die beslissing heeft me een fortuin gekost.",
+    "output": "Die beslissing heeft me een arm en een been gekost."
+  },
+  {
+    "id": "t12",
+    "system": "D",
+    "source": "The appointment was moved from Tuesday to Thursday.",
+    "reference": "De afspraak is verplaatst van dinsdag naar donderdag.",
+    "output": "De afspraak is verplaatst van dinsdag naar donderdag."
+  },
+  {
+    "id": "t12",
+    "system": "A",
+    "source": "The appointment was moved from Tuesday to Thursday.",
+    "reference": "De afspraak is verplaatst van dinsdag naar donderdag.",
+    "output": "a                 "
+  },
+  {
+    "id": "t12",
+    "system": "B",
+    "source": "The appointment was moved from Tuesday to Thursday.",
+    "reference": "De afspraak is verplaatst van dinsdag naar donderdag.",
+    "output": "[unavailable] verhuisde verhuisde verhuisde verhuisde"
+  },
+  {
+    "id": "t01",
+    "system": "E",
+    "source": "I am not hungry.",
+    "reference": "Ik heb geen honger.",
+    "output": "Ik heb geen honger."
+  },
+  {
+    "id": "t02",
+    "system": "E",
+    "source": "She gave him the book yesterday.",
+    "reference": "Ze heeft hem gisteren het boek gegeven.",
+    "output": "Zij gaf hem het boek gisteren."
+  },
+  {
+    "id": "t03",
+    "system": "E",
+    "source": "Where can I buy a ticket?",
+    "reference": "Waar kan ik een kaartje kopen?",
+    "output": "Waar kan ik een kaartje kopen?"
+  },
+  {
+    "id": "t04",
+    "system": "E",
+    "source": "Please speak a little more slowly.",
+    "reference": "Spreek alstublieft iets langzamer.",
+    "output": "Spreek alsjeblieft een beetje langzamer."
+  },
+  {
+    "id": "t05",
+    "system": "E",
+    "source": "I thought he would come tomorrow.",
+    "reference": "Ik dacht dat hij morgen zou komen.",
+    "output": "Ik dacht dat hij morgen zou komen."
+  },
+  {
+    "id": "t06",
+    "system": "E",
+    "source": "The red car is smaller than the blue one.",
+    "reference": "De rode auto is kleiner dan de blauwe.",
+    "output": "De rode auto is kleiner dan de blauwe."
+  },
+  {
+    "id": "t07",
+    "system": "E",
+    "source": "If it rains, we will stay home.",
+    "reference": "Als het regent, blijven we thuis.",
+    "output": "Als het regent, blijven we thuis."
+  },
+  {
+    "id": "t08",
+    "system": "E",
+    "source": "I have lived here for three years.",
+    "reference": "Ik woon hier al drie jaar.",
+    "output": "Ik woon hier al drie jaar."
+  },
+  {
+    "id": "t09",
+    "system": "E",
+    "source": "Please do not send the message yet.",
+    "reference": "Stuur het bericht alstublieft nog niet.",
+    "output": "Stuur de boodschap alstublieft nog niet."
+  },
+  {
+    "id": "t10",
+    "system": "E",
+    "source": "Anna will arrive at 14:30, not at 13:30.",
+    "reference": "Anna komt om 14:30 aan, niet om 13:30.",
+    "output": "Anna komt om 14:30 aan, niet om 13:30."
+  },
+  {
+    "id": "t11",
+    "system": "E",
+    "source": "That decision cost me an arm and a leg.",
+    "reference": "Die beslissing heeft me een fortuin gekost.",
+    "output": "Die beslissing kostte me een arm en een been."
+  },
+  {
+    "id": "t12",
+    "system": "E",
+    "source": "The appointment was moved from Tuesday to Thursday.",
+    "reference": "De afspraak is verplaatst van dinsdag naar donderdag.",
+    "output": "De afspraak is verplaatst van dinsdag naar donderdag."
+  }
+]

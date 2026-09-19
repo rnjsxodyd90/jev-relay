@@ -1,0 +1,10 @@
+{
+  "review": "Independent pre-run AI gold-label sanity check",
+  "flagged": [
+    "memory_m2",
+    "bundle_m2"
+  ],
+  "issue": "The stored slower phrase omitted the a bit qualifier.",
+  "resolution": "Removed a bit from those two source inputs before any benchmark calls; gold label and all other cases unchanged.",
+  "otherCases": "No inconsistency flagged"
+}

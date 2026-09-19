@@ -1,0 +1,83 @@
+[
+  {
+    "id": "s4",
+    "category": "sense",
+    "source": "Keep the bat inside until sunset.",
+    "baseline": {
+      "code": "o024",
+      "passA": false,
+      "passB": false,
+      "output": {
+        "action": "translate",
+        "text": "Houd de knuppel binnen tot zonsondergang."
+      },
+      "reasonA": "Uses knuppel (a club) rather than vleermuis (the animal).",
+      "reasonB": "‘Knuppel’ means a club/bat implement, not the flying mammal required by the context."
+    },
+    "assisted": {
+      "code": "o023",
+      "passA": true,
+      "passB": true,
+      "output": {
+        "action": "translate",
+        "text": "Houd de vleermuis binnen tot zonsondergang."
+      },
+      "reasonA": "",
+      "reasonB": ""
+    }
+  },
+  {
+    "id": "s6",
+    "category": "sense",
+    "source": "The seal is damaged.",
+    "baseline": {
+      "code": "o027",
+      "passA": false,
+      "passB": false,
+      "output": {
+        "action": "translate",
+        "text": "Het zegel is beschadigd."
+      },
+      "reasonA": "Zegel means a seal/stamp, not the plumbing afdichting.",
+      "reasonB": "‘Zegel’ means a seal/stamp, not the plumbing gasket/afdichting required here."
+    },
+    "assisted": {
+      "code": "o028",
+      "passA": true,
+      "passB": true,
+      "output": {
+        "action": "translate",
+        "text": "De afdichting is beschadigd."
+      },
+      "reasonA": "",
+      "reasonB": ""
+    }
+  },
+  {
+    "id": "a4",
+    "category": "clarification",
+    "source": "Send the file to him, not him.",
+    "baseline": {
+      "code": "o063",
+      "passA": false,
+      "passB": false,
+      "output": {
+        "action": "translate",
+        "text": "Stuur het bestand naar hem, niet naar hem."
+      },
+      "reasonA": "It translates instead of asking which of the two men is intended.",
+      "reasonB": "It translates instead of clarifying and leaves the two possible male recipients indistinguishable."
+    },
+    "assisted": {
+      "code": "o064",
+      "passA": true,
+      "passB": true,
+      "output": {
+        "action": "clarify",
+        "text": "Wie is 'hem' en wie is 'hem' in de zin 'Send the file to him, not him'?"
+      },
+      "reasonA": "",
+      "reasonB": "The repeated ‘Wie is hem en wie is hem’ wording is awkward and non-idiomatic; ‘de eerste en de tweede hem’ would be natural."
+    }
+  }
+]

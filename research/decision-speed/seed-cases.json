@@ -1,0 +1,1071 @@
+[
+  {
+    "id": "m1",
+    "category": "memory",
+    "material": {
+      "source": "Would you mind saying that again?",
+      "context": "Polite service conversation with one unfamiliar adult. A debit-card question, if present, concerns a debit card, not credit.",
+      "sourceLanguage": "English",
+      "targetLanguage": "Dutch",
+      "senseOptions": {},
+      "memory": [
+        {
+          "id": "repeat",
+          "english": "Could you repeat that?",
+          "dutch": "Kunt u dat herhalen?"
+        },
+        {
+          "id": "slower",
+          "english": "Could you speak more slowly?",
+          "dutch": "Kunt u langzamer spreken?"
+        },
+        {
+          "id": "card",
+          "english": "Can I pay by debit card?",
+          "dutch": "Kan ik pinnen?"
+        },
+        {
+          "id": "station",
+          "english": "Where is the train station?",
+          "dutch": "Waar is het treinstation?"
+        },
+        {
+          "id": "receipt",
+          "english": "May I have the receipt?",
+          "dutch": "Mag ik de bon?"
+        },
+        {
+          "id": "reservation",
+          "english": "I have a reservation.",
+          "dutch": "Ik heb een reservering."
+        },
+        {
+          "id": "help",
+          "english": "Could you help me?",
+          "dutch": "Kunt u me helpen?"
+        },
+        {
+          "id": "understand",
+          "english": "I do not understand.",
+          "dutch": "Ik begrijp het niet."
+        }
+      ]
+    },
+    "gold": {
+      "action": "translate",
+      "memory": "repeat",
+      "reference": "Kunt u dat herhalen?",
+      "requirements": [
+        "Preserve the request or statement; polite u is appropriate when addressing the listener."
+      ]
+    }
+  },
+  {
+    "id": "m2",
+    "category": "memory",
+    "material": {
+      "source": "Would you mind talking a bit more slowly?",
+      "context": "Polite service conversation with one unfamiliar adult. A debit-card question, if present, concerns a debit card, not credit.",
+      "sourceLanguage": "English",
+      "targetLanguage": "Dutch",
+      "senseOptions": {},
+      "memory": [
+        {
+          "id": "repeat",
+          "english": "Could you repeat that?",
+          "dutch": "Kunt u dat herhalen?"
+        },
+        {
+          "id": "slower",
+          "english": "Could you speak more slowly?",
+          "dutch": "Kunt u langzamer spreken?"
+        },
+        {
+          "id": "card",
+          "english": "Can I pay by debit card?",
+          "dutch": "Kan ik pinnen?"
+        },
+        {
+          "id": "station",
+          "english": "Where is the train station?",
+          "dutch": "Waar is het treinstation?"
+        },
+        {
+          "id": "receipt",
+          "english": "May I have the receipt?",
+          "dutch": "Mag ik de bon?"
+        },
+        {
+          "id": "reservation",
+          "english": "I have a reservation.",
+          "dutch": "Ik heb een reservering."
+        },
+        {
+          "id": "help",
+          "english": "Could you help me?",
+          "dutch": "Kunt u me helpen?"
+        },
+        {
+          "id": "understand",
+          "english": "I do not understand.",
+          "dutch": "Ik begrijp het niet."
+        }
+      ]
+    },
+    "gold": {
+      "action": "translate",
+      "memory": "slower",
+      "reference": "Kunt u langzamer spreken?",
+      "requirements": [
+        "Preserve the request or statement; polite u is appropriate when addressing the listener."
+      ]
+    }
+  },
+  {
+    "id": "m3",
+    "category": "memory",
+    "material": {
+      "source": "Is it possible to pay with my debit card?",
+      "context": "Polite service conversation with one unfamiliar adult. A debit-card question, if present, concerns a debit card, not credit.",
+      "sourceLanguage": "English",
+      "targetLanguage": "Dutch",
+      "senseOptions": {},
+      "memory": [
+        {
+          "id": "repeat",
+          "english": "Could you repeat that?",
+          "dutch": "Kunt u dat herhalen?"
+        },
+        {
+          "id": "slower",
+          "english": "Could you speak more slowly?",
+          "dutch": "Kunt u langzamer spreken?"
+        },
+        {
+          "id": "card",
+          "english": "Can I pay by debit card?",
+          "dutch": "Kan ik pinnen?"
+        },
+        {
+          "id": "station",
+          "english": "Where is the train station?",
+          "dutch": "Waar is het treinstation?"
+        },
+        {
+          "id": "receipt",
+          "english": "May I have the receipt?",
+          "dutch": "Mag ik de bon?"
+        },
+        {
+          "id": "reservation",
+          "english": "I have a reservation.",
+          "dutch": "Ik heb een reservering."
+        },
+        {
+          "id": "help",
+          "english": "Could you help me?",
+          "dutch": "Kunt u me helpen?"
+        },
+        {
+          "id": "understand",
+          "english": "I do not understand.",
+          "dutch": "Ik begrijp het niet."
+        }
+      ]
+    },
+    "gold": {
+      "action": "translate",
+      "memory": "card",
+      "reference": "Kan ik pinnen?",
+      "requirements": [
+        "Preserve the request or statement; polite u is appropriate when addressing the listener."
+      ]
+    }
+  },
+  {
+    "id": "m4",
+    "category": "memory",
+    "material": {
+      "source": "Where can I find the railway station?",
+      "context": "Polite service conversation with one unfamiliar adult. A debit-card question, if present, concerns a debit card, not credit.",
+      "sourceLanguage": "English",
+      "targetLanguage": "Dutch",
+      "senseOptions": {},
+      "memory": [
+        {
+          "id": "repeat",
+          "english": "Could you repeat that?",
+          "dutch": "Kunt u dat herhalen?"
+        },
+        {
+          "id": "slower",
+          "english": "Could you speak more slowly?",
+          "dutch": "Kunt u langzamer spreken?"
+        },
+        {
+          "id": "card",
+          "english": "Can I pay by debit card?",
+          "dutch": "Kan ik pinnen?"
+        },
+        {
+          "id": "station",
+          "english": "Where is the train station?",
+          "dutch": "Waar is het treinstation?"
+        },
+        {
+          "id": "receipt",
+          "english": "May I have the receipt?",
+          "dutch": "Mag ik de bon?"
+        },
+        {
+          "id": "reservation",
+          "english": "I have a reservation.",
+          "dutch": "Ik heb een reservering."
+        },
+        {
+          "id": "help",
+          "english": "Could you help me?",
+          "dutch": "Kunt u me helpen?"
+        },
+        {
+          "id": "understand",
+          "english": "I do not understand.",
+          "dutch": "Ik begrijp het niet."
+        }
+      ]
+    },
+    "gold": {
+      "action": "translate",
+      "memory": "station",
+      "reference": "Waar is het treinstation?",
+      "requirements": [
+        "Preserve the request or statement; polite u is appropriate when addressing the listener."
+      ]
+    }
+  },
+  {
+    "id": "m5",
+    "category": "memory",
+    "material": {
+      "source": "Could I have the receipt, please?",
+      "context": "Polite service conversation with one unfamiliar adult. A debit-card question, if present, concerns a debit card, not credit.",
+      "sourceLanguage": "English",
+      "targetLanguage": "Dutch",
+      "senseOptions": {},
+      "memory": [
+        {
+          "id": "repeat",
+          "english": "Could you repeat that?",
+          "dutch": "Kunt u dat herhalen?"
+        },
+        {
+          "id": "slower",
+          "english": "Could you speak more slowly?",
+          "dutch": "Kunt u langzamer spreken?"
+        },
+        {
+          "id": "card",
+          "english": "Can I pay by debit card?",
+          "dutch": "Kan ik pinnen?"
+        },
+        {
+          "id": "station",
+          "english": "Where is the train station?",
+          "dutch": "Waar is het treinstation?"
+        },
+        {
+          "id": "receipt",
+          "english": "May I have the receipt?",
+          "dutch": "Mag ik de bon?"
+        },
+        {
+          "id": "reservation",
+          "english": "I have a reservation.",
+          "dutch": "Ik heb een reservering."
+        },
+        {
+          "id": "help",
+          "english": "Could you help me?",
+          "dutch": "Kunt u me helpen?"
+        },
+        {
+          "id": "understand",
+          "english": "I do not understand.",
+          "dutch": "Ik begrijp het niet."
+        }
+      ]
+    },
+    "gold": {
+      "action": "translate",
+      "memory": "receipt",
+      "reference": "Mag ik de bon?",
+      "requirements": [
+        "Preserve the request or statement; polite u is appropriate when addressing the listener."
+      ]
+    }
+  },
+  {
+    "id": "m6",
+    "category": "memory",
+    "material": {
+      "source": "There is a reservation in my name.",
+      "context": "Polite service conversation with one unfamiliar adult. A debit-card question, if present, concerns a debit card, not credit.",
+      "sourceLanguage": "English",
+      "targetLanguage": "Dutch",
+      "senseOptions": {},
+      "memory": [
+        {
+          "id": "repeat",
+          "english": "Could you repeat that?",
+          "dutch": "Kunt u dat herhalen?"
+        },
+        {
+          "id": "slower",
+          "english": "Could you speak more slowly?",
+          "dutch": "Kunt u langzamer spreken?"
+        },
+        {
+          "id": "card",
+          "english": "Can I pay by debit card?",
+          "dutch": "Kan ik pinnen?"
+        },
+        {
+          "id": "station",
+          "english": "Where is the train station?",
+          "dutch": "Waar is het treinstation?"
+        },
+        {
+          "id": "receipt",
+          "english": "May I have the receipt?",
+          "dutch": "Mag ik de bon?"
+        },
+        {
+          "id": "reservation",
+          "english": "I have a reservation.",
+          "dutch": "Ik heb een reservering."
+        },
+        {
+          "id": "help",
+          "english": "Could you help me?",
+          "dutch": "Kunt u me helpen?"
+        },
+        {
+          "id": "understand",
+          "english": "I do not understand.",
+          "dutch": "Ik begrijp het niet."
+        }
+      ]
+    },
+    "gold": {
+      "action": "translate",
+      "memory": "reservation",
+      "reference": "Ik heb een reservering.",
+      "requirements": [
+        "Preserve the request or statement; polite u is appropriate when addressing the listener."
+      ]
+    }
+  },
+  {
+    "id": "m7",
+    "category": "memory",
+    "material": {
+      "source": "Would you be able to help me?",
+      "context": "Polite service conversation with one unfamiliar adult. A debit-card question, if present, concerns a debit card, not credit.",
+      "sourceLanguage": "English",
+      "targetLanguage": "Dutch",
+      "senseOptions": {},
+      "memory": [
+        {
+          "id": "repeat",
+          "english": "Could you repeat that?",
+          "dutch": "Kunt u dat herhalen?"
+        },
+        {
+          "id": "slower",
+          "english": "Could you speak more slowly?",
+          "dutch": "Kunt u langzamer spreken?"
+        },
+        {
+          "id": "card",
+          "english": "Can I pay by debit card?",
+          "dutch": "Kan ik pinnen?"
+        },
+        {
+          "id": "station",
+          "english": "Where is the train station?",
+          "dutch": "Waar is het treinstation?"
+        },
+        {
+          "id": "receipt",
+          "english": "May I have the receipt?",
+          "dutch": "Mag ik de bon?"
+        },
+        {
+          "id": "reservation",
+          "english": "I have a reservation.",
+          "dutch": "Ik heb een reservering."
+        },
+        {
+          "id": "help",
+          "english": "Could you help me?",
+          "dutch": "Kunt u me helpen?"
+        },
+        {
+          "id": "understand",
+          "english": "I do not understand.",
+          "dutch": "Ik begrijp het niet."
+        }
+      ]
+    },
+    "gold": {
+      "action": "translate",
+      "memory": "help",
+      "reference": "Kunt u me helpen?",
+      "requirements": [
+        "Preserve the request or statement; polite u is appropriate when addressing the listener."
+      ]
+    }
+  },
+  {
+    "id": "m8",
+    "category": "memory",
+    "material": {
+      "source": "I don't understand.",
+      "context": "Polite service conversation with one unfamiliar adult. A debit-card question, if present, concerns a debit card, not credit.",
+      "sourceLanguage": "English",
+      "targetLanguage": "Dutch",
+      "senseOptions": {},
+      "memory": [
+        {
+          "id": "repeat",
+          "english": "Could you repeat that?",
+          "dutch": "Kunt u dat herhalen?"
+        },
+        {
+          "id": "slower",
+          "english": "Could you speak more slowly?",
+          "dutch": "Kunt u langzamer spreken?"
+        },
+        {
+          "id": "card",
+          "english": "Can I pay by debit card?",
+          "dutch": "Kan ik pinnen?"
+        },
+        {
+          "id": "station",
+          "english": "Where is the train station?",
+          "dutch": "Waar is het treinstation?"
+        },
+        {
+          "id": "receipt",
+          "english": "May I have the receipt?",
+          "dutch": "Mag ik de bon?"
+        },
+        {
+          "id": "reservation",
+          "english": "I have a reservation.",
+          "dutch": "Ik heb een reservering."
+        },
+        {
+          "id": "help",
+          "english": "Could you help me?",
+          "dutch": "Kunt u me helpen?"
+        },
+        {
+          "id": "understand",
+          "english": "I do not understand.",
+          "dutch": "Ik begrijp het niet."
+        }
+      ]
+    },
+    "gold": {
+      "action": "translate",
+      "memory": "understand",
+      "reference": "Ik begrijp het niet.",
+      "requirements": [
+        "Preserve the request or statement; polite u is appropriate when addressing the listener."
+      ]
+    }
+  },
+  {
+    "id": "s1",
+    "category": "sense",
+    "material": {
+      "source": "I'll wait by the bank.",
+      "context": "Two kayakers discuss where to meet along a river. There is no financial business involved.",
+      "sourceLanguage": "English",
+      "targetLanguage": "Dutch",
+      "senseOptions": {
+        "river": "river edge; Dutch oever",
+        "financial": "financial institution; Dutch bank",
+        "bench": "seat; Dutch bankje"
+      },
+      "memory": []
+    },
+    "gold": {
+      "action": "translate",
+      "sense": "river",
+      "reference": "Ik wacht bij de oever.",
+      "requirements": [
+        "bank must mean riverbank/oever, not financial bank."
+      ]
+    }
+  },
+  {
+    "id": "s2",
+    "category": "sense",
+    "material": {
+      "source": "Check the charge before we leave.",
+      "context": "An engineer is talking about a rechargeable battery, not an invoice or accusation.",
+      "sourceLanguage": "English",
+      "targetLanguage": "Dutch",
+      "senseOptions": {
+        "electrical": "stored electrical charge; lading",
+        "fee": "money owed; kosten",
+        "accusation": "legal allegation; aanklacht"
+      },
+      "memory": []
+    },
+    "gold": {
+      "action": "translate",
+      "sense": "electrical",
+      "reference": "Controleer de lading voordat we vertrekken.",
+      "requirements": [
+        "charge refers to battery charge/lading."
+      ]
+    }
+  },
+  {
+    "id": "s3",
+    "category": "sense",
+    "material": {
+      "source": "Has the interest changed?",
+      "context": "The customer asks a bank about the annual percentage paid on a savings account.",
+      "sourceLanguage": "English",
+      "targetLanguage": "Dutch",
+      "senseOptions": {
+        "rate": "financial interest rate; rente",
+        "curiosity": "attention or curiosity; belangstelling",
+        "stake": "ownership or stake; belang"
+      },
+      "memory": []
+    },
+    "gold": {
+      "action": "translate",
+      "sense": "rate",
+      "reference": "Is de rente veranderd?",
+      "requirements": [
+        "interest must be rente, not belangstelling."
+      ]
+    }
+  },
+  {
+    "id": "s4",
+    "category": "sense",
+    "material": {
+      "source": "Keep the bat inside until sunset.",
+      "context": "A wildlife carer is rehabilitating an injured flying mammal.",
+      "sourceLanguage": "English",
+      "targetLanguage": "Dutch",
+      "senseOptions": {
+        "animal": "flying mammal; vleermuis",
+        "sport": "sports bat; knuppel"
+      },
+      "memory": []
+    },
+    "gold": {
+      "action": "translate",
+      "sense": "animal",
+      "reference": "Houd de vleermuis tot zonsondergang binnen.",
+      "requirements": [
+        "bat is vleermuis, not a sports implement."
+      ]
+    }
+  },
+  {
+    "id": "s5",
+    "category": "sense",
+    "material": {
+      "source": "The spring needs replacing.",
+      "context": "A mechanic is repairing the coiled metal component in a door closer.",
+      "sourceLanguage": "English",
+      "targetLanguage": "Dutch",
+      "senseOptions": {
+        "coil": "elastic mechanical coil; veer",
+        "season": "season after winter; lente",
+        "water": "natural water source; bron"
+      },
+      "memory": []
+    },
+    "gold": {
+      "action": "translate",
+      "sense": "coil",
+      "reference": "De veer moet worden vervangen.",
+      "requirements": [
+        "spring is mechanical veer, not season or water source."
+      ]
+    }
+  },
+  {
+    "id": "s6",
+    "category": "sense",
+    "material": {
+      "source": "The seal is damaged.",
+      "context": "A plumber is inspecting the rubber ring that prevents a tap from leaking.",
+      "sourceLanguage": "English",
+      "targetLanguage": "Dutch",
+      "senseOptions": {
+        "gasket": "leak-preventing seal; afdichting",
+        "animal": "marine mammal; zeehond",
+        "stamp": "official stamp; zegel"
+      },
+      "memory": []
+    },
+    "gold": {
+      "action": "translate",
+      "sense": "gasket",
+      "reference": "De afdichting is beschadigd.",
+      "requirements": [
+        "seal is afdichting, not animal or official stamp."
+      ]
+    }
+  },
+  {
+    "id": "s7",
+    "category": "sense",
+    "material": {
+      "source": "This port is blocked.",
+      "context": "The IT team is inspecting firewall rules for network connections.",
+      "sourceLanguage": "English",
+      "targetLanguage": "Dutch",
+      "senseOptions": {
+        "network": "network communication port; poort",
+        "harbor": "place for ships; haven",
+        "wine": "fortified wine; port"
+      },
+      "memory": []
+    },
+    "gold": {
+      "action": "translate",
+      "sense": "network",
+      "reference": "Deze poort is geblokkeerd.",
+      "requirements": [
+        "port is network poort, not harbor or wine."
+      ]
+    }
+  },
+  {
+    "id": "s8",
+    "category": "sense",
+    "material": {
+      "source": "Please prepare the minutes by Friday.",
+      "context": "A secretary is asked to write the record of a committee meeting.",
+      "sourceLanguage": "English",
+      "targetLanguage": "Dutch",
+      "senseOptions": {
+        "record": "written record of a meeting; notulen",
+        "time": "units of time; minuten"
+      },
+      "memory": []
+    },
+    "gold": {
+      "action": "translate",
+      "sense": "record",
+      "reference": "Stel de notulen alstublieft uiterlijk vrijdag op.",
+      "requirements": [
+        "minutes are meeting notulen; by Friday is a deadline."
+      ]
+    }
+  },
+  {
+    "id": "r1",
+    "category": "register",
+    "material": {
+      "source": "Can you send me your address?",
+      "context": "A business representative politely addresses one unfamiliar adult customer. Use formal singular Dutch.",
+      "sourceLanguage": "English",
+      "targetLanguage": "Dutch",
+      "senseOptions": {},
+      "memory": []
+    },
+    "gold": {
+      "action": "translate",
+      "register": "formal",
+      "reference": "Kunt u mij uw adres sturen?",
+      "requirements": [
+        "Use u/uw, not jij/je or jullie."
+      ]
+    }
+  },
+  {
+    "id": "r2",
+    "category": "register",
+    "material": {
+      "source": "Can you send me your address?",
+      "context": "A teenager speaks casually to one close friend. Use informal singular Dutch.",
+      "sourceLanguage": "English",
+      "targetLanguage": "Dutch",
+      "senseOptions": {},
+      "memory": []
+    },
+    "gold": {
+      "action": "translate",
+      "register": "informal",
+      "reference": "Kun je me je adres sturen?",
+      "requirements": [
+        "Use je/jij and je/jouw; do not use formal u."
+      ]
+    }
+  },
+  {
+    "id": "r3",
+    "category": "register",
+    "material": {
+      "source": "Have you brought your tickets?",
+      "context": "A teacher addresses a group of students, not a single person.",
+      "sourceLanguage": "English",
+      "targetLanguage": "Dutch",
+      "senseOptions": {},
+      "memory": []
+    },
+    "gold": {
+      "action": "translate",
+      "register": "plural",
+      "reference": "Hebben jullie jullie kaartjes meegenomen?",
+      "requirements": [
+        "Address the group with jullie; preserve plural tickets."
+      ]
+    }
+  },
+  {
+    "id": "r4",
+    "category": "register",
+    "material": {
+      "source": "Would you like to take a seat?",
+      "context": "A receptionist speaks courteously to an unfamiliar older customer. Formal singular Dutch is required.",
+      "sourceLanguage": "English",
+      "targetLanguage": "Dutch",
+      "senseOptions": {},
+      "memory": []
+    },
+    "gold": {
+      "action": "translate",
+      "register": "formal",
+      "reference": "Wilt u plaatsnemen?",
+      "requirements": [
+        "Use formal u, not informal je."
+      ]
+    }
+  },
+  {
+    "id": "n1",
+    "category": "meaning",
+    "material": {
+      "source": "Only cancel the second booking, not both.",
+      "context": "There are exactly two bookings. The first booking must remain active.",
+      "sourceLanguage": "English",
+      "targetLanguage": "Dutch",
+      "senseOptions": {},
+      "memory": []
+    },
+    "gold": {
+      "action": "translate",
+      "reference": "Annuleer alleen de tweede boeking, niet allebei.",
+      "requirements": [
+        "Cancel second only; preserve first."
+      ]
+    }
+  },
+  {
+    "id": "n2",
+    "category": "meaning",
+    "material": {
+      "source": "Do not delay canceling the 14:30 booking.",
+      "context": "The speaker wants the cancellation to happen immediately, not to postpone it.",
+      "sourceLanguage": "English",
+      "targetLanguage": "Dutch",
+      "senseOptions": {},
+      "memory": []
+    },
+    "gold": {
+      "action": "translate",
+      "reference": "Stel het annuleren van de boeking van 14:30 niet uit.",
+      "requirements": [
+        "Cancel without delay; do not invert into do not cancel. Preserve 14:30."
+      ]
+    }
+  },
+  {
+    "id": "n3",
+    "category": "meaning",
+    "material": {
+      "source": "Anna owes Bram 125 euros, not the other way around.",
+      "context": "The named people and the amount must be preserved exactly.",
+      "sourceLanguage": "English",
+      "targetLanguage": "Dutch",
+      "senseOptions": {},
+      "memory": []
+    },
+    "gold": {
+      "action": "translate",
+      "reference": "Anna is Bram 125 euro schuldig, niet andersom.",
+      "requirements": [
+        "Anna is debtor; Bram creditor; amount 125 euros."
+      ]
+    }
+  },
+  {
+    "id": "n4",
+    "category": "meaning",
+    "material": {
+      "source": "Move the appointment from Tuesday to Thursday, not from Thursday to Tuesday.",
+      "context": "The appointment is currently scheduled for Tuesday.",
+      "sourceLanguage": "English",
+      "targetLanguage": "Dutch",
+      "senseOptions": {},
+      "memory": []
+    },
+    "gold": {
+      "action": "translate",
+      "reference": "Verplaats de afspraak van dinsdag naar donderdag, niet andersom.",
+      "requirements": [
+        "New day Thursday; original day Tuesday."
+      ]
+    }
+  },
+  {
+    "id": "n5",
+    "category": "meaning",
+    "material": {
+      "source": "I did not say that Eva stole the keys.",
+      "context": "Do not add a claim that Eva is innocent or that someone else stole them; preserve only the stated denial of saying this.",
+      "sourceLanguage": "English",
+      "targetLanguage": "Dutch",
+      "senseOptions": {},
+      "memory": []
+    },
+    "gold": {
+      "action": "translate",
+      "reference": "Ik heb niet gezegd dat Eva de sleutels heeft gestolen.",
+      "requirements": [
+        "Negation applies to saying; do not turn it into Eva did not steal."
+      ]
+    }
+  },
+  {
+    "id": "n6",
+    "category": "meaning",
+    "material": {
+      "source": "If the payment has not arrived by Monday, do not ship the order.",
+      "context": "The condition must be retained; this is not an unconditional instruction never to ship.",
+      "sourceLanguage": "English",
+      "targetLanguage": "Dutch",
+      "senseOptions": {},
+      "memory": []
+    },
+    "gold": {
+      "action": "translate",
+      "reference": "Als de betaling maandag nog niet is ontvangen, verstuur de bestelling dan niet.",
+      "requirements": [
+        "Conditional no-shipping if payment absent by Monday."
+      ]
+    }
+  },
+  {
+    "id": "n7",
+    "category": "memory_trap",
+    "material": {
+      "source": "Please do not repeat that.",
+      "context": "The listener should not repeat the previous statement. This is a negated request.",
+      "sourceLanguage": "English",
+      "targetLanguage": "Dutch",
+      "senseOptions": {},
+      "memory": [
+        {
+          "id": "repeat",
+          "english": "Could you repeat that?",
+          "dutch": "Kunt u dat herhalen?"
+        },
+        {
+          "id": "slower",
+          "english": "Could you speak more slowly?",
+          "dutch": "Kunt u langzamer spreken?"
+        },
+        {
+          "id": "card",
+          "english": "Can I pay by debit card?",
+          "dutch": "Kan ik pinnen?"
+        },
+        {
+          "id": "station",
+          "english": "Where is the train station?",
+          "dutch": "Waar is het treinstation?"
+        },
+        {
+          "id": "receipt",
+          "english": "May I have the receipt?",
+          "dutch": "Mag ik de bon?"
+        },
+        {
+          "id": "reservation",
+          "english": "I have a reservation.",
+          "dutch": "Ik heb een reservering."
+        },
+        {
+          "id": "help",
+          "english": "Could you help me?",
+          "dutch": "Kunt u me helpen?"
+        },
+        {
+          "id": "understand",
+          "english": "I do not understand.",
+          "dutch": "Ik begrijp het niet."
+        }
+      ]
+    },
+    "gold": {
+      "action": "translate",
+      "memory": "NONE",
+      "reference": "Herhaal dat alstublieft niet.",
+      "requirements": [
+        "Do not choose the positive repeat phrase from memory."
+      ]
+    }
+  },
+  {
+    "id": "n8",
+    "category": "memory_trap",
+    "material": {
+      "source": "I do not have a reservation.",
+      "context": "The person has no reservation. Preserve the negation.",
+      "sourceLanguage": "English",
+      "targetLanguage": "Dutch",
+      "senseOptions": {},
+      "memory": [
+        {
+          "id": "repeat",
+          "english": "Could you repeat that?",
+          "dutch": "Kunt u dat herhalen?"
+        },
+        {
+          "id": "slower",
+          "english": "Could you speak more slowly?",
+          "dutch": "Kunt u langzamer spreken?"
+        },
+        {
+          "id": "card",
+          "english": "Can I pay by debit card?",
+          "dutch": "Kan ik pinnen?"
+        },
+        {
+          "id": "station",
+          "english": "Where is the train station?",
+          "dutch": "Waar is het treinstation?"
+        },
+        {
+          "id": "receipt",
+          "english": "May I have the receipt?",
+          "dutch": "Mag ik de bon?"
+        },
+        {
+          "id": "reservation",
+          "english": "I have a reservation.",
+          "dutch": "Ik heb een reservering."
+        },
+        {
+          "id": "help",
+          "english": "Could you help me?",
+          "dutch": "Kunt u me helpen?"
+        },
+        {
+          "id": "understand",
+          "english": "I do not understand.",
+          "dutch": "Ik begrijp het niet."
+        }
+      ]
+    },
+    "gold": {
+      "action": "translate",
+      "memory": "NONE",
+      "reference": "Ik heb geen reservering.",
+      "requirements": [
+        "Do not choose the positive reservation phrase from memory."
+      ]
+    }
+  },
+  {
+    "id": "a1",
+    "category": "clarification",
+    "material": {
+      "source": "Meet me at the bank.",
+      "context": "No further context is available. It is unknown whether bank means a financial institution or a riverbank.",
+      "sourceLanguage": "English",
+      "targetLanguage": "Dutch",
+      "senseOptions": {
+        "financial": "financial institution; bank",
+        "river": "riverbank; oever"
+      },
+      "memory": []
+    },
+    "gold": {
+      "action": "clarify",
+      "requirements": [
+        "Ask which meaning of bank; do not choose arbitrarily."
+      ]
+    }
+  },
+  {
+    "id": "a2",
+    "category": "clarification",
+    "material": {
+      "source": "Please move it there.",
+      "context": "There is no preceding conversation, no visible object, and no indicated destination. The listener cannot identify either it or there.",
+      "sourceLanguage": "English",
+      "targetLanguage": "Dutch",
+      "senseOptions": {},
+      "memory": []
+    },
+    "gold": {
+      "action": "clarify",
+      "requirements": [
+        "Ask for the object and destination rather than inventing them."
+      ]
+    }
+  },
+  {
+    "id": "a3",
+    "category": "clarification",
+    "material": {
+      "source": "Set the amount to fifteen—no, fifty—",
+      "context": "The transcript ends immediately after the correction; the speaker was interrupted and has not confirmed the final amount.",
+      "sourceLanguage": "English",
+      "targetLanguage": "Dutch",
+      "senseOptions": {},
+      "memory": []
+    },
+    "gold": {
+      "action": "clarify",
+      "requirements": [
+        "Ask the final intended amount. Do not guess 15 or 50."
+      ]
+    }
+  },
+  {
+    "id": "a4",
+    "category": "clarification",
+    "material": {
+      "source": "Send the file to him, not him.",
+      "context": "Two different men were being pointed at, but the visual gestures and identities are unavailable.",
+      "sourceLanguage": "English",
+      "targetLanguage": "Dutch",
+      "senseOptions": {},
+      "memory": []
+    },
+    "gold": {
+      "action": "clarify",
+      "requirements": [
+        "Ask which recipient; the text alone does not distinguish the men."
+      ]
+    }
+  }
+]

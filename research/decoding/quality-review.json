@@ -1,0 +1,43 @@
+{
+  "method": "Blinded AI linguistic review; not a native-human evaluation",
+  "systems": {
+    "A": "parallel_characters",
+    "B": "hierarchical_parallel_words",
+    "C": "hierarchical_sequential_words",
+    "D": "mymemory_service",
+    "E": "qwen_30b_a3b"
+  },
+  "counts": {
+    "A": {
+      "meaningPreserved": 0,
+      "naturalDutch": 0,
+      "total": 12
+    },
+    "B": {
+      "meaningPreserved": 0,
+      "naturalDutch": 0,
+      "total": 12
+    },
+    "C": {
+      "meaningPreserved": 0,
+      "naturalDutch": 0,
+      "total": 3
+    },
+    "D": {
+      "meaningPreserved": 11,
+      "naturalDutch": 12,
+      "total": 12
+    },
+    "E": {
+      "meaningPreserved": 12,
+      "naturalDutch": 12,
+      "total": 12
+    }
+  },
+  "notes": [
+    "D t01 changed I am not hungry into I am not very hungry.",
+    "E t09 boodschap is less context-specific than bericht but preserves meaning.",
+    "D/E t11 arm-and-leg wording was accepted as an understandable contemporary idiom by the reviewer; traditional Dutch alternatives are preferable to some speakers. Human idiomatic review is still needed.",
+    "A/B/C outputs were incomplete fragments, repetitions or unavailable placeholders."
+  ]
+}
