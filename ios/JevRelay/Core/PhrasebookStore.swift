@@ -88,7 +88,7 @@ final class PhrasebookStore: ObservableObject {
             try mutableDirectory.setResourceValues(directoryValues)
 
             let data = try JSONEncoder().encode(phrases)
-            try data.write(to: storageURL, options: .atomic)
+            try data.write(to: storageURL, options: [.atomic, .completeFileProtection])
             try protectAndExcludeFromBackup(storageURL)
             saved = phrases
             storageError = nil

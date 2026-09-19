@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "observedDate": "2026-09-19",
+  "projectRef": "iliuldjetbxxsjykoqxm",
+  "function": "native-backend",
+  "deploymentMethod": "Supabase Dashboard; deterministic single-file bundle",
+  "migrationsAppliedInOneTransaction": ["202609190001", "202609190002", "202609190003"],
+  "databaseChecks": {
+    "anonCanReserveQuota": false,
+    "authenticatedCanReserveQuota": false,
+    "serviceRoleCanReserveQuota": true,
+    "authAdminCanExecuteSignupHook": true,
+    "allPrivateTablesHaveRLS": true,
+    "activeHourlyCleanupJobs": 1
+  },
+  "authHook": {
+    "name": "public.before_user_created_native_backend",
+    "dashboardEnabled": true,
+    "realAnonymousSignupAndDeletion": "passed in two bounded smoke identities",
+    "rollbackOnlyLogicChecks": {
+      "permanentAccountDenied403": true,
+      "malformedEventDenied400": true,
+      "dailyLimitDenied429WithoutIncrement": true,
+      "monthlyLimitDenied429WithoutIncrement": true,
+      "validAnonymousEventIncrementsBothCounters": true,
+      "testMutationsRolledBack": true
+    },
+    "testScope": "Logic assertions ran as the Dashboard database owner. Hosted Supabase rejected SET ROLE supabase_auth_admin with 42501; that attempt was rolled back and no role privileges were altered. Real Auth-role execution was separately exercised by anonymous signup through Supabase Auth."
+  },
+  "postTestCounts": {
+    "remainingAuthIdentities": 0,
+    "remainingLinkedAccountMetadata": 0,
+    "retainedCurrentDailySignupCount": 2,
+    "retainedCurrentDailyTurnCount": 5
+  },
+  "health": {
+    "status": 200,
+    "ready": true,
+    "interpretReady": true,
+    "deletionReady": true,
+    "limits": {"userDaily": 10, "globalDaily": 60, "globalMonthly": 300}
+  },
+  "limitations": [
+    "This is pilot readiness evidence, not a production-scale or monetary-budget guarantee.",
+    "Hourly cleanup was configured and active; execution history is not asserted in this record.",
+    "Dashboard-applied migrations do not establish CLI migration-ledger reconciliation.",
+    "Provider/platform retention and physical-device behavior require separate validation.",
+    "The original ambiguous-fixture clarification expectation failed safely to review and remains in live-smoke.json."
+  ]
+}

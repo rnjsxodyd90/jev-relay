@@ -27,10 +27,10 @@ struct SettingsView: View {
                 Text("Qwen had lower median latency on the single memory-match and word-sense tasks. These measurements do not establish universal speed, accuracy, or production approval performance. Confidence values are not calibrated correctness probabilities.").font(.relay(.subheadline)).foregroundStyle(RelayStyle.muted)
             }
             Section("Help and policy") {
-                if let url = model.configuration.privacyPolicyURL { Link("Privacy policy", destination: url).frame(minHeight: 44) } else { LabeledContent("Privacy policy", value: "Not configured") }
+                if let url = model.configuration.privacyPolicyURL { Link("Privacy policy", destination: url).frame(minHeight: 44).accessibilityIdentifier("privacyPolicyLink") } else { LabeledContent("Privacy policy", value: "Not configured").accessibilityIdentifier("privacyPolicyLink") }
                 if let url = model.configuration.supportURL { Link("Support", destination: url).frame(minHeight: 44) } else { LabeledContent("Support", value: "Not configured") }
             }
-            Section { Text("Not for legal, medical, or emergency use. Output is not certified. No analytics, tracking, advertising, in-app purchases, or account wall are included.").font(.relay(.caption)).foregroundStyle(RelayStyle.muted) }
+            Section { Text("Not for legal, medical, or emergency use. Output is not certified. No analytics, tracking, advertising, in-app purchases, or account wall are included.").font(.relay(.caption)).foregroundStyle(RelayStyle.muted).accessibilityIdentifier("privacySafetyNotice") }
         }
         .scrollContentBackground(.hidden).background(RelayStyle.workspace).navigationTitle("Preferences")
         .confirmationDialog("Delete anonymous identity?", isPresented: $model.showingIdentityDeletion, titleVisibility: .visible) {

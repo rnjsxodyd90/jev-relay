@@ -121,18 +121,23 @@ jobs:
           mkdir -p artifacts/results artifacts/logs artifacts/derived-data
           xcrun simctl boot "$SIMULATOR_UDID" 2>/dev/null || true
           xcrun simctl bootstatus "$SIMULATOR_UDID" -b
-          rm -rf artifacts/results/iphone.xcresult artifacts/derived-data/iphone
+          rm -rf artifacts/results/iphone.xcresult artifacts/derived-data/native
           NSUnbufferedIO=YES xcodebuild \
             -project ios/JevRelay.xcodeproj \
             -scheme JevRelay \
             -configuration Debug \
             -destination "id=$SIMULATOR_UDID" \
-            -derivedDataPath artifacts/derived-data/iphone \
+            -derivedDataPath artifacts/derived-data/native \
             -resultBundlePath artifacts/results/iphone.xcresult \
             -parallel-testing-enabled NO \
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGNING_REQUIRED=NO \
             test 2>&1 | tee artifacts/logs/iphone-tests.log
+
+      - name: Release iPhone simulator resources before iPad testing
+        if: always()
+        run: |
+          xcrun simctl shutdown "${{ steps.simulators.outputs.iphone_udid }}" 2>/dev/null || true
 
       - name: Run offline unit and UI tests on iPad
         id: ipad_tests
@@ -146,13 +151,13 @@ jobs:
           mkdir -p artifacts/results artifacts/logs artifacts/derived-data
           xcrun simctl boot "$SIMULATOR_UDID" 2>/dev/null || true
           xcrun simctl bootstatus "$SIMULATOR_UDID" -b
-          rm -rf artifacts/results/ipad.xcresult artifacts/derived-data/ipad
+          rm -rf artifacts/results/ipad.xcresult
           NSUnbufferedIO=YES xcodebuild \
             -project ios/JevRelay.xcodeproj \
             -scheme JevRelay \
             -configuration Debug \
             -destination "id=$SIMULATOR_UDID" \
-            -derivedDataPath artifacts/derived-data/ipad \
+            -derivedDataPath artifacts/derived-data/native \
             -resultBundlePath artifacts/results/ipad.xcresult \
             -parallel-testing-enabled NO \
             CODE_SIGNING_ALLOWED=NO \
@@ -179,6 +184,19 @@ jobs:
             echo "::warning::No xcresult bundle was created before the test command failed."
           fi
           find artifacts/screenshots -type f -print || true
+
+      - name: Upload screenshot attachments separately
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ios-screenshot-attachments-${{ github.run_attempt }}
+          path: |
+            artifacts/screenshots/**/*.png
+            artifacts/screenshots/**/*.jpg
+            artifacts/screenshots/**/*.jpeg
+            artifacts/screenshots/**/manifest.json
+          if-no-files-found: warn
+          retention-days: 14
 
       - name: Upload test results, logs, and screenshots
         if: always()

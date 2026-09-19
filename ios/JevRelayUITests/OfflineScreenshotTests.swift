@@ -44,11 +44,21 @@ final class OfflineScreenshotTests: XCTestCase {
         tapTab(named: "Preferences")
         XCTAssertTrue(app.navigationBars["Preferences"].waitForExistence(timeout: 10))
 
-        let privacyText = app.staticTexts["Privacy policy"]
-        let privacyLink = app.links["Privacy policy"]
-        for _ in 0..<8 where !privacyText.exists && !privacyLink.exists { app.swipeUp() }
-        XCTAssertTrue(privacyText.exists || privacyLink.exists, "The privacy row was not reachable in Preferences.")
-        XCTAssertTrue(app.staticTexts["Not for legal, medical, or emergency use. Output is not certified. No analytics, tracking, advertising, in-app purchases, or account wall are included."].exists)
+        // SwiftUI Link may expose a button rather than XCUIElementTypeLink.
+        // Use a stable identifier without assuming its accessibility element type.
+        let privacy = app.descendants(matching: .any).matching(identifier: "privacyPolicyLink").firstMatch
+        for _ in 0..<8 where !privacy.exists || !privacy.isHittable { app.swipeUp() }
+        if !privacy.exists || !privacy.isHittable {
+            let hierarchy = XCTAttachment(string: app.debugDescription)
+            hierarchy.name = "Privacy accessibility hierarchy"
+            hierarchy.lifetime = .keepAlways
+            add(hierarchy)
+        }
+        XCTAssertTrue(privacy.exists && privacy.isHittable, "The privacy row was not visible and reachable in Preferences.")
+        let notice = app.descendants(matching: .any).matching(identifier: "privacySafetyNotice").firstMatch
+        for _ in 0..<4 where !notice.exists || !notice.isHittable { app.swipeUp() }
+        XCTAssertTrue(notice.exists && notice.isHittable, "The privacy and safety notice was not visible.")
+        XCTAssertTrue(privacy.exists && privacy.isHittable, "The screenshot must also include the accessible privacy row.")
         attachScreenshot(named: "03-privacy-preferences-offline")
     }
 

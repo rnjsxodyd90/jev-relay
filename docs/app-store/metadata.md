@@ -1,6 +1,6 @@
 # App Store metadata draft
 
-Status: **draft, not ready to enter or publish**. Replace all bracketed values with real, public, reviewed values. Do not invent URLs.
+Status: **prepared metadata, release verification and App Store entry still pending**. Public URLs are live. Final device QA, privacy answers, signing, and App Store Connect validation remain required.
 
 ## Required fields
 
@@ -11,8 +11,8 @@ Status: **draft, not ready to enter or publish**. Replace all bracketed values w
 | Bundle ID | `com.taekwon.jevrelay` | provided |
 | Team ID | `53R7M78MLK` | provided |
 | Price | Free | no ads; no in-app purchases |
-| Privacy Policy URL | `[PUBLISH BEFORE SUBMISSION: HTTPS privacy-policy URL]` | unsatisfied |
-| Support URL | `[PUBLISH BEFORE SUBMISSION: monitored public support or GitHub Issues URL]` | unsatisfied |
+| Privacy Policy URL | `https://rnjsxodyd90.github.io/jev-relay/privacy.html` | published HTTPS page |
+| Support URL | `https://rnjsxodyd90.github.io/jev-relay/support.html` | published HTTPS page; operator monitoring remains a release responsibility |
 
 ## Promotional text
 
@@ -22,7 +22,7 @@ Draft only: Translate English to Dutch with editable text, review controls, and 
 
 Jev Relay helps you prepare English-to-Dutch wording one turn at a time.
 
-Type or revise your English text, then choose Interpret when you want a cloud translation request. Before new wording is generated, Jev Relay makes one routing decision across the requested action, phrasebook match, register, and word sense. New wording is requested only when needed. If context is missing, a response is uncertain, or a service is unavailable, the app asks for clarification or keeps the result for review instead of approving a guess.
+Type or revise your English text, then choose Interpret when you want a cloud translation request. Before new wording is generated, Jev selects four related decisions in one request: the next action, phrase reuse, form of address, and word meaning. New wording is requested only when needed. If context is missing, a response is uncertain, or a service is unavailable, the app asks for clarification or keeps the result for review instead of approving a guess.
 
 You stay in control of the text. Review and edit the source before sending. Review the Dutch result before using it. Start Dutch playback yourself when you want to hear it. Save useful phrases to the on-device phrasebook, and delete them from the app whenever you choose.
 
@@ -49,6 +49,6 @@ Character count: 70/100, including commas.
 ## Before finalizing metadata
 
 - Confirm age rating, category, copyright, availability, and localizations in App Store Connect.
-- Replace the two URL placeholders with final public HTTPS pages and test them unauthenticated.
+- Recheck both public HTTPS pages without authentication before submission, and confirm support monitoring.
 - Verify the final binary name, bundle ID, and price/IAP configuration in App Store Connect.
 - Recheck all functionality language against the release build and privacy policy.

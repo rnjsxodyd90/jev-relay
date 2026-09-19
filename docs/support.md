@@ -5,7 +5,7 @@ title: Jev Relay support
 
 # Jev Relay support
 
-Contact **[rnjsxodyd@gmail.com](mailto:rnjsxodyd@gmail.com?subject=Jev%20Relay%20support)** for help or a privacy request. This is the developer's existing public App Store support address.
+Contact **[rnjsxodyd@gmail.com](mailto:rnjsxodyd@gmail.com?subject=Jev%20Relay%20support)** for help or a privacy request.
 
 For a non-sensitive bug report, you can also use the [public source repository](https://github.com/rnjsxodyd90/jev-relay). Do not post private conversations, API keys, authentication tokens, or personal documents in a public issue.
 
