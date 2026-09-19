@@ -12,27 +12,29 @@ struct DecisionRail: View {
 
     var body: some View {
         PaperSurface {
-            Button { presentation.showingDetails.toggle() } label: {
-                HStack(spacing: 8) {
-                    Text("How it works").font(.relay(.headline, weight: .semibold))
-                    Spacer()
-                    Image(systemName: presentation.showingDetails ? "chevron.up" : "chevron.down")
-                }
-                .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
-                .contentShape(Rectangle())
-            }
-            .buttonStyle(.plain)
-            .accessibilityIdentifier("howItWorksDisclosure")
-            .accessibilityValue(presentation.showingDetails ? "Expanded" : "Collapsed")
-            if presentation.showingDetails {
-                VStack(alignment: .leading, spacing: 12) {
-                    Text("When you choose Translate, Jev considers four routing choices before it asks for Dutch wording. This helps it decide whether to translate, use a saved phrase, or ask for clarification.").font(.relay(.subheadline)).foregroundStyle(RelayStyle.muted)
-                    Text("Transparent detail").font(.relay(.headline, weight: .semibold)).foregroundStyle(RelayStyle.slate)
-                    ForEach(Array(steps.enumerated()), id: \.element.0) { index, step in
-                        decisionRow(id: step.0, prompt: step.1, index: index)
-                        if index < steps.count - 1 { Rectangle().fill(RelayStyle.rule).frame(width: 2, height: 16).padding(.leading, 13) }
+            VStack(alignment: .leading, spacing: 0) {
+                Button { presentation.showingDetails.toggle() } label: {
+                    HStack(spacing: 8) {
+                        Text("How it works").font(.relay(.headline, weight: .semibold))
+                        Spacer()
+                        Image(systemName: presentation.showingDetails ? "chevron.up" : "chevron.down")
                     }
-                }.padding(.top, 10)
+                    .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
+                    .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .accessibilityIdentifier("howItWorksDisclosure")
+                .accessibilityValue(presentation.showingDetails ? "Expanded" : "Collapsed")
+                if presentation.showingDetails {
+                    VStack(alignment: .leading, spacing: 12) {
+                        Text("When you choose Translate, Jev considers four routing choices before it asks for Dutch wording. This helps it decide whether to translate, use a saved phrase, or ask for clarification.").font(.relay(.subheadline)).foregroundStyle(RelayStyle.muted)
+                        Text("Transparent detail").font(.relay(.headline, weight: .semibold)).foregroundStyle(RelayStyle.slate)
+                        ForEach(Array(steps.enumerated()), id: \.element.0) { index, step in
+                            decisionRow(id: step.0, prompt: step.1, index: index)
+                            if index < steps.count - 1 { Rectangle().fill(RelayStyle.rule).frame(width: 2, height: 16).padding(.leading, 13) }
+                        }
+                    }.padding(.top, 10)
+                }
             }
         }
     }

@@ -35,6 +35,8 @@ struct WorkbenchView: View {
             ToolbarItem(placement: .topBarTrailing) { Button("Start over") { focusedField = nil; model.showingResetConfirmation = true }.frame(minWidth: 44, minHeight: 44).accessibilityIdentifier("resetSessionButton") }
             ToolbarItemGroup(placement: .keyboard) { Spacer(); Button("Done") { focusedField = nil }.accessibilityIdentifier("dismissKeyboardButton") }
         }
+        .toolbarBackground(RelayStyle.workspace, for: .navigationBar)
+        .toolbarBackground(.visible, for: .navigationBar)
         .onDisappear { model.speechCapture.stop(); model.speaker.stop() }
     }
 

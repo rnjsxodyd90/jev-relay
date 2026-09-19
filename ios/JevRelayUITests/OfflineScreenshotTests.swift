@@ -63,6 +63,9 @@ final class OfflineScreenshotTests: XCTestCase {
         details.tap()
         let transparentDetail = app.staticTexts["Transparent detail"].firstMatch
         guard requireExpandedElement(transparentDetail, named: "transparent-detail", message: "Expanding How it works must reveal the transparent detail.") else { return }
+        // The expanded content must remain in the same rail column, directly below its trigger.
+        XCTAssertLessThanOrEqual(abs(details.frame.minX - transparentDetail.frame.minX), 24, "How it works and its detail must share one card column.")
+        XCTAssertGreaterThan(transparentDetail.frame.minY, details.frame.maxY, "How it works detail must appear below its trigger.")
         scrollToVisible(transparentDetail, swipingUp: true)
         XCTAssertTrue(isVisibleAboveBottomNavigation(transparentDetail), "Expanded decision detail must be reachable.")
         attachScreenshot(named: "04-decisions-scroll-offline")
