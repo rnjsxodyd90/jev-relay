@@ -57,6 +57,7 @@ final class AppModel: ObservableObject {
 
     func requestInterpretation() {
         errorMessage = nil
+        speechCapture.stop()
         invalidatePlaybackReview()
         guard configuration.isServiceAvailable else { errorMessage = configuration.missingServiceMessage; return }
         guard hasConsent else { showingConsent = true; return }

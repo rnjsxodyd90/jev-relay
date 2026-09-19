@@ -1,14 +1,32 @@
 import SwiftUI
 
+@MainActor
+private final class DecisionRailPresentationState: ObservableObject {
+    @Published var showingDetails = false
+}
+
 struct DecisionRail: View {
     let result: InterpretResponse?
+    @StateObject private var presentation = DecisionRailPresentationState()
     private let steps = [("action", "Can this turn proceed?"), ("memory", "Does a complete phrase match?"), ("register", "Which form of address?"), ("sense", "Is the intended meaning resolved?")]
 
     var body: some View {
         PaperSurface {
-            DisclosureGroup("How it works") {
+            Button { presentation.showingDetails.toggle() } label: {
+                HStack(spacing: 8) {
+                    Text("How it works").font(.relay(.headline, weight: .semibold))
+                    Spacer()
+                    Image(systemName: presentation.showingDetails ? "chevron.up" : "chevron.down")
+                }
+                .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .accessibilityIdentifier("howItWorksDisclosure")
+            .accessibilityValue(presentation.showingDetails ? "Expanded" : "Collapsed")
+            if presentation.showingDetails {
                 VStack(alignment: .leading, spacing: 12) {
-                    Text("When you choose Translate, Jev checks four safeguards before it asks for Dutch wording. This helps it decide whether to translate, use a saved phrase, or ask for clarification.").font(.relay(.subheadline)).foregroundStyle(RelayStyle.muted)
+                    Text("When you choose Translate, Jev considers four routing choices before it asks for Dutch wording. This helps it decide whether to translate, use a saved phrase, or ask for clarification.").font(.relay(.subheadline)).foregroundStyle(RelayStyle.muted)
                     Text("Transparent detail").font(.relay(.headline, weight: .semibold)).foregroundStyle(RelayStyle.slate)
                     ForEach(Array(steps.enumerated()), id: \.element.0) { index, step in
                         decisionRow(id: step.0, prompt: step.1, index: index)
@@ -16,8 +34,6 @@ struct DecisionRail: View {
                     }
                 }.padding(.top, 10)
             }
-            .font(.relay(.headline, weight: .semibold))
-            .accessibilityIdentifier("howItWorksDisclosure")
         }
     }
 

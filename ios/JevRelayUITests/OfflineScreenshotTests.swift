@@ -49,7 +49,7 @@ final class OfflineScreenshotTests: XCTestCase {
         // A vertically expanding SwiftUI TextField may be exposed as either a text field or text view.
         // Its identifier is stable across those native accessibility representations.
         let context = app.descendants(matching: .any).matching(identifier: "contextEditor").firstMatch
-        XCTAssertTrue(context.waitForExistence(timeout: 5), "Expanding optional controls must reveal editable context.")
+        guard requireExpandedElement(context, named: "context-editor", message: "Expanding optional controls must reveal editable context.") else { return }
         scrollToVisible(context, swipingUp: true)
         XCTAssertTrue(isVisibleAboveBottomNavigation(context), "The revealed context control must be reachable.")
         // Context can push the native row above the viewport. Return to that row before collapsing it.
@@ -62,7 +62,7 @@ final class OfflineScreenshotTests: XCTestCase {
         XCTAssertTrue(isVisibleAboveBottomNavigation(details), "How it works must be reachable.")
         details.tap()
         let transparentDetail = app.staticTexts["Transparent detail"].firstMatch
-        XCTAssertTrue(transparentDetail.waitForExistence(timeout: 5), "Expanding How it works must reveal the transparent detail.")
+        guard requireExpandedElement(transparentDetail, named: "transparent-detail", message: "Expanding How it works must reveal the transparent detail.") else { return }
         scrollToVisible(transparentDetail, swipingUp: true)
         XCTAssertTrue(isVisibleAboveBottomNavigation(transparentDetail), "Expanded decision detail must be reachable.")
         attachScreenshot(named: "04-decisions-scroll-offline")
@@ -119,6 +119,22 @@ final class OfflineScreenshotTests: XCTestCase {
         scrollToVisible(element, swipingUp: true)
         attachScreenshot(named: name)
         XCTAssertTrue(isVisibleAboveBottomNavigation(element), "Lower content must remain reachable above the floating tab bar.")
+    }
+
+    // QA-only diagnostics: retained only when expansion does not reveal its real child control.
+    @discardableResult
+    private func requireExpandedElement(_ element: XCUIElement, named name: String, message: String) -> Bool {
+        guard !element.waitForExistence(timeout: 5) else { return true }
+        let screenshot = XCTAttachment(screenshot: app.screenshot())
+        screenshot.name = "QA expansion failure - \(name)"
+        screenshot.lifetime = .keepAlways
+        add(screenshot)
+        let hierarchy = XCTAttachment(string: app.debugDescription)
+        hierarchy.name = "QA expansion accessibility hierarchy - \(name)"
+        hierarchy.lifetime = .keepAlways
+        add(hierarchy)
+        XCTFail(message)
+        return false
     }
 
     private func attachScreenshot(named name: String) {

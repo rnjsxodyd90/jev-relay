@@ -95,6 +95,21 @@ final class AppModelTests: XCTestCase {
         XCTAssertEqual(model.result?.translatedText, "Hallo")
     }
 
+    func testBlockedInterpretationRequestStopsDictationBeforeConsent() async {
+        let (defaults, suite) = defaults(); defer { defaults.removePersistentDomain(forName: suite) }
+        let relay = StubRelay()
+        let model = AppModel(configuration: configuration(), defaults: defaults, phrasebook: phrasebook(), api: relay)
+        model.sourceText = "Hello"
+        let stopsBeforeRequest = model.speechCapture.stopInvocationCount
+
+        model.requestInterpretation()
+
+        XCTAssertEqual(model.speechCapture.stopInvocationCount, stopsBeforeRequest + 1)
+        XCTAssertTrue(model.showingConsent)
+        let calls = await relay.callCount()
+        XCTAssertEqual(calls, 0)
+    }
+
     func testLateResponseCannotOverwriteChangedInput() async {
         let (defaults, suite) = defaults(); defer { defaults.removePersistentDomain(forName: suite) }
         defaults.set(true, forKey: "transmissionConsent.v1")

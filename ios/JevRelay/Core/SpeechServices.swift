@@ -25,6 +25,7 @@ final class SpeechCapture: NSObject, ObservableObject {
     @Published private(set) var isRecording = false
     @Published private(set) var isStarting = false
     @Published private(set) var status = ""
+    private(set) var stopInvocationCount = 0
     private let recognizer: SFSpeechRecognizer?
     private let engine = AVAudioEngine()
     private let speechAuthorizationProvider: SpeechAuthorizationProvider
@@ -135,6 +136,7 @@ final class SpeechCapture: NSObject, ObservableObject {
     }
 
     func stop(keepStatus: Bool = false) {
+        stopInvocationCount += 1
         generation &+= 1
         let wasActive = isRecording || isStarting
         cleanupAudio()

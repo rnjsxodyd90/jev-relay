@@ -1,8 +1,14 @@
 import SwiftUI
 
+@MainActor
+private final class WorkbenchPresentationState: ObservableObject {
+    @Published var showingOptionalControls = false
+}
+
 struct WorkbenchView: View {
     @EnvironmentObject private var model: AppModel
     @FocusState private var focusedField: EditorField?
+    @StateObject private var presentation = WorkbenchPresentationState()
     private enum EditorField: Hashable { case source, context }
 
     var body: some View {
@@ -53,7 +59,19 @@ struct WorkbenchView: View {
                         .buttonStyle(RelayButtonStyle(prominent: false)).accessibilityIdentifier("tryExampleButton")
                     Text("This only fills the editable English text. It does not translate, record, or send anything.").font(.relay(.caption)).foregroundStyle(RelayStyle.muted)
                 }
-                DisclosureGroup("Optional context and tone") {
+                Button { presentation.showingOptionalControls.toggle() } label: {
+                    HStack(spacing: 8) {
+                        Text("Optional context and tone").font(.relay(.headline, weight: .semibold))
+                        Spacer()
+                        Image(systemName: presentation.showingOptionalControls ? "chevron.up" : "chevron.down")
+                    }
+                    .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
+                    .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .accessibilityIdentifier("optionalControls")
+                .accessibilityValue(presentation.showingOptionalControls ? "Expanded" : "Collapsed")
+                if presentation.showingOptionalControls {
                     VStack(alignment: .leading, spacing: 14) {
                         Text("Add these only when they help the meaning or formality. They are optional.").font(.relay(.caption)).foregroundStyle(RelayStyle.muted)
                         VStack(alignment: .leading, spacing: 7) {
@@ -63,8 +81,9 @@ struct WorkbenchView: View {
                                 .overlay(RoundedRectangle(cornerRadius: 8).stroke(RelayStyle.rule)).accessibilityIdentifier("contextEditor")
                         }
                         VStack(alignment: .leading, spacing: 7) { Text("Tone").font(.relay(.headline, weight: .semibold)); Picker("Tone", selection: $model.tone) { ForEach(ToneMode.allCases) { Text($0.title).tag($0) } }.pickerStyle(.segmented).accessibilityIdentifier("tonePicker") }
-                    }.padding(.top, 8)
-                }.accessibilityIdentifier("optionalControls")
+                    }
+                    .padding(.top, 8)
+                }
                 Text("Translation needs an internet connection. Nothing is sent until you choose Translate.").font(.relay(.caption)).foregroundStyle(RelayStyle.muted).accessibilityIdentifier("transmissionNotice")
                 Text("Live service includes 10 turns per user per UTC day. Shared service limits may also apply.").font(.relay(.caption)).foregroundStyle(RelayStyle.muted)
                 Divider().overlay(RelayStyle.rule)
