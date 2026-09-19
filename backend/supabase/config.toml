@@ -1,0 +1,4 @@
+[functions.native-backend]
+# The function performs authoritative server-side getUser validation itself so it
+# can explicitly reject public publishable/anon keys used as bearer credentials.
+verify_jwt = false

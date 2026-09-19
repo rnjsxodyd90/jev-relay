@@ -6,3 +6,18 @@ node_modules/
 *.log
 .DS_Store
 coverage/
+
+# Native build products, signing material, and local service state
+.build/
+build/
+DerivedData/
+xcuserdata/
+*.xcarchive/
+*.ipa
+*.p12
+*.p8
+*.mobileprovision
+*.cer
+*.key
+*.secret
+backend/supabase/.temp/

@@ -1,0 +1,7 @@
+// Public client configuration only. Provider and signing secrets never belong here.
+// The empty expansion preserves HTTPS slashes in xcconfig syntax.
+SUPABASE_URL = https:/$()/iliuldjetbxxsjykoqxm.supabase.co
+SUPABASE_PUBLISHABLE_KEY = sb_publishable_xkzno9JFwy4ChZ-Ttcdfyw_XvHkif13
+RELAY_BACKEND_URL = https:/$()/iliuldjetbxxsjykoqxm.supabase.co/functions/v1/native-backend
+PRIVACY_POLICY_URL = https:/$()/rnjsxodyd90.github.io/jev-relay/privacy.html
+SUPPORT_URL = https:/$()/rnjsxodyd90.github.io/jev-relay/support.html

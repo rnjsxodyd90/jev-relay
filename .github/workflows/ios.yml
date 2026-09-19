@@ -1,0 +1,214 @@
+name: Native iOS verification
+
+on:
+  push:
+    paths:
+      - "ios/**"
+      - ".github/workflows/ios.yml"
+  pull_request:
+    paths:
+      - "ios/**"
+      - ".github/workflows/ios.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ios-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  native-tests:
+    name: Offline iPhone and iPad tests
+    runs-on: macos-15
+    timeout-minutes: 60
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Select installed Xcode 26 or newer
+        id: xcode
+        run: |
+          set -euo pipefail
+          selected="$(node <<'JS'
+          const {readdirSync} = require('node:fs');
+          const {spawnSync} = require('node:child_process');
+          const candidates = [];
+          for (const name of readdirSync('/Applications').filter(name => /^Xcode.*\.app$/.test(name))) {
+            const app = '/Applications/' + name;
+            const result = spawnSync('xcodebuild', ['-version'], {encoding: 'utf8', env: {...process.env, DEVELOPER_DIR: app + '/Contents/Developer'}});
+            const output = result.stdout || '';
+            const match = /Xcode\s+(\d+)(?:\.(\d+))?(?:\.(\d+))?/.exec(output);
+            if (result.status !== 0 || !match || Number(match[1]) < 26 || /beta|release.candidate|\brc\b/i.test(name + ' ' + output)) continue;
+            candidates.push({app, version: match.slice(1).map(value => Number(value || 0))});
+          }
+          candidates.sort((a, b) => { for (let i = 0; i < 3; i++) { const difference = b.version[i] - a.version[i]; if (difference) return difference; } return a.app.localeCompare(b.app); });
+          if (!candidates.length) { console.error('::error::An installed stable Xcode 26 or newer is required. None was found.'); process.exit(1); }
+          console.log(candidates[0].app);
+          JS
+          )"
+          echo "DEVELOPER_DIR=$selected/Contents/Developer" >> "$GITHUB_ENV"
+          echo "xcode_path=$selected" >> "$GITHUB_OUTPUT"
+          echo "Selected $selected"
+
+      - name: Record toolchain and SDK inventory
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/toolchain
+          {
+            echo "Runner: $RUNNER_OS $RUNNER_ARCH"
+            sw_vers
+            echo
+            xcodebuild -version
+            echo
+            swiftc --version
+            echo
+            xcodebuild -showsdks
+          } | tee artifacts/toolchain/versions.txt
+          xcrun simctl list devices available | tee artifacts/toolchain/available-simulators.txt
+          {
+            echo "### iOS toolchain"
+            echo '```text'
+            cat artifacts/toolchain/versions.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Select available iPhone and iPad simulators
+        id: simulators
+        run: |
+          set -euo pipefail
+          node <<'JS'
+          const {appendFileSync} = require('node:fs');
+          const {execFileSync} = require('node:child_process');
+          const inventory = JSON.parse(execFileSync('xcrun', ['simctl', 'list', 'devices', 'available', '-j'], {encoding: 'utf8'}));
+          const phones = [], tablets = [];
+          for (const [runtime, devices] of Object.entries(inventory.devices || {})) {
+            const match = /SimRuntime\.iOS-(\d+)(?:-(\d+))?(?:-(\d+))?/.exec(runtime);
+            if (!match || Number(match[1]) < 17) continue;
+            const version = match.slice(1).map(value => Number(value || 0));
+            for (const device of devices) {
+              if (device.isAvailable === false) continue;
+              const entry = {version, name: device.name || '', udid: device.udid || '', runtime};
+              if (entry.name.startsWith('iPhone')) phones.push({...entry, large: /Pro Max/.test(entry.name) ? 2 : /Plus/.test(entry.name) ? 1 : 0});
+              if (entry.name.startsWith('iPad')) tablets.push({...entry, large: /13-inch/.test(entry.name) ? 2 : /12\.9-inch/.test(entry.name) ? 1 : 0});
+            }
+          }
+          function choose(devices) { return devices.sort((a, b) => { for (let i = 0; i < 3; i++) { const difference = b.version[i] - a.version[i]; if (difference) return difference; } return b.large - a.large || b.name.localeCompare(a.name, undefined, {numeric: true}); })[0]; }
+          const phone = choose(phones), tablet = choose(tablets);
+          if (!phone || !tablet) { console.error('::error::Available iPhone and iPad simulators on iOS 17+ are required. See the simulator inventory.'); process.exit(1); }
+          for (const [prefix, device] of [['iphone', phone], ['ipad', tablet]]) {
+            appendFileSync(process.env.GITHUB_OUTPUT, prefix + '_udid=' + device.udid + '\n' + prefix + '_name=' + device.name + '\n' + prefix + '_runtime=' + device.runtime + '\n');
+          }
+          const summary = '### Simulator selection\n- iPhone: ' + phone.name + ' (' + phone.runtime + ')\n- iPad: ' + tablet.name + ' (' + tablet.runtime + ')\n';
+          appendFileSync(process.env.GITHUB_STEP_SUMMARY, summary);
+          console.log(summary);
+          JS
+
+      - name: Run offline unit and UI tests on iPhone
+        id: iphone_tests
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          UITEST_OFFLINE: "1"
+          SIMULATOR_UDID: ${{ steps.simulators.outputs.iphone_udid }}
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/results artifacts/logs artifacts/derived-data
+          xcrun simctl boot "$SIMULATOR_UDID" 2>/dev/null || true
+          xcrun simctl bootstatus "$SIMULATOR_UDID" -b
+          rm -rf artifacts/results/iphone.xcresult artifacts/derived-data/iphone
+          NSUnbufferedIO=YES xcodebuild \
+            -project ios/JevRelay.xcodeproj \
+            -scheme JevRelay \
+            -configuration Debug \
+            -destination "id=$SIMULATOR_UDID" \
+            -derivedDataPath artifacts/derived-data/iphone \
+            -resultBundlePath artifacts/results/iphone.xcresult \
+            -parallel-testing-enabled NO \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            test 2>&1 | tee artifacts/logs/iphone-tests.log
+
+      - name: Run offline unit and UI tests on iPad
+        id: ipad_tests
+        continue-on-error: true
+        timeout-minutes: 25
+        env:
+          UITEST_OFFLINE: "1"
+          SIMULATOR_UDID: ${{ steps.simulators.outputs.ipad_udid }}
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/results artifacts/logs artifacts/derived-data
+          xcrun simctl boot "$SIMULATOR_UDID" 2>/dev/null || true
+          xcrun simctl bootstatus "$SIMULATOR_UDID" -b
+          rm -rf artifacts/results/ipad.xcresult artifacts/derived-data/ipad
+          NSUnbufferedIO=YES xcodebuild \
+            -project ios/JevRelay.xcodeproj \
+            -scheme JevRelay \
+            -configuration Debug \
+            -destination "id=$SIMULATOR_UDID" \
+            -derivedDataPath artifacts/derived-data/ipad \
+            -resultBundlePath artifacts/results/ipad.xcresult \
+            -parallel-testing-enabled NO \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            test 2>&1 | tee artifacts/logs/ipad-tests.log
+
+      - name: Export genuine XCTest screenshot attachments
+        if: always()
+        run: |
+          set -u
+          mkdir -p artifacts/screenshots
+          found=0
+          for result in artifacts/results/*.xcresult; do
+            [ -d "$result" ] || continue
+            found=1
+            name="$(basename "$result" .xcresult)"
+            output="artifacts/screenshots/$name"
+            mkdir -p "$output"
+            if ! xcrun xcresulttool export attachments --path "$result" --output-path "$output"; then
+              echo "::warning::Could not export attachments from $result; the complete xcresult is still preserved."
+            fi
+          done
+          if [ "$found" -eq 0 ]; then
+            echo "::warning::No xcresult bundle was created before the test command failed."
+          fi
+          find artifacts/screenshots -type f -print || true
+
+      - name: Upload test results, logs, and screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ios-offline-test-results-${{ github.run_attempt }}
+          path: |
+            artifacts/results/*.xcresult
+            artifacts/screenshots/**
+            artifacts/logs/**
+            artifacts/toolchain/**
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Shut down selected simulators
+        if: always()
+        run: |
+          xcrun simctl shutdown "${{ steps.simulators.outputs.iphone_udid }}" 2>/dev/null || true
+          xcrun simctl shutdown "${{ steps.simulators.outputs.ipad_udid }}" 2>/dev/null || true
+
+      - name: Report test status
+        if: always()
+        run: |
+          {
+            echo "### Offline test status"
+            echo "- iPhone unit/UI tests: ${{ steps.iphone_tests.outcome }}"
+            echo "- iPad unit/UI tests: ${{ steps.ipad_tests.outcome }}"
+            echo "- Screenshots are genuine XCTest attachments from the offline interpret screen, built-in phrasebook, and privacy/preferences UI. No inference result is created for screenshots."
+          } >> "$GITHUB_STEP_SUMMARY"
+          if [ "${{ steps.iphone_tests.outcome }}" != "success" ] || [ "${{ steps.ipad_tests.outcome }}" != "success" ]; then
+            echo "One or more simulator test runs failed. Inspect the preserved xcresult and logs." >&2
+            exit 1
+          fi

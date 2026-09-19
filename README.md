@@ -1,10 +1,20 @@
 # Jev Relay
 
-A small, reusable decision gate and a voice-interpreter workbench. Jev makes four typed choices in one request. Application code decides what happens next.
+A native English-to-Dutch conversation assistant, a reusable decision gate, and a reproducible research workbench. Jev makes four typed choices in one request. Application code decides what happens next; Qwen writes new translations only when needed.
 
-**This is a research-backed integration starter, not a production interpreter or a claim that Jev generates translations.** The interface starts in recorded replay mode. No API key or model call is needed to inspect the evidence.
+## Native iOS app
 
-## Run
+The SwiftUI app in [`ios/`](ios/) includes editable on-device English dictation, context and tone controls, manual Dutch playback, and a local phrasebook. The native app uses real authenticated requests, not the web workbench's recorded replay. Provider keys stay on the server.
+
+The isolated Supabase service in [`backend/`](backend/) adds anonymous authentication, durable user/global request caps, signup controls, privacy-preserving duplicate-request protection, cancellation, account deletion, and scheduled counter cleanup. Request caps are not dollar budgets. Configuration and deployment must be verified before distribution.
+
+**App Store release is in preparation, not submitted or approved.** See [native build evidence](ios/BUILD_EVIDENCE.md), [release checklist](docs/app-store/release-checklist.md), and [privacy assessment](docs/app-store/privacy-assessment.md). Generic-device builds do not establish physical microphone, pronunciation, or signed-distribution validation.
+
+## Research workbench
+
+The original browser interface is a research-backed integration starter. It starts in recorded replay mode, so no API key or model call is needed to inspect the evidence. It is not a claim that Jev generates translations or that the measured routing advantage generalizes to every request.
+
+## Run the workbench
 
 Node.js 22.9 or newer:
 
@@ -93,4 +103,4 @@ research/       Preserved experiments, including negative findings
 
 The interface was redesigned using Anthropic's [frontend-design skill](https://github.com/anthropics/claude-code/blob/main/plugins/frontend-design/skills/frontend-design/SKILL.md), with a project-specific design plan in [docs/design-system.md](docs/design-system.md). The skill is referenced, not presented as our own work.
 
-This independent project is not affiliated with TypeSafe, Qwen, Nebius or Anthropic. Hosted models and third-party dependencies have their own licenses and terms. No open-source license grant is made for this private project at this stage; dependency licenses are unaffected.
+This independent project is not affiliated with TypeSafe, Qwen, Nebius or Anthropic. Hosted models and third-party dependencies have their own licenses and terms. The source is public, but no open-source license grant is made at this stage; dependency licenses are unaffected.

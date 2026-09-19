@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-09-19T10:54:00.825Z",
+  "scope": "Explicit opt-in bounded live smoke: one disposable anonymous identity, three synthetic interpretation turns maximum. This is not a provider-count audit, performance benchmark, translation certification, or universal availability claim.",
+  "fixtures": {
+    "memory": {
+      "text": "Could you repeat that?",
+      "context": "Formal singular address is required.",
+      "source": "en",
+      "target": "nl"
+    },
+    "novel": {
+      "text": "The train leaves at 16:10.",
+      "context": "A neutral station announcement. Preserve the exact departure time.",
+      "source": "en",
+      "target": "nl"
+    },
+    "ambiguous": {
+      "text": "Which bank should I use?",
+      "context": "",
+      "source": "en",
+      "target": "nl"
+    }
+  },
+  "results": [
+    {
+      "id": "health",
+      "status": 200,
+      "elapsedMs": 235,
+      "code": null,
+      "route": null,
+      "model": null,
+      "timing": null,
+      "usedTranslator": null,
+      "passed": true
+    },
+    {
+      "id": "public_key_bearer_rejected",
+      "status": 401,
+      "elapsedMs": 172,
+      "code": "invalid_access_token",
+      "route": null,
+      "model": null,
+      "timing": null,
+      "usedTranslator": null,
+      "passed": true
+    },
+    {
+      "id": "anonymous_signup",
+      "status": 200,
+      "elapsedMs": 310,
+      "code": null,
+      "passed": true
+    },
+    {
+      "id": "invalid_body_rejected_before_inference",
+      "status": 400,
+      "elapsedMs": 356,
+      "code": "invalid_input",
+      "route": null,
+      "model": null,
+      "timing": null,
+      "usedTranslator": null,
+      "passed": true
+    },
+    {
+      "id": "memory_turn",
+      "status": 200,
+      "elapsedMs": 1328,
+      "code": null,
+      "route": "memory",
+      "model": "jev-1.13.0",
+      "timing": {
+        "decisionMs": 687,
+        "translationMs": 0,
+        "totalMs": 688
+      },
+      "usedTranslator": false,
+      "passed": true
+    },
+    {
+      "id": "novel_translation_turn",
+      "status": 200,
+      "elapsedMs": 1561,
+      "code": null,
+      "route": "translate",
+      "model": "jev-1.13.0",
+      "timing": {
+        "decisionMs": 681,
+        "translationMs": 526,
+        "totalMs": 1207
+      },
+      "usedTranslator": true,
+      "passed": true
+    },
+    {
+      "id": "duplicate_idempotency_key",
+      "status": 409,
+      "elapsedMs": 327,
+      "code": "request_already_processed",
+      "route": null,
+      "model": null,
+      "timing": null,
+      "usedTranslator": null,
+      "passed": true
+    },
+    {
+      "id": "ambiguous_clarification_turn",
+      "status": 200,
+      "elapsedMs": 982,
+      "code": null,
+      "route": "review",
+      "model": "jev-1.13.0",
+      "timing": {
+        "decisionMs": 728,
+        "translationMs": 0,
+        "totalMs": 728
+      },
+      "usedTranslator": false,
+      "passed": false
+    },
+    {
+      "id": "delete_session_empty_body",
+      "status": 200,
+      "elapsedMs": 385,
+      "code": null,
+      "route": null,
+      "model": null,
+      "timing": null,
+      "usedTranslator": null,
+      "passed": true
+    },
+    {
+      "id": "old_token_rejected_after_deletion",
+      "status": 401,
+      "elapsedMs": 214,
+      "code": "invalid_access_token",
+      "route": null,
+      "model": null,
+      "timing": null,
+      "usedTranslator": null,
+      "passed": true
+    }
+  ],
+  "cleanup": {
+    "attempted": true,
+    "deleted": true,
+    "oldTokenRejected": true
+  },
+  "overall": {
+    "pass": false,
+    "notes": [
+      "Only response metadata and the synthetic fixtures are recorded. No access token, user ID, API key, request ID, translation text, clarification text, or provider response is retained.",
+      "The invalid-input and duplicate-idempotency checks establish observed HTTP contract behavior. Their no-provider-call properties follow the inspected backend contract; this script does not instrument hosted provider traffic.",
+      "Failed checks: ambiguous_clarification_turn."
+    ]
+  }
+}

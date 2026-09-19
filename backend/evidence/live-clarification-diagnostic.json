@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-09-19T10:58:23.780Z",
+  "scope": "Second explicitly authorized diagnostic: one disposable anonymous identity and exactly two synthetic interpretation calls. This is not a translation certification, provider traffic audit, or universal behavior claim.",
+  "fixtures": {
+    "bank": {
+      "text": "Which bank should I use?",
+      "context": "",
+      "source": "en",
+      "target": "nl"
+    },
+    "interrupted": {
+      "text": "Turn left, no, actually...",
+      "context": "",
+      "source": "en",
+      "target": "nl"
+    }
+  },
+  "results": [
+    {
+      "id": "same_bank_fixture",
+      "status": 200,
+      "elapsedMs": 1224,
+      "route": "review",
+      "reason": "A routing decision is below the experimental confidence threshold. Review the turn.",
+      "decisions": {
+        "action": {
+          "choice": "translate",
+          "confidence": 0.71,
+          "selectedProbability": 0.85
+        },
+        "memory": {
+          "choice": "NONE",
+          "confidence": 0.97,
+          "selectedProbability": 0.98
+        },
+        "register": {
+          "choice": "unspecified",
+          "confidence": 0.98,
+          "selectedProbability": 0.99
+        },
+        "sense": {
+          "choice": "bank_finance",
+          "confidence": 0.99,
+          "selectedProbability": 1
+        }
+      },
+      "timing": {
+        "decisionMs": 733,
+        "translationMs": 0,
+        "totalMs": 733
+      },
+      "usedTranslator": false,
+      "decisionBundleValidated": true
+    },
+    {
+      "id": "interrupted_wording_fixture",
+      "status": 200,
+      "elapsedMs": 1036,
+      "route": "clarify",
+      "reason": "Necessary context is unresolved.",
+      "decisions": {
+        "action": {
+          "choice": "clarify",
+          "confidence": 0.86,
+          "selectedProbability": 0.93
+        },
+        "memory": {
+          "choice": "NONE",
+          "confidence": 0.99,
+          "selectedProbability": 1
+        },
+        "register": {
+          "choice": "unspecified",
+          "confidence": 0.98,
+          "selectedProbability": 0.99
+        },
+        "sense": {
+          "choice": "NONE",
+          "confidence": 0.99,
+          "selectedProbability": 0.99
+        }
+      },
+      "timing": {
+        "decisionMs": 686,
+        "translationMs": 0,
+        "totalMs": 686
+      },
+      "usedTranslator": false,
+      "decisionBundleValidated": true
+    }
+  ],
+  "cleanup": {
+    "attempted": true,
+    "deleted": true,
+    "oldTokenRejected": true,
+    "deleteStatus": 200,
+    "deleteElapsedMs": 404,
+    "oldTokenRejectionStatus": 401,
+    "oldTokenRejectionCode": "invalid_access_token",
+    "oldTokenRejectionElapsedMs": 228
+  },
+  "overall": {
+    "pass": true,
+    "notes": [
+      "Recorded only synthetic fixtures plus route, server reason, validated decision summaries, timing, and usedTranslator. No token, user ID, request ID, API key, translation, clarification text, or full provider response is retained.",
+      "Old-token verification uses delete-session, not interpret, so the diagnostic remains bounded to two interpretation calls."
+    ]
+  },
+  "signup": {
+    "status": 200,
+    "elapsedMs": 542,
+    "created": true
+  },
+  "observedClassification": "low_confidence_policy_hold"
+}
