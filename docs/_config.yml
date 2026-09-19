@@ -1,0 +1,7 @@
+title: Jev Relay
+description: English to Dutch, with context
+theme: jekyll-theme-primer
+show_downloads: false
+exclude:
+  - app-store
+  - live-smoke.json
