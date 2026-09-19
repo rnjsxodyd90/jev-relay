@@ -121,9 +121,9 @@ final class AppModel: ObservableObject {
     func dismissPlaybackReview() { playbackReview = nil }
 
     func approveReviewAndPlay(_ token: UUID) {
-        guard let playbackReview,
-              playbackReview.id == token,
-              consumedReviewToken != playbackReview.id,
+        guard let playbackReview else { return }
+        guard playbackReview.id == token else { return }
+        guard consumedReviewToken != playbackReview.id,
               let result,
               resultGeneration == playbackReview.resultGeneration,
               result.sourceText == playbackReview.sourceText,

@@ -174,6 +174,7 @@ final class DutchSpeaker: NSObject, ObservableObject, AVSpeechSynthesizerDelegat
     @Published private(set) var isSpeaking = false
     @Published private(set) var availabilityMessage: String?
     private(set) var stopInvocationCount = 0
+    private(set) var speakInvocationCount = 0
     private let synthesizer = AVSpeechSynthesizer()
     private(set) var voice: AVSpeechSynthesisVoice?
 
@@ -185,6 +186,7 @@ final class DutchSpeaker: NSObject, ObservableObject, AVSpeechSynthesizerDelegat
     }
 
     func speak(_ text: String) {
+        speakInvocationCount += 1
         stop()
         guard let voice, !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
         let utterance = AVSpeechUtterance(string: text); utterance.voice = voice; utterance.rate = AVSpeechUtteranceDefaultSpeechRate

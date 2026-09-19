@@ -161,20 +161,21 @@ extension AppModelTests {
     func testOnlyCurrentReviewedResultCanSpeak() async {
         let (model, defaults, suite) = await eligibleModel()
         defer { defaults.removePersistentDomain(forName: suite) }
-        let stopsBeforeApproval = model.speaker.stopInvocationCount
+        let speaksBeforeApproval = model.speaker.speakInvocationCount
 
         model.approveReviewAndPlay(UUID())
-        XCTAssertEqual(model.speaker.stopInvocationCount, stopsBeforeApproval)
+        XCTAssertEqual(model.speaker.speakInvocationCount, speaksBeforeApproval)
 
         model.requestPlaybackReview()
         guard let staleToken = model.playbackReview?.id else { return XCTFail("Expected a playback review") }
         model.requestPlaybackReview()
-        guard let currentToken = model.playbackReview?.id else { return XCTFail("Expected a current playback review") }
+        guard let currentReview = model.playbackReview else { return XCTFail("Expected a current playback review") }
         model.approveReviewAndPlay(staleToken)
-        XCTAssertEqual(model.speaker.stopInvocationCount, stopsBeforeApproval)
+        XCTAssertEqual(model.speaker.speakInvocationCount, speaksBeforeApproval)
+        XCTAssertEqual(model.playbackReview?.id, currentReview.id)
 
-        model.approveReviewAndPlay(currentToken)
-        XCTAssertEqual(model.speaker.stopInvocationCount, stopsBeforeApproval + 1)
+        model.approveReviewAndPlay(currentReview.id)
+        XCTAssertEqual(model.speaker.speakInvocationCount, speaksBeforeApproval + 1)
         XCTAssertNil(model.playbackReview)
     }
 
@@ -183,12 +184,12 @@ extension AppModelTests {
         defer { defaults.removePersistentDomain(forName: suite) }
         model.requestPlaybackReview()
         guard let token = model.playbackReview?.id else { return XCTFail("Expected a playback review") }
-        let stopsBeforeApproval = model.speaker.stopInvocationCount
+        let speaksBeforeApproval = model.speaker.speakInvocationCount
 
         model.approveReviewAndPlay(token)
         model.approveReviewAndPlay(token)
 
-        XCTAssertEqual(model.speaker.stopInvocationCount, stopsBeforeApproval + 1)
+        XCTAssertEqual(model.speaker.speakInvocationCount, speaksBeforeApproval + 1)
     }
 
     func testEditAndResetInvalidatePlaybackReviewApproval() async {
@@ -196,25 +197,25 @@ extension AppModelTests {
         defer { defaults.removePersistentDomain(forName: suite) }
         model.requestPlaybackReview()
         guard let editToken = model.playbackReview?.id else { return XCTFail("Expected a playback review") }
-        let stopsBeforeEdit = model.speaker.stopInvocationCount
+        let speaksBeforeEdit = model.speaker.speakInvocationCount
 
         model.context = "At a hotel"
         model.approveReviewAndPlay(editToken)
 
         XCTAssertNil(model.playbackReview)
-        XCTAssertEqual(model.speaker.stopInvocationCount, stopsBeforeEdit + 1)
+        XCTAssertEqual(model.speaker.speakInvocationCount, speaksBeforeEdit)
 
         model.sourceText = "Hello"
         model.requestInterpretation()
         await waitForResult(model)
         model.requestPlaybackReview()
         guard let resetToken = model.playbackReview?.id else { return XCTFail("Expected a playback review") }
-        let stopsBeforeReset = model.speaker.stopInvocationCount
+        let speaksBeforeReset = model.speaker.speakInvocationCount
         model.resetSession()
         model.approveReviewAndPlay(resetToken)
 
         XCTAssertNil(model.playbackReview)
-        XCTAssertEqual(model.speaker.stopInvocationCount, stopsBeforeReset + 1)
+        XCTAssertEqual(model.speaker.speakInvocationCount, speaksBeforeReset)
     }
 }
 

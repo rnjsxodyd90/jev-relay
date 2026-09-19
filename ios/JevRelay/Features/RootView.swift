@@ -10,9 +10,9 @@ struct RootView: View {
         }
         .background(RelayStyle.workspace)
         .sheet(isPresented: $model.showingConsent) { ConsentView().interactiveDismissDisabled() }
-        .confirmationDialog("Reset this turn?", isPresented: $model.showingResetConfirmation, titleVisibility: .visible) {
-            Button("Reset session", role: .destructive) { model.resetSession() }
+        .confirmationDialog("Start over?", isPresented: $model.showingResetConfirmation, titleVisibility: .visible) {
+            Button("Clear current text", role: .destructive) { model.resetSession() }
             Button("Cancel", role: .cancel) {}
-        } message: { Text("The editable turn and result will be cleared. No transcript is kept in history.") }
+        } message: { Text("Clears your current text, context, tone and Dutch result. Your saved phrases stay on this device.") }
     }
 }

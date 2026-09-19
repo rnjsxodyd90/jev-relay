@@ -26,7 +26,7 @@ struct WorkbenchView: View {
         .navigationTitle("Jev Relay")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            ToolbarItem(placement: .topBarTrailing) { Button { focusedField = nil; model.showingResetConfirmation = true } label: { Label("Reset session", systemImage: "arrow.counterclockwise") }.frame(minWidth: 44, minHeight: 44) }
+            ToolbarItem(placement: .topBarTrailing) { Button("Start over") { focusedField = nil; model.showingResetConfirmation = true }.frame(minWidth: 44, minHeight: 44).accessibilityIdentifier("resetSessionButton") }
             ToolbarItemGroup(placement: .keyboard) { Spacer(); Button("Done") { focusedField = nil }.accessibilityIdentifier("dismissKeyboardButton") }
         }
         .onDisappear { model.speechCapture.stop(); model.speaker.stop() }

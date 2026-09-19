@@ -42,17 +42,29 @@ final class OfflineScreenshotTests: XCTestCase {
         XCTAssertEqual(editor.value as? String, example, "Dismissing the keyboard must preserve the editable source.")
         XCTAssertFalse(app.keyboards.firstMatch.exists, "Done must dismiss the keyboard.")
 
+        // Tap the native disclosure row, rather than its identified container, because the container's bounds grow on expansion.
         let optional = app.buttons["Optional context and tone"].firstMatch
         XCTAssertTrue(optional.waitForExistence(timeout: 5), "Optional controls must be clearly available.")
         optional.tap()
-        XCTAssertTrue(app.textFields["contextEditor"].exists)
+        // A vertically expanding SwiftUI TextField may be exposed as either a text field or text view.
+        // Its identifier is stable across those native accessibility representations.
+        let context = app.descendants(matching: .any).matching(identifier: "contextEditor").firstMatch
+        XCTAssertTrue(context.waitForExistence(timeout: 5), "Expanding optional controls must reveal editable context.")
+        scrollToVisible(context, swipingUp: true)
+        XCTAssertTrue(isVisibleAboveBottomNavigation(context), "The revealed context control must be reachable.")
+        // Context can push the native row above the viewport. Return to that row before collapsing it.
+        scrollToVisible(optional, swipingUp: false)
+        XCTAssertTrue(isVisibleAboveBottomNavigation(optional), "The optional-controls row must remain reachable.")
         optional.tap()
 
         let details = app.buttons["How it works"].firstMatch
-        for _ in 0..<6 where !details.isHittable { app.swipeUp() }
-        XCTAssertTrue(details.isHittable, "How it works must be reachable.")
+        scrollToVisible(details, swipingUp: true)
+        XCTAssertTrue(isVisibleAboveBottomNavigation(details), "How it works must be reachable.")
         details.tap()
-        XCTAssertTrue(app.staticTexts["Transparent detail"].waitForExistence(timeout: 5))
+        let transparentDetail = app.staticTexts["Transparent detail"].firstMatch
+        XCTAssertTrue(transparentDetail.waitForExistence(timeout: 5), "Expanding How it works must reveal the transparent detail.")
+        scrollToVisible(transparentDetail, swipingUp: true)
+        XCTAssertTrue(isVisibleAboveBottomNavigation(transparentDetail), "Expanded decision detail must be reachable.")
         attachScreenshot(named: "04-decisions-scroll-offline")
 
         let safety = app.descendants(matching: .any).matching(identifier: "workbenchSafetyNotice").firstMatch
@@ -97,8 +109,14 @@ final class OfflineScreenshotTests: XCTestCase {
         return true
     }
 
+    private func scrollToVisible(_ element: XCUIElement, swipingUp: Bool, maxSwipes: Int = 8) {
+        for _ in 0..<maxSwipes where !isVisibleAboveBottomNavigation(element) {
+            if swipingUp { app.swipeUp() } else { app.swipeDown() }
+        }
+    }
+
     private func scrollToAndCapture(_ element: XCUIElement, named name: String) {
-        for _ in 0..<8 where !isVisibleAboveBottomNavigation(element) { app.swipeUp() }
+        scrollToVisible(element, swipingUp: true)
         attachScreenshot(named: name)
         XCTAssertTrue(isVisibleAboveBottomNavigation(element), "Lower content must remain reachable above the floating tab bar.")
     }
