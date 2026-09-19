@@ -36,7 +36,7 @@ Jev Relay is focused on English-to-Dutch. It is not a substitute for a professio
 
 `English,Dutch,translation,phrasebook,register,clarification,speech,review`
 
-Character count: 70/100, including commas.
+Character count: 73/100, including commas.
 
 ## Intentional exclusions
 

@@ -4,6 +4,11 @@
   "projectRef": "iliuldjetbxxsjykoqxm",
   "function": "native-backend",
   "deploymentMethod": "Supabase Dashboard; deterministic single-file bundle",
+  "databaseRegion": {
+    "dashboardLabel": "West EU (Ireland)",
+    "awsRegion": "eu-west-1",
+    "scope": "Database location only; Edge Function and AI-provider processing residency is not established."
+  },
   "migrationsAppliedInOneTransaction": ["202609190001", "202609190002", "202609190003"],
   "databaseChecks": {
     "anonCanReserveQuota": false,
@@ -33,6 +38,16 @@
     "retainedCurrentDailySignupCount": 2,
     "retainedCurrentDailyTurnCount": 5
   },
+  "scheduledCleanup": {
+    "jobName": "native-backend-counter-cleanup-hourly",
+    "active": true,
+    "scheduleUTC": "17 * * * *",
+    "latestStatus": "succeeded",
+    "returnMessage": "1 row",
+    "startedAt": "2026-09-19T11:17:00.151208Z",
+    "finishedAt": "2026-09-19T11:17:00.169463Z",
+    "scope": "Verified cron execution history. The returned row is the function result, not a claim that an expired record was deleted."
+  },
   "health": {
     "status": 200,
     "ready": true,
@@ -42,7 +57,7 @@
   },
   "limitations": [
     "This is pilot readiness evidence, not a production-scale or monetary-budget guarantee.",
-    "Hourly cleanup was configured and active; execution history is not asserted in this record.",
+    "Successful scheduled cleanup execution does not by itself establish every retention-boundary case.",
     "Dashboard-applied migrations do not establish CLI migration-ledger reconciliation.",
     "Provider/platform retention and physical-device behavior require separate validation.",
     "The original ambiguous-fixture clarification expectation failed safely to review and remains in live-smoke.json."

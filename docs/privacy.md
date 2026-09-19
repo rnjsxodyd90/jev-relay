@@ -19,7 +19,7 @@ Jev Relay is operated by **Tae yong Kwon**. Contact **[rnjsxodyd@gmail.com](mail
 
 ## When you choose live interpretation
 
-Before the first live request, the app identifies the external services and asks for your permission. Choosing **Interpret** sends the edited English text, context, and relevant routing information over HTTPS to the Jev Relay backend, hosted by **Supabase** in the EU.
+Before the first live request, the app identifies the external services and asks for your permission. Choosing **Interpret** sends the edited English text, context, and relevant routing information over HTTPS to the Jev Relay backend, hosted by **Supabase**. The relay database is in Ireland. This does not establish the processing location of every Supabase Edge Function or AI provider.
 
 The backend sends the text, context, supplied word-meaning choices, and library phrase candidates to **TypeSafe AI (Jev)** to choose the next action, phrase reuse, tone, and word meaning. When new Dutch wording is needed, the relevant text, context, and decisions are also sent to **Nebius Token Factory (Qwen)**.
 
@@ -51,7 +51,7 @@ Processing is used to provide the features you request, with consent for optiona
 
 ## Providers and international processing
 
-An EU backend location does not guarantee that all downstream processing remains in the EU. AI providers and their subprocessors may process data internationally under their applicable terms and safeguards. Their policies describe their own obligations, retention, and contacts:
+An EU database location does not guarantee that all request processing remains in the EU. Supabase Edge Functions, AI providers, and their subprocessors may process data internationally under their applicable terms and safeguards. Their policies describe their own obligations, retention, and contacts:
 
 - [Supabase privacy policy](https://supabase.com/privacy)
 - [TypeSafe AI privacy policy](https://typesafe.ai/legal/privacy-policy)

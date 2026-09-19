@@ -24,12 +24,13 @@ struct PaperSurface<Content: View>: View {
 }
 
 struct RelayButtonStyle: ButtonStyle {
+    @Environment(\.isEnabled) private var isEnabled
     let prominent: Bool
     func makeBody(configuration: Configuration) -> some View {
         configuration.label.font(.relay(.headline, weight: .semibold)).frame(minHeight: 44).padding(.horizontal, 16)
-            .foregroundStyle(prominent ? Color.white : RelayStyle.slate)
-            .background(prominent ? RelayStyle.indigo.opacity(configuration.isPressed ? 0.8 : 1) : RelayStyle.paper)
-            .overlay(RoundedRectangle(cornerRadius: 10).stroke(prominent ? RelayStyle.indigo : RelayStyle.rule))
-            .clipShape(RoundedRectangle(cornerRadius: 10)).opacity(configuration.isPressed ? 0.85 : 1)
+            .foregroundStyle(isEnabled ? (prominent ? Color.white : RelayStyle.slate) : RelayStyle.muted)
+            .background(isEnabled && prominent ? RelayStyle.indigo.opacity(configuration.isPressed ? 0.8 : 1) : RelayStyle.paper)
+            .overlay(RoundedRectangle(cornerRadius: 10).stroke(isEnabled && prominent ? RelayStyle.indigo : RelayStyle.rule))
+            .clipShape(RoundedRectangle(cornerRadius: 10)).opacity(isEnabled && configuration.isPressed ? 0.85 : 1)
     }
 }

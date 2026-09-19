@@ -2,6 +2,9 @@ import SwiftUI
 
 struct WorkbenchView: View {
     @EnvironmentObject private var model: AppModel
+    @FocusState private var focusedField: EditorField?
+    private enum EditorField: Hashable { case source, context }
+
     var body: some View {
         GeometryReader { proxy in
             ScrollView {
@@ -17,11 +20,17 @@ struct WorkbenchView: View {
                 }.padding(wideInsets(proxy.size.width)).frame(maxWidth: 1100).frame(maxWidth: .infinity)
             }
             .background(RelayStyle.workspace.ignoresSafeArea())
+            .scrollDismissesKeyboard(.interactively)
+            .accessibilityIdentifier("workbenchScroll")
         }
         .navigationTitle("Jev Relay")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            ToolbarItem(placement: .topBarTrailing) { Button { model.showingResetConfirmation = true } label: { Label("Reset session", systemImage: "arrow.counterclockwise") }.frame(minWidth: 44, minHeight: 44) }
+            ToolbarItem(placement: .topBarTrailing) { Button { focusedField = nil; model.showingResetConfirmation = true } label: { Label("Reset session", systemImage: "arrow.counterclockwise") }.frame(minWidth: 44, minHeight: 44) }
+            ToolbarItemGroup(placement: .keyboard) {
+                Spacer()
+                Button("Done") { focusedField = nil }.accessibilityIdentifier("dismissKeyboardButton")
+            }
         }
         .onDisappear { model.speechCapture.stop(); model.speaker.stop() }
     }
@@ -42,7 +51,7 @@ struct WorkbenchView: View {
                         Spacer()
                         if model.sourceText.utf8.count >= 3_200 { Text(limitText).font(.relay(.caption)).foregroundStyle(model.sourceText.utf8.count > 4_000 ? RelayStyle.error : RelayStyle.muted) }
                     }
-                    TextEditor(text: $model.sourceText).frame(minHeight: 175)
+                    TextEditor(text: $model.sourceText).focused($focusedField, equals: .source).frame(minHeight: 175)
                         .font(.relay(.body)).scrollContentBackground(.hidden).padding(10).background(RelayStyle.workspace)
                         .overlay(RoundedRectangle(cornerRadius: 8).stroke(RelayStyle.rule))
                         .accessibilityLabel("English source text").accessibilityIdentifier("sourceEditor")
@@ -50,6 +59,7 @@ struct WorkbenchView: View {
                 VStack(alignment: .leading, spacing: 7) {
                     Text("Context").font(.relay(.headline, weight: .semibold))
                     TextField("Who is speaking, to whom, and what does “it” refer to?", text: $model.context, axis: .vertical)
+                        .focused($focusedField, equals: .context)
                         .lineLimit(2...5).textFieldStyle(.plain).padding(12).background(RelayStyle.workspace)
                         .overlay(RoundedRectangle(cornerRadius: 8).stroke(RelayStyle.rule))
                         .accessibilityIdentifier("contextEditor")
@@ -61,11 +71,11 @@ struct WorkbenchView: View {
                 Text("Live service includes 10 turns per user per UTC day. Shared service limits may also apply.").font(.relay(.caption)).foregroundStyle(RelayStyle.muted)
                 Divider().overlay(RelayStyle.rule)
                 HStack(spacing: 12) {
-                    Button { Task { await model.speechCapture.toggle() } } label: { Label(recordButtonTitle, systemImage: model.speechCapture.isRecording ? "stop.fill" : model.speechCapture.isStarting ? "xmark" : "mic") }
+                    Button { focusedField = nil; Task { await model.speechCapture.toggle() } } label: { Label(recordButtonTitle, systemImage: model.speechCapture.isRecording ? "stop.fill" : model.speechCapture.isStarting ? "xmark" : "mic") }
                         .buttonStyle(RelayButtonStyle(prominent: false)).accessibilityIdentifier("recordButton")
                     Spacer()
                     if model.isInterpreting { Button("Cancel") { model.cancelInterpretation() }.buttonStyle(RelayButtonStyle(prominent: false)) }
-                    Button("Interpret") { model.requestInterpretation() }.buttonStyle(RelayButtonStyle(prominent: true))
+                    Button("Interpret") { focusedField = nil; model.requestInterpretation() }.buttonStyle(RelayButtonStyle(prominent: true))
                         .disabled(model.sourceText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || model.isInterpreting).accessibilityIdentifier("interpretButton")
                 }
                 if model.isInterpreting { ProgressView("Interpreting one turn…").font(.relay(.subheadline)).accessibilityIdentifier("interpretProgress") }
@@ -79,6 +89,7 @@ struct WorkbenchView: View {
     private var safetyNote: some View {
         Text("Jev Relay is not for legal, medical, or emergency use. Output is not a certified translation. Review wording before playback or use.")
             .font(.relay(.caption)).foregroundStyle(RelayStyle.muted).frame(maxWidth: 680, alignment: .leading)
+            .accessibilityIdentifier("workbenchSafetyNotice")
     }
     private var recordButtonTitle: String { model.speechCapture.isRecording ? "Stop" : model.speechCapture.isStarting ? "Cancel" : "Record" }
     private var limitText: String {

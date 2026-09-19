@@ -35,3 +35,11 @@ The separate deployed-backend smoke evidence is in `backend/evidence/`; it does 
 Follow-up changes request complete file protection at the initial atomic write, independently test the requested protection attributes, and separate metadata verification from ordinary persistence/backup/deletion checks. Missing metadata is an explicit simulator-only skip for that single hardware-dependent test; missing or wrong metadata remains a failure on a physical device. There are now 17 unit tests, with at most one such conditional skip. Privacy controls have stable accessibility identifiers and are checked for visibility without assuming SwiftUI Link is an XCUIElementTypeLink. Generic-device test compilation passed after these changes. A fresh hosted run is required to verify execution.
 
 The CI workflow now releases the iPhone simulator before starting iPad tests, reuses compiled products, and publishes a small screenshot-only artifact alongside the full results. Screenshots containing research figures in Preferences are QA evidence, not storefront performance claims.
+
+## Passing hosted follow-up
+
+[Run 35440726341](https://github.com/rnjsxodyd90/jev-relay/actions/runs/35440726341), commit `67a0d96`, completed successfully on both iPhone 17 Pro Max and iPad Pro 13-inch (M5), using Xcode 26.3 / iOS 26.2. The privacy accessibility check passed on both devices. The earlier failure remains linked above. This verifies the storage/privacy corrections at that commit, not physical hardware or later edits.
+
+A final refinement adds explicit keyboard dismissal, visible disabled-button styling, and scroll-to-end assertions above the iPhone floating tab bar. Its screenshots type a synthetic English example without pressing Interpret; no inference response is fabricated. The privacy manifest now includes quota-related Other Usage Data. The final AppStore-configuration generic-device build passed unsigned. Hosted execution of these refinements is pending.
+
+The updated workflow runs device families in independent parallel jobs with fail-fast disabled. Compact review artifacts contain genuine PNGs, test summaries, logs, and toolchain evidence; complete xcresult bundles remain separate. No replay mode or special native app mode is used for the UI captures.

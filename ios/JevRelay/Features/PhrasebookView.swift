@@ -14,7 +14,7 @@ struct PhrasebookView: View {
             }
             Section("Saved on this device") {
                 if let error = model.phrasebook.storageError { Text(error).font(.relay(.subheadline)).foregroundStyle(RelayStyle.error) }
-                if filteredSaved.isEmpty { Text(model.phrasebook.saved.isEmpty ? "No saved phrases yet. Save a reviewed result explicitly after interpretation." : "No saved phrase matches this search.").font(.relay(.subheadline)).foregroundStyle(RelayStyle.muted) }
+                if filteredSaved.isEmpty { Text(model.phrasebook.saved.isEmpty ? "No saved phrases yet. Save a reviewed result explicitly after interpretation." : "No saved phrase matches this search.").font(.relay(.subheadline)).foregroundStyle(RelayStyle.muted).accessibilityIdentifier("savedPhraseStatus") }
                 ForEach(filteredSaved) { phrase in
                     Button { model.useSavedPhrase(phrase) } label: { PhraseRow(english: phrase.english, dutch: phrase.dutch) }.buttonStyle(.plain).frame(minHeight: 52)
                         .swipeActions { Button("Delete", role: .destructive) { model.phrasebook.delete(phrase) } }
