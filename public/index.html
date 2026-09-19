@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jev Relay decision workbench and recorded interpreter benchmark evidence.">
+  <title>Jev Relay</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="mast">
+      <a class="brand" href="#workbench" aria-label="Jev Relay workbench">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span>Jev Relay</span>
+      </a>
+      <p class="mast-copy">Interpreter decisions, replayed with their evidence intact.</p>
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <button type="button" class="nav-button is-active" data-view="workbench" aria-current="page">Workbench</button>
+        <button type="button" class="nav-button" data-view="evidence">Evidence</button>
+        <button type="button" class="nav-button" data-view="integration">Integration</button>
+      </nav>
+      <div class="mast-foot">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span id="dataset-stamp">Loading recorded evidence</span>
+      </div>
+    </aside>
+
+    <main class="main" id="main-content" tabindex="-1">
+      <header class="topbar">
+        <div>
+          <p class="context-line" id="view-context">Decision workbench</p>
+          <h1 id="view-title">Inspect one interpreter turn</h1>
+        </div>
+        <a class="json-link" href="/api/evidence">Open evidence JSON</a>
+      </header>
+
+      <section id="workbench-view" class="view" aria-labelledby="view-title"></section>
+      <section id="evidence-view" class="view" hidden aria-label="Benchmark evidence"></section>
+      <section id="integration-view" class="view" hidden aria-label="Integration guide"></section>
+    </main>
+  </div>
+
+  <div id="app-status" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
