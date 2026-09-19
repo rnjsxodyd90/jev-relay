@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-09-19T14:33:32.641Z",
+  "sourceCommit": "5afe32075fa27fbc3e9a2261b3f2b0ede551c94e",
+  "bundleId": "com.taekwon.jevrelay",
+  "appStoreConnectId": "6813870271",
+  "version": "1.0",
+  "build": "1",
+  "localXcode": {
+    "version": "27.0",
+    "build": "27A266a"
+  },
+  "signing": {
+    "type": "Apple Distribution",
+    "teamId": "53R7M78MLK",
+    "profileName": "Jev Relay App Store",
+    "profileUUID": "8d953955-4b0a-4d9e-9b6a-bdccc5a84ff1",
+    "archiveSucceeded": true,
+    "strictSignatureVerificationPassed": true
+  },
+  "export": {
+    "method": "app-store-connect",
+    "succeeded": true,
+    "ipaSHA256": "39e12a66181b584c1df4c549ad4cf17e590eb6201c4ba135f5a3657c70cb395c"
+  },
+  "upload": {
+    "accepted": true,
+    "errors": 0,
+    "deliveryUUID": "fbb56ec7-69f6-4b30-aab1-7904b9f29762",
+    "initialAttempt": "Blocked by permissions on existing user cache directories; no build defect reported.",
+    "successfulAttempt": "Used an isolated new cache within the authorized task directory."
+  },
+  "credentialCleanup": {
+    "temporaryDeveloperKeyRevoked": true,
+    "activeTeamKeysAfterCleanup": 0,
+    "privateFilesDeleted": true
+  },
+  "appStoreReview": {
+    "submitted": false,
+    "approved": false,
+    "released": false,
+    "releaseMode": "manual"
+  },
+  "remainingGates": [
+    "Apple build processing and validation",
+    "Physical-device speech, accessibility, complete-file-protection and clean-install QA",
+    "Native Dutch human quality review",
+    "Provider/platform retention, operational logs/backups and final privacy attestation",
+    "Remaining App Store declarations and submission"
+  ]
+}

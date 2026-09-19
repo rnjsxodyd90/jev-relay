@@ -19,7 +19,7 @@ Jev Relay is operated by **Tae yong Kwon**. Contact **[rnjsxodyd@gmail.com](mail
 
 ## When you choose live interpretation
 
-Before the first live request, the app identifies the external services and asks for your permission. Choosing **Interpret** sends the edited English text, context, and relevant routing information over HTTPS to the Jev Relay backend, hosted by **Supabase**. The relay database is in Ireland. This does not establish the processing location of every Supabase Edge Function or AI provider.
+Before the first live request, the app identifies the external services and asks for your permission. Choosing **Translate** sends the edited English text, context, and relevant routing information over HTTPS to the Jev Relay backend, hosted by **Supabase**. The relay database is in Ireland. This does not establish the processing location of every Supabase Edge Function or AI provider.
 
 The backend sends the text, context, supplied word-meaning choices, and library phrase candidates to **TypeSafe AI (Jev)** to choose the next action, phrase reuse, tone, and word meaning. When new Dutch wording is needed, the relevant text, context, and decisions are also sent to **Nebius Token Factory (Qwen)**.
 
@@ -37,7 +37,7 @@ Our application code does not log or persist the text of interpretation requests
 
 TypeSafe's policy covers retention of input as reasonably necessary for its service and states that it does not train or fine-tune models on customer input. Nebius provides an optional Zero Data Retention setting; unless that setting is enabled for the service account, its policy permits retention of inputs and outputs for speculative decoding. Do not assume that selecting a non-storage API option is equivalent to a provider-wide zero-retention agreement.
 
-In **Preferences**, **Delete cloud identity** requests hard deletion of the current anonymous authentication identity and its linked app account metadata. The app clears its local credentials only after the service confirms deletion. This identity cannot be recovered. Current pseudonymous quota counters and non-identifying global totals remain through the applicable UTC quota period so deletion does not erase service limits. Duplicate-request receipts cover the current and previous UTC day. Expired counter and receipt data is scheduled for bounded hourly cleanup; paused hosting, a failed job, or a backlog can extend that period. Local saved phrases are deleted separately when you choose that option.
+In **Settings**, **Delete cloud identity** requests hard deletion of the current anonymous authentication identity and its linked app account metadata. The app clears its local credentials only after the service confirms deletion. This identity cannot be recovered. Current pseudonymous quota counters and non-identifying global totals remain through the applicable UTC quota period so deletion does not erase service limits. Duplicate-request receipts cover the current and previous UTC day. Expired counter and receipt data is scheduled for bounded hourly cleanup; paused hosting, a failed job, or a backlog can extend that period. Local saved phrases are deleted separately when you choose that option.
 
 Deletion does not reverse processing already performed by an AI provider or automatically erase records that a provider must retain. Contact us for assistance with a privacy request. Support messages are used to handle your request and retained only as reasonably needed for that purpose or applicable legal obligations.
 

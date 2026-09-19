@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-09-19T15:49:46.000Z",
+  "sourceCommit": "783c77112a48fa4111aa46cefcde2f4c21762229",
+  "bundleId": "com.taekwon.jevrelay",
+  "appStoreConnectId": "6813870271",
+  "version": "1.0",
+  "build": "2",
+  "localXcode": {
+    "version": "27.0",
+    "build": "27A266a"
+  },
+  "signing": {
+    "type": "Apple Distribution",
+    "teamId": "53R7M78MLK",
+    "profileName": "Jev Relay App Store",
+    "profileUUID": "8d953955-4b0a-4d9e-9b6a-bdccc5a84ff1",
+    "archiveSucceeded": true,
+    "strictSignatureVerificationPassed": true
+  },
+  "export": {
+    "method": "app-store-connect",
+    "succeeded": true,
+    "ipaSHA256": "060a6704829da95b18e4a317ea305e74e8b3d4b89e51eadef5684334a54a9acb"
+  },
+  "upload": {
+    "accepted": true,
+    "exitCode": 0,
+    "errors": 0,
+    "deliveryUUID": "c0a9ef01-e3bc-47f8-9cde-e7aee4f90408",
+    "evidence": "altool upload receipt plus App Store Connect UI verification",
+    "processingStatusVerified": true,
+    "appStoreConnectStatus": "Complete",
+    "testFlightStatus": "Ready to Submit",
+    "testFlightExpiration": "90 days",
+    "testersOrGroupsInvited": false
+  },
+  "credentialCleanup": {
+    "temporaryDeveloperKeyRevoked": true,
+    "activeTeamKeysAfterCleanup": 0,
+    "privateFilesDeleted": true,
+    "downloadAndUploadCacheFilesDeleted": true
+  },
+  "appStoreDraft": {
+    "version": "1.0",
+    "buildSelectedAndSaved": "2",
+    "status": "Prepare for Submission",
+    "releaseMode": "manual"
+  },
+  "appStoreReview": {
+    "submitted": false,
+    "approved": false,
+    "released": false,
+    "releaseMode": "manual"
+  },
+  "remainingGates": [
+    "Physical-device speech, accessibility, complete-file-protection, clean-install and native-network QA",
+    "Native Dutch human quality review",
+    "Provider/platform retention, operational logs/backups, residency/subprocessor verification and final privacy attestation",
+    "App Privacy publication, accessibility claim decision, and remaining operator/content declarations including age rating, content rights and territory availability",
+    "App Store submission"
+  ]
+}

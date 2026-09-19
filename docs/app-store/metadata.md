@@ -1,6 +1,6 @@
-# App Store metadata draft
+# App Store metadata
 
-Status: **prepared metadata, release verification and App Store entry still pending**. Public URLs are live. Final device QA, privacy answers, signing, and App Store Connect validation remain required.
+Status: **App Store Connect record and 1.0 bundle ID created; not submitted**. A signed AppStore archive succeeded with the existing distribution identity. Export/upload, physical-device QA, privacy answers, and remaining release gates are still incomplete.
 
 ## Required fields
 
@@ -16,21 +16,19 @@ Status: **prepared metadata, release verification and App Store entry still pend
 
 ## Promotional text
 
-Draft only: Translate English to Dutch with editable text, review controls, and a local phrasebook.
+Translate English to Dutch, review the wording, then choose when to play it aloud.
 
 ## Description
 
-Jev Relay helps you prepare English-to-Dutch wording one turn at a time.
+Jev Relay helps you turn English into Dutch one clear step at a time.
 
-Type or revise your English text, then choose Interpret when you want a cloud translation request. Before new wording is generated, Jev selects four related decisions in one request: the next action, phrase reuse, form of address, and word meaning. New wording is requested only when needed. If context is missing, a response is uncertain, or a service is unavailable, the app asks for clarification or keeps the result for review instead of approving a guess.
+Open Translate. Type English or tap Speak English, optionally add Context and Tone, then tap Translate. Review the Dutch result, save useful wording locally, or tap Review, then play Dutch. In the review sheet, playback starts only after you choose Reviewed, play Dutch.
 
-You stay in control of the text. Review and edit the source before sending. Review the Dutch result before using it. Start Dutch playback yourself when you want to hear it. Save useful phrases to the on-device phrasebook, and delete them from the app whenever you choose.
+Try an example only fills the editable English text. It does not translate, record, or send anything. You stay in control before anything is sent: live translation requires an internet connection, and the first live turn shows a Transmission notice before consent. The app is focused on one-way English-to-Dutch translation. Daily and shared service limits apply.
 
-Voice input is optional. When you tap to record, on-device speech recognition turns recorded English speech into editable text. You can use typed text instead.
+Speech recognition is optional and uses Apple on-device recognition only when supported. Live translation is not promised offline. Saved local phrases can be managed in Phrases; transmission and deletion controls are in Settings.
 
-Live interpretation requires an internet connection. Daily and shared service limits apply; the local phrasebook remains available without live interpretation.
-
-Jev Relay is focused on English-to-Dutch. It is not a substitute for a professional translator or advice for legal, medical, financial, emergency, or other high-stakes situations.
+Jev Relay is not for legal, medical, emergency, or other high-stakes use, and output is not a certified or professional translation.
 
 ## Keywords
 
@@ -51,4 +49,6 @@ Character count: 73/100, including commas.
 - Confirm age rating, category, copyright, availability, and localizations in App Store Connect.
 - Recheck both public HTTPS pages without authentication before submission, and confirm support monitoring.
 - Verify the final binary name, bundle ID, and price/IAP configuration in App Store Connect.
+- Complete export/upload, physical-device QA, privacy answers/attestation, and remaining release gates.
 - Recheck all functionality language against the release build and privacy policy.
+- Do not treat CI as passed: the latest recorded run, 35444300584 (`edbbbfc`), failed three device tests; fixes are being published now.

@@ -1,0 +1,28 @@
+{
+  "observedDate": "2026-09-19",
+  "commit": "783c77112a48fa4111aa46cefcde2f4c21762229",
+  "workflowRun": "https://github.com/rnjsxodyd90/jev-relay/actions/runs/35449925719",
+  "workflowResult": "success",
+  "xcode": "26.3",
+  "simulatorOS": "iOS 26.2",
+  "devices": [
+    {"name":"iPhone 17 Pro Max","totalTests":26,"passed":25,"skipped":1,"failed":0,"screenshots":6,"reviewSummary":"/Users/taea/.aside/u/0/sessions/2026-09-19_WrtUBpLOsycpioeV/artifacts/jev-relay-ios-verification/round7/iphone/review/iphone-summary.json","screenshotManifest":"/Users/taea/.aside/u/0/sessions/2026-09-19_WrtUBpLOsycpioeV/artifacts/jev-relay-ios-verification/round7/iphone/screenshots/iphone/manifest.json","reviewArtifactSHA256":"95490e72a7cc431ec41a1b6831e8b3bffcbb6be2b1eb1f3b254a8a590048f404","width":1320,"height":2868,"pngAlpha":false},
+    {"name":"iPad Pro 13-inch (M5)","totalTests":26,"passed":25,"skipped":1,"failed":0,"screenshots":6,"reviewSummary":"/Users/taea/.aside/u/0/sessions/2026-09-19_WrtUBpLOsycpioeV/artifacts/jev-relay-ios-verification/round7/ipad/review/ipad-summary.json","screenshotManifest":"/Users/taea/.aside/u/0/sessions/2026-09-19_WrtUBpLOsycpioeV/artifacts/jev-relay-ios-verification/round7/ipad/screenshots/ipad/manifest.json","reviewArtifactSHA256":"815221a9faecb57b5e624baafe90d108721b220adef801a84ff060233b998cab","width":2064,"height":2752,"pngAlpha":false}
+  ],
+  "testBreakdownPerDevice":"26 total tests: 25 passed, one hardware-only file-protection metadata test skipped, zero failed.",
+  "onlySkippedTest":"PhrasebookTests.testSavedFileProtectionMetadataOnHardware",
+  "skipReason":"Simulator does not expose file-protection metadata. The physical-device assertion is not bypassed.",
+  "verifiedUI":["empty input cannot be sent","typing preserves editable source","single-VStack expanded detail card remains one column on iPad","opaque navigation background does not overlay scrolled iPhone controls","geometry assertions cover the corrected layouts","editing does not present an inference result or interpretation progress","workbench safety notice and phrasebook end remain reachable","privacy row and safety notice are visible"],
+  "screenshotProvenance":"Final 12 genuine offline XCTest PNGs are indexed by /Users/taea/.aside/u/0/sessions/2026-09-19_WrtUBpLOsycpioeV/artifacts/jev-relay-release-materials/screenshot-provenance.json. They are RGB without alpha: iPhone 1320x2868 and iPad 2064x2752. No fabricated inference is used.",
+  "latestSourceControls":["explicit full-row expansion buttons","@StateObject presentation state","dictation stops before consent","single-use exact-result review before playback","single-VStack expanded detail card","opaque navigation background","geometry assertions"],
+  "priorVerificationHistory":[
+    {"workflowRun":"https://github.com/rnjsxodyd90/jev-relay/actions/runs/35438932702","commit":"0f3e832","result":"failed","findings":["14 of 15 unit tests passed; physical file-protection metadata assertion failed","genuine UI screenshot test could not locate the privacy row by its assumed accessibility element type"]},
+    {"workflowRun":"https://github.com/rnjsxodyd90/jev-relay/actions/runs/35440726341","commit":"67a0d96","result":"passed","findings":["privacy accessibility check passed on both device families"]},
+    {"workflowRun":"https://github.com/rnjsxodyd90/jev-relay/actions/runs/35442383329","commit":"80ce756","result":"passed","findings":["per device: 18 total, 17 passed, one simulator-only file-protection skip, zero failed"]},
+    {"workflowRun":"https://github.com/rnjsxodyd90/jev-relay/actions/runs/35444300584","commit":"edbbbfc","result":"failed","findings":["two model assertion failures","UI context accessibility failure"]},
+    {"workflowRun":"https://github.com/rnjsxodyd90/jev-relay/actions/runs/35445463316","commit":"c33cc75","result":"failed","findings":["all unit tests passed","context-expansion UI failure"]},
+    {"workflowRun":"https://github.com/rnjsxodyd90/jev-relay/actions/runs/35447224708","commit":"5afe32075fa27fbc3e9a2261b3f2b0ede551c94e","result":"passed","findings":["per device: 26 total, 25 passed, one hardware-only file-protection skip, zero failed","visual QA later found expanded iPad details split into card columns and translucent iPhone header overlaying scrolled controls; corrected in current run"]}
+  ],
+  "notEstablished":["final visual QA approval","physical microphone or pronunciation","physical-device file-protection metadata","native live network flow on a reviewer device","human Dutch quality review","provider logging or zero retention","build 2 upload","App Store submission, approval, or release"],
+  "scopeBoundary":"This is final automated simulator evidence, not final visual QA approval. Build 2 local signing is separate from upload status. Build 1 is TestFlight Ready to Submit after its encryption answer was saved; no testers are invited. That status is not App Store submission, approval, or release."
+}

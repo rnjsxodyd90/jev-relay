@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-09-19T16:26:49.961Z",
+  "appStoreConnectId": "6813870271",
+  "bundleId": "com.taekwon.jevrelay",
+  "version": "1.0",
+  "selectedBuild": "2",
+  "status": "Prepare for Submission",
+  "releaseMode": "manual",
+  "submitted": false,
+  "approved": false,
+  "released": false,
+  "testersInvited": false,
+  "buildUploadStatus": "Complete",
+  "testFlightStatus": "Ready to Submit",
+  "metadata": {
+    "name": "Jev Relay",
+    "subtitle": "English to Dutch, with context",
+    "primaryCategory": "Reference",
+    "primaryLanguage": "English (U.S.)",
+    "supportURL": "https://rnjsxodyd90.github.io/jev-relay/support.html",
+    "privacyPolicyURL": "https://rnjsxodyd90.github.io/jev-relay/privacy.html",
+    "reviewerContactSaved": true,
+    "reviewInstructionsSaved": true,
+    "reviewerSignInRequired": false
+  },
+  "pricing": {
+    "saved": true,
+    "baseRegion": "United States",
+    "baseCurrency": "USD",
+    "price": 0
+  },
+  "screenshots": [
+    {
+      "deviceFamily": "iPhone",
+      "display": "6.9-inch",
+      "width": 1320,
+      "height": 2868,
+      "orderedFiles": [
+        "01-interpret-offline.png",
+        "02-phrasebook-offline.png"
+      ],
+      "acceptedCount": 2
+    },
+    {
+      "deviceFamily": "iPad",
+      "display": "13-inch",
+      "width": 2064,
+      "height": 2752,
+      "orderedFiles": [
+        "01-interpret-offline.png",
+        "02-phrasebook-offline.png"
+      ],
+      "acceptedCount": 2
+    }
+  ],
+  "untestedPlatformAvailability": {
+    "appleSiliconMac": false,
+    "appleVisionPro": false
+  },
+  "incompleteStoreFields": {
+    "appPrivacy": "Unstarted and unpublished; provider/operational audit and final attestation required",
+    "accessibility": "Unstarted; physical-device/accessibility QA required before support claims",
+    "ageRating": "Not configured; final content/capability assessment required",
+    "contentRights": "Not configured; operator rights verification required",
+    "releaseTerritories": "Not configured; operator selection required"
+  },
+  "remainingReleaseGates": [
+    "Physical-device speech, pronunciation, accessibility, file protection, clean install, deletion and native network QA",
+    "Independent Dutch human quality review",
+    "Provider/platform retention, logs, backups, residency, subprocessors and final privacy attestation",
+    "Remaining store declarations and territory selection"
+  ],
+  "boundaries": [
+    "Ready to Submit is not App Store approval or tester invitation",
+    "Simulator screenshots are genuine offline XCTest output, not physical-device or live-translation proof",
+    "No Data Not Collected or unverified accessibility claim was published"
+  ]
+}

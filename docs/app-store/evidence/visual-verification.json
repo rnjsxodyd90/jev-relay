@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-09-19T16:33:35.339Z",
+  "sourceCommit": "783c77112a48fa4111aa46cefcde2f4c21762229",
+  "result": "pass",
+  "scope": "Independent visual QA of supplied offline simulator screenshots",
+  "findings": [
+    "English-to-Dutch purpose and actions are clear.",
+    "No iPhone navigation-header overlap is present.",
+    "The iPad detail presentation is a coherent single card."
+  ],
+  "iPhoneScrollUnderlap": {
+    "initialViewShowsNextCardBehindFloatingTabBar": true,
+    "scrolledScreenshotFullyRevealsCard": true,
+    "xctestReachabilityPassed": true,
+    "classification": "normal scroll underlap, not a permanently obscured control"
+  },
+  "sources": [
+    {
+      "family": "iphone",
+      "file": "screenshots/iphone/01-interpret-offline.png",
+      "sha256": "a1ce2af82f2b8d10304203a89ab2a78b1c37473839fa938a9245e756cdfa4d8b"
+    },
+    {
+      "family": "iphone",
+      "file": "screenshots/iphone/04-decisions-scroll-offline.png",
+      "sha256": "7e42463722c2c515d6e0c0a255297fe08357232475150cbd9ae76fbd3e77428d"
+    },
+    {
+      "family": "ipad",
+      "file": "screenshots/ipad/01-interpret-offline.png",
+      "sha256": "bb3dd22300cfd8ca9efefbda7c6b3665abf0b40c11f794de986e24a3094fb3bf"
+    },
+    {
+      "family": "ipad",
+      "file": "screenshots/ipad/04-decisions-scroll-offline.png",
+      "sha256": "5f75abf74ee55c017c74e288156a6d649af26723d605f7959067499b0bd1519c"
+    }
+  ],
+  "appStoreScreenshotUpload": {
+    "uploaded": true,
+    "order": [
+      "Translate",
+      "Phrases"
+    ],
+    "families": [
+      {
+        "display": "iPhone 6.9-inch",
+        "width": 1320,
+        "height": 2868,
+        "count": 2
+      },
+      {
+        "display": "iPad 13-inch",
+        "width": 2064,
+        "height": 2752,
+        "count": 2
+      }
+    ]
+  },
+  "boundaries": [
+    "Simulator screenshots are not physical-device QA.",
+    "Simulator screenshots are not Dutch human-quality proof.",
+    "Simulator screenshots are not live-service proof."
+  ],
+  "run": "https://github.com/rnjsxodyd90/jev-relay/actions/runs/35449925719",
+  "artifactDirectory": "jev-relay-release-materials"
+}
