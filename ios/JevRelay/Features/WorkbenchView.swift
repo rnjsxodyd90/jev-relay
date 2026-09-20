@@ -9,13 +9,19 @@ struct WorkbenchView: View {
     @EnvironmentObject private var model: AppModel
     @FocusState private var focusedField: EditorField?
     @StateObject private var presentation = WorkbenchPresentationState()
+    private let openSettings: () -> Void
     private enum EditorField: Hashable { case source, context }
+
+    init(openSettings: @escaping () -> Void = {}) {
+        self.openSettings = openSettings
+    }
 
     var body: some View {
         GeometryReader { proxy in
             ScrollView {
                 VStack(alignment: .leading, spacing: 18) {
                     masthead
+                    if !model.hasRequiredProviderKeys { providerSetupCard }
                     let wide = proxy.size.width >= 760
                     Group {
                         if wide { HStack(alignment: .top, spacing: 18) { editor.frame(maxWidth: .infinity); DecisionRail(result: model.result).frame(width: 300) } }
@@ -86,23 +92,45 @@ struct WorkbenchView: View {
                     }
                     .padding(.top, 8)
                 }
-                Text("Translation needs an internet connection. Nothing is sent until you choose Translate.").font(.relay(.caption)).foregroundStyle(RelayStyle.muted).accessibilityIdentifier("transmissionNotice")
-                Text("Live service includes 10 turns per user per UTC day. Shared service limits may also apply.").font(.relay(.caption)).foregroundStyle(RelayStyle.muted)
+                Text("Translation needs an internet connection. Nothing is sent until you choose Translate and accept the transmission notice.").font(.relay(.caption)).foregroundStyle(RelayStyle.muted).accessibilityIdentifier("transmissionNotice")
+                Text("Requests use your own TypeSafe / Jev and Nebius accounts. Their charges and quotas apply; the app supplies no credits or fallback.").font(.relay(.caption)).foregroundStyle(RelayStyle.muted)
                 Divider().overlay(RelayStyle.rule)
                 HStack(spacing: 12) {
                     Button { focusedField = nil; Task { await model.speechCapture.toggle() } } label: { Label(speakButtonTitle, systemImage: model.speechCapture.isRecording ? "stop.fill" : model.speechCapture.isStarting ? "xmark" : "mic") }
                         .buttonStyle(RelayButtonStyle(prominent: false)).accessibilityIdentifier("speakEnglishButton")
                     Spacer()
                     if model.isInterpreting { Button("Cancel") { model.cancelInterpretation() }.buttonStyle(RelayButtonStyle(prominent: false)) }
-                    Button("Translate") { focusedField = nil; model.requestInterpretation() }.buttonStyle(RelayButtonStyle(prominent: true))
-                        .disabled(model.sourceText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || model.isInterpreting).accessibilityIdentifier("translateButton")
+                    Button(model.hasRequiredProviderKeys ? "Translate" : "Set up keys") {
+                        focusedField = nil
+                        if model.hasRequiredProviderKeys { model.requestInterpretation() }
+                        else { openSettings() }
+                    }
+                    .buttonStyle(RelayButtonStyle(prominent: true))
+                    .disabled(model.sourceText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || model.isInterpreting)
+                    .accessibilityIdentifier("translateButton")
                 }
                 if model.isInterpreting { ProgressView("Translating…").font(.relay(.subheadline)).accessibilityIdentifier("interpretProgress") }
                 if !model.speechCapture.status.isEmpty { Text(model.speechCapture.status).font(.relay(.subheadline)).foregroundStyle(RelayStyle.muted) }
-                if !model.configuration.isServiceAvailable { Label(model.configuration.missingServiceMessage, systemImage: "network.slash").font(.relay(.subheadline)).foregroundStyle(RelayStyle.muted) }
                 if let error = model.errorMessage { Label(error, systemImage: "exclamationmark.triangle").font(.relay(.subheadline, weight: .medium)).foregroundStyle(RelayStyle.error).accessibilityIdentifier("errorMessage") }
             }
         }
+    }
+
+    private var providerSetupCard: some View {
+        PaperSurface {
+            VStack(alignment: .leading, spacing: 10) {
+                Label("Your API keys are required", systemImage: "key")
+                    .font(.relay(.headline, weight: .semibold))
+                    .foregroundStyle(RelayStyle.slate)
+                Text("Before any live request, store your own TypeSafe / Jev and Nebius API keys in Settings. They stay in this device’s Keychain. Your provider accounts are billed, and the app includes no API credits or developer fallback.")
+                    .font(.relay(.subheadline))
+                    .foregroundStyle(RelayStyle.muted)
+                Button("Open Settings") { openSettings() }
+                    .buttonStyle(RelayButtonStyle(prominent: false))
+                    .accessibilityIdentifier("openProviderSettingsButton")
+            }
+        }
+        .accessibilityIdentifier("providerSetupCard")
     }
 
     private var safetyNote: some View { Text("Jev Relay is not for legal, medical, or emergency use. Output is not a certified translation. Review wording before playback or use.").font(.relay(.caption)).foregroundStyle(RelayStyle.muted).frame(maxWidth: 680, alignment: .leading).accessibilityIdentifier("workbenchSafetyNotice") }

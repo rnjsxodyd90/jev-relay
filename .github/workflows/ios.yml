@@ -37,6 +37,9 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
+      - name: Verify user-funded native architecture
+        run: node ios/Scripts/verify-byok-architecture.mjs
+
       - name: Select installed Xcode 26 or newer
         id: xcode
         run: |

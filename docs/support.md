@@ -5,31 +5,36 @@ title: Jev Relay support
 
 # Jev Relay support
 
-Contact **[rnjsxodyd@gmail.com](mailto:rnjsxodyd@gmail.com?subject=Jev%20Relay%20support)** for help or a privacy request.
+Contact **[rnjsxodyd@gmail.com](mailto:rnjsxodyd@gmail.com?subject=Jev%20Relay%20support)** for help or a privacy request. Do not send API keys, private conversations, authentication tokens, or personal documents by email or in a public issue.
 
-For a non-sensitive bug report, you can also use the [public source repository](https://github.com/rnjsxodyd90/jev-relay). Do not post private conversations, API keys, authentication tokens, or personal documents in a public issue.
+## Set up your own provider access
 
-## Prepare a translation
+Jev Relay's native BYOK build3 is in progress. It requires your own TypeSafe/Jev API key and, if you choose the optional Qwen path, your own Nebius API key. The app does not include developer-funded usage, shared keys, free credits, an owner-funded fallback, or an app-operated cloud account.
 
-1. Open **Translate**. Type English text, or choose **Speak English** if on-device speech recognition is available. **Try an example** only fills editable text; it does not send or record anything.
-2. Review the English text. Open **Optional context and tone** only when those details help.
-3. Choose **Translate**. Dictation stops before the first-live-request transmission notice asks for permission to share text with the named AI services.
-4. Review the Dutch result. If the app asks for clarification, add context before trying again.
-5. To hear eligible wording, choose **Review, then play Dutch**. Check the source and Dutch text, then choose **Reviewed, play Dutch**. Nothing is spoken automatically, and approval applies only once to that exact result.
-6. Choose **Save locally** when you want to keep an eligible phrase. Manage saved wording in **Phrases**.
+Create, fund, limit, and revoke keys in your provider account dashboards. Use the providers' current account and billing documentation for setup:
 
-## If something is unavailable
+- [TypeSafe AI](https://typesafe.ai/)
+- [Nebius Token Factory](https://tokenfactory.nebius.com/)
 
-- **Microphone or speech access:** use typed text, or review Jev Relay's permissions in iOS Settings. The app does not switch to remote speech recognition.
-- **On-device recognition unavailable:** your device, language assets, or OS configuration may not support it. Typed input remains available.
-- **Dutch voice unavailable:** install an appropriate Dutch voice through iOS speech settings. Jev Relay does not substitute an English voice.
-- **Network or service error:** no result is approved for playback. A cancelled or interrupted cloud request may already have counted toward the usage limit. The app does not automatically repeat interpretation requests.
-- **Usage limit reached:** daily and shared free-service limits apply. Continue using the local phrasebook, or try again after the relevant limit resets.
+Enter each key only in the matching provider-key screen in the app. The app is designed to store keys in iOS Keychain and never display them back. Saving a key does not check it or contact a provider.
 
-## Clear data
+## Translate
 
-Use **Start over** to clear the current unsaved turn. Manage saved wording in **Phrases**. In **Settings**, you can revoke permission for future cloud transmissions or request deletion of the anonymous cloud identity, with a separate choice about local phrases. Local saved phrases and the cloud identity have separate deletion controls.
+1. Open **Translate**, enter English text, and optionally add context or tone.
+2. Review the text, then choose **Translate**.
+3. On the first live request, review the transmission notice and give consent.
+4. The app sends a live request directly to the needed provider using your own key. A turn uses at most one Jev request and, if needed, one Qwen request. It does not retry automatically.
+5. Review the Dutch result before optional playback or local saving.
 
-Deleting an identity does not undo text already processed by a provider. See the [privacy policy](privacy.html) for the processing and retention boundaries.
+The app is not for legal, medical, emergency, or other high-stakes use. Provider availability, billing, key permissions, and account limits can affect a request.
+
+## Common issues
+
+- **A key does not work:** confirm it belongs to the correct provider, is active, and has any required billing or permissions in that provider's dashboard. Save does not validate keys; an error may occur only on a live, consented Translate request.
+- **A provider reports a spending or account issue:** manage it directly in that provider account. Jev Relay cannot add credits, change provider billing, or recover a revoked key.
+- **You want to stop access:** remove the key from the app and revoke or rotate it in the provider dashboard. Removing a key does not undo provider processing already performed.
+- **Microphone or speech is unavailable:** use typed input. The app is intended not to fall back to remote speech recognition.
+
+For data handling and historical legacy-data requests, see the [privacy policy](privacy.html).
 
 [Back to Jev Relay](index.html)

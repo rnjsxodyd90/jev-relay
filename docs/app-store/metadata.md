@@ -1,54 +1,43 @@
-# App Store metadata
+# App Store metadata for native BYOK build3
 
-Status: **App Store Connect record and 1.0 bundle ID created; not submitted**. A signed AppStore archive succeeded with the existing distribution identity. Export/upload, physical-device QA, privacy answers, and remaining release gates are still incomplete.
+Status: **draft only.** Build3 is being implemented and tested. It has not passed QA, been archived/uploaded, submitted to App Review, approved, or released. Build2 evidence is historical only; its review was canceled while Apple processing cancellation was last observed. No public release occurred and manual release was preserved.
 
-## Required fields
+## Proposed fields, subject to final binary verification
 
-| Field | Value | Validation |
-|---|---|---|
-| App name | `Jev Relay` | 9/30 characters |
-| Subtitle | `English to Dutch, with context` | 30/30 characters |
-| Bundle ID | `com.taekwon.jevrelay` | provided |
-| Team ID | `53R7M78MLK` | provided |
-| Price | Free | no ads; no in-app purchases |
-| Privacy Policy URL | `https://rnjsxodyd90.github.io/jev-relay/privacy.html` | published HTTPS page |
-| Support URL | `https://rnjsxodyd90.github.io/jev-relay/support.html` | published HTTPS page; operator monitoring remains a release responsibility |
+| Field | Draft value |
+|---|---|
+| App name | `Jev Relay` |
+| Subtitle | `English to Dutch, with context` |
+| Bundle ID | `com.taekwon.jevrelay` |
+| Price | Free app; users pay providers directly for their own usage |
+| Privacy Policy URL | `https://rnjsxodyd90.github.io/jev-relay/privacy.html` |
+| Support URL | `https://rnjsxodyd90.github.io/jev-relay/support.html` |
 
 ## Promotional text
 
-Translate English to Dutch, review the wording, then choose when to play it aloud.
+Translate English to Dutch with your own provider keys, then review the wording before optional playback.
 
 ## Description
 
-Jev Relay helps you turn English into Dutch one clear step at a time.
+Jev Relay is a native English-to-Dutch translation app that uses your own TypeSafe/Jev API key and, when needed, your own Nebius API key. You control the provider accounts, billing, spending limits, and key revocation.
 
-Open Translate. Type English or tap Speak English, optionally add Context and Tone, then tap Translate. Review the Dutch result, save useful wording locally, or tap Review, then play Dutch. In the review sheet, playback starts only after you choose Reviewed, play Dutch.
+Enter text, optionally add context or tone, and choose Translate. After consent, the app sends a live request directly to the required provider. It uses at most one Jev request and, only when needed, one Qwen request, with no automatic retries. Review the Dutch result before playback or saving a phrase locally.
 
-Try an example only fills the editable English text. It does not translate, record, or send anything. You stay in control before anything is sent: live translation requires an internet connection, and the first live turn shows a Transmission notice before consent. The app is focused on one-way English-to-Dutch translation. Daily and shared service limits apply.
+Keys are designed to stay in iOS Keychain and are not included in the app or shown back after saving. The app does not provide developer-funded usage, shared keys, free credits, an owner-funded fallback, or a cloud account. Saving a key does not validate it or contact a provider.
 
-Speech recognition is optional and uses Apple on-device recognition only when supported. Live translation is not promised offline. Saved local phrases can be managed in Phrases; transmission and deletion controls are in Settings.
-
-Jev Relay is not for legal, medical, emergency, or other high-stakes use, and output is not a certified or professional translation.
+Jev Relay is not for legal, medical, emergency, or other high-stakes use. Translation quality and provider availability are not guaranteed.
 
 ## Keywords
 
-`English,Dutch,translation,phrasebook,register,clarification,speech,review`
+`English,Dutch,translation,phrasebook,context,speech,review,BYOK`
 
-Character count: 73/100, including commas.
+## Do not claim
 
-## Intentional exclusions
+- Offline live translation, free provider credits, included usage, a shared quota, or owner-funded fallback.
+- That provider content is never retained, that ZDR is enabled, or that App Privacy is a full audit.
+- Build3 QA, upload, App Review submission, approval, or release.
+- Universal accuracy, speed, or high-stakes suitability.
 
-- No claim that translations are always correct, instant, or available offline.
-- No claim that Jev or Qwen is universally faster, more accurate, or superior.
-- No claim that cloud services retain no data.
-- No claim of human translation, professional certification, or suitability for high-stakes use.
-- No claim of `Data Not Collected`.
+## Before submission
 
-## Before finalizing metadata
-
-- Confirm age rating, category, copyright, availability, and localizations in App Store Connect.
-- Recheck both public HTTPS pages without authentication before submission, and confirm support monitoring.
-- Verify the final binary name, bundle ID, and price/IAP configuration in App Store Connect.
-- Complete export/upload, physical-device QA, privacy answers/attestation, and remaining release gates.
-- Recheck all functionality language against the release build and privacy policy.
-- Do not treat CI as passed: the latest recorded run, 35444300584 (`edbbbfc`), failed three device tests; fixes are being published now.
+Complete physical-device QA, independent Dutch review, detailed provider/privacy audit, final binary/network/keychain verification, App Store fields and privacy answers, and reviewer-access planning. Recheck all copy against the shipped build.

@@ -4,11 +4,11 @@ A native English-to-Dutch conversation assistant, a reusable decision gate, and 
 
 ## Native iOS app
 
-The SwiftUI app in [`ios/`](ios/) includes editable on-device English dictation, context and tone controls, manual Dutch playback, and a local phrasebook. The native app uses real authenticated requests, not the web workbench's recorded replay. Provider keys stay on the server.
+The SwiftUI app in [`ios/`](ios/) includes editable on-device English dictation, context and tone controls, explicit review before Dutch playback, and a local phrasebook. The build 3 candidate uses **each user's own TypeSafe/Jev and Nebius API credentials and credits**. Keys are stored in device-only iOS Keychain and sent only to the matching provider over fixed HTTPS endpoints. No developer key, included credit allowance, anonymous Supabase session, or owner-funded fallback is used by the new native client. Saving a key does not make a provider request; live transmission requires consent and an explicit Translate action.
 
-The isolated Supabase service in [`backend/`](backend/) adds anonymous authentication, durable user/global request caps, signup controls, privacy-preserving duplicate-request protection, cancellation, account deletion, and scheduled counter cleanup. Request caps are not dollar budgets. Configuration and deployment must be verified before distribution.
+The Supabase implementation in [`backend/`](backend/) is retained as legacy/reference code. Its deployed interpretation route was disabled by removing the two provider secrets; read-only health verification returned 503 with interpretation unavailable and account deletion still available. Do not restore shared provider keys merely to make that legacy health check green. The separate local research workbench below has its own opt-in server-funded design and is not the native BYOK app.
 
-**App Store release is in preparation, not submitted or approved.** See [native build evidence](ios/BUILD_EVIDENCE.md), [release checklist](docs/app-store/release-checklist.md), and [privacy assessment](docs/app-store/privacy-assessment.md). Generic-device builds do not establish physical microphone, pronunciation, or signed-distribution validation.
+**Build 2's review submission was canceled for replacement; build 3 is under verification, not approved or publicly released.** Manual release remains required. Apple reviewer-access arrangements remain unresolved. See [native build evidence](ios/BUILD_EVIDENCE.md), [release checklist](docs/app-store/release-checklist.md), and [privacy assessment](docs/app-store/privacy-assessment.md). Compilation does not establish physical-device QA or Dutch human-quality review.
 
 ## Research workbench
 

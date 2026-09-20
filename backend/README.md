@@ -1,6 +1,8 @@
 # Native Jev Supabase backend
 
-Production-oriented Supabase Edge backend for authenticated anonymous English-to-Dutch turns. It exposes only:
+**Legacy/reference service, not the build 3 native BYOK route.** On 20 September 2026 the deployed Jev Relay project's `TYPESAFE_API_KEY` and `NEBIUS_API_KEY` secrets were removed without revoking provider-account keys elsewhere. Read-only health verification returned HTTP 503, `ready:false`, interpretation disabled, and `deleteSession:true`. Do not restore shared funding for the native app. Existing identity-deletion and retention obligations remain; no database records were deleted during this migration.
+
+The new native client calls providers directly with each user's own device-Keychain credentials. The implementation below is retained for historical verification and local reference. It exposes only:
 
 - `GET /health`
 - `POST /interpret`

@@ -7,12 +7,21 @@ final class OfflineScreenshotTests: XCTestCase {
         continueAfterFailure = false
         XCUIDevice.shared.orientation = .portrait
         app = XCUIApplication()
-        // Exercise real views only. This suite never consents, translates, records, or deletes a cloud identity.
+        // Exercise real views only. This suite uses fake local-only strings, cleans them from Keychain, and never consents, translates, records, or contacts a provider.
         app.launch()
         XCTAssertTrue(app.staticTexts["Your English-to-Dutch conversation helper"].waitForExistence(timeout: 15), "The offline app shell did not appear.")
+        removeAllProviderKeys(assertCleanup: true)
+        tapTab(named: "Translate")
     }
 
-    override func tearDownWithError() throws { app?.terminate(); app = nil }
+    override func tearDownWithError() throws {
+        if app != nil, app.state != .notRunning {
+            if app.state != .runningForeground { app.activate() }
+            if app.state == .runningForeground { removeAllProviderKeys(assertCleanup: false) }
+        }
+        app?.terminate()
+        app = nil
+    }
 
     func testGenuineOfflineScreenshots() {
         captureWorkbench()
@@ -20,8 +29,63 @@ final class OfflineScreenshotTests: XCTestCase {
         captureSettings()
     }
 
+    func testProviderKeyLifecycleAndSecureBuffersRemainLocal() {
+        tapTab(named: "Settings")
+        XCTAssertTrue(app.navigationBars["Settings"].waitForExistence(timeout: 10))
+        returnSettingsToTop()
+
+        let field = app.secureTextFields["TypeSafe / Jev API key"].firstMatch
+        let saveButton = app.buttons.matching(identifier: "jev-key-save").firstMatch
+        XCTAssertTrue(field.waitForExistence(timeout: 5))
+        XCTAssertTrue(saveButton.exists)
+        XCTAssertFalse(saveButton.isEnabled)
+
+        let firstFakeKey = "ui-fake-jev-key-one"
+        field.tap()
+        field.typeText(firstFakeKey)
+        XCTAssertTrue(saveButton.isEnabled)
+        dismissKeyboardIfPresent()
+        saveButton.tap()
+        XCTAssertTrue(app.buttons.matching(identifier: "jev-key-remove").firstMatch.waitForExistence(timeout: 5))
+        XCTAssertFalse(saveButton.isEnabled, "Saving must immediately clear the secure-entry buffer.")
+        XCTAssertFalse(app.navigationBars["Transmission notice"].exists, "Saving a key must not request consent or contact a provider.")
+
+        let replacementFakeKey = "ui-fake-jev-key-two"
+        field.tap()
+        field.typeText(replacementFakeKey)
+        XCTAssertTrue(saveButton.isEnabled)
+        dismissKeyboardIfPresent()
+        saveButton.tap()
+        XCTAssertFalse(saveButton.isEnabled, "Replacing must immediately clear the secure-entry buffer.")
+        XCTAssertTrue(app.buttons.matching(identifier: "jev-key-remove").firstMatch.exists)
+
+        field.tap()
+        field.typeText("unsaved-fake-key")
+        XCTAssertTrue(saveButton.isEnabled)
+        tapTab(named: "Phrases")
+        tapTab(named: "Settings")
+        returnSettingsToTop()
+        XCTAssertFalse(app.buttons.matching(identifier: "jev-key-save").firstMatch.isEnabled, "Leaving Settings must clear unsaved plaintext.")
+
+        let activeField = app.secureTextFields["TypeSafe / Jev API key"].firstMatch
+        activeField.tap()
+        activeField.typeText("background-fake-key")
+        XCTAssertTrue(app.buttons.matching(identifier: "jev-key-save").firstMatch.isEnabled)
+        XCUIDevice.shared.press(.home)
+        app.activate()
+        XCTAssertTrue(app.navigationBars["Settings"].waitForExistence(timeout: 10))
+        returnSettingsToTop()
+        XCTAssertFalse(app.buttons.matching(identifier: "jev-key-save").firstMatch.isEnabled, "Backgrounding must clear unsaved plaintext.")
+
+        removeAllProviderKeys(assertCleanup: true)
+        XCTAssertFalse(app.buttons.matching(identifier: "jev-key-remove").firstMatch.exists)
+        XCTAssertFalse(app.navigationBars["Transmission notice"].exists)
+    }
+
     private func captureWorkbench() {
         XCTAssertTrue(app.staticTexts["Type or speak English, review the Dutch, then choose to play it."].exists)
+        XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "providerSetupCard").firstMatch.exists, "The offline fixture must honestly show the own-key prerequisite.")
+        XCTAssertTrue(app.buttons["Open Settings"].exists)
         let editor = app.textViews["sourceEditor"].firstMatch
         XCTAssertTrue(editor.waitForExistence(timeout: 5))
         XCTAssertFalse(app.buttons["translateButton"].isEnabled, "An empty turn must not be sent.")
@@ -88,13 +152,67 @@ final class OfflineScreenshotTests: XCTestCase {
     private func captureSettings() {
         tapTab(named: "Settings")
         XCTAssertTrue(app.navigationBars["Settings"].waitForExistence(timeout: 10))
+        XCTAssertTrue(app.staticTexts["Jev Relay includes no API credits and has no developer-funded fallback. Requests use your own TypeSafe / Jev and Nebius provider accounts, and provider charges and quotas apply to you."].waitForExistence(timeout: 5))
+        XCTAssertGreaterThanOrEqual(app.staticTexts.matching(NSPredicate(format: "label == %@", "Not configured")).count, 2, "Offline screenshots must not use owner or demo provider keys.")
+        let jevField = app.secureTextFields["TypeSafe / Jev API key"].firstMatch
+        XCTAssertTrue(jevField.exists)
+        XCTAssertNotEqual(jevField.value as? String, "", "The secure field should show its placeholder, never a stored key.")
+        attachScreenshot(named: "03-byok-settings-offline")
+
         let privacy = app.descendants(matching: .any).matching(identifier: "privacyPolicyLink").firstMatch
         for _ in 0..<8 where !privacy.exists || !privacy.isHittable { app.swipeUp() }
         XCTAssertTrue(privacy.exists && privacy.isHittable, "The privacy row was not visible and reachable in Settings.")
         let notice = app.descendants(matching: .any).matching(identifier: "privacySafetyNotice").firstMatch
         for _ in 0..<4 where !notice.exists || !notice.isHittable { app.swipeUp() }
         XCTAssertTrue(notice.exists && notice.isHittable, "The privacy and safety notice was not visible.")
-        attachScreenshot(named: "03-privacy-preferences-offline")
+        attachScreenshot(named: "06-privacy-preferences-offline")
+    }
+
+    private func removeAllProviderKeys(assertCleanup: Bool) {
+        tapTab(named: "Settings")
+        guard app.navigationBars["Settings"].waitForExistence(timeout: 10) else {
+            if assertCleanup { XCTFail("Settings was unavailable for provider-key cleanup.") }
+            return
+        }
+        returnSettingsToTop()
+        for provider in ["jev", "nebius"] {
+            let removeButton = app.buttons.matching(identifier: "\(provider)-key-remove").firstMatch
+            guard removeButton.exists else { continue }
+            makeVisibleFromEitherDirection(removeButton)
+            guard removeButton.isHittable else {
+                if assertCleanup { XCTFail("The \(provider) key could not be reached for cleanup.") }
+                continue
+            }
+            removeButton.tap()
+            let confirm = app.buttons["Remove key"].firstMatch
+            guard confirm.waitForExistence(timeout: 5) else {
+                if assertCleanup { XCTFail("The \(provider) removal confirmation did not appear.") }
+                continue
+            }
+            confirm.tap()
+            _ = removeButton.waitForNonExistence(timeout: 5)
+        }
+        if assertCleanup {
+            XCTAssertFalse(app.buttons.matching(identifier: "jev-key-remove").firstMatch.exists)
+            XCTAssertFalse(app.buttons.matching(identifier: "nebius-key-remove").firstMatch.exists)
+        }
+    }
+
+    private func returnSettingsToTop() {
+        dismissKeyboardIfPresent()
+        for _ in 0..<10 { app.swipeDown() }
+    }
+
+    private func makeVisibleFromEitherDirection(_ element: XCUIElement) {
+        for _ in 0..<8 where !isVisibleAboveBottomNavigation(element) { app.swipeDown() }
+        for _ in 0..<8 where !isVisibleAboveBottomNavigation(element) { app.swipeUp() }
+    }
+
+    private func dismissKeyboardIfPresent() {
+        guard app.keyboards.firstMatch.exists else { return }
+        let returnKey = app.keyboards.buttons["return"].firstMatch
+        if returnKey.exists { returnKey.tap() }
+        else { app.swipeDown() }
     }
 
     private func tapTab(named name: String) {

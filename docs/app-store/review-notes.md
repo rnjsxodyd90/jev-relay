@@ -1,32 +1,25 @@
-# App Review notes
+# App Review notes for native BYOK build3
 
-Internal status: the App Store Connect record and 1.0 bundle ID exist, but the app is not submitted or approved. A signed AppStore archive succeeded with the existing distribution identity. Export/upload, physical-device QA, privacy answers/attestation, and other release gates are not complete. The latest recorded CI run, 35444300584 (`edbbbfc`), failed three device tests; fixes are being published now. Do not describe CI as passed.
+Internal status: **do not submit these notes yet.** Build3 is in implementation and test. It has not passed QA, been uploaded, submitted, approved, or released. Build2 review was canceled while Apple processing cancellation was last observed; build2 remains historical evidence only, with no public release and manual release preserved.
 
-## Notes for App Review
+## Planned app behavior
 
-Jev Relay is a native SwiftUI English-to-Dutch turn-based translation app. It is free, with no ads or in-app purchases.
+Jev Relay is a native SwiftUI English-to-Dutch BYOK app. A user must provide their own TypeSafe/Jev API key and, for optional Qwen use, their own Nebius API key. Keys are intended for iOS Keychain with `WhenUnlockedThisDeviceOnly` accessibility. They are not bundled, displayed back, sent to the operator/Supabase, or cross-sent between providers.
 
-**No reviewer credentials are required.** A consented live request creates an anonymous session as needed. There is no reviewer account, username, password, or subscription flow.
+A user enters text, taps Translate, reviews a transmission notice, and consents before a live call. Save does not validate keys or use the network. A live turn is designed to make at most one Jev request and, only if needed, one Qwen request, with no automatic retry. Each key is sent only as Authorization directly to its provider's fixed HTTPS endpoint.
 
-### Exact review flow
+## Reviewer access blocker
 
-1. Launch the app on the **Translate** tab.
-2. Enter English text, for example: `Could you repeat that?` Open **Optional context and tone** only if useful, and choose **Formal** when addressing one person politely.
-3. Tap **Translate**. On the first live turn, read the **Transmission notice** and choose **I understand and consent** to proceed. An anonymous session is created/refreshed only for this explicit cloud request. **Try an example** only fills editable text; typing, recording, and opening do not send text.
-4. Jev selects action, phrasebook reuse/miss, register, and word sense. Qwen is requested only for new wording; an appropriate stored phrase can be reused instead.
-5. Invalid, uncertain, unavailable, or malformed responses fail closed to clarification, a review-required result, or a visible error, not an approved guess. Bounded smoke retained an ambiguous fixture that safely returned review instead of expected clarification.
-6. For an eligible Dutch result, tap **Review, then play Dutch**. In the sheet, confirm the wording and choose **Reviewed, play Dutch**. Playback is manual and Dutch-only; it never auto-plays.
-7. **Save locally** explicitly saves an eligible result. **Settings → Delete cloud identity** offers a confirmed deletion flow with a separate choice about local phrases. **Phrases** manages saved local wording.
+**Live translation cannot be reviewed without a reviewer-controlled provider key with active provider access.** The app has no anonymous Supabase account, operator cloud identity, developer-funded credits, shared developer key, demo credential, or fake AI replay mode. Do not state that reviewer credentials are unnecessary, that Apple has been supplied keys, or that a live demo is available unless that becomes true and is separately verified.
 
-### Permissions
+Before submission, decide and document an Apple-compliant review path that does not expose an operator or user secret and does not misrepresent live functionality. Until then, this is a submission blocker.
 
-Microphone and Speech Recognition are requested only after voice-recording is tapped. Voice is optional and requires on-device recognition support. Audio is not intentionally uploaded or saved; typed input remains available if permission is denied.
+## Permissions
 
-### Review environment
+Microphone and speech recognition, if included in the final build, must be requested only after the user starts voice entry. Speech recognition is intended to be on device; physical-device verification remains required. The app does not use GPS or location permission.
 
-- Live backend: `https://iliuldjetbxxsjykoqxm.supabase.co/functions/v1/native-backend`
-- Availability and reviewer allowance: confirm before submission; client behavior states 10 turns/user/UTC day and shared limits may apply
-- Privacy: https://rnjsxodyd90.github.io/jev-relay/privacy.html
-- Support: https://rnjsxodyd90.github.io/jev-relay/support.html
+## Privacy and legacy status
 
-The build has no fake AI replay mode. Preference screens with research figures are QA evidence, not storefront performance/accuracy marketing. Do not claim provider retention/ZDR/logging facts, physical-device microphone/pronunciation validation, or final privacy attestation until independently complete.
+The existing conservative App Privacy declaration has six data types labeled App Functionality, linked to user, and not used for tracking. It is not a complete privacy audit and must be revalidated for build3. Provider retention, ZDR, infrastructure logs, backups, residency, and subprocessors remain open audit items.
+
+The old relay was disabled after only the `TYPESAFE_API_KEY` and `NEBIUS_API_KEY` secrets were removed from the JevRelay Supabase project. Last checked, health returned `503` with `ready: false`, and legacy `deleteSession` returned true. No other provider project keys were revoked.

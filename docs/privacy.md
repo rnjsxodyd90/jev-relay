@@ -5,73 +5,60 @@ title: Jev Relay privacy policy
 
 # Jev Relay privacy policy
 
-Effective date: 19 September 2026.
+Effective date: 20 September 2026. This policy describes the planned native BYOK build3 client. Build3 is still being implemented and tested; this page is not a release or QA attestation.
 
 Jev Relay is operated by **Tae yong Kwon**. Contact **[rnjsxodyd@gmail.com](mailto:rnjsxodyd@gmail.com?subject=Jev%20Relay%20privacy)** with privacy questions or requests.
 
 ## On your device
 
-- Optional microphone input is transcribed using on-device speech recognition. If on-device recognition is unavailable, the app keeps typed input available rather than uploading audio for recognition.
-- The app does not upload or save microphone recordings.
-- The app does not use GPS, a device-location API, or location permission.
-- Unsaved source text, context, and results are kept in the current app session rather than automatically added to a cloud history.
-- Phrases are saved locally only when you choose to save them. You can delete individual saved phrases or clear them all.
-- Transmission preferences are stored locally. Anonymous service credentials are protected by the device's Keychain. Provider API keys are never included in the app.
+- You may type English source text and optional context. Unsaved text and results remain in the current app session unless you choose to save a phrase locally.
+- Optional microphone input is intended to use on-device speech recognition only. The app does not use GPS, a device-location API, or location permission.
+- The app is designed to store your TypeSafe/Jev and optional Nebius API keys in iOS Keychain with `WhenUnlockedThisDeviceOnly` accessibility. Keys are not bundled with the app and are not shown back to you after saving.
+- Secure key-entry buffers are intended to clear after saving, when the app backgrounds, and when the entry screen disappears.
+- The app has no advertising or analytics SDKs and does not use data for cross-app tracking.
 
-## When you choose live interpretation
+## Your provider keys and live translation
 
-Before the first live request, the app identifies the external services and asks for your permission. Choosing **Translate** sends the edited English text, context, and relevant routing information over HTTPS to the Jev Relay backend, hosted by **Supabase**. The relay database is in Ireland. This does not establish the processing location of every Supabase Edge Function or AI provider.
+Jev Relay is bring-your-own-key (BYOK). Each user supplies and pays for their own TypeSafe/Jev API key and, if using Qwen, their own Nebius API key. The app provides no developer-funded usage, shared developer keys, owner-funded fallback, quota, anonymous Supabase signup/refresh, operator cloud identity, or shared service allowance.
 
-The backend sends the text, context, supplied word-meaning choices, and library phrase candidates to **TypeSafe AI (Jev)** to choose the next action, phrase reuse, tone, and word meaning. When new Dutch wording is needed, the relevant text, context, and decisions are also sent to **Nebius Token Factory (Qwen)**.
+Saving a key does not validate it or make a network request. After you explicitly consent and choose **Translate**, the app may make at most one Jev request and, only when needed for the result, one Qwen request. It does not automatically retry. Fixed source-text and output limits apply.
 
-Your microphone recording is not included. Your anonymous app identity is not deliberately included in the prompts sent to either AI provider. Text you type may itself contain personal information, so avoid sending confidential, sensitive, or high-stakes material.
+The TypeSafe/Jev key is sent only as Authorization to TypeSafe's fixed HTTPS endpoint. The Nebius key is sent only as Authorization to Nebius's fixed HTTPS endpoint. A key for one provider is not sent to the other provider. Keys are not sent to the app operator, Supabase, or an app-operated relay. Do not enter a key in any place other than the app's provider-key entry screen.
 
-## Anonymous identity and service limits
+Your translated content and any optional context are sent to the provider needed for the live request. Text you enter may contain personal information. Do not send confidential, sensitive, or high-stakes material unless you are authorized to do so.
 
-The first permitted live use creates an anonymous Supabase identity. The app does not ask you for a name, email address, phone number, or social login. Random authentication identifiers and protected access/refresh credentials allow the backend to authenticate requests.
+## Billing, retention, and provider controls
 
-The backend keeps limited account metadata, pseudonymous usage counters, short-lived request receipts to prevent duplicate processing, and global aggregate counters to enforce service limits and protect against abuse. These records are not a conversation history. They do not contain source text, context, audio, translations, or model decisions.
+You manage billing, spending limits, key revocation, and any available retention or account settings through your own provider accounts. The app contains no purchase or provider-signup links and does not promise free credits or a particular price.
 
-## Retention and deletion
+Provider content retention and account controls are governed by the applicable provider terms and settings. No provider-wide zero-data-retention arrangement has been verified for this app. Do not treat direct routing or a no-training statement as a promise of no retention.
 
-Our application code does not log or persist the text of interpretation requests or responses. This is not a claim that every infrastructure or AI provider retains nothing. Hosting and authentication systems may retain operational, connection, security, and authentication records under their own policies.
+- [TypeSafe AI privacy policy](https://typesafe.ai/legal/privacy-policy)
+- [TypeSafe data-processing information](https://typesafe.ai/legal/data-processing)
+- [Nebius Token Factory privacy policy](https://docs.tokenfactory.nebius.com/legal/privacy-policy)
+- [Nebius Token Factory terms](https://docs.tokenfactory.nebius.com/legal/terms-of-service)
+- [Nebius data-handling guide](https://docs.tokenfactory.nebius.com/legal/legal-quick-guide)
 
-TypeSafe's policy covers retention of input as reasonably necessary for its service and states that it does not train or fine-tune models on customer input. Nebius's terms and guidance may permit retention of inputs and outputs for service operation, including speculative decoding. No Zero Data Retention setting has been verified for this service account. Do not assume that selecting a non-storage API option is equivalent to a provider-wide zero-retention agreement.
+## Infrastructure and historical legacy data
 
-In **Settings**, **Delete cloud identity** requests hard deletion of the current anonymous authentication identity and its linked app account metadata. The app clears its local credentials only after the service confirms deletion. This identity cannot be recovered. Current pseudonymous quota counters and non-identifying global totals remain through the applicable UTC quota period so deletion does not erase service limits. Duplicate-request receipts cover the current and previous UTC day. Expired counter and receipt data is scheduled for bounded hourly cleanup; paused hosting, a failed job, or a backlog can extend that period. Local saved phrases are deleted separately when you choose that option.
+The direct native build is designed without operator cloud identity or a live relay. The legacy Jev Relay Supabase backend was confirmed disabled after its `TYPESAFE_API_KEY` and `NEBIUS_API_KEY` secrets were removed: the health endpoint returned `503` with `ready: false`, and its legacy `deleteSession` operation returned true. No other provider project keys were revoked as part of that action.
 
-Deletion does not reverse processing already performed by an AI provider or automatically erase records that a provider must retain. Contact us for assistance with a privacy request. Support messages are used to handle your request and retained only as reasonably needed for that purpose or applicable legal obligations.
+Removing a key from the new app does not erase metadata created during earlier legacy testing. Historical legacy authentication, quota, receipt, or infrastructure records remain subject to their applicable retention and deletion processes. Contact the operator for a privacy request concerning legacy app-held records. Provider processing already performed is controlled separately by the relevant provider.
+
+Infrastructure and support systems may process operational records such as IP address, user agent, IP-derived approximate location, request timing/status, and diagnostics. This is not GPS collection, advertising, analytics, or a claim that every field is retained for every request. Retention, backups, logging, residency, and subprocessors require further verification.
+
+## Existing App Privacy declaration
+
+The existing conservative App Store declaration contains six data types, each labeled **App Functionality**, **linked to the user**, and **not used for tracking**: User ID, Other User Content, Other Usage Data, Coarse Location, Other Diagnostic Data, and Other Data Types. These labels are retained conservatively pending revalidation against the final build3 binary and operations. They are not a full privacy audit or a claim that all data is collected in the same way by build3.
 
 ## Your choices and rights
 
-You can use the local phrasebook without permitting live interpretation, decline microphone or speech permissions, type instead of dictating, review text before sending it, stop playback, revoke permission for future cloud transmissions, and delete local phrases or the cloud identity.
-
-Depending on your location, you may have rights to access, correct, delete, restrict, or object to processing of personal data, receive a copy of relevant data, withdraw consent for future optional processing, or complain to a data-protection authority. Email the contact above for help. We may need enough information to identify the relevant request without collecting unnecessary additional data.
-
-Processing is used to provide the features you request, with consent for optional microphone access and AI transmission where applicable, and to maintain service security and usage limits. We do not include advertising or analytics SDKs and do not use app data for cross-app advertising tracking. No personal information is sold by the app operator.
-
-## Infrastructure and security records
-
-Hosted authentication, backend, and security systems can process operational connection and diagnostic records, including client IP address, user agent, approximate country or city derived from an IP address, request status and timing, and operational diagnostics. We use these records for service operation, security, abuse prevention, and troubleshooting, not for cross-app advertising. This describes infrastructure logging capability and is not a claim that every request produces every field or that a particular app request is logged in a particular way. We do not promise a universal retention period for these records.
-
-## Providers and international processing
-
-An EU database location does not guarantee that all request processing remains in the EU. Supabase Edge Functions, AI providers, and their subprocessors may process data internationally under their applicable terms and safeguards. Their policies describe their own obligations, retention, and contacts:
-
-- [Supabase privacy policy](https://supabase.com/privacy)
-- [TypeSafe AI privacy policy](https://typesafe.ai/legal/privacy-policy)
-- [TypeSafe data-processing addendum](https://typesafe.ai/legal/data-processing)
-- [TypeSafe service terms](https://typesafe.ai/legal/mca)
-- [Nebius Token Factory privacy policy](https://docs.tokenfactory.nebius.com/legal/privacy-policy)
-- [Nebius Token Factory service terms](https://docs.tokenfactory.nebius.com/legal/terms-of-service)
-- [Nebius data-handling and retention guide](https://docs.tokenfactory.nebius.com/legal/legal-quick-guide)
+You can use local features without adding provider keys, choose not to use microphone features, review text before translating, avoid saving phrases, remove keys from the app, and revoke keys through the relevant provider dashboard. Depending on your location, you may have rights to access, correct, delete, restrict, object to, or receive a copy of applicable personal data. Email the contact above for help with an operator-held legacy-data request.
 
 The public support website is hosted by GitHub Pages, which may process standard web connection logs under [GitHub's privacy statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement). No advertising or analytics scripts are added to these support pages.
 
-Send only content you are allowed to share or translate, and follow the linked service and model terms.
-
 ## Changes
 
-We will update this page when the app's processing changes. A materially different optional transmission purpose will require an appropriate updated in-app notice rather than relying only on a website change.
+I will update this policy when the processing design or verified release behavior changes. Material changes to optional transmission require an appropriate in-app notice.
 
 [Support](support.html) · [Back to Jev Relay](index.html)

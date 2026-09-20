@@ -28,7 +28,7 @@ struct InterpretRequest: Encodable, Equatable {
         let cleanContext = context.trimmingCharacters(in: .whitespacesAndNewlines)
         let joined = [cleanContext.isEmpty ? nil : cleanContext, tone.contextInstruction]
             .compactMap { $0 }.joined(separator: "\n")
-        guard joined.count <= 2_000 else { throw InputValidationError.contextTooLong }
+        guard joined.count <= 2_000, joined.utf8.count <= 8_000 else { throw InputValidationError.contextTooLong }
         self.text = cleanText
         self.context = joined
     }
@@ -40,7 +40,7 @@ enum InputValidationError: LocalizedError, Equatable {
         switch self {
         case .emptyText: return "Enter an English turn to interpret."
         case .textTooLong: return "Keep each turn below 4,000 UTF-8 bytes."
-        case .contextTooLong: return "Keep situational context below 2,000 characters."
+        case .contextTooLong: return "Keep situational context within 2,000 characters and 8,000 UTF-8 bytes."
         }
     }
 }

@@ -18,9 +18,6 @@
 <key>UISupportedInterfaceOrientations~ipad</key><array><string>UIInterfaceOrientationPortrait</string><string>UIInterfaceOrientationPortraitUpsideDown</string><string>UIInterfaceOrientationLandscapeLeft</string><string>UIInterfaceOrientationLandscapeRight</string></array>
 <key>NSMicrophoneUsageDescription</key><string>Jev Relay uses the microphone only while you record English speech for on-device transcription. Audio is not uploaded or saved.</string>
 <key>NSSpeechRecognitionUsageDescription</key><string>Jev Relay uses Apple on-device speech recognition to turn your recorded English speech into editable text.</string>
-<key>SUPABASE_URL</key><string>$(SUPABASE_URL)</string>
-<key>SUPABASE_PUBLISHABLE_KEY</key><string>$(SUPABASE_PUBLISHABLE_KEY)</string>
-<key>RELAY_BACKEND_URL</key><string>$(RELAY_BACKEND_URL)</string>
 <key>PRIVACY_POLICY_URL</key><string>$(PRIVACY_POLICY_URL)</string>
 <key>SUPPORT_URL</key><string>$(SUPPORT_URL)</string>
 </dict></plist>

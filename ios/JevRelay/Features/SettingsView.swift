@@ -2,49 +2,138 @@ import SwiftUI
 
 struct SettingsView: View {
     @EnvironmentObject private var model: AppModel
+
     var body: some View {
         Form {
-            Section("Live service") {
-                LabeledContent("Status", value: model.configuration.isServiceAvailable ? "Configured" : "Unavailable")
-                Text(model.configuration.isServiceAvailable ? "Translation needs an internet connection. Text can be sent only after consent and an explicit Translate action." : model.configuration.missingServiceMessage).font(.relay(.subheadline)).foregroundStyle(RelayStyle.muted)
-                if model.hasConsent { Button("Revoke transmission consent") { model.revokeConsent() }.frame(minHeight: 44) }
-                else { Text("Transmission consent is not active.").font(.relay(.subheadline)).foregroundStyle(RelayStyle.muted) }
+            Section("Bring your own API keys") {
+                Text("Jev Relay includes no API credits and has no developer-funded fallback. Requests use your own TypeSafe / Jev and Nebius provider accounts, and provider charges and quotas apply to you.")
+                    .font(.relay(.subheadline))
+                    .foregroundStyle(RelayStyle.muted)
+                Text("Keys are stored in iOS Keychain on this device. Existing keys are never displayed or prefilled.")
+                    .font(.relay(.subheadline))
+                    .foregroundStyle(RelayStyle.muted)
             }
-            Section("Anonymous cloud identity") {
-                Text("Deleting asks the relay service to remove the current anonymous identity. After confirmed success, its tokens are cleared. The identity cannot be recovered.").font(.relay(.subheadline)).foregroundStyle(RelayStyle.muted)
-                Button("Delete cloud identity", role: .destructive) { model.showingIdentityDeletion = true }.disabled(model.isDeletingIdentity || !model.configuration.isServiceAvailable).frame(minHeight: 44)
-                if model.isDeletingIdentity { ProgressView("Waiting for confirmed deletion…") }
-                if let message = model.deletionMessage { Text(message).font(.relay(.subheadline)).foregroundStyle(message.contains("was deleted") ? RelayStyle.success : RelayStyle.error) }
+
+            ProviderKeySection(provider: .jev)
+            ProviderKeySection(provider: .nebius)
+
+            Section("Transmission consent") {
+                if model.hasConsent {
+                    Button("Revoke transmission consent", role: .destructive) { model.revokeConsent() }
+                        .frame(minHeight: 44)
+                    Text("Revoking consent cancels active work and invalidates any Dutch result awaiting review or playback.")
+                        .font(.relay(.subheadline))
+                        .foregroundStyle(RelayStyle.muted)
+                } else {
+                    Text("Transmission consent is not active. You will be asked after both provider keys are configured and you explicitly choose Translate.")
+                        .font(.relay(.subheadline))
+                        .foregroundStyle(RelayStyle.muted)
+                }
             }
+
             Section("Local phrases") {
                 LabeledContent("Saved", value: "\(model.phrasebook.saved.count)")
-                Button("Clear all saved phrases", role: .destructive) { model.showingClearAllPhrases = true }.disabled(model.phrasebook.saved.isEmpty).frame(minHeight: 44)
-                Text("Saved phrases use protected local app storage and are excluded from device backups. Transcripts and turns are not automatically kept.").font(.relay(.subheadline)).foregroundStyle(RelayStyle.muted)
-                if let error = model.phrasebook.storageError { Text(error).font(.relay(.subheadline)).foregroundStyle(RelayStyle.error) }
+                Button("Clear all saved phrases", role: .destructive) { model.showingClearAllPhrases = true }
+                    .disabled(model.phrasebook.saved.isEmpty)
+                    .frame(minHeight: 44)
+                Text("Saved phrases use protected local app storage and are excluded from device backups. Transcripts and turns are not automatically kept.")
+                    .font(.relay(.subheadline))
+                    .foregroundStyle(RelayStyle.muted)
+                if let error = model.phrasebook.storageError {
+                    Text(error).font(.relay(.subheadline)).foregroundStyle(RelayStyle.error)
+                }
             }
+
             Section("Recorded evidence") {
-                Text("Limited experiment: 12 synthetic cases × 3 rounds in one collection window. Jev: median 303 ms, p95 378 ms, exact 36/36. Qwen: median 375 ms, p95 652 ms, exact 28/36.").font(.relay(.subheadline))
-                Text("Qwen had lower median latency on the single memory-match and word-sense tasks. These measurements do not establish universal speed, accuracy, or production approval performance. Confidence values are not calibrated correctness probabilities.").font(.relay(.subheadline)).foregroundStyle(RelayStyle.muted)
+                Text("Limited experiment: 12 synthetic cases × 3 rounds in one collection window. Jev: median 303 ms, p95 378 ms, exact 36/36. Qwen: median 375 ms, p95 652 ms, exact 28/36.")
+                    .font(.relay(.subheadline))
+                Text("These measurements do not establish universal speed, accuracy, cost, quota, or production performance. Confidence values are not calibrated correctness probabilities.")
+                    .font(.relay(.subheadline))
+                    .foregroundStyle(RelayStyle.muted)
             }
+
             Section("Help and policy") {
-                if let url = model.configuration.privacyPolicyURL { Link("Privacy policy", destination: url).frame(minHeight: 44).accessibilityIdentifier("privacyPolicyLink") } else { LabeledContent("Privacy policy", value: "Not configured").accessibilityIdentifier("privacyPolicyLink") }
-                if let url = model.configuration.supportURL { Link("Support", destination: url).frame(minHeight: 44) } else { LabeledContent("Support", value: "Not configured") }
+                if let url = model.configuration.privacyPolicyURL {
+                    Link("Privacy policy", destination: url).frame(minHeight: 44).accessibilityIdentifier("privacyPolicyLink")
+                } else {
+                    LabeledContent("Privacy policy", value: "Not configured").accessibilityIdentifier("privacyPolicyLink")
+                }
+                if let url = model.configuration.supportURL {
+                    Link("Support", destination: url).frame(minHeight: 44)
+                } else {
+                    LabeledContent("Support", value: "Not configured")
+                }
             }
-            Section { Text("Not for legal, medical, or emergency use. Output is not certified. No analytics, tracking, advertising, in-app purchases, or account wall are included.").font(.relay(.caption)).foregroundStyle(RelayStyle.muted).accessibilityIdentifier("privacySafetyNotice") }
+
+            Section {
+                Text("Not for legal, medical, or emergency use. Output is not certified. No analytics, tracking, advertising, or in-app purchases are included. No Jev Relay account is required; your own provider credentials are required for live translation.")
+                    .font(.relay(.caption))
+                    .foregroundStyle(RelayStyle.muted)
+                    .accessibilityIdentifier("privacySafetyNotice")
+            }
         }
-        .scrollContentBackground(.hidden).background(RelayStyle.workspace).navigationTitle("Settings")
-        .confirmationDialog("Delete anonymous identity?", isPresented: $model.showingIdentityDeletion, titleVisibility: .visible) {
-            Button("Delete identity, keep local phrases", role: .destructive) { deleteIdentity(clearSaved: false) }
-            Button("Delete identity and local phrases", role: .destructive) { deleteIdentity(clearSaved: true) }
-            Button("Cancel", role: .cancel) {}
-        } message: { Text("This cannot be undone. Choose explicitly whether locally saved phrases should also be cleared.") }
+        .scrollContentBackground(.hidden)
+        .scrollDismissesKeyboard(.interactively)
+        .background(RelayStyle.workspace)
+        .navigationTitle("Settings")
         .confirmationDialog("Clear every saved local phrase?", isPresented: $model.showingClearAllPhrases, titleVisibility: .visible) {
-            Button("Clear all", role: .destructive) { model.phrasebook.deleteAll() }; Button("Cancel", role: .cancel) {}
+            Button("Clear all", role: .destructive) { model.phrasebook.deleteAll() }
+            Button("Cancel", role: .cancel) {}
         }
     }
+}
 
-    private func deleteIdentity(clearSaved: Bool) {
-        model.isDeletingIdentity = true
-        Task { await model.deleteIdentity(clearSavedPhrases: clearSaved); model.isDeletingIdentity = false }
+private struct ProviderKeySection: View {
+    @EnvironmentObject private var model: AppModel
+    @Environment(\.scenePhase) private var scenePhase
+    @State private var key = ""
+    @State private var showingRemoveConfirmation = false
+    let provider: ProviderKind
+
+    var body: some View {
+        Section(provider.displayName) {
+            LabeledContent("Status", value: model.isProviderConfigured(provider) ? "Configured" : "Not configured")
+                .accessibilityIdentifier("\(provider.id)-key-status")
+            SecureField("Paste API key", text: $key)
+                .textInputAutocapitalization(.never)
+                .autocorrectionDisabled()
+                .accessibilityLabel("\(provider.displayName) API key")
+                .accessibilityIdentifier("\(provider.id)-key-field")
+            HStack(spacing: 12) {
+                Button(model.isProviderConfigured(provider) ? "Replace key" : "Save key") {
+                    _ = model.saveProviderKey(key, for: provider)
+                    key = ""
+                }
+                .disabled(key.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+                .frame(minHeight: 44)
+                .accessibilityIdentifier("\(provider.id)-key-save")
+
+                if model.isProviderConfigured(provider) {
+                    Button("Remove", role: .destructive) { showingRemoveConfirmation = true }
+                        .frame(minHeight: 44)
+                        .accessibilityIdentifier("\(provider.id)-key-remove")
+                }
+            }
+            .buttonStyle(.borderless)
+            Text("Stored in iOS Keychain on this device. Saving does not contact or validate with the provider.")
+                .font(.relay(.caption))
+                .foregroundStyle(RelayStyle.muted)
+            if let message = model.credentialMessage {
+                Text(message).font(.relay(.caption)).foregroundStyle(RelayStyle.muted)
+            }
+        }
+        .confirmationDialog("Remove the \(provider.displayName) key?", isPresented: $showingRemoveConfirmation, titleVisibility: .visible) {
+            Button("Remove key", role: .destructive) {
+                _ = model.clearProviderKey(provider)
+                key = ""
+            }
+            Button("Cancel", role: .cancel) {}
+        } message: {
+            Text("Translation will be blocked until a replacement key is stored. Any active request or playback approval will be cancelled.")
+        }
+        .onDisappear { key = "" }
+        .onChange(of: scenePhase) { _, phase in
+            if phase != .active { key = "" }
+        }
     }
 }

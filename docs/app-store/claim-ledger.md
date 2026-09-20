@@ -1,26 +1,27 @@
-# Claim ledger
+# Claim ledger for native BYOK build3
 
-Use only claims marked **release-verified** in customer-facing copy. Automated CI, visual simulator QA, upload acceptance, TestFlight status, and internal signed-distribution status are not marketing approval.
+Use customer-facing claims only when the final build3 behavior has been verified. Build3 is in progress, not QA-passed, uploaded, submitted, approved, or released.
 
-| Claim or fact | Status | Evidence / required verification | Approved use |
-|---|---|---|---|
-| English-to-Dutch, turn-based app | Simulator UI and signed archive verified; reviewer-device live flow pending | Final CI `783c77112a48fa4111aa46cefcde2f4c21762229`; build 2 local signing | Prepared metadata, subject to gates |
-| English-to-Dutch purpose/actions, corrected iPad detail, and iPhone header layout | Independent visual simulator QA passed | `visual-verification.json`; iPhone next-card partial view is normal scroll underlap, not a permanently obscured control | Internal QA only; not physical-device, Dutch-quality, or live-service proof |
-| Local phrasebook has explicit save/delete | Simulator tests passed | Physical file-protection metadata remains the sole simulator-only skip | Prepared copy, retaining hardware limitation |
-| Voice recognition is on device and optional | Code/tests; physical runtime pending | Device microphone/network check needed | Final wording after device verification |
-| Audio is not uploaded or saved by app | Inspected behavior; physical audit pending | Device/network audit remains outstanding | App-code claim only |
-| App uses only OS-provided encryption | Local build configuration verified | `ITSAppUsesNonExemptEncryption=false`; TLS, Keychain, file protection only | App Store compliance context, not privacy guarantee |
-| Build 2 uploaded and processed | Verified internal distribution status | App Store Connect: Complete; TestFlight: Ready to Submit, expires in 90 days; build 2 is selected/saved in the reopened version 1.0 draft | Internal status only |
-| Build 2 available to testers | Unsupported | No testers or groups are invited | Prohibited |
-| App Store submitted | Release-verified internal status | Authenticated receipt: version 1.0 build 2, one submitted item, Waiting for Review, submission ID `290fbf06-0bc9-469f-ab2d-19e23d0baf7b` | Internal status only; not marketing approval |
-| App Store approved or released | Unsupported | Submission is Waiting for Review; manual release remained checked after confirmation | Prohibited |
-| Published App Privacy declaration | Release-verified internal status | Six types published for App Functionality, linked, and not tracking at `2026-09-20T07:00:35.227Z` | Internal status only; not a provider/compliance audit |
-| No provider retention or Data Not Collected | Unsupported | Detailed retention, logs, backups, residency, subprocessors, and ZDR remain unresolved | Prohibited |
-| Accessibility support | Unsupported | Accessibility is unclaimed; physical accessibility QA remains open | Prohibited |
-| Age rating 18+ and content-rights responses saved | Release-verified internal status | Prior App Store Connect verification | Internal store status only; not broader legal/compliance proof |
-| Territory availability | Unsupported | Territory selection remains a pre-release follow-up | Prohibited |
-| Universal speed, accuracy, privacy, or offline translation | Unsupported | No suitable evidence | Prohibited |
+| Claim or fact | Current status | Approved use |
+|---|---|---|
+| Native English-to-Dutch BYOK app | Planned design; final implementation pending | Internal planning only until verified |
+| User supplies own TypeSafe/Jev and optional Nebius keys | Required planned design | Draft copy, subject to final verification |
+| User manages provider billing, spending, and revocation | Required planned design | Draft copy, subject to provider/account verification |
+| Keys use `WhenUnlockedThisDeviceOnly`, are not bundled/shown back, and buffers clear | Implementation requirement; unverified | Not release claim until signed-device verification |
+| Direct fixed HTTPS endpoints; matching Authorization only | Implementation requirement; unverified | Not release claim until network/binary verification |
+| Save makes no network/key validation; consented Translate is live | Implementation requirement; unverified | Not release claim until verification |
+| At most one Jev plus optional one Qwen, no retries | Implementation requirement; unverified | Not performance/availability claim |
+| No developer-funded usage, shared key/quota, or owner-funded fallback | Required design; final verification pending | Draft copy, subject to verification |
+| No anonymous Supabase identity or operator cloud identity | Required design; final verification pending | Draft copy, subject to verification |
+| No GPS, ads, analytics SDKs, or tracking | Design/policy statement; final SDK/runtime audit pending | Do not strengthen until audit |
+| Six conservative App Privacy labels | Existing declaration: App Functionality, linked, no tracking | Internal disclosure baseline only, not a full audit |
+| No provider retention, active ZDR, or Data Not Collected | Unsupported | Prohibited |
+| Build3 QA, upload, submission, approval, or release | Unsupported | Prohibited |
+| Build2 review status proves build3 readiness | False | Prohibited |
+| Legacy relay disabled | Last observed after removal of two specified secrets: health 503/ready false; deleteSession true | Historical operational fact only |
+| Reviewer needs no credentials or has supplied keys | Unsupported; live access blocker exists | Prohibited |
+| Free credits, included usage, purchase/signup link, price estimate | Unsupported or intentionally absent | Prohibited |
 
-## Research provenance boundary
+## Historical evidence boundary
 
-The synthetic decision benchmark is not Dutch translation-quality, native-device, or live-service performance evidence and must not be used in App Store copy.
+Build2 App Review was canceled while Apple processing cancellation was last observed. No public release occurred and manual release was preserved. Keep build2 evidence as historical context only; do not convert it into a build3 claim.

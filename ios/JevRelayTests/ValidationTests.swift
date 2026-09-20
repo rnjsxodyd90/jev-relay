@@ -8,6 +8,26 @@ final class ValidationTests: XCTestCase {
         XCTAssertThrowsError(try InterpretRequest(text: "   ", context: "", tone: .automatic))
         XCTAssertThrowsError(try InterpretRequest(text: String(repeating: "é", count: 2_001), context: "", tone: .automatic))
         XCTAssertThrowsError(try InterpretRequest(text: "Hello", context: String(repeating: "x", count: 2_001), tone: .automatic))
+        let combiningContext = "e" + String(repeating: "\u{0301}", count: 4_001)
+        XCTAssertEqual(combiningContext.count, 1)
+        XCTAssertThrowsError(try InterpretRequest(text: "Hello", context: combiningContext, tone: .automatic))
+    }
+
+    func testProviderKeyValidationIsLocalAndHeaderSafe() throws {
+        XCTAssertEqual(try ProviderCredentialValidation.normalized("  user-test-key-only\n"), "user-test-key-only")
+        for invalid in ["", "   ", "Bearer user-test-key-only", "test\r\nInjected: value", "test key", "clé", String(repeating: "x", count: 4_097)] {
+            XCTAssertThrowsError(try ProviderCredentialValidation.normalized(invalid))
+        }
+        XCTAssertEqual(try ProviderCredentialValidation.normalized(String(repeating: "x", count: 4_096)).count, 4_096)
+    }
+
+    func testProviderConfigurationHasOnlyFixedHTTPSDestinations() {
+        XCTAssertEqual(ServiceConfiguration.jevEndpoint.absoluteString, "https://api.typesafe.ai/v1/systemone")
+        XCTAssertEqual(ServiceConfiguration.nebiusEndpoint.absoluteString, "https://api.tokenfactory.nebius.com/v1/chat/completions")
+        XCTAssertNil(ServiceConfiguration.jevEndpoint.user)
+        XCTAssertNil(ServiceConfiguration.jevEndpoint.password)
+        XCTAssertNil(ServiceConfiguration.nebiusEndpoint.query)
+        XCTAssertEqual(ServiceConfiguration.jevModel, "jev-1.13.0")
     }
 
     func testStrictResponseDecoding() throws {

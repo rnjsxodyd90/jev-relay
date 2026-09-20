@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-09-20T08:40:44.301Z",
+  "appStoreConnectId": "6813870271",
+  "oldBuild": "2",
+  "candidateBuild": "3",
+  "requestedBilling": "Every user supplies their own TypeSafe/Jev and Nebius credentials; no developer-funded fallback",
+  "appleReview": {
+    "oldSubmissionId": "290fbf06-0bc9-469f-ab2d-19e23d0baf7b",
+    "cancellationAccepted": true,
+    "lastSubmissionStatus": "Processing",
+    "lastItemStatus": "Ready for Review",
+    "released": false
+  },
+  "legacyBackend": {
+    "projectId": "iliuldjetbxxsjykoqxm",
+    "removedSecretNames": [
+      "TYPESAFE_API_KEY",
+      "NEBIUS_API_KEY"
+    ],
+    "accountProviderKeysRevoked": false,
+    "quotaPepperPreserved": true,
+    "healthHTTPStatus": 503,
+    "ready": false,
+    "interpretationDisabled": true,
+    "deleteSessionAvailable": true,
+    "evidence": "Read-only health verification after accepted project-secret removal; no provider call"
+  },
+  "replacement": {
+    "directProviders": true,
+    "deviceOnlyKeychain": true,
+    "ownerKeyFallback": false,
+    "realKeysUsedInTests": false,
+    "qaStatus": "Full app/unit/UI test-target build succeeded; native runtime execution pending CI.",
+    "localBuildForTesting": {
+      "succeeded": true,
+      "xcode": "27.0",
+      "build": "27A266a",
+      "architectures": [
+        "arm64",
+        "x86_64"
+      ],
+      "executedTests": false,
+      "simulatorBlocker": "CoreSimulatorService unavailable in local environment",
+      "compilerWorkarounds": [
+        "SWIFT_ENABLE_EXPLICIT_MODULES=NO",
+        "Swift compiler macro sandbox disabled for local build only"
+      ]
+    },
+    "javascriptTests": {
+      "passed": 51,
+      "failed": 0
+    },
+    "staticByokArchitectureCheckPassed": true,
+    "propertyListsValidated": true,
+    "securityReview": {
+      "highSeverityIssuesFound": 0,
+      "hardeningCompleted": [
+        "injected test session settings isolated",
+        "fixed exact provider endpoint validation",
+        "redirect refusal",
+        "private secure-entry state",
+        "cancellation before credential mutations"
+      ],
+      "consentBoundary": "Centralized in the only production caller, AppModel; transport itself is not a consent UI"
+    }
+  },
+  "remainingReviewBlocker": "Apple full-access reviewer credential/demo path must be resolved without sharing owner credentials or inventing access"
+}
