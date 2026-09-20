@@ -63,7 +63,9 @@ final class OfflineScreenshotTests: XCTestCase {
         field.typeText("unsaved-fake-key")
         XCTAssertTrue(saveButton.isEnabled)
         tapTab(named: "Phrases")
+        XCTAssertTrue(app.navigationBars["Offline phrases"].waitForExistence(timeout: 10), "Phrases must become active before checking that Settings clears unsaved plaintext.")
         tapTab(named: "Settings")
+        XCTAssertTrue(app.navigationBars["Settings"].waitForExistence(timeout: 10), "Settings must become active before checking that its secure field was cleared.")
         returnSettingsToTop()
         XCTAssertFalse(app.buttons.matching(identifier: "jev-key-save").firstMatch.isEnabled, "Leaving Settings must clear unsaved plaintext.")
 
@@ -153,7 +155,9 @@ final class OfflineScreenshotTests: XCTestCase {
         tapTab(named: "Settings")
         XCTAssertTrue(app.navigationBars["Settings"].waitForExistence(timeout: 10))
         XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "byokNoCreditsNotice").firstMatch.waitForExistence(timeout: 5))
-        XCTAssertGreaterThanOrEqual(app.staticTexts.matching(NSPredicate(format: "label == %@", "Not configured")).count, 2, "Offline screenshots must not use owner or demo provider keys.")
+        assertProviderStatus("jev", is: "Not configured")
+        assertProviderStatus("nebius", is: "Not configured")
+        returnSettingsToTop()
         let jevField = app.secureTextFields["TypeSafe / Jev API key"].firstMatch
         XCTAssertTrue(jevField.exists)
         XCTAssertNotEqual(jevField.value as? String, "", "The secure field should show its placeholder, never a stored key.")
@@ -200,7 +204,12 @@ final class OfflineScreenshotTests: XCTestCase {
 
     private func returnSettingsToTop() {
         dismissKeyboardIfPresent()
-        for _ in 0..<10 { app.swipeDown() }
+        let notice = app.descendants(matching: .any).matching(identifier: "byokNoCreditsNotice").firstMatch
+        let navigationBar = app.navigationBars["Settings"]
+        for _ in 0..<10 {
+            if notice.exists && notice.isHittable && notice.frame.minY >= navigationBar.frame.maxY { break }
+            app.swipeDown()
+        }
     }
 
     private func makeVisibleFromEitherDirection(_ element: XCUIElement) {
@@ -216,11 +225,26 @@ final class OfflineScreenshotTests: XCTestCase {
     }
 
     private func tapTab(named name: String) {
-        let tabBarButton = app.tabBars.buttons[name]
-        if tabBarButton.exists { tabBarButton.tap(); return }
+        // A visible keyboard can cover compact iPhone tab controls. Dismissing it does not clear the field;
+        // the following verified tab switch continues to exercise Settings' onDisappear clearing.
+        dismissKeyboardIfPresent()
+        let tabBarButton = app.tabBars.buttons[name].firstMatch
+        if tabBarButton.waitForExistence(timeout: 5) {
+            XCTAssertTrue(tabBarButton.isHittable, "The \(name) tab was visible but not hittable on this device layout.")
+            tabBarButton.tap()
+            return
+        }
         let fallbackButton = app.buttons[name].firstMatch
         XCTAssertTrue(fallbackButton.waitForExistence(timeout: 5), "The \(name) tab was not available on this device layout.")
+        XCTAssertTrue(fallbackButton.isHittable, "The \(name) tab was visible but not hittable on this device layout.")
         fallbackButton.tap()
+    }
+
+    private func assertProviderStatus(_ provider: String, is expected: String) {
+        let status = app.descendants(matching: .any).matching(identifier: "\(provider)-key-status").firstMatch
+        for _ in 0..<4 where !status.exists { app.swipeUp() }
+        XCTAssertTrue(status.waitForExistence(timeout: 5), "The \(provider) configuration status was unavailable.")
+        XCTAssertEqual(status.value as? String, expected, "Offline screenshots must not use owner or demo \(provider) provider keys.")
     }
 
     private func isVisibleAboveBottomNavigation(_ element: XCUIElement) -> Bool {

@@ -94,6 +94,9 @@ private struct ProviderKeySection: View {
     var body: some View {
         Section(provider.displayName) {
             LabeledContent("Status", value: model.isProviderConfigured(provider) ? "Configured" : "Not configured")
+                .accessibilityElement(children: .ignore)
+                .accessibilityLabel("\(provider.displayName) API key status")
+                .accessibilityValue(model.isProviderConfigured(provider) ? "Configured" : "Not configured")
                 .accessibilityIdentifier("\(provider.id)-key-status")
             SecureField("Paste API key", text: $key)
                 .textInputAutocapitalization(.never)
