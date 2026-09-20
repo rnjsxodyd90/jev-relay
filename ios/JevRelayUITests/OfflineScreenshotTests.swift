@@ -160,7 +160,9 @@ final class OfflineScreenshotTests: XCTestCase {
         returnSettingsToTop()
         let jevField = app.secureTextFields["TypeSafe / Jev API key"].firstMatch
         XCTAssertTrue(jevField.exists)
-        XCTAssertNotEqual(jevField.value as? String, "", "The secure field should show its placeholder, never a stored key.")
+        let displayedValue = jevField.value as? String ?? ""
+        XCTAssertTrue(displayedValue.isEmpty || displayedValue == "Paste API key", "The secure field must be empty or show only its placeholder, never a stored key.")
+        XCTAssertFalse(app.buttons.matching(identifier: "jev-key-save").firstMatch.isEnabled, "The screenshot must not contain an unsaved credential.")
         attachScreenshot(named: "03-byok-settings-offline")
 
         let privacy = app.descendants(matching: .any).matching(identifier: "privacyPolicyLink").firstMatch
