@@ -9,6 +9,7 @@ struct SettingsView: View {
                 Text("Jev Relay includes no API credits and has no developer-funded fallback. Requests use your own TypeSafe / Jev and Nebius provider accounts, and provider charges and quotas apply to you.")
                     .font(.relay(.subheadline))
                     .foregroundStyle(RelayStyle.muted)
+                    .accessibilityIdentifier("byokNoCreditsNotice")
                 Text("Keys are stored in iOS Keychain on this device. Existing keys are never displayed or prefilled.")
                     .font(.relay(.subheadline))
                     .foregroundStyle(RelayStyle.muted)

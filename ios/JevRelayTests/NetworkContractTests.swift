@@ -16,6 +16,8 @@ final class Locked<Value> {
 }
 
 final class MockURLProtocol: URLProtocol {
+    private static let requestBodyLimit = 131_072
+
     struct Reply {
         let response: HTTPURLResponse
         let data: Data
@@ -44,7 +46,8 @@ final class MockURLProtocol: URLProtocol {
 
     override func startLoading() {
         do {
-            let reply = try XCTUnwrap(Self.handler.read { $0 })(request)
+            let normalizedRequest = try Self.normalizedRequest(request)
+            let reply = try XCTUnwrap(Self.handler.read { $0 })(normalizedRequest)
             let deliver = { [weak self] in
                 guard let self, !self.stopped.read({ $0 }) else { return }
                 self.client?.urlProtocol(self, didReceive: reply.response, cacheStoragePolicy: .notAllowed)
@@ -63,6 +66,28 @@ final class MockURLProtocol: URLProtocol {
 
     override func stopLoading() {
         stopped.update { $0 = true }
+    }
+
+    private static func normalizedRequest(_ request: URLRequest) throws -> URLRequest {
+        if request.httpBody != nil || request.httpBodyStream == nil { return request }
+        guard let stream = request.httpBodyStream else { return request }
+        stream.open()
+        defer { stream.close() }
+
+        var body = Data()
+        var buffer = [UInt8](repeating: 0, count: 4_096)
+        while true {
+            let count = stream.read(&buffer, maxLength: buffer.count)
+            if count < 0 { throw stream.streamError ?? URLError(.cannotDecodeRawData) }
+            if count == 0 { break }
+            guard count <= requestBodyLimit - body.count else { throw URLError(.dataLengthExceedsMaximum) }
+            body.append(contentsOf: buffer.prefix(count))
+        }
+
+        var normalized = request
+        normalized.httpBodyStream = nil
+        normalized.httpBody = body
+        return normalized
     }
 }
 
@@ -542,8 +567,10 @@ final class NetworkContractTests: XCTestCase {
 
     func testCancellationStopsTheInFlightJevRequestAndNeverCallsQwen() async throws {
         let requests = Locked<[URLRequest]>([])
+        let requestStarted = expectation(description: "Jev request entered URLProtocol")
         MockURLProtocol.setHandler { request in
             requests.update { $0.append(request) }
+            if request.url == ServiceConfiguration.jevEndpoint { requestStarted.fulfill() }
             return MockURLProtocol.Reply(
                 response: self.response(for: request, status: 200),
                 data: try self.jsonData(self.validJevResponse(for: request)),
@@ -553,7 +580,7 @@ final class NetworkContractTests: XCTestCase {
         let task = Task {
             try await client().interpret(try InterpretRequest(text: "Hello", context: "", tone: .automatic))
         }
-        try await Task.sleep(for: .milliseconds(30))
+        await fulfillment(of: [requestStarted], timeout: 2)
         task.cancel()
         do {
             _ = try await task.value
@@ -563,8 +590,10 @@ final class NetworkContractTests: XCTestCase {
         } catch {
             XCTFail("Expected CancellationError, got \(error)")
         }
-        XCTAssertEqual(requests.read { $0.count }, 1)
-        XCTAssertEqual(requests.read { $0.first?.url }, Optional(ServiceConfiguration.jevEndpoint))
+        let captured = requests.read { $0 }
+        XCTAssertEqual(captured.count, 1)
+        XCTAssertEqual(captured.first?.url, ServiceConfiguration.jevEndpoint)
+        XCTAssertFalse(captured.contains { $0.url == ServiceConfiguration.nebiusEndpoint })
     }
 
     func testDefaultSessionIsEphemeralBoundedAndWithoutCacheOrPersistentCookies() {

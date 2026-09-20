@@ -141,9 +141,12 @@ jobs:
             -derivedDataPath artifacts/derived-data/native \
             -resultBundlePath "artifacts/results/${{ matrix.family }}.xcresult" \
             -parallel-testing-enabled NO \
-            CODE_SIGNING_ALLOWED=NO \
-            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=YES \
+            CODE_SIGNING_REQUIRED=YES \
+            CODE_SIGN_IDENTITY=- \
             test 2>&1 | tee "artifacts/logs/${{ matrix.family }}-tests.log"
+          # Ad-hoc simulator signing preserves the app identity/Keychain entitlements.
+          # No Apple distribution identity or live provider credentials are used.
 
       - name: Export genuine XCTest screenshot attachments
         if: always()

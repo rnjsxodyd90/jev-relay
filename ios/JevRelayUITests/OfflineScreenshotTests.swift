@@ -152,7 +152,7 @@ final class OfflineScreenshotTests: XCTestCase {
     private func captureSettings() {
         tapTab(named: "Settings")
         XCTAssertTrue(app.navigationBars["Settings"].waitForExistence(timeout: 10))
-        XCTAssertTrue(app.staticTexts["Jev Relay includes no API credits and has no developer-funded fallback. Requests use your own TypeSafe / Jev and Nebius provider accounts, and provider charges and quotas apply to you."].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "byokNoCreditsNotice").firstMatch.waitForExistence(timeout: 5))
         XCTAssertGreaterThanOrEqual(app.staticTexts.matching(NSPredicate(format: "label == %@", "Not configured")).count, 2, "Offline screenshots must not use owner or demo provider keys.")
         let jevField = app.secureTextFields["TypeSafe / Jev API key"].firstMatch
         XCTAssertTrue(jevField.exists)
