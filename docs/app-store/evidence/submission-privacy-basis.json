@@ -1,0 +1,80 @@
+{
+  "document": "submission privacy basis",
+  "preparedAt": "2026-09-19",
+  "scope": {
+    "purpose": "Conservative evidence basis for public-policy wording and proposed privacy declarations.",
+    "notEvidenceOf": [
+      "A particular native-app request having produced a particular log entry",
+      "Universal collection, deletion, or retention behavior across infrastructure or providers",
+      "Zero Data Retention being enabled for any provider account",
+      "Apple submission, review, approval, or publication"
+    ]
+  },
+  "sources": [
+    {
+      "source": "Supabase project Logs Explorer",
+      "observedAt": "2026-09-19",
+      "observation": "edge_logs accepted a Last 24 hours query; the project UI reported Free-plan log retention of 1 day.",
+      "fieldNamesObserved": [
+        "request.headers.cf_connecting_ip",
+        "request.headers.x_real_ip",
+        "request.headers.user_agent",
+        "request.cf.country",
+        "request.headers.cf_ipcountry",
+        "request.cf.city"
+      ],
+      "scopeLimit": "This is project logging capability and field-name evidence only. It does not prove a specific native invocation, universal field population, or a retention promise."
+    },
+    {
+      "source": "Supabase Auth health/management record",
+      "observedAt": "2026-09-19",
+      "observation": "Auth health/management was reviewed as supporting context for hosted authentication and operational records.",
+      "scopeLimit": "No personal log values, credentials, or claim of a complete audit are included."
+    },
+    {
+      "source": "Application source review",
+      "observedAt": "2026-09-19",
+      "observation": "No raw audio upload, native advertising SDK, native analytics SDK, or deliberate app-user identifier in AI prompts was identified. Counters are linked to anonymous identifiers. Text, context, and outputs are treated conservatively as provider-retained data.",
+      "scopeLimit": "This is a bounded source review, not a guarantee about every dependency, infrastructure provider, or future version."
+    },
+    {
+      "source": "TypeSafe MCA",
+      "url": "https://typesafe.ai/legal/mca",
+      "observedAt": "2026-09-19",
+      "termsReviewed": "MCA sections 2.1-2.2 permit integration for end users; section 4.2 assigns output rights.",
+      "scopeLimit": "Rights were verified before a noted 2026-09-28 replacement; this is not a retention or tracking assurance."
+    },
+    {
+      "source": "Nebius Token Factory terms of service",
+      "url": "https://docs.tokenfactory.nebius.com/legal/terms-of-service",
+      "observedAt": "2026-09-19",
+      "termsReviewed": "Older terms sections 4(a)-(b) permit Customer Product and end users; sections 10(b)-(c) state Customer owns input and output.",
+      "scopeLimit": "This is not a retention or tracking assurance."
+    },
+    {
+      "source": "Qwen model license",
+      "observedAt": "2026-09-19",
+      "observation": "Apache License 2.0 identified.",
+      "scopeLimit": "Model licensing does not establish API data handling, retention, or tracking practices."
+    }
+  ],
+  "proposedDeclarations": {
+    "dataTypes": [
+      "Coarse Location: approximate country or city derived from IP address in infrastructure logs",
+      "Other User Content: text, context, and outputs sent for requested interpretation and conservatively treated as provider-retained",
+      "User ID: anonymous authentication identifier and linked pseudonymous counters",
+      "Other Usage Data: pseudonymous usage counters and aggregate service-limit data",
+      "Other Diagnostic Data: request status, timing, and operational diagnostics",
+      "Other Data: client IP address and user agent in hosted authentication, backend, and security logs"
+    ],
+    "linkage": "Proposed as linked to the anonymous app identity where the applicable account or request record is linked.",
+    "tracking": "No Apple-defined tracking is supported by this bounded evidence. Public API-processing terms do not establish no collection or no retention.",
+    "location": "No GPS, device-location API, or location permission is used."
+  },
+  "policyConstraints": [
+    "Do not promise an exact or universal retention or deletion period.",
+    "Do not characterize infrastructure capability as proof of a particular app invocation.",
+    "Do not claim a full audit.",
+    "Direct users to send only content they are allowed to share or translate and to follow linked provider and model terms."
+  ]
+}

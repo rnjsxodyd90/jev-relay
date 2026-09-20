@@ -13,6 +13,7 @@ Jev Relay is operated by **Tae yong Kwon**. Contact **[rnjsxodyd@gmail.com](mail
 
 - Optional microphone input is transcribed using on-device speech recognition. If on-device recognition is unavailable, the app keeps typed input available rather than uploading audio for recognition.
 - The app does not upload or save microphone recordings.
+- The app does not use GPS, a device-location API, or location permission.
 - Unsaved source text, context, and results are kept in the current app session rather than automatically added to a cloud history.
 - Phrases are saved locally only when you choose to save them. You can delete individual saved phrases or clear them all.
 - Transmission preferences are stored locally. Anonymous service credentials are protected by the device's Keychain. Provider API keys are never included in the app.
@@ -35,7 +36,7 @@ The backend keeps limited account metadata, pseudonymous usage counters, short-l
 
 Our application code does not log or persist the text of interpretation requests or responses. This is not a claim that every infrastructure or AI provider retains nothing. Hosting and authentication systems may retain operational, connection, security, and authentication records under their own policies.
 
-TypeSafe's policy covers retention of input as reasonably necessary for its service and states that it does not train or fine-tune models on customer input. Nebius provides an optional Zero Data Retention setting; unless that setting is enabled for the service account, its policy permits retention of inputs and outputs for speculative decoding. Do not assume that selecting a non-storage API option is equivalent to a provider-wide zero-retention agreement.
+TypeSafe's policy covers retention of input as reasonably necessary for its service and states that it does not train or fine-tune models on customer input. Nebius's terms and guidance may permit retention of inputs and outputs for service operation, including speculative decoding. No Zero Data Retention setting has been verified for this service account. Do not assume that selecting a non-storage API option is equivalent to a provider-wide zero-retention agreement.
 
 In **Settings**, **Delete cloud identity** requests hard deletion of the current anonymous authentication identity and its linked app account metadata. The app clears its local credentials only after the service confirms deletion. This identity cannot be recovered. Current pseudonymous quota counters and non-identifying global totals remain through the applicable UTC quota period so deletion does not erase service limits. Duplicate-request receipts cover the current and previous UTC day. Expired counter and receipt data is scheduled for bounded hourly cleanup; paused hosting, a failed job, or a backlog can extend that period. Local saved phrases are deleted separately when you choose that option.
 
@@ -49,6 +50,10 @@ Depending on your location, you may have rights to access, correct, delete, rest
 
 Processing is used to provide the features you request, with consent for optional microphone access and AI transmission where applicable, and to maintain service security and usage limits. We do not include advertising or analytics SDKs and do not use app data for cross-app advertising tracking. No personal information is sold by the app operator.
 
+## Infrastructure and security records
+
+Hosted authentication, backend, and security systems can process operational connection and diagnostic records, including client IP address, user agent, approximate country or city derived from an IP address, request status and timing, and operational diagnostics. We use these records for service operation, security, abuse prevention, and troubleshooting, not for cross-app advertising. This describes infrastructure logging capability and is not a claim that every request produces every field or that a particular app request is logged in a particular way. We do not promise a universal retention period for these records.
+
 ## Providers and international processing
 
 An EU database location does not guarantee that all request processing remains in the EU. Supabase Edge Functions, AI providers, and their subprocessors may process data internationally under their applicable terms and safeguards. Their policies describe their own obligations, retention, and contacts:
@@ -56,10 +61,14 @@ An EU database location does not guarantee that all request processing remains i
 - [Supabase privacy policy](https://supabase.com/privacy)
 - [TypeSafe AI privacy policy](https://typesafe.ai/legal/privacy-policy)
 - [TypeSafe data-processing addendum](https://typesafe.ai/legal/data-processing)
+- [TypeSafe service terms](https://typesafe.ai/legal/mca)
 - [Nebius Token Factory privacy policy](https://docs.tokenfactory.nebius.com/legal/privacy-policy)
+- [Nebius Token Factory service terms](https://docs.tokenfactory.nebius.com/legal/terms-of-service)
 - [Nebius data-handling and retention guide](https://docs.tokenfactory.nebius.com/legal/legal-quick-guide)
 
 The public support website is hosted by GitHub Pages, which may process standard web connection logs under [GitHub's privacy statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement). No advertising or analytics scripts are added to these support pages.
+
+Send only content you are allowed to share or translate, and follow the linked service and model terms.
 
 ## Changes
 
