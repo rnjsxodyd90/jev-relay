@@ -7,8 +7,18 @@
       "A particular native-app request having produced a particular log entry",
       "Universal collection, deletion, or retention behavior across infrastructure or providers",
       "Zero Data Retention being enabled for any provider account",
-      "Apple submission, review, approval, or publication"
+      "Apple approval or public release"
     ]
+  },
+  "currentSubmissionStatus": {
+    "source": "docs/app-store/evidence/review-submission-verification.json",
+    "observedAt": "2026-09-20T07:11:55.246Z",
+    "status": "Waiting for Review",
+    "submitted": true,
+    "approved": false,
+    "released": false,
+    "releaseMode": "manual",
+    "scopeLimit": "Submission and published App Privacy responses are not proof of approval, release, or a full provider/compliance audit."
   },
   "sources": [
     {
@@ -58,17 +68,18 @@
       "scopeLimit": "Model licensing does not establish API data handling, retention, or tracking practices."
     }
   ],
-  "proposedDeclarations": {
+  "publishedDeclarations": {
     "dataTypes": [
       "Coarse Location: approximate country or city derived from IP address in infrastructure logs",
       "Other User Content: text, context, and outputs sent for requested interpretation and conservatively treated as provider-retained",
       "User ID: anonymous authentication identifier and linked pseudonymous counters",
       "Other Usage Data: pseudonymous usage counters and aggregate service-limit data",
       "Other Diagnostic Data: request status, timing, and operational diagnostics",
-      "Other Data: client IP address and user agent in hosted authentication, backend, and security logs"
+      "Other Data Types: client IP address and user agent in hosted authentication, backend, and security logs"
     ],
-    "linkage": "Proposed as linked to the anonymous app identity where the applicable account or request record is linked.",
-    "tracking": "No Apple-defined tracking is supported by this bounded evidence. Public API-processing terms do not establish no collection or no retention.",
+    "publication": "Published in App Store Connect at 2026-09-20T07:00:35.227Z for App Functionality, linked to identity, and not used for tracking; see review-submission-verification.json.",
+    "linkage": "Published as linked to identity; the bounded evidence supports linkage where the applicable account or request record is linked.",
+    "tracking": "Published as not used for tracking. Public API-processing terms do not establish no collection or no retention.",
     "location": "No GPS, device-location API, or location permission is used."
   },
   "policyConstraints": [

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-09-20T07:11:55.246Z",
+  "appStoreConnectId": "6813870271",
+  "bundleId": "com.taekwon.jevrelay",
+  "version": "1.0",
+  "selectedBuild": "2",
+  "status": "Waiting for Review",
+  "submissionId": "290fbf06-0bc9-469f-ab2d-19e23d0baf7b",
+  "dateSubmittedDisplayed": "Sep 20, 2026 at 9:05 AM",
+  "displayedTimezone": "Europe/Amsterdam",
+  "submitted": true,
+  "approved": false,
+  "released": false,
+  "releaseMode": "manual",
+  "manualReleaseVerifiedAfterSubmission": true,
+  "itemsSubmitted": 1,
+  "appPrivacy": {
+    "published": true,
+    "publicationConfirmedAt": "2026-09-20T07:00:35.227Z",
+    "dataTypes": [
+      "Coarse Location",
+      "Other User Content",
+      "User ID",
+      "Other Usage Data",
+      "Other Diagnostic Data",
+      "Other Data Types"
+    ],
+    "allUsedFor": [
+      "App Functionality"
+    ],
+    "allLinkedToIdentity": true,
+    "allUsedForTracking": false,
+    "policyURL": "https://rnjsxodyd90.github.io/jev-relay/privacy.html",
+    "policySourceCommit": "c3e6dcd997fc55f959abfa450eaa56e489419e08",
+    "policyPublicPageVerified": true
+  },
+  "remainingPreReleaseGates": [
+    "Physical-device speech, pronunciation, accessibility, file-protection, clean-install, deletion and native network QA",
+    "Independent Dutch human quality review",
+    "Detailed provider/platform retention, logs, backups, residency and subprocessor verification; no ZDR verified",
+    "Release territories, accessibility support claims and other final operator/release checks"
+  ],
+  "boundaries": [
+    "Submission is not approval or public release",
+    "Manual release remains selected",
+    "Published conservative privacy responses are not an independent compliance audit",
+    "No physical-device QA or human Dutch-quality pass is asserted"
+  ],
+  "evidenceMethod": "Authenticated App Store Connect UI snapshots after Submit for Review; version page radio checked after confirmation; App Review receipt showing one submitted item 1.0 (2)"
+}

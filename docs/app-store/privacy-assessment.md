@@ -1,6 +1,6 @@
 # Privacy assessment draft
 
-Status: **provisional and non-legal advice**. This is a working assessment for engineering, privacy review, and App Store Connect entry. It is not a final privacy attestation. Re-evaluate from the release binary, backend configuration, provider contracts/settings, Supabase configuration, and actual logs before submission.
+Status: **submitted, Waiting for Review, with a conservative App Privacy declaration and non-legal advice**. On 20 September 2026, all six declared types were published for App Functionality, linked to identity, and not used for tracking. The app is not approved or released, and manual release is retained. This working assessment is not a full provider/compliance audit or final legal attestation. Re-evaluate from the release binary, backend configuration, provider contracts/settings, Supabase configuration, and actual logs before relying on stronger claims.
 
 ## Actual-flow model to verify
 
@@ -29,19 +29,21 @@ Status: **provisional and non-legal advice**. This is a working assessment for e
 | Supabase / backend / host | Anonymous auth, private-table RLS/grants, quota/receipt storage, signup controls, two identity deletions, and successful scheduled cleanup were verified in a bounded pilot. The Dashboard reports the database in Ireland. | Anonymous does not mean unlinked. Database region does not prove Edge Function execution location or provider residency. | Audit observability, IP/request logs, backups, retention, subprocessors, operational resilience, and signed-device behavior. |
 | Apple on-device frameworks | On-device processing is intended for speech recognition; manual local playback is intended. | Data that never leaves the device is not “collected” for the App Privacy label, but this needs runtime verification. | Physical-device, network, and storage tests, including denied-permission path. |
 
-## Conservative provisional App Privacy label
+## Published conservative App Privacy declaration
 
-Enter these only after confirming the exact release flow. This is a conservative starting point, not a completed App Store Connect declaration.
+The six data types below were published on 20 September 2026 for App Functionality, linked to identity, and not used for tracking. The declaration is evidence of the App Store Connect response, not proof of a complete provider, retention, log, backup, residency, or subprocessor audit.
 
 | Apple data type | Collected? | Linked to user? | Tracking? | Purpose | Reasoning |
 |---|---:|---:|---:|---|---|
-| Identifiers: User ID | Yes, provisional | Yes | No | App Functionality | Anonymous Supabase/account-level identifier is used for authentication and durable per-user quota enforcement. |
-| User Content: Other User Content | Yes, provisional | Yes | No | App Functionality | English text, context, and generated Dutch wording are transmitted for requested routing/translation. Provider retention makes optional-disclosure treatment unavailable on current facts. |
-| Usage Data: Other Usage Data | Yes, provisional | Yes | No | App Functionality | Inspected deployed tables retain pseudonymous daily/monthly usage counts for quota enforcement. The native manifest declares Other Usage Data for App Functionality, not Analytics. |
-| User Content: Audio Data | No, if verified | n/a | n/a | n/a | Optional audio should stay on device and not be uploaded/saved. If any audio leaves the device or is retained, revisit. |
-| Diagnostics / device identifiers / IP address | Unknown | Unknown | No known tracking | Unknown | Platform, provider, CDN, host, Supabase, and error-monitoring logs are not verified. Do not answer `No` until audited. |
+| Identifiers: User ID | Yes, published | Yes | No | App Functionality | Anonymous Supabase/account-level identifier is used for authentication and durable per-user quota enforcement. |
+| User Content: Other User Content | Yes, published | Yes | No | App Functionality | English text, context, and generated Dutch wording are transmitted for requested routing/translation. Provider retention makes optional-disclosure treatment unavailable on current facts. |
+| Usage Data: Other Usage Data | Yes, published | Yes | No | App Functionality | Inspected deployed tables retain pseudonymous daily/monthly usage counts for quota enforcement. |
+| Location: Coarse Location | Yes, published | Yes | No | App Functionality | Approximate country or city can be derived from IP address in infrastructure records; no GPS, device-location API, or location permission is used. |
+| Diagnostics: Other Diagnostic Data | Yes, published | Yes | No | App Functionality | Hosted systems can process request status, timing, and operational diagnostics; field population and retention remain unaudited. |
+| Other Data Types | Yes, published | Yes | No | App Functionality | Hosted authentication, backend, and security systems can process client IP address and user agent; this is capability evidence, not proof of each request or universal retention. |
+| User Content: Audio Data | No, subject to follow-up | n/a | n/a | n/a | Optional audio should stay on device and not be uploaded/saved. If any audio leaves the device or is retained, revisit. |
 
-Do **not** select “Data Not Collected.” Do **not** mark tracking absent as a final attestation until SDKs, providers, and data sharing are audited, though no advertising/tracking behavior is currently intended.
+Do **not** select “Data Not Collected.” The published no-tracking responses are conservative App Store declarations, not a final provider/compliance audit; SDKs, providers, data sharing, logs, and retention still require verification.
 
 ## Apple labeling basis
 
@@ -54,7 +56,7 @@ Primary references, accessed 2026-09-19:
 - TypeSafe AI, [Privacy Policy](https://typesafe.ai/legal/privacy-policy)
 - Nebius Token Factory, [Legal quick guide](https://docs.tokenfactory.nebius.com/legal/legal-quick-guide)
 
-## Privacy-policy requirements before publication
+## Privacy-policy follow-ups after submission
 
 The public privacy policy must accurately explain:
 
@@ -75,7 +77,7 @@ The public privacy policy must accurately explain:
 - All three native migrations were applied through the Dashboard in one transaction. Private-table RLS, role grants, the enabled signup hook, and bounded live/deletion tests were verified. CLI migration-ledger reconciliation is still separate work.
 - The hourly cleanup job actually succeeded at `2026-09-19T11:17:00Z`; its single returned function-result row does not establish that any expired data existed in that run.
 - Public [privacy](https://rnjsxodyd90.github.io/jev-relay/privacy.html) and [support](https://rnjsxodyd90.github.io/jev-relay/support.html) pages are published. Support monitoring remains an operator responsibility.
-- See `backend/evidence/deployment-verification.json` and the live smoke evidence. The native manifest now declares User ID, Other User Content, and Other Usage Data, linked for App Functionality and not tracking. Final App Store Connect answers remain unentered and provisional.
+- See `backend/evidence/deployment-verification.json`, the live smoke evidence, and [review-submission verification](evidence/review-submission-verification.json). App Store Connect published six types at `2026-09-20T07:00:35.227Z`: Coarse Location, Other User Content, User ID, Other Usage Data, Other Diagnostic Data, and Other Data Types. All are App Functionality, linked, and not tracking; this does not close the operational/provider follow-ups.
 
 ## Facts still needed
 
